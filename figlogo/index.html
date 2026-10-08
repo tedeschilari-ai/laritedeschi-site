@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="pt-BR" class="tema-claro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FigLogo · Curso de criação de logotipos no Figma | Lari Tedeschi</title>
+<meta name="description" content="O curso da Lari Tedeschi para aprender a criar logotipos profissionais no Figma, do briefing à entrega. Aulas gravadas, acesso vitalício e certificado.">
+<link rel="canonical" href="https://laritedeschi.com/figlogo">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FigLogo · Curso de criação de logotipos no Figma">
+<meta property="og:description" content="Aprenda a criar logotipos profissionais no Figma, do briefing à entrega.">
+<meta property="og:url" content="https://laritedeschi.com/figlogo">
+<meta property="og:image" content="https://laritedeschi.com/assets/img/figlogo/modulos/01-comece-por-aqui.webp">
+<meta name="theme-color" content="#f3f1f3">
+<!-- FigLogo · página OFICIAL (institucional, link na bio). Variantes de tráfego ficam em /figlogo/1, /2, /3, /4a, /4b -->
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',{content_name:'FigLogo'});
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=874750447646279&ev=PageView&noscript=1" alt=""></noscript>
+
+<link rel="stylesheet" href="../assets/css/escola.css">
+<style>
+/* Cores do FigLogo */
+:root{
+  --accent:#ff58fc; --accent-2:#c92bd0; --accent-3:#7a1580; --accent-lt:#ffc6fe;
+  --laptop:url("https://framerusercontent.com/images/yAxMkRziQSaIKrq4kFLGnVcywA.png?scale-down-to=2048");
+}
+</style>
+</head>
+<body data-curso="FigLogo">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="chk" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#ff58fc"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ring" viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-70,0 a70,70 0 1,1 140,0 a70,70 0 1,1 -140,0"/></defs><circle cx="100" cy="100" r="96" style="fill:var(--ringfill,#221222)" stroke="rgba(255,88,252,.5)" stroke-width="1.5"/><text style="fill:var(--ringtxt,#ffc6fe)" font-family="Euclid,Arial" font-size="17" font-weight="600" textLength="432" lengthAdjust="spacing"><textPath href="#circ">CURSO VERIFICADO PELO FIGMA ✦</textPath></text></symbol>
+</svg>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a href="../" aria-label="Lari Tedeschi, página inicial" style="display:flex;align-items:center;gap:14px">
+      <img class="logo logo-claro" src="../assets/img/figlogo/logo-figlogo.png" alt="FigLogo" width="87" height="28"><img class="logo logo-escuro" src="../assets/img/figlogo/logo-figlogo-escuro.png" alt="FigLogo" width="87" height="28">
+    </a>
+    <div class="links">
+      <a href="#curso">O curso</a>
+      <a href="#conteudo">Conteúdo</a>
+      <a href="#alunos">Alunos</a>
+      <a href="#professora">Professora</a>
+      <a href="#faq">Dúvidas</a>
+    </div>
+    <a class="btn" href="#matricula">Matricular-se</a>
+  </div>
+</nav>
+
+<!-- Abertura -->
+<header class="hero">
+  <div class="bgfx"><canvas id="stars"></canvas><div class="gridpat"></div><div class="glow"></div></div>
+  <div class="wrap">
+    <span class="pillbar"><img src="https://framerusercontent.com/images/SQ4yLeYZ60qTb0bUkWQkLVtsBw.png" alt=""><span><b>+800 alunos</b> na escola da Lari Tedeschi</span></span>
+    <h1 id="h1"><span class="grad">Crie logotipos profissionais no Figma,</span> do briefing à entrega.</h1>
+    <p class="sub rv">O FigLogo é o curso de criação de logotipos da Lari Tedeschi. Você aprende o processo que designers de marca usam em projetos reais, <strong>começando do zero e usando uma ferramenta gratuita.</strong></p>
+    <div class="ctas rv">
+      <a class="btn" href="#matricula">Quero me matricular <span class="arr">→</span></a>
+      <a class="btn ghost" href="#conteudo">Ver o que tem dentro</a>
+    </div>
+
+    <div class="stage-hero">
+      <div class="halo"></div>
+      <div class="badge" aria-label="Curso verificado pelo Figma"><svg viewBox="0 0 200 200"><use href="#ring"/></svg><img src="https://framerusercontent.com/images/uDo2iIiW3XUG65P2eBXz7NzaGI4.png?scale-down-to=512" alt=""></div>
+      <div class="tool t1"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg></div>
+      <div class="tool t2 hot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
+      <div class="tool t3"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M4 9h16M4 15h16M9 4v16M15 4v16"/></svg></div>
+      <div class="laptop" role="img" aria-label="Logotipo sendo construído no Figma"><div class="part base"></div><div class="part lid"></div></div>
+    </div>
+  </div>
+</header>
+
+<!-- O curso em resumo -->
+<section id="curso" style="padding-top:60px" data-blur="r">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">O curso em resumo</span>
+      <h2>Tudo o que você precisa saber <span class="grad">antes de começar.</span></h2>
+    </div>
+    <div class="facts rv">
+      <div class="fact"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M7 10.5V15c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5"/></svg></div><div><div class="k">Nível</div><div class="v">Iniciante, do zero</div><div class="d">Começa na instalação do Figma. Não precisa saber desenhar.</div></div></div>
+      <div class="fact"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M10 9l4 2-4 2z"/><path d="M8 21h8"/></svg></div><div><div class="k">Formato</div><div class="v">Aulas gravadas</div><div class="d">Você assiste no seu ritmo, quantas vezes quiser.</div></div></div>
+      <div class="fact"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18.2 8.4a3.6 3.6 0 1 1 0 7.2c-2.6 0-4-3.6-6.2-3.6S8.4 15.6 5.8 15.6a3.6 3.6 0 1 1 0-7.2c2.6 0 4 3.6 6.2 3.6s3.6-3.6 6.2-3.6z"/></svg></div><div><div class="k">Acesso</div><div class="v">Vitalício</div><div class="d">Com todas as atualizações futuras incluídas.</div></div></div>
+      <div class="fact"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h4v6.5H8a3.25 3.25 0 0 1 0-6.5z"/><path d="M12 2h4a3.25 3.25 0 0 1 0 6.5h-4z"/><path d="M12 8.5h4a3.25 3.25 0 1 1 0 6.5 3.25 3.25 0 0 1 0-6.5z"/><path d="M8 8.5h4V15H8a3.25 3.25 0 0 1 0-6.5z"/><path d="M8 15h4v3.25A3.25 3.25 0 1 1 8 15z"/></svg></div><div><div class="k">Ferramenta</div><div class="v">Figma Pro gratuito</div><div class="d">Curso verificado pelo Figma: você pede a licença educacional.</div></div></div>
+      <div class="fact"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 10.5h7M8.5 13.5h4"/></svg></div><div><div class="k">Suporte</div><div class="v">Comunidade no WhatsApp</div><div class="d">Para tirar dúvidas durante o curso.</div></div></div>
+      <div class="fact"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14l-1.5 7 5-3 5 3-1.5-7"/></svg></div><div><div class="k">Certificado</div><div class="v">De conclusão</div><div class="d">Para colocar no portfólio e no LinkedIn.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Método -->
+<section id="metodo" data-blur="l">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">O método</span>
+      <h2>Um processo de quatro etapas, <span class="grad">o Método PCRA.</span></h2>
+      <p>O curso segue a ordem em que um projeto de logotipo acontece de verdade, do primeiro contato com o cliente até a entrega dos arquivos.</p>
+    </div>
+    <div class="steps4">
+      <div class="step rv"><span class="n">01</span><div class="big">P</div><h3>Pesquisa</h3><p>Briefing e análise de referências para entender o que a marca precisa antes de desenhar.</p></div>
+      <div class="step rv"><span class="n">02</span><div class="big">C</div><h3>Conceito</h3><p>Transformar o briefing em direções criativas com intenção, em vez de tentativa e erro.</p></div>
+      <div class="step rv"><span class="n">03</span><div class="big">R</div><h3>Refinamento</h3><p>Grid, proporção, tipografia e kerning: os detalhes que deixam o logo profissional.</p></div>
+      <div class="step rv"><span class="n">04</span><div class="big">A</div><h3>Apresentação</h3><p>Mockups, arquivos finais e uma apresentação que ajuda o cliente a aprovar.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Conteúdo -->
+<section id="conteudo" data-blur="lr">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">O que tem dentro</span>
+      <h2>Os módulos do curso, <span class="grad">um por um.</span></h2>
+      <p>É assim que o FigLogo aparece na área de membros.</p>
+    </div>
+    <div class="platform rv">
+      <div class="glowp"></div>
+      <span class="chip c1">▶ Aulas gravadas, no seu ritmo</span>
+      <span class="chip c2">✦ Acesso vitalício</span>
+      <div class="frame tiltp"><img src="../assets/img/figlogo/area-de-membros.webp" alt="Área de membros do FigLogo" loading="lazy"></div>
+    </div>
+    <div class="modgrid">
+      <article class="modcard rv"><img src="../assets/img/figlogo/modulos/01-comece-por-aqui.webp" alt="" loading="lazy"><div class="cap"><span class="num">01</span><span class="ttl">Comece por aqui</span></div></article>
+      <article class="modcard rv"><img src="../assets/img/figlogo/modulos/02-hall-criativo.webp" alt="" loading="lazy"><div class="cap"><span class="num">02</span><span class="ttl">Hall criativo</span></div></article>
+      <article class="modcard rv"><img src="../assets/img/figlogo/modulos/03-a-base-de-tudo.webp" alt="" loading="lazy"><div class="cap"><span class="num">03</span><span class="ttl">A base de tudo</span></div></article>
+      <article class="modcard rv"><img src="../assets/img/figlogo/modulos/04-processo-criativo.webp" alt="" loading="lazy"><div class="cap"><span class="num">04</span><span class="ttl">O processo criativo</span></div></article>
+      <article class="modcard rv"><img src="../assets/img/figlogo/modulos/05-tecnicas-de-construcao.webp" alt="" loading="lazy"><div class="cap"><span class="num">05</span><span class="ttl">Técnicas de construção</span></div></article>
+      <article class="modcard rv"><img src="../assets/img/figlogo/modulos/06-criando-na-pratica.webp" alt="" loading="lazy"><div class="cap"><span class="num">06</span><span class="ttl">Criando na prática</span></div></article>
+      <article class="modcard rv"><img src="../assets/img/figlogo/modulos/07-sistema-de-refinamento.webp" alt="" loading="lazy"><div class="cap"><span class="num">07</span><span class="ttl">Sistema de refinamento</span></div></article>
+      <article class="modcard rv"><img src="../assets/img/figlogo/modulos/08-desafios-para-evoluir.webp" alt="" loading="lazy"><div class="cap"><span class="num">08</span><span class="ttl">Desafios para evoluir</span></div></article>
+      <article class="modcard rv"><img src="../assets/img/figlogo/modulos/09-checklist-de-entrega.webp" alt="" loading="lazy"><div class="cap"><span class="num">09</span><span class="ttl">Checklist de entrega</span></div></article>
+      <article class="modcard rv"><img src="../assets/img/figlogo/modulos/10-oficina-de-mockups.webp" alt="" loading="lazy"><div class="cap"><span class="num">10</span><span class="ttl">Oficina de mockups</span></div></article>
+      <article class="modcard rv"><img src="../assets/img/figlogo/modulos/11-plano-de-evolucao.webp" alt="" loading="lazy"><div class="cap"><span class="num">11</span><span class="ttl">Plano de evolução</span></div></article>
+      <article class="modcard rv"><img src="../assets/img/figlogo/modulos/12-profissionais-convidados.webp" alt="" loading="lazy"><div class="cap"><span class="num">12</span><span class="ttl">Profissionais convidados</span></div></article>
+    </div>
+
+    <div class="head rv" style="margin-top:100px">
+      <span class="eyebrow">O que você aprende</span>
+      <h2>Cada etapa do método, <span class="grad">em detalhe.</span></h2>
+    </div>
+    <div class="mods">
+      <details class="mod rv" open><summary><span class="tag">ETAPA 1</span><span class="name">Pesquisa</span><span class="plus">+</span></summary>
+        <ul>
+          <li>As perguntas de briefing que ajudam o cliente a dizer o que quer, mesmo quando ele ainda não sabe.</li>
+          <li>Como analisar referências e usar a ideia sem copiar o logo de outra marca.</li>
+          <li>Os princípios de Gestalt que explicam por que alguns logos funcionam e outros parecem amadores.</li>
+        </ul>
+      </details>
+      <details class="mod rv"><summary><span class="tag">ETAPA 2</span><span class="name">Conceito</span><span class="plus">+</span></summary>
+        <ul>
+          <li>Como transformar um briefing em três direções criativas antes de abrir o Figma.</li>
+          <li>Como avaliar um logo gerado por IA e decidir o que manter, ajustar ou descartar.</li>
+        </ul>
+      </details>
+      <details class="mod rv"><summary><span class="tag">ETAPA 3</span><span class="name">Refinamento</span><span class="plus">+</span></summary>
+        <ul>
+          <li>Grid e proporção na prática: um símbolo que funciona no ícone do Instagram e na fachada.</li>
+          <li>A pen tool do Figma do jeito certo: vetores limpos, prontos para qualquer gráfica.</li>
+          <li>O ajuste de kerning que faz o logotipo deixar de parecer fonte digitada.</li>
+          <li>O checklist de revisão antes de mostrar ao cliente.</li>
+        </ul>
+      </details>
+      <details class="mod rv"><summary><span class="tag">ETAPA 4</span><span class="name">Apresentação</span><span class="plus">+</span></summary>
+        <ul>
+          <li>Como montar a apresentação da marca com mockups que mostram o logo aplicado.</li>
+          <li>O pacote de entrega profissional: quais arquivos exportar, em que formatos e como organizar.</li>
+          <li>Como explicar cada decisão de design para o cliente.</li>
+        </ul>
+      </details>
+      <details class="mod rv"><summary><span class="tag">EXTRA</span><span class="name">Prática e convidados</span><span class="plus">+</span></summary>
+        <ul>
+          <li>Desafios práticos para você terminar o curso com logos prontos para o portfólio.</li>
+          <li>Aulas bônus com profissionais convidados.</li>
+        </ul>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Figma Pro -->
+<section class="seal-sec">
+  <div class="rays"></div>
+  <div class="tool f1"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M4 9h16M4 15h16M9 4v16M15 4v16"/></svg></div>
+  <div class="tool f2"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7"/></svg></div>
+  <div class="tool f3 hot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l7.5 18 2.5-7.5L20.5 11z"/></svg></div>
+  <div class="tool f4"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
+  <div class="wrap rv">
+    <div class="seal"><svg viewBox="0 0 200 200"><use href="#ring"/></svg><img src="https://framerusercontent.com/images/uDo2iIiW3XUG65P2eBXz7NzaGI4.png?scale-down-to=512" alt="Figma"></div>
+    <h2>Aprenda no Figma Pro, <span class="grad">sem pagar pela licença.</span></h2>
+    <p class="s">O FigLogo é um curso verificado pelo Figma.</p>
+    <p class="t">Com isso, você pode solicitar a licença educacional e usar as funções profissionais da plataforma de graça enquanto aprende.</p>
+  </div>
+</section>
+
+<!-- Alunos -->
+<section id="alunos" data-blur="lr">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Quem já fez</span>
+      <h2>O que os alunos <span class="grad">contam do curso.</span></h2>
+    </div>
+    <div class="rgrid">
+      <article class="res rv"><div class="txt"><div class="who">Quesia</div><span class="big">R$150 → +R$1.000 por projeto</span></div><div class="print"><img src="https://framerusercontent.com/images/zXRTje0tnFe5INgP0lJgQYgD86A.png?scale-down-to=1024" alt="Depoimento da Quesia" loading="lazy"></div></article>
+      <article class="res rv"><div class="txt"><div class="who">Designer há 6 anos</div><span class="big">Mais segurança no próprio processo</span><p>Mesmo com experiência, perdeu a insegurança na hora de criar.</p></div><div class="print"><img src="../assets/img/figlogo/depoimentos/depoimento-1.webp" alt="Depoimento de aluno do FigLogo" loading="lazy"></div></article>
+      <article class="res rv"><div class="txt"><div class="who">Julia</div><span class="big">R$200 → R$2.000 por projeto</span><p>Por projeto de identidade visual.</p></div><div class="print"><img src="https://framerusercontent.com/images/cEOfkTulj5JxA9Arsq67KfACKtk.png?scale-down-to=1024" alt="Depoimento da Julia" loading="lazy"></div></article>
+      <article class="res rv"><div class="txt"><div class="who">Bea</div><span class="big">Começou sem nunca ter usado o Figma</span><p>Aprendeu a metodologia a partir do zero.</p></div><div class="print"><img src="https://framerusercontent.com/images/SOxju70KbkgDFKUJok6V9cqT4.png?scale-down-to=1024" alt="Depoimento da Bea" loading="lazy"></div></article>
+      <article class="res rv"><div class="txt"><div class="who">Lari Martineri</div><span class="big">Assistindo como uma série</span><p>Gostou do ritmo e da forma das aulas.</p></div><div class="print"><img src="../assets/img/figlogo/depoimentos/depoimento-3.webp" alt="Depoimento de aluna do FigLogo" loading="lazy"></div></article>
+      <article class="res rv"><div class="txt"><div class="who">Gioh</div><span class="big">Primeiro logo criado</span><p>Tirou o primeiro logo do papel com os desafios do curso.</p></div><div class="print"><img src="https://framerusercontent.com/images/91qHzviLr0gBg0N56T5IbVJiEs8.png?scale-down-to=1024" alt="Depoimento da Gioh" loading="lazy"></div></article>
+      <article class="res rv"><div class="txt"><div class="who">Ellen</div><span class="big">Uma metodologia que explica de verdade</span><p>Gostou tanto do jeito de ensinar que já quer o próximo curso.</p></div><div class="print"><img src="../assets/img/figlogo/depoimentos/depoimento-5.webp" alt="Depoimento de aluna do FigLogo" loading="lazy"></div></article>
+      <article class="res rv"><div class="txt"><div class="who">Rapha e Andressa</div><span class="big">Mais segurança para criar</span><p>Perderam o medo do processo criativo.</p></div><div class="print"><img src="https://framerusercontent.com/images/VoBl2f6r2IMVxpXhZ4SoIgShc.png?scale-down-to=1024" alt="Depoimento da Rapha" loading="lazy"><img src="https://framerusercontent.com/images/oZo7ijxrtAmch7dY1vcPtC0DgCU.png?scale-down-to=1024" alt="Depoimento da Andressa" loading="lazy"></div></article>
+      <article class="res rv"><div class="txt"><div class="who">Aluno do FigLogo</div><span class="big">Coisas feitas "no olho" agora fazem sentido</span><p>Aplicou em projetos práticos e viu a diferença no resultado.</p></div><div class="print"><img src="../assets/img/figlogo/depoimentos/depoimento-6.webp" alt="Depoimento de aluno do FigLogo" loading="lazy"></div></article>
+    </div>
+    <div class="head rv" style="margin:90px auto 40px">
+      <span class="eyebrow">Hall criativo</span>
+      <h2>Projetos criados <span class="grad">pelos alunos.</span></h2>
+      <p>Logotipos construídos dentro do curso, com o Método PCRA do começo ao fim.</p>
+    </div>
+  </div>
+  <div class="marquee">
+    <div class="track" id="gallery">
+      <img src="https://framerusercontent.com/images/az9qJXyC3fehBNaAb1Ba67cOQ7Y.png?scale-down-to=1024" alt="Projeto de aluno do FigLogo" loading="lazy">
+      <img src="https://framerusercontent.com/images/4J2uVN0cK7PkjjGrBmSlLCQP1k.png?scale-down-to=1024" alt="Projeto de aluno do FigLogo" loading="lazy">
+      <img src="https://framerusercontent.com/images/BYE4t8zsuG7c3r0uz6VXPR951Mg.png?scale-down-to=1024" alt="Projeto de aluno do FigLogo" loading="lazy">
+      <img src="https://framerusercontent.com/images/srRgcvceFwUAgQdou5xQ6Jqk.png?scale-down-to=1024" alt="Projeto de aluno do FigLogo" loading="lazy">
+      <img src="https://framerusercontent.com/images/JIiHZGa4hx0YxrzWXU3GoltGOec.png?scale-down-to=1024" alt="Projeto de aluno do FigLogo" loading="lazy">
+      <img src="https://framerusercontent.com/images/HJB7K1eE6BXg2nwKEVkGwgBjgA.png?scale-down-to=1024" alt="Projeto de aluno do FigLogo" loading="lazy">
+      <img src="https://framerusercontent.com/images/UxGizu0g40ck8RcPbGO1mP5kNMI.png?scale-down-to=1024" alt="Projeto de aluno do FigLogo" loading="lazy">
+      <img src="https://framerusercontent.com/images/GWbInzYmIxBvBfJye6wUcqRw4.png?scale-down-to=1024" alt="Projeto de aluno do FigLogo" loading="lazy">
+      <img src="https://framerusercontent.com/images/Z5ZVaHayOshle3DHX40WYLjAHA.png?scale-down-to=1024" alt="Projeto de aluno do FigLogo" loading="lazy">
+      <img src="https://framerusercontent.com/images/5N1ocKuQa1yVNfnTVJkOiuBVOM8.png?scale-down-to=1024" alt="Projeto de aluno do FigLogo" loading="lazy">
+      <img src="https://framerusercontent.com/images/C0wre8k8qSihDtuW97HLmRLmdc.png?scale-down-to=1024" alt="Projeto de aluno do FigLogo" loading="lazy">
+      <img src="https://framerusercontent.com/images/roQBVe30ioufgMeetoRxF7k.png?scale-down-to=1024" alt="Projeto de aluno do FigLogo" loading="lazy">
+      <img src="https://framerusercontent.com/images/D0yNnQJhDVtInbz3SlWkvzlQWo.png?scale-down-to=1024" alt="Projeto de aluno do FigLogo" loading="lazy">
+      <img src="https://framerusercontent.com/images/XnqJdKpaHzjXNWPVX8R2q2wKw.png?scale-down-to=1024" alt="Projeto de aluno do FigLogo" loading="lazy">
+      <img src="https://framerusercontent.com/images/oZyFuSMJhul3CCNveauIJiScEg.png?scale-down-to=1024" alt="Projeto de aluno do FigLogo" loading="lazy">
+    </div>
+  </div>
+  <div class="dots" aria-hidden="true"></div>
+</section>
+
+<!-- Certificado -->
+<section class="cert">
+  <div class="bgdots"></div>
+  <div class="wrap">
+    <span class="eyebrow rv">Certificado de conclusão</span>
+    <h2 class="rv">Ao terminar, <span class="grad">seu certificado já vem pronto.</span></h2>
+    <p class="sub rv">Para mostrar no portfólio e no LinkedIn.</p>
+    <div class="paperstage rv">
+      <div class="pglow"></div>
+      <svg class="squig sq1" viewBox="0 0 120 200" fill="none"><path d="M30 190C10 150 90 140 70 100S10 60 40 20" stroke="#a6f35b" stroke-width="22" stroke-linecap="round"/></svg>
+      <svg class="squig sq2" viewBox="0 0 120 200" fill="none"><path d="M90 10C110 50 30 60 50 100S110 140 80 190" stroke="#6b35ff" stroke-width="20" stroke-linecap="round"/></svg>
+      <div class="tool fl1 hot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg></div>
+      <div class="tool fl2"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
+      <span class="pchip pc1"><i>✓</i>Curso concluído</span>
+      <span class="pchip pc2"><b>in</b>Pronto para o LinkedIn</span>
+      <div class="pchip pc3"><span>Progresso</span><div class="pbar"><i></i></div><b>100%</b></div>
+      <span class="spark sp1">✦</span><span class="spark sp2">✦</span>
+      <div class="paper"><img src="../assets/img/figlogo/certificado.webp" alt="Certificado de conclusão do FigLogo" loading="lazy"></div>
+      <div class="pshadow"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Para quem é -->
+<section data-blur="r">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Para quem é</span>
+      <h2>O FigLogo foi feito para <span class="grad">quem está começando.</span></h2>
+    </div>
+    <div class="fgrid">
+      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Quem nunca usou o Figma</h3><p>O curso começa na instalação e vai até as ferramentas avançadas.</p></div>
+      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Quem não sabe desenhar</h3><p>Logotipo se constrói com grid e vetor, não à mão livre.</p></div>
+      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Quem ainda não tem portfólio</h3><p>Os desafios do curso viram os primeiros projetos do seu portfólio.</p></div>
+      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Designers que criam no improviso</h3><p>Para quem já cria, mas quer um processo claro do briefing à entrega.</p></div>
+      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Quem quer cobrar melhor</h3><p>Saber explicar cada decisão é o que sustenta um preço mais alto.</p></div>
+      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Quem usa IA para criar</h3><p>O método ensina a direcionar, avaliar e refinar o que a IA gera.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Professora -->
+<section class="about" id="professora">
+  <div class="streak"></div>
+  <div class="wrap grid">
+    <div class="rv">
+      <span class="eyebrow">A professora</span>
+      <h2>Opa, eu sou a <span class="grad">Lari</span> <span class="wave">👋</span></h2>
+      <p class="first">Designer especialista em marcas, formada em Design Gráfico pela Unicuritiba e em Expressão Gráfica pela Universidade Federal do Paraná.</p>
+      <p>Em 2021 comecei a me especializar no Figma e percebi que muitos designers iniciantes queriam evoluir, mas ficavam presos entre ferramentas caras, excesso de informação e falta de direção.</p>
+      <p>Desde então ensino a criar logotipos e identidades visuais de um jeito acessível, estratégico e profissional, usando o Figma.</p>
+      <div class="creds"><span>Design Gráfico · Unicuritiba</span><span>Expressão Gráfica · UFPR</span><span>Figma desde 2021</span></div>
+    </div>
+    <div class="photo rv">
+      <img src="https://framerusercontent.com/images/sGi8noFHclJUQZpeciDX2c1AZI.png?scale-down-to=1024" alt="Lari Tedeschi" loading="lazy">
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:90px">
+    <div class="head rv" style="margin-bottom:36px">
+      <span class="eyebrow">Projetos da Lari</span>
+      <h2>Marcas criadas <span class="grad">com o mesmo método.</span></h2>
+    </div>
+  </div>
+  <div class="car rv"><div class="ct">
+    <figure><img src="../assets/img/figlogo/lari/mari-oliveira-1.webp" alt="Identidade visual Mari Oliveira" loading="lazy"><figcaption>Mari Oliveira</figcaption></figure>
+    <figure><img src="../assets/img/figlogo/lari/bossa-2.webp" alt="Identidade visual Bossa Collection" loading="lazy"><figcaption>Bossa Collection</figcaption></figure>
+    <figure><img src="../assets/img/figlogo/lari/eduarda-greca-2.webp" alt="Identidade visual Eduarda Greca" loading="lazy"><figcaption>Eduarda Greca</figcaption></figure>
+    <figure><img src="../assets/img/figlogo/lari/oak-1.webp" alt="Identidade visual OAK&amp;Co." loading="lazy"><figcaption>OAK&amp;Co.</figcaption></figure>
+    <figure><img src="../assets/img/figlogo/lari/mari-oliveira-2.webp" alt="Identidade visual Mari Oliveira" loading="lazy"><figcaption>Mari Oliveira</figcaption></figure>
+    <figure><img src="../assets/img/figlogo/lari/bossa-3.webp" alt="Identidade visual Bossa Collection" loading="lazy"><figcaption>Bossa Collection</figcaption></figure>
+    <figure><img src="../assets/img/figlogo/lari/eduarda-greca-3.webp" alt="Identidade visual Eduarda Greca" loading="lazy"><figcaption>Eduarda Greca</figcaption></figure>
+    <figure><img src="../assets/img/figlogo/lari/oak-3.webp" alt="Identidade visual OAK&amp;Co." loading="lazy"><figcaption>OAK&amp;Co.</figcaption></figure>
+  </div></div>
+</section>
+
+<!-- Trilha da escola -->
+<section id="trilha" data-blur="l">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">A trilha da escola</span>
+      <h2>Onde o FigLogo entra <span class="grad">na sua formação.</span></h2>
+      <p>Os cursos da Lari se complementam. O FigLogo é o primeiro passo para quem quer trabalhar com marcas.</p>
+    </div>
+    <div class="path">
+      <div class="course here rv">
+        <span class="here-tag">Você está aqui</span>
+        <span class="lvl">Primeiro passo</span>
+        <h3>FigLogo</h3>
+        <p>Criação de logotipos no Figma, do briefing à entrega.</p>
+      </div>
+      <a class="course rv" href="../figbrand/" style="--c:#9131F6">
+        <span class="dot"></span>
+        <span class="lvl">Próximo passo</span>
+        <h3>FigBrand</h3>
+        <p>Identidade visual completa e estratégica, com mentorias em grupo.</p>
+        <span class="go">Conhecer o FigBrand →</span>
+      </a>
+      <a class="course rv" href="../figpost/" style="--c:#FF70FE">
+        <span class="dot"></span>
+        <span class="lvl">Em paralelo</span>
+        <h3>FigPost</h3>
+        <p>Posts e carrosséis no Figma, com precificação e estrutura de estúdio.</p>
+        <span class="go">Conhecer o FigPost →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Matrícula -->
+<section class="offer" id="matricula">
+  <div class="bgglow"></div>
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Matrícula</span>
+      <h2>Comece o FigLogo <span class="grad">hoje.</span></h2>
+    </div>
+    <div class="obox rv">
+      <div class="left">
+        <p class="quote">O que está incluído:</p>
+        <ul class="inc">
+          <li><svg width="20" height="20"><use href="#chk"/></svg>Acesso vitalício, com todas as atualizações futuras</li>
+          <li><svg width="20" height="20"><use href="#chk"/></svg>Figma do zero ao avançado</li>
+          <li><svg width="20" height="20"><use href="#chk"/></svg>Método PCRA completo</li>
+          <li><svg width="20" height="20"><use href="#chk"/></svg>Desafios práticos para o portfólio</li>
+          <li><svg width="20" height="20"><use href="#chk"/></svg>Comunidade de dúvidas no WhatsApp</li>
+          <li><svg width="20" height="20"><use href="#chk"/></svg>Aulas com profissionais convidados</li>
+          <li><svg width="20" height="20"><use href="#chk"/></svg>Licença educacional do Figma Pro</li>
+          <li><svg width="20" height="20"><use href="#chk"/></svg>Certificado de conclusão</li>
+        </ul>
+      </div>
+      <div class="price">
+        <span class="lbl">Pagamento único</span>
+        <p class="val"><small>R$</small>67</p>
+        <p class="avista">à vista</p>
+        <p class="parc">ou em até 12x de R$6,93 no cartão</p>
+        <a class="btn" href="https://pay.kiwify.com.br/yHGdEBA">Matricular-se no FigLogo</a>
+        <div class="secure"><span>🔒 Pagamento seguro</span><span>Pix ou cartão</span><span>Acesso imediato por e-mail</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Garantia -->
+<section class="guarantee" id="garantia" data-blur="l">
+  <div class="wrap">
+    <div class="guar rv">
+      <img src="https://framerusercontent.com/images/Wu5XkqZdV7jRMT6SeDD3gGU6U.png" alt="Selo de garantia de 7 dias" loading="lazy">
+      <div>
+        <span class="eyebrow">Garantia</span>
+        <h2>Você tem 7 dias para decidir <span class="grad">sem risco.</span></h2>
+        <p>Entre, assista às aulas e conheça a plataforma com calma. Se sentir que o FigLogo não é para você, é só pedir o reembolso em até 7 dias e devolvemos 100% do valor, sem perguntas e sem burocracia.</p>
+        <div class="steps3">
+          <div><b>Entre no curso</b>O acesso chega no seu e-mail logo após a compra.</div>
+          <div><b>Assista às aulas</b>Explore os módulos e a área de membros.</div>
+          <div><b>Decida em 7 dias</b>Não gostou? Reembolso de 100% do valor.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dúvidas -->
+<section class="faq" id="faq" data-blur="r">
+  <div class="wrap">
+    <div class="top rv">
+      <h2><span class="grad">Perguntas</span> frequentes</h2>
+      <p>Ficou alguma dúvida?<br>Chama no WhatsApp.</p>
+    </div>
+    <div class="list">
+      <details class="rv"><summary>Preciso já saber usar o Figma?</summary><p>Não. O curso começa do zero, da instalação às ferramentas avançadas.</p></details>
+      <details class="rv"><summary>Preciso pagar o Figma?</summary><p>Não. O curso é verificado pelo Figma, então você pode pedir a licença educacional e usar as funções Pro de graça.</p></details>
+      <details class="rv"><summary>As aulas são gravadas?</summary><p>Sim. Você assiste quando e quantas vezes quiser.</p></details>
+      <details class="rv"><summary>Por quanto tempo tenho acesso?</summary><p>Para sempre, com todas as atualizações futuras incluídas.</p></details>
+      <details class="rv"><summary>Vou receber certificado?</summary><p>Sim. Ao concluir o curso você recebe o certificado de conclusão.</p></details>
+      <details class="rv"><summary>E se eu não gostar do curso?</summary><p>Você tem 7 dias de garantia. Peça o reembolso e devolvemos 100% do valor.</p></details>
+      <details class="rv"><summary>O curso ensina a usar IA?</summary><p>O foco é o método de criação de marca, e é ele que te faz usar bem a IA: você aprende a direcionar, avaliar e refinar o que ela gera.</p></details>
+      <details class="rv"><summary>Qual a diferença entre o FigLogo e o FigBrand?</summary><p>O FigLogo ensina a criar o logotipo. O FigBrand vai além: identidade visual completa, com mentorias. Para quem está começando, o FigLogo é o primeiro passo.</p></details>
+    </div>
+    <div class="support rv">
+      <p>Ainda ficou com dúvida?</p>
+      <a href="https://wa.me/5541999401055" target="_blank" rel="noopener">Fale com o suporte no WhatsApp →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Rodapé da escola -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div><div class="brand">Lari Tedeschi</div><p style="margin-top:8px;max-width:30ch">Cursos de design de marca no Figma.</p></div>
+      <div><h4>Cursos</h4><ul><li><a href="../figlogo/">FigLogo</a></li><li><a href="../figbrand/">FigBrand</a></li><li><a href="../figpost/">FigPost</a></li></ul></div>
+      <div><h4>Produtos</h4><ul><li><a href="../kit-design-studio/">Kit Design Studio</a></li><li><a href="https://dashboardfinanceiro.com">Dashboard Financeiro</a></li><li><a href="../estudio/">Studio Tedeschi</a></li></ul></div>
+      <div><h4>Contato</h4><ul><li><a href="https://www.instagram.com/laritedeschi" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/@laritedeschi" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://wa.me/5541999401055" target="_blank" rel="noopener">WhatsApp</a></li><li>contato@laritedeschi.com</li></ul></div>
+    </div>
+    <p class="copy">© Lari Tedeschi · Todos os direitos reservados</p>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5541999401055" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 20 20" fill="#fff"><path d="M17.085 2.91A9.9 9.9 0 0 0 10.04 0C4.553 0 .08 4.45.08 9.91c0 1.75.463 3.45 1.327 4.95L0 20l5.276-1.38a9.97 9.97 0 0 0 4.764 1.21C15.528 19.83 20 15.38 20 9.92c0-2.65-1.035-5.14-2.915-7.01zM10.04 18.15a8.3 8.3 0 0 1-4.221-1.15l-.301-.18-3.136.82.834-3.04-.201-.31a8.2 8.2 0 0 1-1.266-4.38c0-4.54 3.718-8.24 8.281-8.24 2.211 0 4.292.86 5.849 2.42a8.15 8.15 0 0 1 2.423 5.83c.02 4.54-3.699 8.23-8.262 8.23zm4.543-6.16c-.251-.12-1.477-.72-1.699-.81-.231-.08-.392-.12-.562.12-.171.25-.644.81-.784.97-.141.17-.292.19-.543.06-.251-.12-1.055-.39-2-1.230-.744-.66-1.236-1.47-1.387-1.72-.141-.25-.02-.38.111-.51.11-.11.251-.29.371-.43.121-.14.171-.25.252-.41.08-.17.04-.31-.02-.43-.061-.12-.563-1.34-.764-1.840-.201-.48-.412-.42-.563-.43h-.482c-.171 0-.433.06-.664.31-.221.25-.864.85-.864 2.07s.894 2.4 1.015 2.56c.121.17 1.759 2.67 4.251 3.74.593.26 1.056.41 1.417.52.593.19 1.136.16 1.568.1.483-.07 1.478-.6 1.679-1.180.211-.58.211-1.070.14-1.180-.07-.11-.221-.16-.472-.28z"/></svg>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="../assets/js/escola.js"></script>
+</body>
+</html>
