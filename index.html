@@ -21,6 +21,8 @@ fbq('init','874750447646279');fbq('track','PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=874750447646279&ev=PageView&noscript=1" alt=""></noscript>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="assets/css/escola.css">
 <style>
 /* Página inicial: coluna única no celular, grade no computador.
@@ -39,60 +41,44 @@ fbq('init','874750447646279');fbq('track','PageView');
 .bio section{padding:0}
 .bloco{margin-top:56px}
 .bloco>.eyebrow{display:block;text-align:center;margin-bottom:18px}
-/* cursos */
-.cursos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.curso{--c:#ff58fc;position:relative;display:flex;flex-direction:column;border-radius:24px;overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:var(--card-shadow);transition:transform .3s,box-shadow .3s}
-.curso:hover{transform:translateY(-4px);box-shadow:0 1px 2px rgba(26,11,26,.04),0 24px 44px -24px color-mix(in srgb,var(--c) 55%,transparent)}
-.curso .capa{position:relative;aspect-ratio:16/10;overflow:hidden;background:color-mix(in srgb,var(--c) 14%,#fff)}
-.curso .capa img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.curso:hover .capa img{transform:scale(1.04)}
-.curso .capa.logo-only{display:grid;place-items:center;background:radial-gradient(70% 80% at 30% 20%,color-mix(in srgb,var(--c) 22%,#fff),color-mix(in srgb,var(--c) 8%,#fff))}
-.curso .capa.logo-only img{width:58%;height:auto;object-fit:contain}
-.curso .nivel{position:absolute;left:14px;top:14px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 11px;border-radius:999px;background:var(--c);color:var(--ci,#fff)}
-.curso .corpo{display:flex;flex-direction:column;gap:8px;padding:20px 22px 22px;flex:1}
-.curso .logo{height:24px;width:auto;align-self:flex-start}
-.curso p{color:var(--muted);font-size:15px;line-height:1.45;flex:1}
-.curso .ir{display:flex;align-items:center;justify-content:space-between;margin-top:6px;font-weight:600;font-size:15px}
-.curso .ir i{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--c);color:var(--ci,#fff);font-style:normal;transition:transform .2s}
-.curso:hover .ir i{transform:translateX(3px)}
-/* produtos e links */
-.produtos{display:grid;grid-template-columns:1.2fr 1fr;gap:16px}
-.kit{display:grid;grid-template-columns:1fr;border-radius:24px;overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:var(--card-shadow);transition:transform .3s}
-.kit:hover{transform:translateY(-4px)}
-.kit .capa{background:linear-gradient(140deg,#f6f6f6,#ececec);display:grid;place-items:center;padding:14px 10px 0}
-.kit .capa img{width:92%}
-.kit .corpo{padding:18px 22px 22px;display:flex;flex-direction:column;gap:8px}
-.kit .logo{height:46px;width:auto;align-self:flex-start}
-.kit p{color:var(--muted);font-size:15px}
-.kit .ir{font-weight:600;font-size:15px}
-.links{display:grid;gap:12px;align-content:start}
-.lk{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:18px;background:var(--card);border:1px solid var(--line);box-shadow:var(--card-shadow);transition:transform .2s,border-color .2s}
+/* cursos e produtos: capa + texto + botão na cor de cada um */
+.mais800{display:inline-flex;align-items:center;gap:10px;font-size:14.5px;color:var(--muted);margin-top:2px}
+.mais800 img{height:30px;width:auto;border-radius:999px}
+.mais800 b{color:var(--txt);font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{--c:#1a0b1a;--ci:#fff;display:flex;flex-direction:column;border-radius:22px;overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:var(--card-shadow);transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 1px 2px rgba(26,11,26,.04),0 24px 44px -24px color-mix(in srgb,var(--c) 55%,transparent)}
+.card .capa{aspect-ratio:16/9;overflow:hidden;background:#eee}
+.card .capa img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card:hover .capa img{transform:scale(1.03)}
+.card .corpo{display:flex;flex-direction:column;gap:14px;padding:18px 20px 20px;flex:1}
+.card .tag{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:color-mix(in srgb,var(--c) 12%,#fff);color:var(--c)}
+.card p{color:var(--muted);font-size:15px;line-height:1.45;flex:1}
+.card .bt{display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 16px;border-radius:999px;background:var(--c);color:var(--ci);font-weight:600;font-size:15px;letter-spacing:-.01em;transition:filter .2s}
+.card .bt span{transition:transform .2s}
+.card:hover .bt{filter:brightness(1.06)}
+.card:hover .bt span{transform:translateX(3px)}
+.lk{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:18px;background:var(--card);border:1px solid var(--line);box-shadow:var(--card-shadow);transition:transform .2s,border-color .2s;margin-top:16px}
 .lk:hover{transform:translateY(-2px);border-color:var(--line-2)}
 .lk .ic{flex:none;width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:var(--b,#1a0b1a);color:#fff}
 .lk .ic svg{width:21px;height:21px;stroke:currentColor}
 .lk b{display:block;font-weight:600;font-size:16px;letter-spacing:-.01em}
 .lk span{display:block;font-size:13.5px;color:var(--muted);margin-top:1px}
 .lk .tg{margin-left:auto;flex:none;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 9px;border-radius:999px;background:#E6FF7D;color:#24104A}
-/* estúdio */
-.estudio{position:relative;overflow:hidden;border-radius:28px;background:#1a0b1a;color:#fff;padding:40px;display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center}
-.estudio::before{content:"";position:absolute;right:-12%;top:-40%;width:60%;aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(255,88,252,.35),transparent)}
-.estudio::after{content:"";position:absolute;left:-10%;bottom:-50%;width:50%;aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(145,49,246,.35),transparent)}
-.estudio>*{position:relative;z-index:1}
-.estudio .eyebrow{color:rgba(255,255,255,.6)}
-.estudio h2{font-size:clamp(28px,3.4vw,40px)}
-.estudio p{color:rgba(255,255,255,.75);margin-top:12px;max-width:46ch}
+/* estúdio: identidade minimalista (preto, branco, cinza, Inter) */
+.estudio{font-family:"Inter","Helvetica Neue",Arial,sans-serif;border-radius:24px;background:#fff;color:#111;border:1px solid #e6e6e6;padding:40px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center}
+.estudio .marca{font-size:13px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#111}
+.estudio .marca small{display:block;font-weight:400;letter-spacing:.18em;color:#8a8a8a;font-size:11px;margin-top:4px}
+.estudio h2{font-family:inherit;font-size:clamp(26px,3vw,36px);font-weight:600;letter-spacing:-.03em;margin-top:22px;color:#111}
+.estudio p{color:#6b6b6b;margin-top:10px;max-width:46ch;font-size:15.5px}
 .estudio .acoes{display:grid;gap:10px}
-.estudio .btn{width:100%}
-.estudio .btn.ghost{color:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.3) inset}
-.estudio .btn.ghost:hover{background:rgba(255,255,255,.08)}
-.posts{position:absolute;inset:0;display:grid;place-items:center}
-.post{position:absolute;width:30%;aspect-ratio:4/5;border-radius:10px;box-shadow:0 16px 28px -14px rgba(40,16,140,.55);padding:9%  6%;display:flex;flex-direction:column;gap:6%}
-.post i{display:block;height:6%;border-radius:9px;background:currentColor;opacity:.85}
-.post i.s{width:60%}.post i.xs{width:40%;opacity:.5}
-.post.p1{background:#fff;color:#6032FD;transform:translateX(-62%) rotate(-10deg)}
-.post.p2{background:#6032FD;color:#fff;z-index:2;transform:translateY(-4%)}
-.post.p3{background:#E6FF7D;color:#24104A;transform:translateX(62%) rotate(10deg)}
-.post .dots{margin-top:auto;display:flex;gap:4px}.post .dots b{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.4}.post .dots b:first-child{opacity:1}
+.estudio .eb{display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 18px;border-radius:10px;font-weight:500;font-size:15px;transition:background .2s,color .2s}
+.estudio .eb.pri{background:#111;color:#fff}
+.estudio .eb.pri:hover{background:#333}
+.estudio .eb.sec{border:1px solid #d8d8d8;color:#111}
+.estudio .eb.sec:hover{background:#f4f4f4}
+@media (max-width:960px){.cards{grid-template-columns:1fr 1fr}.estudio{grid-template-columns:1fr}}
+@media (max-width:640px){.bio{padding:40px 16px 80px}.cards{grid-template-columns:1fr}.estudio{padding:28px 22px}.bloco{margin-top:44px}}
 .rod{margin-top:56px;text-align:center;font-size:13px;color:var(--dim)}
 @media (max-width:960px){.cursos{grid-template-columns:1fr 1fr}.produtos,.estudio{grid-template-columns:1fr}}
 @media (max-width:640px){.bio{padding:40px 16px 80px}.cursos{grid-template-columns:1fr}.curso .capa{aspect-ratio:16/8}.estudio{padding:28px 22px}.bloco{margin-top:44px}}
@@ -104,11 +90,11 @@ fbq('init','874750447646279');fbq('track','PageView');
 
   <header class="perfil">
     <div class="avatar rv"><img src="assets/img/inicio/lari.webp" alt="Lari Tedeschi" width="104" height="104"></div>
-    <span class="pillbar rv"><img src="https://framerusercontent.com/images/SQ4yLeYZ60qTb0bUkWQkLVtsBw.png" alt=""><span><b>+800 alunos</b> na escola da Lari Tedeschi</span></span>
     <h1 class="rv">Lari Tedeschi</h1>
     <p class="sub rv">Designer de marcas e professora de Figma. Aqui estão todos os meus cursos, produtos e o meu estúdio.</p>
+    <span class="mais800 rv"><img src="assets/img/comum/alunos.webp" alt=""><span><b>+800 alunos</b></span></span>
     <nav class="redes rv" aria-label="Redes sociais">
-      <a href="https://www.instagram.com/laritedeschi" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.8-.4.4-.6.7-.8 1.2-.2.4-.3 1-.4 2.1C2.7 9.8 2.7 10.2 2.7 12s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.2.4.4.7.6 1.2.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.8.4-.4.6-.7.8-1.2.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.2-.4-.4-.7-.6-1.2-.8-.4-.2-1-.3-2.1-.4C15.5 4 15.1 4 12 4zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 8.1a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4zm6.2-8.3a1.1 1.1 0 1 1-2.3 0 1.1 1.1 0 0 1 2.3 0z"/></svg></a>
+      <a href="https://www.instagram.com/laritedeschi" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" style="fill:none;stroke:var(--txt);stroke-width:2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" style="fill:var(--txt);stroke:none"/></svg></a>
       <a href="https://www.youtube.com/@laritedeschi" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2C.5 9.1.5 12 .5 12s0 2.9.5 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.8.5-4.8s0-2.9-.5-4.8zM9.7 15.5v-7l6 3.5-6 3.5z"/></svg></a>
       <a href="https://www.tiktok.com/@laritedeschi" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 2h-3.4v13.4a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.1a6.3 6.3 0 1 0 5.4 6.3V8.6a8 8 0 0 0 4.7 1.5V6.7a4.7 4.7 0 0 1-4.7-4.7z"/></svg></a>
       <a href="https://br.pinterest.com/laristedeschi/" target="_blank" rel="noopener" aria-label="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 1.5a10.5 10.5 0 0 0-3.8 20.3c-.1-.9-.2-2.2 0-3.2l1.3-5.5s-.3-.7-.3-1.6c0-1.5.9-2.7 2-2.7.9 0 1.4.7 1.4 1.5 0 .9-.6 2.3-.9 3.6-.3 1.1.5 2 1.6 2 1.9 0 3.4-2 3.4-5 0-2.6-1.9-4.4-4.5-4.4-3.1 0-4.9 2.3-4.9 4.7 0 .9.4 1.9.8 2.5.1.1.1.2.1.3l-.3 1.2c0 .2-.2.3-.4.2-1.4-.6-2.2-2.6-2.2-4.2 0-3.4 2.5-6.6 7.2-6.6 3.8 0 6.7 2.7 6.7 6.3 0 3.8-2.4 6.8-5.7 6.8-1.1 0-2.2-.6-2.5-1.3l-.7 2.6c-.2 1-.9 2.2-1.4 2.9A10.5 10.5 0 1 0 12 1.5z"/></svg></a>
@@ -118,73 +104,55 @@ fbq('init','874750447646279');fbq('track','PageView');
 
   <section class="bloco" aria-labelledby="t-cursos">
     <span class="eyebrow" id="t-cursos">Cursos</span>
-    <div class="cursos">
-      <a class="curso rv" href="figlogo/" style="--c:#ff58fc">
-        <div class="capa"><img src="assets/img/figlogo/modulos/01-comece-por-aqui.webp" alt="" loading="lazy"><span class="nivel">Primeiro passo</span></div>
-        <div class="corpo">
-          <img class="logo" src="assets/img/figlogo/logo-figlogo-escuro.png" alt="FigLogo" height="24">
-          <p>Aprenda a criar logotipos profissionais no Figma, do briefing à entrega, começando do zero.</p>
-          <span class="ir">Conhecer o FigLogo <i>→</i></span>
-        </div>
+    <div class="cards">
+      <a class="card rv" href="figlogo/" style="--c:#ff58fc;--ci:#fff">
+        <div class="capa"><img src="assets/img/figlogo/capa-figlogo.webp" alt="FigLogo" loading="lazy" width="1200" height="675"></div>
+        <div class="corpo"><span class="tag">Primeiro passo</span><p>Aprenda a criar logotipos profissionais no Figma, do briefing à entrega, começando do zero.</p><span class="bt">Conhecer o FigLogo <span>→</span></span></div>
       </a>
-      <a class="curso rv" href="figbrand/" style="--c:#9131F6">
-        <div class="capa"><img src="assets/img/figbrand/tudo-que-voce-recebe.webp" alt="" loading="lazy" style="object-fit:contain;padding:10px 8px 0"><span class="nivel" style="--ci:#24104A;background:#E6FF7D">Curso avançado</span></div>
-        <div class="corpo">
-          <img class="logo" src="assets/img/figbrand/logo-figbrand-escuro.png" alt="FigBrand" height="24">
-          <p>Identidade visual estratégica, do briefing à entrega, com hotseat mensal e correção do projeto final.</p>
-          <span class="ir">Conhecer o FigBrand <i>→</i></span>
-        </div>
+      <a class="card rv" href="figbrand/" style="--c:#9131F6;--ci:#fff">
+        <div class="capa"><img src="assets/img/figbrand/capa-figbrand.webp" alt="FigBrand" loading="lazy" width="1200" height="675"></div>
+        <div class="corpo"><span class="tag">Curso avançado</span><p>Identidade visual estratégica, do briefing à entrega, com hotseat mensal e correção do projeto final.</p><span class="bt">Conhecer o FigBrand <span>→</span></span></div>
       </a>
-      <a class="curso rv" href="figpost/" style="--c:#6032FD">
-        <div class="capa logo-only"><div class="posts" aria-hidden="true"><div class="post p1"><i></i><i class="s"></i><i class="xs"></i><span class="dots"><b></b><b></b><b></b></span></div><div class="post p2"><i></i><i class="s"></i><i class="xs"></i><span class="dots"><b></b><b></b><b></b></span></div><div class="post p3"><i></i><i class="s"></i><i class="xs"></i><span class="dots"><b></b><b></b><b></b></span></div></div><span class="nivel">Posts e carrosséis</span></div>
-        <div class="corpo">
-          <img class="logo" src="assets/img/figpost/logo-figpost.png" alt="FigPost" height="24">
-          <p>Crie posts e carrosséis no Figma e estruture o seu estúdio com preço, posicionamento e processos.</p>
-          <span class="ir">Conhecer o FigPost <i>→</i></span>
-        </div>
+      <a class="card rv" href="figpost/" style="--c:#6032FD;--ci:#fff">
+        <div class="capa"><img src="assets/img/figpost/capa-figpost.webp" alt="FigPost" loading="lazy" width="1200" height="675"></div>
+        <div class="corpo"><span class="tag">Posts e carrosséis</span><p>Crie posts e carrosséis no Figma e estruture o seu estúdio com preço, posicionamento e processos.</p><span class="bt">Conhecer o FigPost <span>→</span></span></div>
       </a>
     </div>
   </section>
 
   <section class="bloco" aria-labelledby="t-produtos">
     <span class="eyebrow" id="t-produtos">Produtos e materiais</span>
-    <div class="produtos">
-      <a class="kit rv" href="kit-design-studio/">
-        <div class="capa"><img src="assets/img/kit/capa-kit.webp" alt="Templates do Kit Design Studio em computador e notebook" loading="lazy"></div>
-        <div class="corpo">
-          <img class="logo" src="assets/img/kit/logo-kit-escuro.png" alt="Kit Design Studio" height="46">
-          <p>Templates editáveis de contrato, proposta, apresentação, manual de marca e mais, para estruturar o seu estúdio em um dia.</p>
-          <span class="ir">Conhecer o Kit →</span>
-        </div>
+    <div class="cards">
+      <a class="card rv" href="kit-design-studio/" style="--c:#111111;--ci:#fff">
+        <div class="capa"><img src="assets/img/kit/capa-kit-logo.webp" alt="Kit Design Studio" loading="lazy" width="1200" height="675"></div>
+        <div class="corpo"><span class="tag">Templates</span><p>Contrato, proposta, apresentação, manual de marca e mais, para estruturar o seu estúdio em um dia.</p><span class="bt">Conhecer o Kit <span>→</span></span></div>
       </a>
-      <div class="links">
-        <a class="lk rv" href="https://dashboardfinanceiro.com/comprar/" style="--b:#16a34a">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span>
-          <span><b>Dashboard Financeiro</b><span>Controle as suas finanças sem planilhas</span></span>
-        </a>
-        <a class="lk rv" href="https://pay.kiwify.com.br/qJBo7ZT" style="--b:#1a0b1a">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></span>
-          <span><b>Notion Studio</b><span>Organize as demandas do seu estúdio</span></span>
-        </a>
-        <a class="lk rv" href="https://www.youtube.com/watch?v=lXFQ3i07KpI&list=PL0T5evEVNjRajBXQktFJn4cANp99YxGO6" target="_blank" rel="noopener" style="--b:#ff0033">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/></svg></span>
-          <span><b>Mini curso de Figma</b><span>Aulas gratuitas para começar</span></span>
-          <span class="tg">Grátis</span>
-        </a>
-      </div>
+      <a class="card rv" href="https://dashboardfinanceiro.com/comprar/" style="--c:#6C5CE7;--ci:#fff">
+        <div class="capa"><img src="assets/img/inicio/capa-dashboard.webp" alt="Dashboard Financeiro" loading="lazy" width="1200" height="675"></div>
+        <div class="corpo"><span class="tag">Assinatura</span><p>Um dashboard visual e organizado para controlar as suas finanças sem planilhas.</p><span class="bt">Conhecer o Dashboard <span>→</span></span></div>
+      </a>
+      <a class="card rv" href="https://pay.kiwify.com.br/qJBo7ZT" style="--c:#FF58FC;--ci:#fff">
+        <div class="capa"><img src="assets/img/inicio/capa-notion-studio.webp" alt="Template Notion Studio" loading="lazy" width="1200" height="675"></div>
+        <div class="corpo"><span class="tag">Template Notion</span><p>Organize as demandas do seu estúdio no Notion, com dashboard para o cliente.</p><span class="bt">Conhecer o Notion Studio <span>→</span></span></div>
+      </a>
     </div>
+    <a class="lk rv" href="https://www.youtube.com/watch?v=lXFQ3i07KpI&amp;list=PL0T5evEVNjRajBXQktFJn4cANp99YxGO6" target="_blank" rel="noopener" style="--b:#ff0033">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/></svg></span>
+      <span><b>Mini curso de Figma</b><span>Aulas gratuitas para começar</span></span>
+      <span class="tg">Grátis</span>
+    </a>
   </section>
 
   <section class="bloco" aria-labelledby="t-estudio">
     <div class="estudio rv">
       <div>
-        <span class="eyebrow" id="t-estudio">Studio Tedeschi</span>
+        <span class="marca" id="t-estudio">Tedeschi Studio<small>Identidade visual</small></span>
         <h2>Precisa de uma marca para o seu negócio?</h2>
         <p>Além de ensinar, eu crio identidades visuais estratégicas para empresas, do conceito à entrega.</p>
       </div>
       <div class="acoes">
-        <a class="btn" href="https://api.whatsapp.com/send/?phone=5541999401055&text=Ol%C3%A1%2C+tenho+interesse+em+um+projeto+para+minha+marca%21" target="_blank" rel="noopener">Pedir um orçamento <span class="arr">→</span></a>
-        <a class="btn ghost" href="https://www.behance.net/larissatedeschi" target="_blank" rel="noopener">Ver o portfólio</a>
+        <a class="eb pri" href="https://api.whatsapp.com/send/?phone=5541999401055&amp;text=Ol%C3%A1%2C+tenho+interesse+em+um+projeto+para+minha+marca%21" target="_blank" rel="noopener">Pedir um orçamento →</a>
+        <a class="eb sec" href="https://www.behance.net/larissatedeschi" target="_blank" rel="noopener">Ver o portfólio</a>
       </div>
     </div>
   </section>
