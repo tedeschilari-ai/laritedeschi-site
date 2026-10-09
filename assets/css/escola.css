@@ -392,6 +392,48 @@ a.course:hover{transform:translateY(-4px);border-color:var(--line-2)}
 [data-blur*="r"]::after{content:"";right:-22%;bottom:4%;animation-delay:-8s}
 @keyframes drift{50%{translate:6% -5%;scale:1.08}}
 
+/* ---------- peças extras (FigBrand e próximos cursos) ---------- */
+.steps4.tres{grid-template-columns:repeat(3,1fr)}
+.step .big.num{font-size:96px}
+.hero-visual{position:relative;z-index:2;width:100%;max-width:min(760px,100%);height:auto;margin:0 auto;filter:drop-shadow(0 40px 50px rgba(26,11,26,.22))}
+.etapas{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.etapa{position:relative;padding:22px;border-radius:18px;background:var(--card);border:1px solid var(--line);box-shadow:var(--card-shadow);overflow:hidden}
+.etapa .num{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--accent);font-variant-numeric:tabular-nums}
+.etapa h3{font-size:19px;margin-top:8px}
+.etapa p{font-size:14.5px;color:var(--muted);margin-top:6px;line-height:1.45}
+.etapa.destaque{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+.etapa.destaque .num,.etapa.destaque p{color:color-mix(in srgb,var(--accent-ink) 80%,transparent)}
+.entregas{display:grid;gap:18px;max-width:1000px;margin:0 auto}
+.entrega{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:34px;border-radius:24px;background:var(--card);border:1px solid var(--line);box-shadow:var(--card-shadow)}
+.entrega:nth-child(even) .vis{order:-1}
+.entrega .k{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.entrega h3{font-size:clamp(22px,2.4vw,28px);margin-top:8px}
+.entrega h4{font-size:16px;font-weight:600;margin-top:6px;color:var(--txt)}
+.entrega p{color:var(--muted);margin-top:12px;font-size:15.5px}
+.entrega .vis{position:relative;display:grid;place-items:center;min-height:220px;border-radius:18px;background:radial-gradient(70% 70% at 50% 50%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%),var(--bg-2);overflow:hidden}
+.entrega .vis img{max-height:260px;width:auto}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:24px}
+.chips span{font-size:13.5px;font-weight:600;padding:9px 14px;border-radius:999px;background:var(--card);border:1px solid var(--line-2);box-shadow:var(--card-shadow)}
+.chips span.hot{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+.chips span.pop{background:var(--pop);color:var(--pop-ink,#1a0b1a);border-color:transparent}
+.projgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.proj{border-radius:18px;overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:var(--card-shadow);transition:transform .3s}
+.proj:hover{transform:translateY(-4px)}
+.proj img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.proj figcaption{padding:12px 16px 14px;font-size:14px;color:var(--muted)}
+.proj figcaption b{display:block;color:var(--txt);font-weight:600;font-size:15.5px}
+.clients{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+.client{border-radius:18px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:var(--card-shadow)}
+.client img{width:100%}
+.client figcaption{padding:12px 16px;font-size:13.5px;color:#6b6070;background:var(--card)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px}
+.stats div{padding:14px 16px;border-radius:14px;background:color-mix(in srgb,var(--accent) 8%,var(--card));border:1px solid color-mix(in srgb,var(--accent) 22%,transparent)}
+.stats b{display:block;font-size:22px;letter-spacing:-.03em;color:var(--txt)}
+.stats span{font-size:13px;color:var(--muted)}
+.price .renova{font-size:12.5px;color:#7a6f7a;margin-top:6px}
+@media (max-width:960px){.etapas{grid-template-columns:1fr 1fr}.entrega{grid-template-columns:1fr;gap:24px}.entrega:nth-child(even) .vis{order:0}.projgrid{grid-template-columns:1fr 1fr}.clients{grid-template-columns:1fr 1fr}.steps4.tres{grid-template-columns:1fr}}
+@media (max-width:640px){.etapas{grid-template-columns:1fr 1fr;gap:10px}.etapa{padding:16px}.etapa h3{font-size:16.5px}.clients{grid-template-columns:1fr}.entrega{padding:22px}.stats{grid-template-columns:1fr}}
+
 /* ---------- animação de entrada ---------- */
 .js .rv{opacity:0;transform:translateY(28px);filter:blur(8px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1),filter .9s}
 .js .rv.in{opacity:1;transform:none;filter:none}
@@ -426,7 +468,7 @@ a.course:hover{transform:translateY(-4px);border-color:var(--line-2)}
   .fact{padding:20px}
   .steps4,.fgrid,.modgrid{grid-template-columns:1fr}
   .step .big{font-size:96px}
-  .rgrid{columns:1}
+  .rgrid{columns:1!important}
   .inc{grid-template-columns:1fr}
   .obox .left{padding:24px 18px}
   .price{padding:28px 20px}
