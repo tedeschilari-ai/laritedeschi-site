@@ -28,6 +28,81 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
   --accent:#9131F6; --accent-2:#7D1AE6; --accent-3:#24104A; --accent-lt:#B671FF;
   --pop:#E6FF7D; --pop-ink:#24104A;
 }
+
+/* ---- mockups coloridos das entregas ---- */
+.entrega .vis.mk{min-height:0;aspect-ratio:1.25/1;border-radius:24px;padding:0}
+.mk{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.entrega .vis.mk-curso{background:linear-gradient(150deg,#B671FF,#7D1AE6)}
+.entrega .vis.mk-hot{background:#E6FF7D}
+.entrega .vis.mk-tcc{background:#F1E6FF}
+.entrega .vis.mk-tpl{background:#9131F6}
+.entrega .vis.mk-com{background:#24104A}
+.tagx{position:absolute;z-index:4;font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;padding:10px 15px;border-radius:999px;box-shadow:0 12px 24px -12px rgba(36,16,74,.55);animation:bob 6s ease-in-out infinite}
+/* curso: player */
+.player{width:84%;border-radius:18px;overflow:hidden;background:#24104A;box-shadow:0 30px 50px -24px rgba(36,16,74,.8)}
+.player .scr{position:relative;aspect-ratio:16/8.5;background:radial-gradient(80% 90% at 70% 30%,#9131F6,#3B1878 70%);display:flex;align-items:flex-end;padding:16px 18px}
+.player .play{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:#E6FF7D;display:grid;place-items:center;box-shadow:0 0 0 10px rgba(230,255,125,.18)}
+.player .ttl{color:#fff;font-weight:600;font-size:15px;letter-spacing:-.01em;line-height:1.2}
+.player .ttl small{display:block;font-size:10px;letter-spacing:.14em;color:#E6FF7D;margin-bottom:4px}
+.player .ctrl{padding:12px 14px 14px}
+.player .prog{height:5px;border-radius:5px;background:#3B2370;overflow:hidden;margin-bottom:12px}
+.player .prog i{display:block;width:42%;height:100%;background:#E6FF7D;border-radius:5px}
+.player .mods{display:flex;gap:6px;flex-wrap:wrap}
+.player .mods span{font-size:10.5px;font-weight:600;padding:5px 9px;border-radius:999px;background:#331A63;color:#CDB4FF}
+.player .mods span.on{background:#9131F6;color:#fff}
+.mk-curso .tagx{left:6%;top:8%;background:#E6FF7D;color:#24104A;transform:rotate(-5deg)}
+/* hotseat */
+.entrega .vis.mk-hot img{width:80%;height:auto;max-height:none;margin-top:14%;filter:drop-shadow(0 30px 30px rgba(36,16,74,.35));transform:rotate(-2deg)}
+.live{position:absolute;z-index:4;right:6%;top:8%;background:#FF3D6E;color:#fff;font-weight:700;font-size:12.5px;letter-spacing:.14em;padding:9px 14px;border-radius:999px;display:flex;align-items:center;gap:8px;transform:rotate(6deg)}
+.live::before{content:"";width:8px;height:8px;border-radius:50%;background:#fff;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.2}}
+.pergunta{position:absolute;z-index:4;left:5%;top:14%;max-width:56%;background:#fff;color:#24104A;border-radius:16px 16px 16px 4px;padding:11px 14px;font-size:13px;font-weight:600;line-height:1.35;box-shadow:0 16px 30px -14px rgba(36,16,74,.6);transform:rotate(-3deg);animation:bob 7s ease-in-out infinite}
+.pergunta small{display:block;font-size:10px;font-weight:700;letter-spacing:.12em;color:#9131F6;margin-bottom:3px}
+.mk-hot .tagx{left:6%;bottom:8%;background:#9131F6;color:#fff;transform:rotate(-5deg);animation-delay:-3s}
+/* tcc */
+.entrega .vis.mk-tcc svg.tccart{width:100%;height:auto;transform:scale(1.14)}
+.mk-tcc .tagx{right:6%;top:8%;background:#24104A;color:#E6FF7D;transform:rotate(4deg)}
+.fxpop{animation:bob 6s ease-in-out infinite}
+/* templates */
+.fan{position:absolute;inset:0}
+.pg{position:absolute;top:50%;left:50%;width:27%;aspect-ratio:3/4;background:#fff;border-radius:12px;padding:9px;box-shadow:0 18px 28px -14px rgba(20,0,60,.6);transform:translate(calc(-50% + (var(--i) - 2.5) * 30%),-50%) rotate(calc((var(--i) - 2.5) * 6deg));transform-origin:50% 130%;transition:transform .35s cubic-bezier(.3,.9,.2,1);display:flex;flex-direction:column;gap:5px}
+.pg-h{background:var(--c);color:var(--t);border-radius:6px;font-weight:700;font-size:clamp(7.5px,.75vw,10.5px);line-height:1.15;padding:5px 5px;margin-bottom:3px;width:fit-content;max-width:100%}
+.pg i{display:block;height:5px;border-radius:5px;background:#EDE2FF}
+.pg-box{height:26%;border-radius:6px;background:linear-gradient(140deg,#F1E6FF,#E3CFFF);margin:2px 0}
+.mk-tpl:hover .pg{transform:translate(calc(-50% + (var(--i) - 2.5) * 36%),-54%) rotate(calc((var(--i) - 2.5) * 9deg))}
+.mk-tpl .tagx{left:6%;bottom:8%;background:#E6FF7D;color:#24104A;transform:rotate(-4deg)}
+/* comunidade */
+.chat{width:74%;display:flex;flex-direction:column;gap:11px}
+.msg{color:#24104A;max-width:84%;padding:12px 15px;border-radius:18px 18px 18px 4px;background:#fff;font-size:13.5px;font-weight:600;line-height:1.4;box-shadow:0 8px 16px -10px rgba(0,0,0,.4)}
+.msg small{display:block;font-size:10.5px;font-weight:700;color:#7D1AE6;margin-bottom:3px}
+.msg.me{align-self:flex-end;background:#9131F6;color:#fff;border-radius:18px 18px 4px 18px}
+.msg.me small{color:#E6FF7D}
+.typing{display:flex;gap:5px;padding:13px 15px;background:#fff;border-radius:18px;width:fit-content}
+.typing i{width:7px;height:7px;border-radius:50%;background:#B671FF;animation:ty 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes ty{0%,60%,100%{transform:none;opacity:.5}30%{transform:translateY(-4px);opacity:1}}
+.mk-com .tagx{right:6%;top:8%;background:#E6FF7D;color:#24104A;transform:rotate(5deg)}
+
+/* ---- ciclo invisível ---- */
+.ciclo{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;position:relative}
+.cic{position:relative;padding:24px 22px 26px;border-radius:20px;background:var(--card);border:1px solid var(--line);box-shadow:var(--card-shadow)}
+.cic .n{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;background:#F1E6FF;color:#7D1AE6;margin-bottom:16px}
+.cic:last-child .n{background:#9131F6;color:#fff}
+.cic p{font-size:15.5px;color:var(--txt);line-height:1.45}
+.cic:not(:last-child)::after{content:"→";position:absolute;right:-13px;top:50%;transform:translateY(-50%);z-index:2;width:24px;height:24px;border-radius:50%;background:#E6FF7D;color:#24104A;display:grid;place-items:center;font-size:13px;font-weight:700}
+.loop{text-align:center;max-width:62ch;margin:22px auto 0;font-size:14.5px;color:var(--muted);font-weight:500}
+.loop b{color:#7D1AE6}
+.virada{max-width:860px;margin:60px auto 0;padding:36px 38px;border-radius:26px;background:#24104A;color:#fff;text-align:center;position:relative;overflow:hidden}
+.virada::before{content:"";position:absolute;inset:-40% -20% auto auto;width:60%;aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(145,49,246,.55),transparent)}
+.virada .q{position:relative;font-size:clamp(22px,2.6vw,30px);font-weight:600;letter-spacing:-.03em;line-height:1.2}
+.virada .q em{font-style:normal;color:#E6FF7D}
+.virada p{position:relative;margin-top:14px;color:rgba(255,255,255,.78);max-width:62ch;margin-left:auto;margin-right:auto}
+.virada .ganhos{position:relative;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:22px}
+.virada .ganhos span{font-size:13px;font-weight:600;padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16)}
+.virada .ganhos span:nth-child(odd){background:#E6FF7D;color:#24104A;border-color:transparent}
+@media (max-width:960px){.ciclo{grid-template-columns:1fr 1fr}.cic:nth-child(2)::after{display:none}}
+@media (max-width:640px){.ciclo{grid-template-columns:1fr}.cic:not(:last-child)::after{content:"↓";right:50%;top:auto;bottom:-13px;transform:translateX(50%);display:grid}.cic{padding:20px}.virada{padding:28px 22px}.entrega .vis.mk{aspect-ratio:1.05/1}.pergunta{max-width:56%;font-size:11.5px;top:16%;padding:9px 11px}.live{top:5%;right:4%;font-size:11px;padding:7px 11px}.player .scr{aspect-ratio:16/10}.player .play{top:38%;width:44px;height:44px}.player .ttl{font-size:13px}.mk-curso .tagx{top:4%}.entrega .vis.mk-com{aspect-ratio:auto;padding:58px 0 26px}.mk-com .tagx{top:12px}.pg{width:31%}.tagx{font-size:11px;padding:8px 12px}.player .mods span{font-size:9.5px}.chat{width:86%}.msg{font-size:12.5px}}
+@media (prefers-reduced-motion:reduce){.live::before,.typing i{animation:none}}
 </style>
 </head>
 <body data-curso="FigBrand">
@@ -92,6 +167,29 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
   </div>
 </section>
 
+<!-- Por que importa -->
+<section id="por-que" data-blur="r">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Por que um método</span>
+      <h2>Talvez você esteja presa em um ciclo <span class="grad">que parece ser sobre preço.</span></h2>
+      <p>Mas ele começa muito antes do orçamento.</p>
+    </div>
+    <div class="ciclo">
+      <div class="cic rv"><span class="n">1</span><p>Você ainda não tem tanta segurança para defender o seu trabalho.</p></div>
+      <div class="cic rv"><span class="n">2</span><p>Então, na hora do orçamento, cobra menos para aumentar a chance de o cliente aceitar.</p></div>
+      <div class="cic rv"><span class="n">3</span><p>O cliente fecha pelo preço, e você precisa provar o seu valor durante o projeto.</p></div>
+      <div class="cic rv"><span class="n">4</span><p>Sem um processo claro, aceita alterações, volta etapas e entrega muito mais do que estava previsto.</p></div>
+    </div>
+    <p class="loop rv">No final você pensa: <b>"eu deveria ter cobrado muito mais".</b> E no próximo orçamento, tudo se repete.</p>
+    <div class="virada rv">
+      <p class="q">O problema não é que você cobra barato. É que você ainda define o valor do seu trabalho <em>no feeling.</em></p>
+      <p>Quando cada escolha tem um motivo e existe um método por trás do que você cria, você para de titubear na hora de apresentar, justificar e defender o seu trabalho. É isso que o FigBrand ensina.</p>
+      <div class="ganhos"><span>Cobrar com segurança</span><span>Conduzir o cliente</span><span>Defender suas escolhas</span><span>Menos alterações</span><span>Mais valor percebido</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- Método -->
 <section id="metodo" data-blur="l">
   <div class="wrap">
@@ -133,20 +231,24 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
     </div>
     <div class="entregas">
       <article class="entrega rv">
+        <div><span class="k">Curso completo</span><h3>Do briefing à entrega</h3><h4>O processo inteiro, na ordem de um projeto real.</h4><p>Fundamentos, onboarding, estratégia, conceito, identidade, apresentação e entrega, mais 10 aulas com convidados. Para você parar de juntar conteúdos soltos e enxergar o projeto como um processo.</p></div>
+        <div class="vis mk mk-curso"><span class="tagx">▶ Aulas no seu ritmo</span><div class="player"><div class="scr"><div class="play"><svg width="24" viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z" fill="#24104A"/></svg></div><div class="ttl"><small>MÓDULO 3 · ESTRATÉGIA</small>Do research à plataforma de marca</div></div><div class="ctrl"><div class="prog"><i></i></div><div class="mods"><span>Fundamentos</span><span>Onboarding</span><span class="on">Estratégia</span><span>Conceito</span><span>Identidade</span><span>Apresentação</span><span>Entrega</span></div></div></div></div>
+      </article>
+      <article class="entrega rv">
         <div><span class="k">Ao vivo, todo mês</span><h3>Hotseat mensal</h3><h4>Leve seus projetos e dúvidas para quem pode te orientar.</h4><p>Encontros mensais para analisar projetos reais, tirar dúvidas e entender como aplicar o método na prática. Você não precisa travar sozinha tentando descobrir o próximo passo.</p></div>
-        <div class="vis"><img src="../assets/img/figbrand/hotseat.webp" alt="Hotseat ao vivo com a Lari" loading="lazy" width="364" height="218"></div>
+        <div class="vis mk mk-hot"><span class="live">AO VIVO</span><div class="pergunta"><small>DÚVIDA DA ALUNA</small>Lari, como eu apresento o conceito sem o cliente achar que é "só um logo"?</div><img src="../assets/img/figbrand/hotseat.webp" alt="Hotseat ao vivo com a Lari" loading="lazy" width="364" height="218"><span class="tagx">🔥 Todo mês, ao vivo</span></div>
       </article>
       <article class="entrega rv">
         <div><span class="k">Projeto de conclusão</span><h3>TCC com correção individual</h3><h4>Um projeto completo para o seu portfólio.</h4><p>Você recebe um briefing para aplicar o método do início ao fim. Depois entrega o seu projeto e recebe uma correção individual, com feedback da Lari sobre o que você já domina e onde ainda pode evoluir.</p></div>
-        <div class="vis"><div class="chips"><span class="hot">Estratégia</span><span>Conceito</span><span class="pop">Identidade</span><span>Aplicações</span><span class="hot">Feedback da Lari</span></div></div>
+        <div class="vis mk mk-tcc"><span class="tagx">✦ Feedback da Lari</span><svg class="tccart" viewBox="0 0 500 400" aria-hidden="true"><g transform="rotate(-8 92 150)"><rect x="22" y="70" width="140" height="176" rx="14" fill="#E6FF7D"/><text x="38" y="98" font-family="Euclid,Arial" font-weight="700" font-size="8" letter-spacing="1.6" fill="#7D1AE6">BRIEFING</text><text x="38" y="116" font-family="Euclid,Arial" font-weight="700" font-size="12" fill="#24104A">Projeto final</text><rect x="38" y="132" width="104" height="5" rx="2.5" fill="#24104A" opacity=".28"/><rect x="38" y="145" width="80" height="5" rx="2.5" fill="#24104A" opacity=".28"/><rect x="38" y="158" width="92" height="5" rx="2.5" fill="#24104A" opacity=".28"/></g><rect x="118" y="46" width="360" height="286" rx="14" fill="#fff"/><path d="M118 60 a14 14 0 0 1 14 -14 h332 a14 14 0 0 1 14 14 v12 h-360 z" fill="#F3ECFF"/><circle cx="132" cy="59" r="3.5" fill="#9131F6"/><circle cx="143" cy="59" r="3.5" fill="#D9C4FF"/><circle cx="154" cy="59" r="3.5" fill="#D9C4FF"/><text x="466" y="62" text-anchor="end" font-family="Euclid,Arial" font-weight="600" font-size="8.5" fill="#9A78D6">tcc-projeto.fig</text><text x="138" y="92" font-family="Euclid,Arial" font-weight="600" font-size="8" fill="#9A78D6">Apresentação final · 01</text><rect x="138" y="98" width="320" height="180" rx="10" fill="#24104A"/><defs><mask id="mkt"><rect x="150" y="116" width="144" height="144" fill="#fff"/><circle cx="241.8" cy="179" r="25.9" fill="#000"/></mask></defs><circle cx="222" cy="188" r="36" fill="#9131F6" mask="url(#mkt)"/><rect x="282" y="172" width="120" height="11" rx="5.5" fill="#fff"/><rect x="282" y="192" width="84" height="6" rx="3" fill="#fff" opacity=".45"/><g class="fxpop"><circle cx="300" cy="129" r="11" fill="#9131F6"/><text x="300" y="133" text-anchor="middle" font-family="Euclid,Arial" font-weight="700" font-size="10" fill="#fff">L</text><rect x="316" y="110" width="140" height="38" rx="10" fill="#fff" stroke="#EDE2FF"/><text x="326" y="123" font-family="Euclid,Arial" font-weight="700" font-size="7" letter-spacing="1" fill="#9131F6">LARI · FEEDBACK</text><text x="326" y="137" font-family="Euclid,Arial" font-weight="600" font-size="9.5" fill="#24104A">Conceito muito forte! ✦</text></g><g><circle cx="440" cy="318" r="34" fill="#E6FF7D"/><circle cx="440" cy="318" r="27" fill="none" stroke="#24104A" stroke-width="1.4" stroke-dasharray="3 3"/><path d="M428 318 l8 8 16-17" fill="none" stroke="#24104A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g></svg></div>
       </article>
       <article class="entrega rv">
-        <div><span class="k">Caixa de ferramentas</span><h3>+20 templates prontos</h3><h4>Estruturas para não começar nada do zero.</h4><p>Templates e ferramentas para aplicar o processo nos seus projetos. Menos tempo organizando e mais tempo pensando no projeto.</p></div>
-        <div class="vis"><div class="chips"><span class="hot">Briefing</span><span>Pesquisa</span><span class="pop">Proposta</span><span>Apresentação</span><span class="hot">Guia de marca</span><span>Checklist</span><span class="pop">Contrato</span></div></div>
+        <div><span class="k">Caixa de ferramentas</span><h3>+20 templates prontos</h3><h4>Estruturas para não começar nada do zero.</h4><p>Briefing, pesquisa, proposta, apresentação, guia de marca, checklist e mais. Menos tempo organizando o processo e mais tempo pensando no projeto.</p></div>
+        <div class="vis mk mk-tpl"><div class="fan"><div class="pg" style="--i:0;--c:#9131F6;--t:#fff"><div class="pg-h">Briefing</div><i></i><i></i><i style="width:60%"></i><div class="pg-box"></div><i></i><i style="width:75%"></i></div><div class="pg" style="--i:1;--c:#24104A;--t:#fff"><div class="pg-h">Pesquisa</div><i></i><i></i><i style="width:60%"></i><div class="pg-box"></div><i></i><i style="width:75%"></i></div><div class="pg" style="--i:2;--c:#E6FF7D;--t:#24104A"><div class="pg-h">Proposta</div><i></i><i></i><i style="width:60%"></i><div class="pg-box"></div><i></i><i style="width:75%"></i></div><div class="pg" style="--i:3;--c:#B671FF;--t:#fff"><div class="pg-h">Apresentação</div><i></i><i></i><i style="width:60%"></i><div class="pg-box"></div><i></i><i style="width:75%"></i></div><div class="pg" style="--i:4;--c:#7D1AE6;--t:#fff"><div class="pg-h">Guia de marca</div><i></i><i></i><i style="width:60%"></i><div class="pg-box"></div><i></i><i style="width:75%"></i></div><div class="pg" style="--i:5;--c:#E6FF7D;--t:#24104A"><div class="pg-h">Checklist</div><i></i><i></i><i style="width:60%"></i><div class="pg-box"></div><i></i><i style="width:75%"></i></div></div><span class="tagx">✦ +20 templates prontos</span></div>
       </article>
       <article class="entrega rv">
         <div><span class="k">Comunidade</span><h3>Grupo no WhatsApp</h3><h4>Para trocar, perguntar e continuar em movimento.</h4><p>Uma comunidade com outras alunas para compartilhar dúvidas, experiências e aprendizados ao longo da jornada.</p></div>
-        <div class="vis"><div class="chips"><span>"Alguém já usou o canvas de concorrentes?"</span><span class="hot">"Usei essa semana, mudou minha apresentação!"</span><span>"Levei minha dúvida no hotseat e destravou"</span></div></div>
+        <div class="vis mk mk-com"><span class="tagx">💬 Comunidade</span><div class="chat"><div class="msg"><small>Ana</small>Gente, alguém já usou o canvas de concorrentes num projeto real?</div><div class="msg me"><small>Você</small>Usei essa semana! Mudou totalmente minha apresentação 💜</div><div class="msg"><small>Bia</small>Levei minha dúvida no hotseat e destravou tudo ✨</div><div class="typing"><i></i><i></i><i></i></div></div></div>
       </article>
     </div>
   </div>
