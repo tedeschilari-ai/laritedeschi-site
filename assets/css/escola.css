@@ -219,7 +219,7 @@ p+p{margin-top:14px}
 .paper img{width:100%;border-radius:6px;box-shadow:0 2px 0 rgba(255,255,255,.6) inset,0 30px 60px -20px rgba(0,0,0,.75)}
 .paper::after{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(115deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 28%,rgba(255,255,255,0) 60%,rgba(0,0,0,.08) 100%);pointer-events:none}
 @keyframes paperfloat{0%,100%{transform:rotateX(14deg) rotateY(-16deg) rotateZ(-5deg) translateY(0)}50%{transform:rotateX(8deg) rotateY(-8deg) rotateZ(-2deg) translateY(-18px)}}
-.pshadow{width:70%;height:28px;margin:34px auto 0;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.6),transparent);animation:pshadow 7s ease-in-out infinite}
+.pshadow{width:60%;height:22px;margin:34px auto 0;border-radius:50%;background:radial-gradient(closest-side,rgba(26,11,26,.16),transparent);filter:blur(6px);animation:pshadow 7s ease-in-out infinite}
 @keyframes pshadow{50%{transform:scale(.82);opacity:.6}}
 .paperstage .tool{position:absolute;z-index:3}
 .paperstage .fl1{left:-40px;top:8%;transform:rotate(-10deg)}
@@ -298,13 +298,15 @@ a.course:hover{transform:translateY(-4px);border-color:var(--line-2)}
 /* ---------- garantia (seção própria) ---------- */
 .guarantee{padding:40px 0 110px}
 .guar{max-width:960px;margin:0 auto;display:grid;grid-template-columns:240px 1fr;gap:50px;align-items:center;padding:40px;border-radius:28px;background:var(--card);border:1px solid var(--line);box-shadow:var(--card-shadow)}
-.guar img{width:240px;border-radius:26px;box-shadow:0 30px 60px -30px color-mix(in srgb,var(--accent) 80%,transparent)}
+.guar .selo{width:220px;height:220px;color:var(--accent);filter:drop-shadow(0 24px 40px color-mix(in srgb,var(--accent) 45%,transparent))}
+.guar .selo svg{width:100%;height:100%}
+.guar .selo .gira{transform-origin:120px 120px;animation:spin 30s linear infinite}
 .guar h2{font-size:clamp(28px,3.4vw,42px);margin-bottom:14px}
 .guar p{color:var(--muted)}
 .guar .steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
 .guar .steps3 div{padding:14px 16px;border-radius:14px;background:color-mix(in srgb,var(--accent) 8%,transparent);border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);font-size:14px;color:var(--muted);line-height:1.4}
 .guar .steps3 b{display:block;color:var(--txt);font-weight:600;margin-bottom:2px}
-@media (max-width:640px){.guar{grid-template-columns:1fr;text-align:center;gap:22px;padding:28px 20px}.guar img{width:170px;margin:0 auto}.guar .steps3{grid-template-columns:1fr;text-align:left}}
+@media (max-width:640px){.guar{grid-template-columns:1fr;text-align:center;gap:22px;padding:28px 20px}.guar .selo{width:160px;height:160px;margin:0 auto}.guar .steps3{grid-template-columns:1fr;text-align:left}}
 
 /* ---------- faq ---------- */
 .faq .top{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;max-width:860px;margin:0 auto 34px}
@@ -509,3 +511,6 @@ a.course:hover{transform:translateY(-4px);border-color:var(--line-2)}
   .js .rv{opacity:1;transform:none;filter:none;transition:none}
   .hero h1 .w{opacity:1;transform:none;filter:none}
 }
+
+.price .de{color:#8a7f8a;font-size:15px;margin-top:8px}
+.price .de s{color:#e04a4a;text-decoration-thickness:2px}

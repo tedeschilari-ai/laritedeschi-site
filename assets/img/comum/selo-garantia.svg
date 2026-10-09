@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Garantia de 7 dias">
+  <defs>
+    <path id="arco" d="M120,120 m-86,0 a86,86 0 1,1 172,0 a86,86 0 1,1 -172,0"/>
+  </defs>
+  <style>
+    .fundo{fill:var(--accent,#9131F6)}
+    .anel{fill:none;stroke:#fff;stroke-opacity:.35;stroke-width:1.5}
+    .txt{fill:#fff;font-family:Euclid,"Helvetica Neue",Arial,sans-serif;font-weight:600}
+  </style>
+  <circle class="fundo" cx="120" cy="120" r="116"/>
+  <circle class="anel" cx="120" cy="120" r="100"/>
+  <circle class="anel" cx="120" cy="120" r="70"/>
+  <text class="txt" font-size="15" letter-spacing="3.2" textLength="530" lengthAdjust="spacing"><textPath href="#arco">GARANTIA INCONDICIONAL ✦ SEM RISCO ✦ </textPath></text>
+  <text class="txt" x="120" y="134" text-anchor="middle" font-size="64" font-weight="700" letter-spacing="-3">7</text>
+  <text class="txt" x="120" y="160" text-anchor="middle" font-size="17" letter-spacing="2">DIAS</text>
+</svg>
