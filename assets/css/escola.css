@@ -433,7 +433,7 @@ a.course:hover{transform:translateY(-4px);border-color:var(--line-2)}
 .stats span{font-size:13px;color:var(--muted)}
 .price .renova{font-size:12.5px;color:#7a6f7a;margin-top:6px}
 @media (max-width:960px){.etapas{grid-template-columns:1fr 1fr}.entrega{grid-template-columns:1fr;gap:24px}.entrega:nth-child(even) .vis{order:0}.projgrid{grid-template-columns:1fr 1fr}.clients{grid-template-columns:1fr 1fr}.steps4.tres{grid-template-columns:1fr}}
-@media (max-width:640px){.etapas{grid-template-columns:1fr 1fr;gap:10px}.etapa{padding:16px}.etapa h3{font-size:16.5px}.clients{grid-template-columns:1fr}.entrega{padding:22px}.stats{grid-template-columns:1fr}}
+@media (max-width:640px){.projgrid{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:4px 20px 10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.projgrid::-webkit-scrollbar{display:none}.proj{flex:0 0 84%;scroll-snap-align:center}.proj:hover{transform:none}.etapas{grid-template-columns:1fr 1fr;gap:10px}.etapa{padding:16px}.etapa h3{font-size:16.5px}.clients{grid-template-columns:1fr}.entrega{padding:22px}.stats{grid-template-columns:1fr}}
 
 /* ---------- animação de entrada ---------- */
 .js .rv{opacity:0;transform:translateY(28px);filter:blur(8px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1),filter .9s}
