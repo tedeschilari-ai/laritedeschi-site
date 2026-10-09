@@ -29,9 +29,9 @@
       node.textContent.split(/(\s+)/).forEach(function(part){
         if(!part)return;
         if(/^\s+$/.test(part)){frag.appendChild(document.createTextNode(part));return}
-        var s=document.createElement('span');s.className='w';s.textContent=part;s.style.transitionDelay=(k++*55)+'ms';frag.appendChild(s);
+        var s=document.createElement('span');s.className=(wrapIn&&wrapIn.classList.contains('grad'))?'w grad':'w';s.textContent=part;s.style.transitionDelay=(k++*55)+'ms';frag.appendChild(s);
       });
-      if(wrapIn){wrapIn.textContent='';wrapIn.appendChild(frag)}else{h.replaceChild(frag,node)}
+      if(wrapIn){wrapIn.textContent='';wrapIn.classList.remove('grad');wrapIn.appendChild(frag)}else{h.replaceChild(frag,node)}
     });
     requestAnimationFrame(function(){setTimeout(function(){h.classList.add('go')},120)});
   }
