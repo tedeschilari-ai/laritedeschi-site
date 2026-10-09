@@ -36,7 +36,7 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;background:var(--bg)}
+html{scroll-behavior:smooth;background:var(--bg);overflow-x:clip}
 html.lenis{scroll-behavior:auto}
 body{font-family:var(--font);background:var(--bg);color:var(--txt);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip}
 img{display:block;max-width:100%}
@@ -82,7 +82,7 @@ p+p{margin-top:14px}
 .crumb a:hover{color:var(--txt)}
 
 /* ---------- hero ---------- */
-.hero{text-align:center;overflow:hidden;margin-top:-68px;padding:150px 0 40px}
+.hero{position:relative;isolation:isolate;text-align:center;overflow:hidden;margin-top:-68px;padding:150px 0 40px}
 .hero .bgfx{position:absolute;inset:0;z-index:-1;pointer-events:none}
 .gridpat{position:absolute;inset:0;background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 70% 60% at 50% 35%,#000 30%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 35%,#000 30%,transparent 80%)}
 .glow{position:absolute;left:50%;top:44%;width:900px;height:620px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 42%,transparent),color-mix(in srgb,var(--accent-2) 18%,transparent) 55%,transparent);filter:blur(30px);animation:breathe 7s ease-in-out infinite}
@@ -95,6 +95,7 @@ p+p{margin-top:14px}
 .hero h1{font-size:clamp(38px,6.4vw,80px);max-width:1000px;margin:26px auto 0}
 .hero h1 .w{display:inline-block;opacity:0;transform:translateY(24px);filter:blur(10px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1),filter .8s}
 .hero h1.go .w{opacity:1;transform:none;filter:none}
+.hero h1 .w.grad{padding-bottom:.06em;filter:none!important;-webkit-text-fill-color:transparent;-webkit-box-decoration-break:clone}
 .hero .sub{max-width:620px;margin:24px auto 0;font-size:18px;color:var(--muted)}
 .hero .sub strong{color:var(--txt);font-weight:600}
 .hero .ctas{margin-top:34px}
@@ -384,7 +385,7 @@ a.course:hover{transform:translateY(-4px);border-color:var(--line-2)}
 
 /* ---------- blurs rosas de fundo ----------
    Coloque data-blur="l" (esquerda), "r" (direita) ou "lr" (os dois) numa <section>. */
-[data-blur]{isolation:isolate}
+[data-blur]{isolation:isolate;overflow-x:clip}
 [data-blur]::before,[data-blur]::after{content:none;position:absolute;z-index:-1;width:min(720px,90vw);aspect-ratio:1;border-radius:50%;pointer-events:none;
   background:radial-gradient(closest-side,color-mix(in srgb,var(--blur-cor,var(--accent)) var(--blur-forca,30%),transparent),color-mix(in srgb,var(--blur-cor-2,var(--accent-2)) 12%,transparent) 55%,transparent);
   filter:blur(60px);animation:drift 16s ease-in-out infinite}
