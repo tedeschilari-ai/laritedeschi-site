@@ -358,7 +358,7 @@ a.course:hover{transform:translateY(-4px);border-color:var(--line-2)}
   --card-shadow:0 1px 2px rgba(26,11,26,.04),0 12px 30px -18px rgba(26,11,26,.18);
 }
 .tema-claro .grad{background-image:linear-gradient(90deg,var(--accent-2) 0%,var(--accent) 60%,var(--accent-2) 100%)}
-.tema-claro .glow{opacity:.55}
+.tema-claro .hero .bgfx{display:none}  /* topo neutro, sem estrelas nem brilho, no tema claro */
 .tema-claro .nav.solid{background:color-mix(in srgb,var(--bg) 85%,transparent)}
 .tema-claro .seal-sec{background:radial-gradient(60% 80% at 50% 40%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 70%),var(--bg-2)}
 .tema-claro .obox{background:linear-gradient(160deg,color-mix(in srgb,var(--accent) 14%,var(--card)),var(--card) 65%);box-shadow:var(--card-shadow)}
