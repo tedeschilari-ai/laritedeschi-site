@@ -67,7 +67,8 @@ fbq('init','874750447646279');fbq('track','PageView');
 .lk .tg{margin-left:auto;flex:none;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 9px;border-radius:999px;background:#E6FF7D;color:#24104A}
 /* estúdio: identidade minimalista (preto, branco, cinza, Inter) */
 .estudio{font-family:"Inter","Helvetica Neue",Arial,sans-serif;border-radius:24px;background:#fff;color:#111;border:1px solid #e6e6e6;padding:40px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center}
-.estudio .marca{height:56px;width:auto;display:block;margin-bottom:6px}
+.estudio .marca{height:38px;width:auto;display:block;margin-bottom:4px}
+.arraste{display:none;text-align:center;font-size:12.5px;color:var(--dim);margin-top:2px}
 .estudio h2{font-family:inherit;font-size:clamp(26px,3vw,36px);font-weight:600;letter-spacing:-.03em;margin-top:22px;color:#111}
 .estudio p{color:#6b6b6b;margin-top:10px;max-width:46ch;font-size:15.5px}
 .estudio .acoes{display:grid;gap:10px}
@@ -78,7 +79,7 @@ fbq('init','874750447646279');fbq('track','PageView');
 .estudio .eb.sec:hover{background:#f4f4f4}
 .cards.dois{grid-template-columns:1fr 1fr}
 @media (max-width:960px){.cards{grid-template-columns:1fr 1fr}.estudio{grid-template-columns:1fr}}
-@media (max-width:640px){.bio{padding:40px 16px 80px}.cards{grid-template-columns:1fr}.estudio{padding:28px 22px}.bloco{margin-top:44px}}
+@media (max-width:640px){.bio{padding:40px 16px 80px}.cards{grid-template-columns:1fr}.cards.dois{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:4px 16px 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.cards.dois::-webkit-scrollbar{display:none}.cards.dois .card{flex:0 0 86%;scroll-snap-align:center}.cards.dois .card:hover{transform:none}.arraste{display:block!important}.estudio{padding:28px 22px}.bloco{margin-top:44px}}
 .rod{margin-top:56px;text-align:center;font-size:13px;color:var(--dim)}
 @media (max-width:960px){.cursos{grid-template-columns:1fr 1fr}.produtos,.estudio{grid-template-columns:1fr}}
 @media (max-width:640px){.bio{padding:40px 16px 80px}.cursos{grid-template-columns:1fr}.curso .capa{aspect-ratio:16/8}.estudio{padding:28px 22px}.bloco{margin-top:44px}}
@@ -122,6 +123,7 @@ fbq('init','874750447646279');fbq('track','PageView');
 
   <section class="bloco" aria-labelledby="t-produtos">
     <span class="eyebrow" id="t-produtos">Produtos e materiais</span>
+    <span class="arraste" aria-hidden="true">Arraste para o lado para ver todos →</span>
     <div class="cards dois">
       <a class="card rv" href="kit-design-studio/" style="--c:#111111;--ci:#fff">
         <div class="capa"><img src="assets/img/kit/capa-kit-logo.webp" alt="Kit Design Studio" loading="lazy" width="1200" height="675"></div>
@@ -146,7 +148,7 @@ fbq('init','874750447646279');fbq('track','PageView');
   <section class="bloco" aria-labelledby="t-estudio">
     <div class="estudio rv">
       <div>
-        <img class="marca" id="t-estudio" src="assets/img/inicio/logo-tedeschi-studio.png" alt="tedeschi studio." width="150" height="69">
+        <img class="marca" id="t-estudio" src="assets/img/inicio/logo-tedeschi-studio.png" alt="tedeschi studio." width="83" height="38">
         <h2>Precisa de uma marca para o seu negócio?</h2>
         <p>Além de ensinar, eu crio identidades visuais estratégicas para empresas, do conceito à entrega.</p>
       </div>
