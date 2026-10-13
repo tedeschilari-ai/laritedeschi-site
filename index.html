@@ -28,13 +28,13 @@ fbq('init','874750447646279');fbq('track','PageView');
 /* Página inicial: coluna única no celular, grade no computador.
    Cada curso usa a sua própria cor (--c) e a página fica neutra. */
 :root{--accent:#1a0b1a;--accent-2:#3a2a3a;--accent-lt:#5c4b5c;--font:"Inter","Helvetica Neue",Arial,sans-serif}
-body{font-family:var(--font);letter-spacing:-.015em}
+body{font-family:var(--font);letter-spacing:-.03em}
 h1,h2,h3{font-family:var(--font)}
 .bio{max-width:1040px;margin:0 auto;padding:56px 20px 90px}
 .perfil{text-align:center;display:grid;justify-items:center;gap:14px}
 .avatar{position:relative;width:112px;height:112px;border-radius:50%;padding:4px;background:conic-gradient(from 200deg,#ff58fc,#9131F6,#6032FD,#E6FF7D,#ff58fc)}
 .avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid var(--bg)}
-.perfil h1{font-size:clamp(30px,5vw,44px);letter-spacing:-.04em;margin-top:6px}
+.perfil h1{font-size:clamp(30px,5vw,44px);letter-spacing:-.05em;margin-top:6px}
 .perfil .sub{color:var(--muted);font-size:16.5px;max-width:44ch}
 .redes{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:4px}
 .redes a{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--card);border:1px solid var(--line);box-shadow:var(--card-shadow);transition:transform .2s,border-color .2s}
@@ -57,7 +57,7 @@ h1,h2,h3{font-family:var(--font)}
 .card .corpo{display:flex;flex-direction:column;gap:14px;padding:18px 20px 20px;flex:1}
 .card .tag{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:color-mix(in srgb,var(--c) 12%,#fff);color:var(--c)}
 .card p{color:var(--muted);font-size:15px;line-height:1.45;flex:1}
-.card .bt{display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 16px;border-radius:999px;background:var(--c);color:var(--ci);font-weight:600;font-size:15px;letter-spacing:-.01em;transition:filter .2s}
+.card .bt{display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 16px;border-radius:999px;background:var(--c);color:var(--ci);font-weight:600;font-size:15px;letter-spacing:-.03em;transition:filter .2s}
 .card .bt span{transition:transform .2s}
 .card:hover .bt{filter:brightness(1.06)}
 .card:hover .bt span{transform:translateX(3px)}
@@ -65,14 +65,14 @@ h1,h2,h3{font-family:var(--font)}
 .lk:hover{transform:translateY(-2px);border-color:var(--line-2)}
 .lk .ic{flex:none;width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:var(--b,#1a0b1a);color:#fff}
 .lk .ic svg{width:21px;height:21px;stroke:currentColor}
-.lk b{display:block;font-weight:600;font-size:16px;letter-spacing:-.01em}
+.lk b{display:block;font-weight:600;font-size:16px;letter-spacing:-.03em}
 .lk span{display:block;font-size:13.5px;color:var(--muted);margin-top:1px}
 .lk .tg{margin-left:auto;flex:none;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 9px;border-radius:999px;background:#E6FF7D;color:#24104A}
 /* estúdio: identidade minimalista (preto, branco, cinza, Inter) */
 .estudio{font-family:"Inter","Helvetica Neue",Arial,sans-serif;border-radius:24px;background:#fff;color:#111;border:1px solid #e6e6e6;padding:40px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center}
 .estudio .marca{height:38px;width:auto;display:block;margin-bottom:4px}
 .arraste{display:none;text-align:center;font-size:12.5px;color:var(--dim);margin-top:2px}
-.estudio h2{font-family:inherit;font-size:clamp(26px,3vw,36px);font-weight:600;letter-spacing:-.03em;margin-top:22px;color:#111}
+.estudio h2{font-family:inherit;font-size:clamp(26px,3vw,36px);font-weight:600;letter-spacing:-.045em;margin-top:22px;color:#111}
 .estudio p{color:#6b6b6b;margin-top:10px;max-width:46ch;font-size:15.5px}
 .estudio .acoes{display:grid;gap:10px}
 .estudio .eb{display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 18px;border-radius:10px;font-weight:500;font-size:15px;transition:background .2s,color .2s}
@@ -129,7 +129,7 @@ h1,h2,h3{font-family:var(--font)}
     <span class="eyebrow" id="t-produtos">Produtos e materiais</span>
     <span class="arraste" aria-hidden="true">Arraste para o lado para ver todos →</span>
     <div class="cards dois">
-      <a class="card rv" href="kit-design-studio/" style="--c:#111111;--ci:#fff">
+      <a class="card rv" href="https://kitdesignstudio.laritedeschi.com" style="--c:#111111;--ci:#fff">
         <div class="capa"><img src="assets/img/kit/capa-kit-logo.webp" alt="Kit Design Studio" loading="lazy" width="1200" height="675"></div>
         <div class="corpo"><span class="tag">Templates</span><p>Contrato, proposta, apresentação, manual de marca e mais, para estruturar o seu estúdio em um dia.</p><span class="bt">Conhecer o Kit <span>→</span></span></div>
       </a>
