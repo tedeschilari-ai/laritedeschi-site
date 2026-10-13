@@ -28,28 +28,44 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 .grad{background:linear-gradient(95deg,#6032FD 0%,#7A3BFF 55%,#9B4DFF 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .nav .logo{height:28px;width:auto}
 
-/* abertura: Lari recortada com ícones do Figma flutuando */
-.hero-lari{position:relative;z-index:2;width:min(520px,92%);margin:0 auto}
-.hero-lari .bloco{position:absolute;left:12%;right:12%;bottom:0;top:22%;border-radius:40px 40px 0 0;background:linear-gradient(160deg,#7A4BFF,#6032FD 55%,#4A1FE0);opacity:.95;mask-image:linear-gradient(180deg,#000 60%,transparent);-webkit-mask-image:linear-gradient(180deg,#000 60%,transparent)}
-.hero-lari img{position:relative;display:block;width:100%;height:auto}
-.hero-lari .fi{position:absolute;z-index:3;width:58px;height:58px;border-radius:17px;display:grid;place-items:center;box-shadow:0 18px 36px -14px rgba(48,20,160,.55);animation:boia 6s ease-in-out infinite}
-.hero-lari .fi svg{width:27px;height:27px}
-.hero-lari .fi.roxo{background:#6032FD}.hero-lari .fi.rosa{background:#FF70FE}.hero-lari .fi.verde{background:#B7F36B}.hero-lari .fi.branco{background:#fff;border:1px solid var(--line)}
-.hero-lari .tagl{position:absolute;z-index:3;left:4%;top:54%;display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px 14px 8px 8px;box-shadow:0 18px 36px -16px rgba(48,20,160,.4);text-align:left;animation:boia 7s ease-in-out -2s infinite}
-.hero-lari .tagl img{width:34px;height:34px;border-radius:50%;object-fit:cover}
-.hero-lari .tagl span{font-size:11.5px;color:var(--dim);line-height:1.25}
-.hero-lari .tagl b{display:block;font-size:13.5px;color:var(--txt);letter-spacing:-.02em}
-.hero-lari .tbar{position:absolute;z-index:3;left:80%;top:55%;width:20%;max-width:96px;display:flex;flex-direction:column;align-items:center;gap:16px;padding:16px 0;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 36px -16px rgba(48,20,160,.4);animation:boia 7s ease-in-out -4s infinite}
-.hero-lari .tbar svg{width:24px;height:24px}
-.hero-lari .tbar svg:first-child{background:color-mix(in srgb,#6032FD 14%,#fff);border-radius:8px;padding:6px;width:36px;height:36px}
-.hero-lari .i1{left:-2%;top:16%;rotate:-8deg}
-.hero-lari .i2{right:2%;top:14%;rotate:9deg;animation-delay:-1.2s}
-.hero-lari .i3{left:2%;top:58%;rotate:6deg;animation-delay:-2.4s}
-.hero-lari .i4{right:-6%;top:52%;rotate:-6deg;animation-delay:-3.6s}
-.hero-lari .i5{left:20%;top:2%;width:46px;height:46px;border-radius:14px;rotate:-12deg;animation-delay:-4.8s}
-.hero-lari .i5 svg{width:22px;height:22px}
-@keyframes boia{0%,100%{translate:0 0}50%{translate:0 -12px}}
-.stage-hero .halo{top:60%}
+/* abertura: o Figma aberto com um carrossel sendo criado */
+.ed{position:relative;z-index:2;max-width:820px;margin:0 auto;border-radius:20px;background:#fff;border:1px solid var(--line);box-shadow:0 40px 80px -30px rgba(48,20,160,.35),0 2px 6px rgba(26,11,26,.05);overflow:hidden;text-align:left}
+.ed .bar{display:flex;align-items:center;gap:10px;padding:11px 14px;border-bottom:1px solid var(--line);font-size:12.5px;color:var(--dim)}
+.ed .bar .dots{display:flex;gap:6px}.ed .bar .dots i{width:10px;height:10px;border-radius:50%;background:#e6e0ea}
+.ed .bar .nome{margin-left:6px;color:var(--txt);font-weight:600}
+.ed .bar .gente{margin-left:auto;display:flex}.ed .bar .gente img,.ed .bar .gente b{width:24px;height:24px;border-radius:50%;border:2px solid #fff;margin-left:-6px;object-fit:cover}
+.ed .bar .gente b{display:grid;place-items:center;background:#B7F36B;color:#1E0B5C;font-size:11px}
+.ed .bar .share{background:#6032FD;color:#fff;font-weight:600;border-radius:8px;padding:6px 12px;margin-left:8px}
+.ed .corpo{display:grid;grid-template-columns:150px 1fr;min-height:0}
+.ed .camadas{border-right:1px solid var(--line);padding:14px 12px;font-size:12px;color:var(--muted)}
+.ed .camadas b{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+.ed .camadas span{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:7px}
+.ed .camadas span::before{content:"#";color:var(--dim);font-weight:600}
+.ed .camadas span.on{background:color-mix(in srgb,#6032FD 12%,#fff);color:#6032FD;font-weight:600}
+.ed .canvas{position:relative;background:#F4F2F7;padding:44px 28px 70px;overflow:hidden}
+.ed .tira{display:flex;gap:14px;width:max-content;animation:tira 18s ease-in-out infinite alternate}
+@keyframes tira{0%,12%{transform:translateX(0)}88%,100%{transform:translateX(calc(-1 * var(--desl,260px)))}}
+.ed .fr{position:relative;width:190px}
+.ed .fr small{position:absolute;top:-20px;left:0;font-size:11px;color:var(--dim)}
+.ed .fr img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:2px;box-shadow:0 10px 24px -14px rgba(26,11,26,.35)}
+.ed .fr.sel::after{content:"";position:absolute;inset:-3px;border:2px solid #6032FD;border-radius:3px;pointer-events:none}
+.ed .fr.sel i{position:absolute;width:9px;height:9px;background:#fff;border:2px solid #6032FD;z-index:2}
+.ed .fr.sel i:nth-of-type(1){left:-7px;top:-7px}.ed .fr.sel i:nth-of-type(2){right:-7px;top:-7px}.ed .fr.sel i:nth-of-type(3){left:-7px;bottom:-7px}.ed .fr.sel i:nth-of-type(4){right:-7px;bottom:-7px}
+.ed .fr.sel em{position:absolute;left:50%;bottom:-30px;transform:translateX(-50%);font-style:normal;font-size:11px;font-weight:600;background:#6032FD;color:#fff;border-radius:6px;padding:3px 8px;white-space:nowrap}
+.ed .cur{position:absolute;z-index:3;display:flex;align-items:flex-start;gap:2px;pointer-events:none}
+.ed .cur svg{width:20px;height:20px}
+.ed .cur span{margin-top:14px;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:999px 999px 999px 4px;color:#fff;background:#6032FD}
+.ed .cur.c1{left:34%;top:30%;animation:cur1 9s ease-in-out infinite}
+.ed .cur.c2{left:64%;top:58%;animation:cur2 11s ease-in-out infinite}
+.ed .cur.c2 span{background:#FF70FE}
+@keyframes cur1{0%,100%{translate:0 0}40%{translate:60px 40px}70%{translate:-30px 70px}}
+@keyframes cur2{0%,100%{translate:0 0}35%{translate:-70px -30px}65%{translate:40px -60px}}
+.ed .ferr{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:4px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:0 10px 24px -14px rgba(26,11,26,.3)}
+.ed .ferr b{width:32px;height:32px;border-radius:8px;display:grid;place-items:center}
+.ed .ferr b.on{background:#6032FD}
+.ed .ferr svg{width:18px;height:18px}
+.stage-hero .badge{z-index:4}
+.stage-hero .tool.t1{left:auto;right:1%;top:24%}.stage-hero .tool.t2{right:2%;top:8%}.stage-hero .tool.t3{right:auto;left:1%;bottom:12%;top:auto}
 
 /* caminho do curso: ícone no lugar da letra */
 .step .ico{width:60px;height:60px;border-radius:18px;display:grid;place-items:center;margin-bottom:22px;background:color-mix(in srgb,var(--accent) 12%,#fff);border:1px solid color-mix(in srgb,var(--accent) 22%,transparent)}
@@ -58,16 +74,16 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 /* módulos em carrossel automático */
 .car.modcar figure{width:220px;padding:0;border:0;background:none}
 .car.modcar img{aspect-ratio:2/3;height:auto;border-radius:16px;box-shadow:var(--card-shadow)}
-.car.modcar figcaption{font-size:14px;color:var(--txt);font-weight:600;padding:12px 4px 0;letter-spacing:-.02em}
-.car.modcar figcaption b{color:var(--accent);font-size:12px;margin-right:6px}
 
 /* projetos dos alunos: um carrossel por aluno, como no Instagram */
 .igrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .ig{border-radius:20px;background:var(--card);border:1px solid var(--line);box-shadow:var(--card-shadow);overflow:hidden}
 .ig .top{display:flex;align-items:center;gap:10px;padding:12px 14px}
-.ig .top i{width:30px;height:30px;border-radius:50%;background:conic-gradient(from 200deg,#6032FD,#FF70FE,#B7F36B,#6032FD);padding:2px;flex:none}
-.ig .top i::after{content:"";display:block;width:100%;height:100%;border-radius:50%;background:var(--card);border:2px solid var(--card);box-sizing:border-box;background:color-mix(in srgb,var(--accent) 18%,#fff)}
-.ig .top b{font-size:13.5px;font-weight:600;letter-spacing:-.02em}
+.ig .top img{width:34px;height:34px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 0 0 2px #fff,0 0 0 3.5px #6032FD}
+.ig .top div{line-height:1.2;min-width:0}
+.ig .top a{display:block;font-size:11.5px;color:var(--dim)}
+.ig .top a:hover{color:var(--accent)}
+.ig .top b{display:block;font-size:13.5px;font-weight:600;letter-spacing:-.02em}
 .ig .top span{margin-left:auto;font-size:12px;color:var(--dim);font-variant-numeric:tabular-nums}
 .ig .sl{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
 .ig .sl::-webkit-scrollbar{display:none}
@@ -99,9 +115,9 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 
 @media (max-width:960px){.igrid{grid-template-columns:1fr 1fr}.bgrid{grid-template-columns:1fr}.aulas{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){
-  .hero-lari .fi{width:46px;height:46px;border-radius:14px}.hero-lari .fi svg{width:22px;height:22px}
-  .hero-lari .i5{width:38px;height:38px}
-  .hero-lari .i1{left:0}.hero-lari .i2{right:2%}.hero-lari .tagl{left:0;padding:6px 10px 6px 6px}.hero-lari .tagl img{width:26px;height:26px}.hero-lari .tagl b{font-size:12px}.hero-lari .tagl span{font-size:10px}.hero-lari .tbar{gap:10px;padding:10px 0;border-radius:14px}.hero-lari .tbar svg{width:18px;height:18px}.hero-lari .tbar svg:first-child{width:28px;height:28px;padding:5px}
+  .ed .corpo{grid-template-columns:1fr}.ed .camadas{display:none}
+  .ed .canvas{padding:36px 16px 64px}.ed .fr{width:150px}.ed .bar .nome{display:none}
+  .stage-hero .tool{display:none}
   .car.modcar figure{width:170px}
   .igrid{grid-template-columns:1fr;gap:22px}
 }
@@ -144,19 +160,27 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 
     <div class="stage-hero">
       <div class="halo"></div>
-      <div class="hero-lari">
-        <div class="bloco"></div>
-        <img src="../assets/img/figpost/hero-lari-recorte.webp" alt="Lari Tedeschi com um tablet, criando no Figma" width="744" height="833">
-        <div class="tagl"><img src="../assets/img/comum/lari-avatar.webp" alt=""><span><b>Lari Tedeschi</b>@laritedeschi</span></div>
-        <div class="tbar" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="#6032FD"><path d="M4 3l7 18 2.6-7.4L21 11z"/></svg>
-          <svg viewBox="0 0 24 24" fill="none" stroke="#1E0B5C" stroke-width="2" stroke-linecap="round"><path d="M8 3v18M16 3v18M3 8h18M3 16h18"/></svg>
-          <svg viewBox="0 0 24 24" fill="none" stroke="#1E0B5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7V5h14v2M9 19h6M12 5v14"/></svg>
-          <svg viewBox="0 0 24 24" fill="none" stroke="#1E0B5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>
+      <div class="badge" aria-label="Curso verificado pelo Figma"><svg viewBox="0 0 200 200"><use href="#ring"/></svg><img src="../assets/img/figpost/figma.webp" alt="" style="object-fit:contain"></div>
+      <div class="tool t1 hot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
+      <div class="tool t3 hot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="4" width="10" height="16" rx="2"/><path d="M4 7v10M20 7v10"/></svg></div>
+      <div class="ed" role="img" aria-label="Carrossel sendo criado no Figma">
+        <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="nome">carrossel-cliente.fig</span><span class="gente"><img src="../assets/img/comum/lari-avatar.webp" alt=""><b>V</b></span><span class="share">Share</span></div>
+        <div class="corpo">
+          <div class="camadas"><b>Camadas</b><span>Slide 1</span><span class="on">Slide 2</span><span>Slide 3</span><span>Slide 4</span><span>Slide 5</span></div>
+          <div class="canvas">
+            <div class="tira"><div class="fr"><small>Slide 1</small><img src="../assets/img/figpost/vitoria-1.webp" alt="" width="560" height="700"></div><div class="fr sel"><small>Slide 2</small><img src="../assets/img/figpost/vitoria-2.webp" alt="" width="560" height="700"><i></i><i></i><i></i><i></i><em>1080 × 1350</em></div><div class="fr"><small>Slide 3</small><img src="../assets/img/figpost/vitoria-3.webp" alt="" width="560" height="700"></div><div class="fr"><small>Slide 4</small><img src="../assets/img/figpost/vitoria-4.webp" alt="" width="560" height="700"></div><div class="fr"><small>Slide 5</small><img src="../assets/img/figpost/vitoria-5.webp" alt="" width="560" height="700"></div></div>
+            <div class="cur c1"><svg viewBox="0 0 24 24"><path d="M4 3l7 18 2.6-7.4L21 11z" fill="#6032FD" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg><span>Lari</span></div>
+            <div class="cur c2"><svg viewBox="0 0 24 24"><path d="M4 3l7 18 2.6-7.4L21 11z" fill="#FF70FE" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg><span>você</span></div>
+            <div class="ferr" aria-hidden="true">
+              <b class="on"><svg viewBox="0 0 24 24" fill="#fff"><path d="M4 3l7 18 2.6-7.4L21 11z"/></svg></b>
+              <b><svg viewBox="0 0 24 24" fill="none" stroke="#1E0B5C" stroke-width="2" stroke-linecap="round"><path d="M8 3v18M16 3v18M3 8h18M3 16h18"/></svg></b>
+              <b><svg viewBox="0 0 24 24" fill="none" stroke="#1E0B5C" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/></svg></b>
+              <b><svg viewBox="0 0 24 24" fill="none" stroke="#1E0B5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg></b>
+              <b><svg viewBox="0 0 24 24" fill="none" stroke="#1E0B5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7V5h14v2M9 19h6M12 5v14"/></svg></b>
+              <b><svg viewBox="0 0 24 24" fill="none" stroke="#1E0B5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg></b>
+            </div>
+          </div>
         </div>
-        <div class="fi i1 roxo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></div>
-        <div class="fi i2 verde" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#1E0B5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="4" width="10" height="16" rx="2"/><path d="M4 7v10M20 7v10"/></svg></div>
-        <div class="fi i5 rosa" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg></div>
       </div>
     </div>
   </div>
@@ -207,15 +231,15 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
     </div>
   </div>
   <div class="car modcar rv"><div class="ct">
-    <figure><img src="../assets/img/figpost/modulo-0.webp" alt="Módulo 00: Onboarding" loading="lazy" width="320" height="480"><figcaption><b>00</b>Onboarding</figcaption></figure>
-    <figure><img src="../assets/img/figpost/modulo-1.webp" alt="Módulo 01: Figma do zero" loading="lazy" width="320" height="480"><figcaption><b>01</b>Figma do zero</figcaption></figure>
-    <figure><img src="../assets/img/figpost/modulo-2.webp" alt="Módulo 02: Ferramentas avançadas" loading="lazy" width="320" height="480"><figcaption><b>02</b>Ferramentas avançadas</figcaption></figure>
-    <figure><img src="../assets/img/figpost/modulo-3.webp" alt="Módulo 03: Fundamentos do design" loading="lazy" width="320" height="480"><figcaption><b>03</b>Fundamentos do design</figcaption></figure>
-    <figure><img src="../assets/img/figpost/modulo-4.webp" alt="Módulo 04: Passo a passo do carrossel" loading="lazy" width="320" height="480"><figcaption><b>04</b>Passo a passo do carrossel</figcaption></figure>
-    <figure><img src="../assets/img/figpost/modulo-5.webp" alt="Módulo 05: Na prática" loading="lazy" width="320" height="480"><figcaption><b>05</b>Na prática</figcaption></figure>
-    <figure><img src="../assets/img/figpost/modulo-6.webp" alt="Módulo 06: Seu estúdio de design" loading="lazy" width="320" height="480"><figcaption><b>06</b>Seu estúdio de design</figcaption></figure>
-    <figure><img src="../assets/img/figpost/modulo-7.webp" alt="Módulo 07: Aulas bônus" loading="lazy" width="320" height="480"><figcaption><b>07</b>Aulas bônus</figcaption></figure>
-    <figure><img src="../assets/img/figpost/modulo-8.webp" alt="Módulo 08: Atualizações do Figma" loading="lazy" width="320" height="480"><figcaption><b>08</b>Atualizações do Figma</figcaption></figure>
+    <figure><img src="../assets/img/figpost/modulo-0.webp" alt="Módulo 00: Onboarding" loading="lazy" width="320" height="480"></figure>
+    <figure><img src="../assets/img/figpost/modulo-1.webp" alt="Módulo 01: Figma do zero" loading="lazy" width="320" height="480"></figure>
+    <figure><img src="../assets/img/figpost/modulo-2.webp" alt="Módulo 02: Ferramentas avançadas" loading="lazy" width="320" height="480"></figure>
+    <figure><img src="../assets/img/figpost/modulo-3.webp" alt="Módulo 03: Fundamentos do design" loading="lazy" width="320" height="480"></figure>
+    <figure><img src="../assets/img/figpost/modulo-4.webp" alt="Módulo 04: Passo a passo do carrossel" loading="lazy" width="320" height="480"></figure>
+    <figure><img src="../assets/img/figpost/modulo-5.webp" alt="Módulo 05: Na prática" loading="lazy" width="320" height="480"></figure>
+    <figure><img src="../assets/img/figpost/modulo-6.webp" alt="Módulo 06: Seu estúdio de design" loading="lazy" width="320" height="480"></figure>
+    <figure><img src="../assets/img/figpost/modulo-7.webp" alt="Módulo 07: Aulas bônus" loading="lazy" width="320" height="480"></figure>
+    <figure><img src="../assets/img/figpost/modulo-8.webp" alt="Módulo 08: Atualizações do Figma" loading="lazy" width="320" height="480"></figure>
   </div></div>
   <div class="wrap">
 
@@ -295,15 +319,15 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
     <div class="head rv" style="margin:90px auto 40px">
       <span class="eyebrow">Hall criativo</span>
       <h2>Projetos criados <span class="grad">pelos alunos.</span></h2>
-      <p>Carrosséis completos feitos no Figma por quem fez o FigPost. Arraste para ver cada slide.</p>
+      <p>Carrosséis completos feitos no Figma por alunos do FigPost. Arraste para ver cada slide, ou toque no nome para ver o portfólio.</p>
     </div>
   </div>
   <div class="wrap">
     <div class="igrid">
-      <article class="ig rv"><div class="top"><i></i><b>Aluno FigPost</b><span>1/5</span></div><div class="sl" aria-label="Carrossel de aluna · saúde e beleza"><img src="../assets/img/figpost/aluno-01.webp" alt="Slide 1 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-02.webp" alt="Slide 2 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-03.webp" alt="Slide 3 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-04.webp" alt="Slide 4 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-05.webp" alt="Slide 5 de 5" loading="lazy" width="560" height="702"></div><div class="dots"><i></i><i></i><i></i><i></i><i></i></div></article>
-      <article class="ig rv"><div class="top"><i></i><b>Aluno FigPost</b><span>1/6</span></div><div class="sl" aria-label="Carrossel de aluno · banco digital"><img src="../assets/img/figpost/aluno-06.webp" alt="Slide 1 de 6" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-07.webp" alt="Slide 2 de 6" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-08.webp" alt="Slide 3 de 6" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-09.webp" alt="Slide 4 de 6" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-10.webp" alt="Slide 5 de 6" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-11.webp" alt="Slide 6 de 6" loading="lazy" width="560" height="702"></div><div class="dots"><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
-      <article class="ig rv"><div class="top"><i></i><b>Aluno FigPost</b><span>1/5</span></div><div class="sl" aria-label="Carrossel de aluna · identidade visual"><img src="../assets/img/figpost/aluno-12.webp" alt="Slide 1 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-13.webp" alt="Slide 2 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-14.webp" alt="Slide 3 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-15.webp" alt="Slide 4 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-16.webp" alt="Slide 5 de 5" loading="lazy" width="560" height="702"></div><div class="dots"><i></i><i></i><i></i><i></i><i></i></div></article>
-      <article class="ig rv"><div class="top"><i></i><b>Aluno FigPost</b><span>1/5</span></div><div class="sl" aria-label="Carrossel de aluno · tecnologia e IA"><img src="../assets/img/figpost/aluno-17.webp" alt="Slide 1 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-18.webp" alt="Slide 2 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-19.webp" alt="Slide 3 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-20.webp" alt="Slide 4 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-21.webp" alt="Slide 5 de 5" loading="lazy" width="560" height="702"></div><div class="dots"><i></i><i></i><i></i><i></i><i></i></div></article>
+      <article class="ig rv"><a class="top" href="https://www.behance.net/marianesantana9" target="_blank" rel="noopener"><img src="../assets/img/figpost/av-mariane.webp" alt=""><b>Mariane Soares</b><span>1/5</span></a><div class="sl" aria-label="Carrossel de saúde e estética"><img src="../assets/img/figpost/mariane-01.webp" alt="Carrossel de saúde e estética, slide 1 de 5, por Mariane Soares" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/mariane-02.webp" alt="Carrossel de saúde e estética, slide 2 de 5, por Mariane Soares" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/mariane-03.webp" alt="Carrossel de saúde e estética, slide 3 de 5, por Mariane Soares" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/mariane-04.webp" alt="Carrossel de saúde e estética, slide 4 de 5, por Mariane Soares" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/mariane-05.webp" alt="Carrossel de saúde e estética, slide 5 de 5, por Mariane Soares" loading="lazy" width="600" height="750"></div><div class="dots"><i></i><i></i><i></i><i></i><i></i></div></article>
+      <article class="ig rv"><a class="top" href="https://www.behance.net/idrodrigomelo" target="_blank" rel="noopener"><img src="../assets/img/figpost/av-rodrigo.webp" alt=""><b>Rodrigo Melo</b><span>1/6</span></a><div class="sl" aria-label="Carrossel para banco digital"><img src="../assets/img/figpost/rodrigo-a06.webp" alt="Carrossel para banco digital, slide 1 de 6, por Rodrigo Melo" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/rodrigo-a07.webp" alt="Carrossel para banco digital, slide 2 de 6, por Rodrigo Melo" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/rodrigo-a08.webp" alt="Carrossel para banco digital, slide 3 de 6, por Rodrigo Melo" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/rodrigo-a09.webp" alt="Carrossel para banco digital, slide 4 de 6, por Rodrigo Melo" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/rodrigo-a10.webp" alt="Carrossel para banco digital, slide 5 de 6, por Rodrigo Melo" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/rodrigo-a11.webp" alt="Carrossel para banco digital, slide 6 de 6, por Rodrigo Melo" loading="lazy" width="600" height="750"></div><div class="dots"><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+      <article class="ig rv"><a class="top" href="https://www.behance.net/vitriarodrigu8" target="_blank" rel="noopener"><img src="../assets/img/figpost/av-vitoria.webp" alt=""><b>Vitoria Paz</b><span>1/5</span></a><div class="sl" aria-label="Carrossel para clínica de estética"><img src="../assets/img/figpost/vitoria-1.webp" alt="Carrossel para clínica de estética, slide 1 de 5, por Vitoria Paz" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/vitoria-2.webp" alt="Carrossel para clínica de estética, slide 2 de 5, por Vitoria Paz" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/vitoria-3.webp" alt="Carrossel para clínica de estética, slide 3 de 5, por Vitoria Paz" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/vitoria-4.webp" alt="Carrossel para clínica de estética, slide 4 de 5, por Vitoria Paz" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/vitoria-5.webp" alt="Carrossel para clínica de estética, slide 5 de 5, por Vitoria Paz" loading="lazy" width="600" height="750"></div><div class="dots"><i></i><i></i><i></i><i></i><i></i></div></article>
+      <article class="ig rv"><a class="top" href="https://www.behance.net/idrodrigomelo" target="_blank" rel="noopener"><img src="../assets/img/figpost/av-rodrigo.webp" alt=""><b>Rodrigo Melo</b><span>1/5</span></a><div class="sl" aria-label="Carrossel de tecnologia e IA"><img src="../assets/img/figpost/rodrigo-b17.webp" alt="Carrossel de tecnologia e IA, slide 1 de 5, por Rodrigo Melo" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/rodrigo-b18.webp" alt="Carrossel de tecnologia e IA, slide 2 de 5, por Rodrigo Melo" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/rodrigo-b19.webp" alt="Carrossel de tecnologia e IA, slide 3 de 5, por Rodrigo Melo" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/rodrigo-b20.webp" alt="Carrossel de tecnologia e IA, slide 4 de 5, por Rodrigo Melo" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/rodrigo-b21.webp" alt="Carrossel de tecnologia e IA, slide 5 de 5, por Rodrigo Melo" loading="lazy" width="600" height="750"></div><div class="dots"><i></i><i></i><i></i><i></i><i></i></div></article>
     </div>
   </div>
 </section>
