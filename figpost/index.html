@@ -25,30 +25,56 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 <style>
 /* Cores do FigPost: roxo #6032FD com gradiente para o rosa #FA02FF */
 :root{--accent:#6032FD; --accent-2:#B01CFF; --accent-3:#1E0B5C; --accent-lt:#9C7BFF}
-.grad{background:linear-gradient(95deg,#6032FD 0%,#9C2BFF 55%,#FA02FF 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.grad{background:linear-gradient(95deg,#6032FD 0%,#7A3BFF 55%,#9B4DFF 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .nav .logo{height:28px;width:auto}
 
-/* abertura: a Lari no centro e dois carrosséis de alunos ao lado */
-.fan{position:relative;z-index:2;display:flex;justify-content:center;align-items:flex-end;height:470px}
-.fan img{position:absolute;height:auto;bottom:0;border-radius:22px;box-shadow:0 30px 60px -24px rgba(30,11,92,.45);background:#fff}
-.fan .lari{position:relative;width:360px;border-radius:28px;z-index:3}
-.fan .p1{width:250px;left:50%;margin-left:-420px;bottom:30px;transform:rotate(-8deg);z-index:2;animation:boia 7s ease-in-out infinite}
-.fan .p2{width:250px;left:50%;margin-left:170px;bottom:40px;transform:rotate(7deg);z-index:2;animation:boia 7s ease-in-out -3.5s infinite}
+/* abertura: Lari recortada com ícones do Figma flutuando */
+.hero-lari{position:relative;z-index:2;width:min(520px,92%);margin:0 auto}
+.hero-lari .bloco{position:absolute;left:12%;right:12%;bottom:0;top:22%;border-radius:40px 40px 0 0;background:linear-gradient(160deg,#7A4BFF,#6032FD 55%,#4A1FE0);opacity:.95;mask-image:linear-gradient(180deg,#000 60%,transparent);-webkit-mask-image:linear-gradient(180deg,#000 60%,transparent)}
+.hero-lari img{position:relative;display:block;width:100%;height:auto}
+.hero-lari .fi{position:absolute;z-index:3;width:58px;height:58px;border-radius:17px;display:grid;place-items:center;box-shadow:0 18px 36px -14px rgba(48,20,160,.55);animation:boia 6s ease-in-out infinite}
+.hero-lari .fi svg{width:27px;height:27px}
+.hero-lari .fi.roxo{background:#6032FD}.hero-lari .fi.rosa{background:#FF70FE}.hero-lari .fi.verde{background:#B7F36B}.hero-lari .fi.branco{background:#fff;border:1px solid var(--line)}
+.hero-lari .tagl{position:absolute;z-index:3;left:4%;top:54%;display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px 14px 8px 8px;box-shadow:0 18px 36px -16px rgba(48,20,160,.4);text-align:left;animation:boia 7s ease-in-out -2s infinite}
+.hero-lari .tagl img{width:34px;height:34px;border-radius:50%;object-fit:cover}
+.hero-lari .tagl span{font-size:11.5px;color:var(--dim);line-height:1.25}
+.hero-lari .tagl b{display:block;font-size:13.5px;color:var(--txt);letter-spacing:-.02em}
+.hero-lari .tbar{position:absolute;z-index:3;left:80%;top:55%;width:20%;max-width:96px;display:flex;flex-direction:column;align-items:center;gap:16px;padding:16px 0;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 36px -16px rgba(48,20,160,.4);animation:boia 7s ease-in-out -4s infinite}
+.hero-lari .tbar svg{width:24px;height:24px}
+.hero-lari .tbar svg:first-child{background:color-mix(in srgb,#6032FD 14%,#fff);border-radius:8px;padding:6px;width:36px;height:36px}
+.hero-lari .i1{left:-2%;top:16%;rotate:-8deg}
+.hero-lari .i2{right:2%;top:14%;rotate:9deg;animation-delay:-1.2s}
+.hero-lari .i3{left:2%;top:58%;rotate:6deg;animation-delay:-2.4s}
+.hero-lari .i4{right:-6%;top:52%;rotate:-6deg;animation-delay:-3.6s}
+.hero-lari .i5{left:20%;top:2%;width:46px;height:46px;border-radius:14px;rotate:-12deg;animation-delay:-4.8s}
+.hero-lari .i5 svg{width:22px;height:22px}
 @keyframes boia{0%,100%{translate:0 0}50%{translate:0 -12px}}
-.fan .chipf{position:absolute;z-index:4;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 14px;font-size:13.5px;font-weight:600;box-shadow:var(--card-shadow);white-space:nowrap}
-.fan .chipf b{color:var(--accent)}
-.fan .cf1{left:50%;margin-left:-300px;top:30px}
-.fan .cf2{left:50%;margin-left:120px;top:4px}
-.stage-hero .tool.t1{left:4%;top:6%}.stage-hero .tool.t3{right:4%;top:2%}
+.stage-hero .halo{top:60%}
 
-/* módulos: capas verticais da área de membros */
-.modgrid.vert{grid-template-columns:repeat(5,1fr);gap:14px}
-.modgrid.vert .modcard img{aspect-ratio:2/3;height:auto}
-.modgrid.vert .modcard .cap{padding:12px 14px 14px;gap:10px}
-.modgrid.vert .modcard .ttl{font-size:15px}
+/* caminho do curso: ícone no lugar da letra */
+.step .ico{width:60px;height:60px;border-radius:18px;display:grid;place-items:center;margin-bottom:22px;background:color-mix(in srgb,var(--accent) 12%,#fff);border:1px solid color-mix(in srgb,var(--accent) 22%,transparent)}
+.step .ico svg{width:28px;height:28px;stroke:var(--accent)}
 
-/* projetos dos alunos: posts em 4:5 */
-#alunos .track img{width:300px;height:auto;aspect-ratio:4/5;border-radius:18px}
+/* módulos em carrossel automático */
+.car.modcar figure{width:220px;padding:0;border:0;background:none}
+.car.modcar img{aspect-ratio:2/3;height:auto;border-radius:16px;box-shadow:var(--card-shadow)}
+.car.modcar figcaption{font-size:14px;color:var(--txt);font-weight:600;padding:12px 4px 0;letter-spacing:-.02em}
+.car.modcar figcaption b{color:var(--accent);font-size:12px;margin-right:6px}
+
+/* projetos dos alunos: um carrossel por aluno, como no Instagram */
+.igrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.ig{border-radius:20px;background:var(--card);border:1px solid var(--line);box-shadow:var(--card-shadow);overflow:hidden}
+.ig .top{display:flex;align-items:center;gap:10px;padding:12px 14px}
+.ig .top i{width:30px;height:30px;border-radius:50%;background:conic-gradient(from 200deg,#6032FD,#FF70FE,#B7F36B,#6032FD);padding:2px;flex:none}
+.ig .top i::after{content:"";display:block;width:100%;height:100%;border-radius:50%;background:var(--card);border:2px solid var(--card);box-sizing:border-box;background:color-mix(in srgb,var(--accent) 18%,#fff)}
+.ig .top b{font-size:13.5px;font-weight:600;letter-spacing:-.02em}
+.ig .top span{margin-left:auto;font-size:12px;color:var(--dim);font-variant-numeric:tabular-nums}
+.ig .sl{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+.ig .sl::-webkit-scrollbar{display:none}
+.ig .sl img{flex:0 0 100%;width:100%;aspect-ratio:4/5;height:auto;object-fit:cover;scroll-snap-align:center}
+.ig .dots{display:flex;justify-content:center;gap:5px;padding:12px 0 14px}
+.ig .dots i{width:6px;height:6px;border-radius:50%;background:var(--line-2);transition:background .3s,transform .3s}
+.ig .dots i.on{background:var(--accent);transform:scale(1.2)}
 
 /* depoimentos em texto, com foto */
 .depo .txt{display:flex;flex-direction:column;gap:12px}
@@ -71,16 +97,13 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 
 .about .photo img{border-radius:28px;height:auto}
 
-@media (max-width:960px){.modgrid.vert{grid-template-columns:repeat(3,1fr)}.bgrid{grid-template-columns:1fr}.aulas{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:960px){.igrid{grid-template-columns:1fr 1fr}.bgrid{grid-template-columns:1fr}.aulas{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){
-  .fan{height:330px}
-  .fan .lari{width:220px}
-  .fan .p1,.fan .p2{width:130px}
-  .fan .p1{margin-left:-172px;bottom:24px}.fan .p2{margin-left:42px;bottom:30px}
-  .fan .cf1{margin-left:-110px;top:-14px;font-size:12.5px}.fan .cf2{display:none}
-  .stage-hero .tool{display:none}
-  .modgrid.vert{grid-template-columns:repeat(2,1fr)}
-  #alunos .track img{width:calc(100vw - 80px);height:auto}
+  .hero-lari .fi{width:46px;height:46px;border-radius:14px}.hero-lari .fi svg{width:22px;height:22px}
+  .hero-lari .i5{width:38px;height:38px}
+  .hero-lari .i1{left:0}.hero-lari .i2{right:2%}.hero-lari .tagl{left:0;padding:6px 10px 6px 6px}.hero-lari .tagl img{width:26px;height:26px}.hero-lari .tagl b{font-size:12px}.hero-lari .tagl span{font-size:10px}.hero-lari .tbar{gap:10px;padding:10px 0;border-radius:14px}.hero-lari .tbar svg{width:18px;height:18px}.hero-lari .tbar svg:first-child{width:28px;height:28px;padding:5px}
+  .car.modcar figure{width:170px}
+  .igrid{grid-template-columns:1fr;gap:22px}
 }
 </style>
 </head>
@@ -121,14 +144,19 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 
     <div class="stage-hero">
       <div class="halo"></div>
-      <div class="tool t1 hot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-      <div class="tool t3 hot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
-      <div class="fan">
-        <img class="p1" src="../assets/img/figpost/aluno-09.webp" alt="Carrossel criado por aluno do FigPost" width="560" height="702">
-        <img class="lari" src="../assets/img/figpost/hero-lari.webp" alt="Lari Tedeschi com um tablet, criando no Figma" width="900" height="1029">
-        <img class="p2" src="../assets/img/figpost/aluno-12.webp" alt="Post criado por aluno do FigPost" width="560" height="702">
-        <span class="chipf cf1">✦ <b>Carrossel</b> pronto no Figma</span>
-        <span class="chipf cf2">De R$35 para <b>R$90</b> por carrossel</span>
+      <div class="hero-lari">
+        <div class="bloco"></div>
+        <img src="../assets/img/figpost/hero-lari-recorte.webp" alt="Lari Tedeschi com um tablet, criando no Figma" width="744" height="833">
+        <div class="tagl"><img src="../assets/img/comum/lari-avatar.webp" alt=""><span><b>Lari Tedeschi</b>@laritedeschi</span></div>
+        <div class="tbar" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#6032FD"><path d="M4 3l7 18 2.6-7.4L21 11z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1E0B5C" stroke-width="2" stroke-linecap="round"><path d="M8 3v18M16 3v18M3 8h18M3 16h18"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1E0B5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7V5h14v2M9 19h6M12 5v14"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1E0B5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>
+        </div>
+        <div class="fi i1 roxo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></div>
+        <div class="fi i2 verde" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#1E0B5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="4" width="10" height="16" rx="2"/><path d="M4 7v10M20 7v10"/></svg></div>
+        <div class="fi i5 rosa" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg></div>
       </div>
     </div>
   </div>
@@ -161,10 +189,10 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
       <p>O curso segue a ordem em que você precisa aprender: primeiro a ferramenta, depois o design, depois o carrossel e, por fim, como transformar isso em trabalho.</p>
     </div>
     <div class="steps4">
-      <div class="step rv"><span class="n">01</span><div class="big">F</div><h3>Figma do zero</h3><p>Da instalação às ferramentas avançadas, para criar mais rápido e com mais controle.</p></div>
-      <div class="step rv"><span class="n">02</span><div class="big">D</div><h3>Fundamentos do design</h3><p>A base que deixa um post com cara de profissional, e não de modelo pronto.</p></div>
-      <div class="step rv"><span class="n">03</span><div class="big">C</div><h3>Carrossel passo a passo</h3><p>A estrutura de um carrossel que prende a atenção, criado na prática com você.</p></div>
-      <div class="step rv"><span class="n">04</span><div class="big">E</div><h3>Seu estúdio</h3><p>Precificação, posicionamento e processos para conquistar e atender clientes.</p></div>
+      <div class="step rv"><span class="n">01</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h4v6.5H8a3.25 3.25 0 0 1 0-6.5z"/><path d="M12 2h4a3.25 3.25 0 0 1 0 6.5h-4z"/><path d="M12 8.5h4a3.25 3.25 0 1 1 0 6.5 3.25 3.25 0 0 1 0-6.5z"/><path d="M8 8.5h4V15H8a3.25 3.25 0 0 1 0-6.5z"/><path d="M8 15h4v3.25A3.25 3.25 0 1 1 8 15z"/></svg></div><h3>Figma do zero</h3><p>Da instalação às ferramentas avançadas, para criar mais rápido e com mais controle.</p></div>
+      <div class="step rv"><span class="n">02</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="12.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="13.5" r="2.5"/><path d="M12 22a10 10 0 1 1 10-10c0 2.5-2 3-3.5 3H16a2 2 0 0 0-1.5 3.3A2 2 0 0 1 12 22z"/></svg></div><h3>Fundamentos do design</h3><p>A base que deixa um post com cara de profissional, e não de modelo pronto.</p></div>
+      <div class="step rv"><span class="n">03</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="4" width="10" height="16" rx="2"/><path d="M4 7v10M20 7v10"/></svg></div><h3>Carrossel passo a passo</h3><p>A estrutura de um carrossel que prende a atenção, criado na prática com você.</p></div>
+      <div class="step rv"><span class="n">04</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6M9 10h.01M15 10h.01"/></svg></div><h3>Seu estúdio</h3><p>Precificação, posicionamento e processos para conquistar e atender clientes.</p></div>
     </div>
   </div>
 </section>
@@ -177,17 +205,19 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
       <h2>Os módulos do curso, <span class="grad">um por um.</span></h2>
       <p>É assim que o FigPost aparece na área de membros.</p>
     </div>
-    <div class="modgrid vert">
-      <article class="modcard rv"><img src="../assets/img/figpost/modulo-0.webp" alt="" loading="lazy" width="320" height="480"><div class="cap"><span class="num">00</span><span class="ttl">Onboarding</span></div></article>
-      <article class="modcard rv"><img src="../assets/img/figpost/modulo-1.webp" alt="" loading="lazy" width="320" height="480"><div class="cap"><span class="num">01</span><span class="ttl">Figma do zero</span></div></article>
-      <article class="modcard rv"><img src="../assets/img/figpost/modulo-2.webp" alt="" loading="lazy" width="320" height="480"><div class="cap"><span class="num">02</span><span class="ttl">Ferramentas avançadas</span></div></article>
-      <article class="modcard rv"><img src="../assets/img/figpost/modulo-3.webp" alt="" loading="lazy" width="320" height="480"><div class="cap"><span class="num">03</span><span class="ttl">Fundamentos do design</span></div></article>
-      <article class="modcard rv"><img src="../assets/img/figpost/modulo-4.webp" alt="" loading="lazy" width="320" height="480"><div class="cap"><span class="num">04</span><span class="ttl">Passo a passo do carrossel</span></div></article>
-      <article class="modcard rv"><img src="../assets/img/figpost/modulo-5.webp" alt="" loading="lazy" width="320" height="480"><div class="cap"><span class="num">05</span><span class="ttl">Na prática</span></div></article>
-      <article class="modcard rv"><img src="../assets/img/figpost/modulo-6.webp" alt="" loading="lazy" width="320" height="480"><div class="cap"><span class="num">06</span><span class="ttl">Seu estúdio de design</span></div></article>
-      <article class="modcard rv"><img src="../assets/img/figpost/modulo-7.webp" alt="" loading="lazy" width="320" height="480"><div class="cap"><span class="num">07</span><span class="ttl">Aulas bônus</span></div></article>
-      <article class="modcard rv"><img src="../assets/img/figpost/modulo-8.webp" alt="" loading="lazy" width="320" height="480"><div class="cap"><span class="num">08</span><span class="ttl">Atualizações do Figma</span></div></article>
-    </div>
+  </div>
+  <div class="car modcar rv"><div class="ct">
+    <figure><img src="../assets/img/figpost/modulo-0.webp" alt="Módulo 00: Onboarding" loading="lazy" width="320" height="480"><figcaption><b>00</b>Onboarding</figcaption></figure>
+    <figure><img src="../assets/img/figpost/modulo-1.webp" alt="Módulo 01: Figma do zero" loading="lazy" width="320" height="480"><figcaption><b>01</b>Figma do zero</figcaption></figure>
+    <figure><img src="../assets/img/figpost/modulo-2.webp" alt="Módulo 02: Ferramentas avançadas" loading="lazy" width="320" height="480"><figcaption><b>02</b>Ferramentas avançadas</figcaption></figure>
+    <figure><img src="../assets/img/figpost/modulo-3.webp" alt="Módulo 03: Fundamentos do design" loading="lazy" width="320" height="480"><figcaption><b>03</b>Fundamentos do design</figcaption></figure>
+    <figure><img src="../assets/img/figpost/modulo-4.webp" alt="Módulo 04: Passo a passo do carrossel" loading="lazy" width="320" height="480"><figcaption><b>04</b>Passo a passo do carrossel</figcaption></figure>
+    <figure><img src="../assets/img/figpost/modulo-5.webp" alt="Módulo 05: Na prática" loading="lazy" width="320" height="480"><figcaption><b>05</b>Na prática</figcaption></figure>
+    <figure><img src="../assets/img/figpost/modulo-6.webp" alt="Módulo 06: Seu estúdio de design" loading="lazy" width="320" height="480"><figcaption><b>06</b>Seu estúdio de design</figcaption></figure>
+    <figure><img src="../assets/img/figpost/modulo-7.webp" alt="Módulo 07: Aulas bônus" loading="lazy" width="320" height="480"><figcaption><b>07</b>Aulas bônus</figcaption></figure>
+    <figure><img src="../assets/img/figpost/modulo-8.webp" alt="Módulo 08: Atualizações do Figma" loading="lazy" width="320" height="480"><figcaption><b>08</b>Atualizações do Figma</figcaption></figure>
+  </div></div>
+  <div class="wrap">
 
     <div class="head rv" style="margin-top:100px">
       <span class="eyebrow">O que você aprende</span>
@@ -265,32 +295,15 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
     <div class="head rv" style="margin:90px auto 40px">
       <span class="eyebrow">Hall criativo</span>
       <h2>Projetos criados <span class="grad">pelos alunos.</span></h2>
-      <p>Posts e carrosséis feitos no Figma por quem fez o FigPost.</p>
+      <p>Carrosséis completos feitos no Figma por quem fez o FigPost. Arraste para ver cada slide.</p>
     </div>
   </div>
-  <div class="marquee">
-    <div class="track" id="gallery">
-      <img src="../assets/img/figpost/aluno-01.webp" alt="Post criado por aluno do FigPost" loading="lazy">
-      <img src="../assets/img/figpost/aluno-12.webp" alt="Post criado por aluno do FigPost" loading="lazy">
-      <img src="../assets/img/figpost/aluno-02.webp" alt="Post criado por aluno do FigPost" loading="lazy">
-      <img src="../assets/img/figpost/aluno-06.webp" alt="Post criado por aluno do FigPost" loading="lazy">
-      <img src="../assets/img/figpost/aluno-13.webp" alt="Post criado por aluno do FigPost" loading="lazy">
-      <img src="../assets/img/figpost/aluno-03.webp" alt="Post criado por aluno do FigPost" loading="lazy">
-      <img src="../assets/img/figpost/aluno-17.webp" alt="Post criado por aluno do FigPost" loading="lazy">
-      <img src="../assets/img/figpost/aluno-09.webp" alt="Post criado por aluno do FigPost" loading="lazy">
-      <img src="../assets/img/figpost/aluno-04.webp" alt="Post criado por aluno do FigPost" loading="lazy">
-      <img src="../assets/img/figpost/aluno-14.webp" alt="Post criado por aluno do FigPost" loading="lazy">
-      <img src="../assets/img/figpost/aluno-07.webp" alt="Post criado por aluno do FigPost" loading="lazy">
-      <img src="../assets/img/figpost/aluno-18.webp" alt="Post criado por aluno do FigPost" loading="lazy">
-      <img src="../assets/img/figpost/aluno-05.webp" alt="Post criado por aluno do FigPost" loading="lazy">
-      <img src="../assets/img/figpost/aluno-15.webp" alt="Post criado por aluno do FigPost" loading="lazy">
-      <img src="../assets/img/figpost/aluno-11.webp" alt="Post criado por aluno do FigPost" loading="lazy">
-      <img src="../assets/img/figpost/aluno-19.webp" alt="Post criado por aluno do FigPost" loading="lazy">
-      <img src="../assets/img/figpost/aluno-08.webp" alt="Post criado por aluno do FigPost" loading="lazy">
-      <img src="../assets/img/figpost/aluno-16.webp" alt="Post criado por aluno do FigPost" loading="lazy">
-      <img src="../assets/img/figpost/aluno-20.webp" alt="Post criado por aluno do FigPost" loading="lazy">
-      <img src="../assets/img/figpost/aluno-10.webp" alt="Post criado por aluno do FigPost" loading="lazy">
-      <img src="../assets/img/figpost/aluno-21.webp" alt="Post criado por aluno do FigPost" loading="lazy">
+  <div class="wrap">
+    <div class="igrid">
+      <article class="ig rv"><div class="top"><i></i><b>Aluno FigPost</b><span>1/5</span></div><div class="sl" aria-label="Carrossel de aluna · saúde e beleza"><img src="../assets/img/figpost/aluno-01.webp" alt="Slide 1 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-02.webp" alt="Slide 2 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-03.webp" alt="Slide 3 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-04.webp" alt="Slide 4 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-05.webp" alt="Slide 5 de 5" loading="lazy" width="560" height="702"></div><div class="dots"><i></i><i></i><i></i><i></i><i></i></div></article>
+      <article class="ig rv"><div class="top"><i></i><b>Aluno FigPost</b><span>1/6</span></div><div class="sl" aria-label="Carrossel de aluno · banco digital"><img src="../assets/img/figpost/aluno-06.webp" alt="Slide 1 de 6" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-07.webp" alt="Slide 2 de 6" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-08.webp" alt="Slide 3 de 6" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-09.webp" alt="Slide 4 de 6" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-10.webp" alt="Slide 5 de 6" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-11.webp" alt="Slide 6 de 6" loading="lazy" width="560" height="702"></div><div class="dots"><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+      <article class="ig rv"><div class="top"><i></i><b>Aluno FigPost</b><span>1/5</span></div><div class="sl" aria-label="Carrossel de aluna · identidade visual"><img src="../assets/img/figpost/aluno-12.webp" alt="Slide 1 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-13.webp" alt="Slide 2 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-14.webp" alt="Slide 3 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-15.webp" alt="Slide 4 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-16.webp" alt="Slide 5 de 5" loading="lazy" width="560" height="702"></div><div class="dots"><i></i><i></i><i></i><i></i><i></i></div></article>
+      <article class="ig rv"><div class="top"><i></i><b>Aluno FigPost</b><span>1/5</span></div><div class="sl" aria-label="Carrossel de aluno · tecnologia e IA"><img src="../assets/img/figpost/aluno-17.webp" alt="Slide 1 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-18.webp" alt="Slide 2 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-19.webp" alt="Slide 3 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-20.webp" alt="Slide 4 de 5" loading="lazy" width="560" height="702"><img src="../assets/img/figpost/aluno-21.webp" alt="Slide 5 de 5" loading="lazy" width="560" height="702"></div><div class="dots"><i></i><i></i><i></i><i></i><i></i></div></article>
     </div>
   </div>
 </section>
@@ -361,27 +374,27 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
     <div class="head rv">
       <span class="eyebrow">A trilha da escola</span>
       <h2>Onde o FigPost entra <span class="grad">na sua formação.</span></h2>
-      <p>Os cursos da Lari se complementam. O FigPost pode ser feito em paralelo à trilha de marcas.</p>
+      <p>O FigPost não depende dos outros cursos: dá para fazer antes, depois ou junto. Se quiser ir além dos posts, os cursos de marca complementam o seu aprendizado sobre identidade visual e permitem oferecer um serviço a mais aos seus clientes.</p>
     </div>
     <div class="path">
       <div class="course here rv">
         <span class="here-tag">Você está aqui</span>
         <span class="lvl">Em paralelo</span>
         <h3>FigPost</h3>
-        <p>Posts e carrosséis no Figma, com precificação e estrutura de estúdio.</p>
+        <p>Posts e carrosséis no Figma, com precificação e estrutura de estúdio. É o curso para quem quer trabalhar com redes sociais.</p>
       </div>
       <a class="course rv" href="../figlogo/" style="--c:#ff58fc">
         <span class="dot"></span>
-        <span class="lvl">Primeiro passo em marcas</span>
+        <span class="lvl">Para complementar · marcas</span>
         <h3>FigLogo</h3>
-        <p>Criação de logotipos no Figma, do briefing à entrega.</p>
+        <p>Aprenda a criar logotipos no Figma e passe a oferecer também a criação da marca, não só os posts.</p>
         <span class="go">Conhecer o FigLogo →</span>
       </a>
       <a class="course rv" href="../figbrand/" style="--c:#9131F6">
         <span class="dot"></span>
-        <span class="lvl">Curso avançado</span>
+        <span class="lvl">Para ir além · identidade visual</span>
         <h3>FigBrand</h3>
-        <p>Identidade visual completa e estratégica, com hotseat mensal ao vivo.</p>
+        <p>Identidade visual completa e estratégica, para entregar projetos de marca do briefing à entrega.</p>
         <span class="go">Conhecer o FigBrand →</span>
       </a>
     </div>
@@ -484,6 +497,21 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
   <svg width="28" height="28" viewBox="0 0 20 20" fill="#fff"><path d="M17.085 2.91A9.9 9.9 0 0 0 10.04 0C4.553 0 .08 4.45.08 9.91c0 1.75.463 3.45 1.327 4.95L0 20l5.276-1.38a9.97 9.97 0 0 0 4.764 1.21C15.528 19.83 20 15.38 20 9.92c0-2.65-1.035-5.14-2.915-7.01zM10.04 18.15a8.3 8.3 0 0 1-4.221-1.15l-.301-.18-3.136.82.834-3.04-.201-.31a8.2 8.2 0 0 1-1.266-4.38c0-4.54 3.718-8.24 8.281-8.24 2.211 0 4.292.86 5.849 2.42a8.15 8.15 0 0 1 2.423 5.83c.02 4.54-3.699 8.23-8.262 8.23zm4.543-6.16c-.251-.12-1.477-.72-1.699-.81-.231-.08-.392-.12-.562.12-.171.25-.644.81-.784.97-.141.17-.292.19-.543.06-.251-.12-1.055-.39-2-1.230-.744-.66-1.236-1.47-1.387-1.72-.141-.25-.02-.38.111-.51.11-.11.251-.29.371-.43.121-.14.171-.25.252-.41.08-.17.04-.31-.02-.43-.061-.12-.563-1.34-.764-1.840-.201-.48-.412-.42-.563-.43h-.482c-.171 0-.433.06-.664.31-.221.25-.864.85-.864 2.07s.894 2.4 1.015 2.56c.121.17 1.759 2.67 4.251 3.74.593.26 1.056.41 1.417.52.593.19 1.136.16 1.568.1.483-.07 1.478-.6 1.679-1.180.211-.58.211-1.070.14-1.180-.07-.11-.221-.16-.472-.28z"/></svg>
 </a>
 
+<script>
+/* carrosséis dos alunos: passam sozinhos e também dá para arrastar */
+document.querySelectorAll('.ig').forEach(function(ig,k){
+  var sl=ig.querySelector('.sl'),dots=[].slice.call(ig.querySelectorAll('.dots i')),cnt=ig.querySelector('.top span'),n=dots.length,i=0,mexeu=0;
+  var marca=function(){i=Math.round(sl.scrollLeft/sl.clientWidth);dots.forEach(function(d,j){d.classList.toggle('on',j===i)});cnt.textContent=(i+1)+'/'+n};
+  sl.addEventListener('scroll',function(){clearTimeout(sl._t);sl._t=setTimeout(marca,60)},{passive:true});
+  sl.addEventListener('pointerdown',function(){mexeu=Date.now()});sl.addEventListener('touchstart',function(){mexeu=Date.now()},{passive:true});
+  marca();
+  setTimeout(function(){setInterval(function(){
+    if(Date.now()-mexeu<6000)return;
+    var r=sl.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;
+    sl.scrollTo({left:((i+1)%n)*sl.clientWidth,behavior:'smooth'});
+  },2800)},k*700);
+});
+</script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="../assets/js/escola.js"></script>
 </body>
