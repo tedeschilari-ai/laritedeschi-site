@@ -48,9 +48,31 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 .ed .fr{position:relative;width:190px}
 .ed .fr small{position:absolute;top:-20px;left:0;font-size:11px;color:var(--dim)}
 .ed .fr img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:2px;box-shadow:0 10px 24px -14px rgba(26,11,26,.35)}
+/* slides do carrossel criado na abertura (feitos em HTML) */
+.ed .fr{container-type:inline-size}
+.ed .sd{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:2px;box-shadow:0 10px 24px -14px rgba(26,11,26,.35);display:flex;flex-direction:column;padding:11cqw 10cqw;text-align:left;letter-spacing:-.02em}
+.ed .sd .tt{font-weight:700;line-height:1.05;font-size:11.5cqw;letter-spacing:-.04em}
+.ed .sd .num{font-weight:700;font-size:20cqw;line-height:.9;letter-spacing:-.06em;margin-bottom:7cqw}
+.ed .sd .prog{position:absolute;left:10cqw;right:10cqw;bottom:8cqw;height:2.4cqw;border-radius:9px;background:rgba(30,11,92,.12)}
+.ed .sd .prog i{display:block;height:100%;border-radius:9px;background:currentColor}
+.ed .sd .l{display:block;height:3.4cqw;border-radius:9px;background:rgba(30,11,92,.14);margin-top:5cqw}
+.ed .sd .l.c,.ed .sd .card i.c,.ed .sd .hier .c{width:62%}
+.ed .s1{background:#6032FD;color:#fff;justify-content:space-between}
+.ed .s1 .pill{align-self:flex-start;font-size:5.6cqw;font-weight:700;text-transform:uppercase;letter-spacing:.06em;background:#B7F36B;color:#1E0B5C;border-radius:99px;padding:2.4cqw 5cqw}
+.ed .s1 .tt{font-size:13.5cqw}
+.ed .s1 .sq{width:46%}
+.ed .s1 .arr{display:flex;align-items:center;gap:2cqw;font-size:6cqw;font-weight:600;opacity:.85}.ed .s1 .arr svg{width:7cqw}
+.ed .s2{background:#fff;color:#6032FD}.ed .s2 .tt{color:#1E0B5C;margin-bottom:3cqw}
+.ed .s3{background:#B7F36B;color:#1E0B5C}.ed .s3 .tt{margin-bottom:6cqw}
+.ed .s3 .card{display:block;background:#fff;border-radius:4cqw;padding:5cqw;margin-bottom:12cqw}.ed .s3 .card i{display:block;height:3.4cqw;border-radius:9px;background:rgba(30,11,92,.16)}.ed .s3 .card i+i{margin-top:4cqw}.ed .s3 .card i:first-child{background:#6032FD;width:40%}
+.ed .s4{background:#EFE9FF;color:#6032FD}.ed .s4 .tt{color:#1E0B5C;margin-bottom:6cqw}
+.ed .s4 .hier i{display:block;border-radius:9px;background:#1E0B5C;margin-top:4cqw}.ed .s4 .hier .g{height:7cqw;width:85%}.ed .s4 .hier .m{height:4.6cqw;width:65%;background:#6032FD}.ed .s4 .hier .p{height:3cqw;background:rgba(30,11,92,.18)}
+.ed .s5{background:#1E0B5C;color:#fff;justify-content:center;gap:7cqw}
+.ed .s5 .bm{width:18cqw;height:18cqw}
+.ed .s5 .cta{align-self:flex-start;font-size:6cqw;font-weight:700;background:#FF70FE;color:#1E0B5C;border-radius:99px;padding:3cqw 6cqw}
 .ed .fr.sel::after{content:"";position:absolute;inset:-3px;border:2px solid #6032FD;border-radius:3px;pointer-events:none}
-.ed .fr.sel i{position:absolute;width:9px;height:9px;background:#fff;border:2px solid #6032FD;z-index:2}
-.ed .fr.sel i:nth-of-type(1){left:-7px;top:-7px}.ed .fr.sel i:nth-of-type(2){right:-7px;top:-7px}.ed .fr.sel i:nth-of-type(3){left:-7px;bottom:-7px}.ed .fr.sel i:nth-of-type(4){right:-7px;bottom:-7px}
+.ed .fr.sel>i{position:absolute;width:9px;height:9px;background:#fff;border:2px solid #6032FD;z-index:2}
+.ed .fr.sel>i:nth-of-type(1){left:-7px;top:-7px}.ed .fr.sel>i:nth-of-type(2){right:-7px;top:-7px}.ed .fr.sel>i:nth-of-type(3){left:-7px;bottom:-7px}.ed .fr.sel>i:nth-of-type(4){right:-7px;bottom:-7px}
 .ed .fr.sel em{position:absolute;left:50%;bottom:-30px;transform:translateX(-50%);font-style:normal;font-size:11px;font-weight:600;background:#6032FD;color:#fff;border-radius:6px;padding:3px 8px;white-space:nowrap}
 .ed .cur{position:absolute;z-index:3;display:flex;align-items:flex-start;gap:2px;pointer-events:none}
 .ed .cur svg{width:20px;height:20px}
@@ -69,7 +91,7 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 
 /* caminho do curso: ícone no lugar da letra */
 .step .ico{width:60px;height:60px;border-radius:18px;display:grid;place-items:center;margin-bottom:22px;background:color-mix(in srgb,var(--accent) 12%,#fff);border:1px solid color-mix(in srgb,var(--accent) 22%,transparent)}
-.step .ico svg{width:28px;height:28px;stroke:var(--accent)}
+.step .ico svg{width:30px;height:30px}
 
 /* módulos em carrossel automático */
 .car.modcar figure{width:220px;padding:0;border:0;background:none}
@@ -164,11 +186,11 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
       <div class="tool t1 hot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
       <div class="tool t3 hot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="4" width="10" height="16" rx="2"/><path d="M4 7v10M20 7v10"/></svg></div>
       <div class="ed" role="img" aria-label="Carrossel sendo criado no Figma">
-        <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="nome">carrossel-cliente.fig</span><span class="gente"><img src="../assets/img/comum/lari-avatar.webp" alt=""><b>V</b></span><span class="share">Share</span></div>
+        <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="nome">carrossel-que-vende.fig</span><span class="gente"><img src="../assets/img/comum/lari-avatar.webp" alt=""><b>V</b></span><span class="share">Share</span></div>
         <div class="corpo">
           <div class="camadas"><b>Camadas</b><span>Slide 1</span><span class="on">Slide 2</span><span>Slide 3</span><span>Slide 4</span><span>Slide 5</span></div>
           <div class="canvas">
-            <div class="tira"><div class="fr"><small>Slide 1</small><img src="../assets/img/figpost/vitoria-1.webp" alt="" width="560" height="700"></div><div class="fr sel"><small>Slide 2</small><img src="../assets/img/figpost/vitoria-2.webp" alt="" width="560" height="700"><i></i><i></i><i></i><i></i><em>1080 × 1350</em></div><div class="fr"><small>Slide 3</small><img src="../assets/img/figpost/vitoria-3.webp" alt="" width="560" height="700"></div><div class="fr"><small>Slide 4</small><img src="../assets/img/figpost/vitoria-4.webp" alt="" width="560" height="700"></div><div class="fr"><small>Slide 5</small><img src="../assets/img/figpost/vitoria-5.webp" alt="" width="560" height="700"></div></div>
+            <div class="tira"><div class="fr"><small>Slide 1</small><div class="sd s1"><span class="pill">Guia rápido</span><b class="tt">5 passos para um carrossel que vende</b><svg class="sq" viewBox="0 0 120 40" fill="none"><path d="M4 30C20 4 34 4 44 22s26 18 36-2 26-14 36 6" stroke="#B7F36B" stroke-width="8" stroke-linecap="round"/></svg><span class="arr">Arraste <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></div><div class="fr sel"><small>Slide 2</small><div class="sd s2"><span class="num">01</span><b class="tt">Comece pelo gancho</b><i class="l"></i><i class="l"></i><i class="l c"></i><span class="prog"><i style="width:20%"></i></span></div><i></i><i></i><i></i><i></i><em>1080 × 1350</em></div><div class="fr"><small>Slide 3</small><div class="sd s3"><span class="num">02</span><b class="tt">Uma ideia por slide</b><span class="card"><i></i><i></i><i class="c"></i></span><span class="prog"><i style="width:40%"></i></span></div></div><div class="fr"><small>Slide 4</small><div class="sd s4"><span class="num">03</span><b class="tt">Hierarquia clara</b><span class="hier"><i class="g"></i><i class="m"></i><i class="p"></i><i class="p c"></i></span><span class="prog"><i style="width:60%"></i></span></div></div><div class="fr"><small>Slide 5</small><div class="sd s5"><svg class="bm" viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z" fill="#FF70FE"/></svg><b class="tt">Salve para usar no próximo post</b><span class="cta">Seguir @laritedeschi</span></div></div></div>
             <div class="cur c1"><svg viewBox="0 0 24 24"><path d="M4 3l7 18 2.6-7.4L21 11z" fill="#6032FD" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg><span>Lari</span></div>
             <div class="cur c2"><svg viewBox="0 0 24 24"><path d="M4 3l7 18 2.6-7.4L21 11z" fill="#FF70FE" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg><span>você</span></div>
             <div class="ferr" aria-hidden="true">
@@ -213,10 +235,10 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
       <p>O curso segue a ordem em que você precisa aprender: primeiro a ferramenta, depois o design, depois o carrossel e, por fim, como transformar isso em trabalho.</p>
     </div>
     <div class="steps4">
-      <div class="step rv"><span class="n">01</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h4v6.5H8a3.25 3.25 0 0 1 0-6.5z"/><path d="M12 2h4a3.25 3.25 0 0 1 0 6.5h-4z"/><path d="M12 8.5h4a3.25 3.25 0 1 1 0 6.5 3.25 3.25 0 0 1 0-6.5z"/><path d="M8 8.5h4V15H8a3.25 3.25 0 0 1 0-6.5z"/><path d="M8 15h4v3.25A3.25 3.25 0 1 1 8 15z"/></svg></div><h3>Figma do zero</h3><p>Da instalação às ferramentas avançadas, para criar mais rápido e com mais controle.</p></div>
-      <div class="step rv"><span class="n">02</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="12.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="13.5" r="2.5"/><path d="M12 22a10 10 0 1 1 10-10c0 2.5-2 3-3.5 3H16a2 2 0 0 0-1.5 3.3A2 2 0 0 1 12 22z"/></svg></div><h3>Fundamentos do design</h3><p>A base que deixa um post com cara de profissional, e não de modelo pronto.</p></div>
-      <div class="step rv"><span class="n">03</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="4" width="10" height="16" rx="2"/><path d="M4 7v10M20 7v10"/></svg></div><h3>Carrossel passo a passo</h3><p>A estrutura de um carrossel que prende a atenção, criado na prática com você.</p></div>
-      <div class="step rv"><span class="n">04</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6M9 10h.01M15 10h.01"/></svg></div><h3>Seu estúdio</h3><p>Precificação, posicionamento e processos para conquistar e atender clientes.</p></div>
+      <div class="step rv"><span class="n">01</span><div class="ico"><svg viewBox="0 0 24 24" fill="var(--accent)"><path d="M8.5 2h3.5v7H8.5a3.5 3.5 0 0 1 0-7z"/><path d="M12 2h3.5a3.5 3.5 0 0 1 0 7H12z" opacity=".55"/><circle cx="15.5" cy="12.5" r="3.5" opacity=".55"/><path d="M8.5 9H12v7H8.5a3.5 3.5 0 0 1 0-7z" opacity=".8"/><path d="M8.5 16H12v3.5A3.5 3.5 0 1 1 8.5 16z" opacity=".4"/></svg></div><h3>Figma do zero</h3><p>Da instalação às ferramentas avançadas, para criar mais rápido e com mais controle.</p></div>
+      <div class="step rv"><span class="n">02</span><div class="ico"><svg viewBox="0 0 24 24" fill="var(--accent)"><rect x="3" y="3" width="8" height="8" rx="2"/><circle cx="17" cy="7" r="4" opacity=".55"/><path d="M7 13l4.5 8h-9z" opacity=".55"/><rect x="13" y="13" width="8" height="8" rx="4" opacity=".8"/></svg></div><h3>Fundamentos do design</h3><p>A base que deixa um post com cara de profissional, e não de modelo pronto.</p></div>
+      <div class="step rv"><span class="n">03</span><div class="ico"><svg viewBox="0 0 24 24" fill="var(--accent)"><rect x="2" y="6" width="4" height="12" rx="1.5" opacity=".4"/><rect x="18" y="6" width="4" height="12" rx="1.5" opacity=".4"/><rect x="7.5" y="3" width="9" height="18" rx="2.5"/></svg></div><h3>Carrossel passo a passo</h3><p>A estrutura de um carrossel que prende a atenção, criado na prática com você.</p></div>
+      <div class="step rv"><span class="n">04</span><div class="ico"><svg viewBox="0 0 24 24" fill="var(--accent)"><path d="M9 3h6a2 2 0 0 1 2 2v2h-2V5H9v2H7V5a2 2 0 0 1 2-2z" opacity=".55"/><rect x="2" y="7" width="20" height="14" rx="3"/><rect x="10" y="12" width="4" height="3" rx="1" fill="#fff"/></svg></div><h3>Seu estúdio</h3><p>Precificação, posicionamento e processos para conquistar e atender clientes.</p></div>
     </div>
   </div>
 </section>
