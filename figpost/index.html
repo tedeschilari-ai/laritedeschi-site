@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="pt-BR" class="tema-claro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FigPost · Curso de posts e carrosséis no Figma | Lari Tedeschi</title>
+<meta name="description" content="O curso da Lari Tedeschi para criar posts e carrosséis profissionais no Figma, começando do zero, e estruturar o seu estúdio com preço, posicionamento e processos.">
+<link rel="canonical" href="https://laritedeschi.com/figpost">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FigPost · Curso de posts e carrosséis no Figma">
+<meta property="og:description" content="Aprenda Figma do zero, crie carrosséis que vendem e estruture o seu estúdio de design.">
+<meta property="og:url" content="https://laritedeschi.com/figpost">
+<meta property="og:image" content="https://laritedeschi.com/assets/img/figpost/capa-figpost.webp">
+<meta name="theme-color" content="#f3f1f3">
+<!-- FigPost · página OFICIAL (institucional, link na bio). Upsell fica em /figpost/upsell -->
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',{content_name:'FigPost'});
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=874750447646279&ev=PageView&noscript=1" alt=""></noscript>
+
+<link rel="stylesheet" href="../assets/css/escola.css">
+<style>
+/* Cores do FigPost: roxo #6032FD com gradiente para o rosa #FA02FF */
+:root{--accent:#6032FD; --accent-2:#B01CFF; --accent-3:#1E0B5C; --accent-lt:#9C7BFF}
+.grad{background:linear-gradient(95deg,#6032FD 0%,#7A3BFF 55%,#9B4DFF 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav .logo{height:28px;width:auto}
+
+/* abertura: o Figma aberto com um carrossel sendo criado */
+.ed{position:relative;z-index:2;max-width:820px;margin:0 auto;border-radius:20px;background:#fff;border:1px solid var(--line);box-shadow:0 40px 80px -30px rgba(48,20,160,.35),0 2px 6px rgba(26,11,26,.05);overflow:hidden;text-align:left}
+.ed .bar{display:flex;align-items:center;gap:10px;padding:11px 14px;border-bottom:1px solid var(--line);font-size:12.5px;color:var(--dim)}
+.ed .bar .dots{display:flex;gap:6px}.ed .bar .dots i{width:10px;height:10px;border-radius:50%;background:#e6e0ea}
+.ed .bar .nome{margin-left:6px;color:var(--txt);font-weight:600}
+.ed .bar .gente{margin-left:auto;display:flex}.ed .bar .gente img,.ed .bar .gente b{width:24px;height:24px;border-radius:50%;border:2px solid #fff;margin-left:-6px;object-fit:cover}
+.ed .bar .gente b{display:grid;place-items:center;background:#B7F36B;color:#1E0B5C;font-size:11px}
+.ed .bar .share{background:#6032FD;color:#fff;font-weight:600;border-radius:8px;padding:6px 12px;margin-left:8px}
+.ed .corpo{display:grid;grid-template-columns:150px 1fr;min-height:0}
+.ed .camadas{border-right:1px solid var(--line);padding:14px 12px;font-size:12px;color:var(--muted)}
+.ed .camadas b{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+.ed .camadas span{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:7px}
+.ed .camadas span::before{content:"#";color:var(--dim);font-weight:600}
+.ed .camadas span.on{background:color-mix(in srgb,#6032FD 12%,#fff);color:#6032FD;font-weight:600}
+.ed .canvas{position:relative;background:#F4F2F7;padding:44px 28px 70px;overflow:hidden}
+.ed .tira{display:flex;gap:14px;width:max-content;animation:tira 18s ease-in-out infinite alternate}
+@keyframes tira{0%,12%{transform:translateX(0)}88%,100%{transform:translateX(calc(-1 * var(--desl,260px)))}}
+.ed .fr{position:relative;width:190px}
+.ed .fr small{position:absolute;top:-20px;left:0;font-size:11px;color:var(--dim)}
+.ed .fr img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:2px;box-shadow:0 10px 24px -14px rgba(26,11,26,.35)}
+/* slides do carrossel criado na abertura (feitos em HTML) */
+.ed .fr{container-type:inline-size}
+.ed .sd{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:2px;box-shadow:0 10px 24px -14px rgba(26,11,26,.35);display:flex;flex-direction:column;padding:11cqw 10cqw;text-align:left;letter-spacing:-.02em}
+.ed .sd .tt{font-weight:700;line-height:1.05;font-size:11.5cqw;letter-spacing:-.04em}
+.ed .sd .num{font-weight:700;font-size:20cqw;line-height:.9;letter-spacing:-.06em;margin-bottom:7cqw}
+.ed .sd .prog{position:absolute;left:10cqw;right:10cqw;bottom:8cqw;height:2.4cqw;border-radius:9px;background:rgba(30,11,92,.12)}
+.ed .sd .prog i{display:block;height:100%;border-radius:9px;background:currentColor}
+.ed .sd .l{display:block;height:3.4cqw;border-radius:9px;background:rgba(30,11,92,.14);margin-top:5cqw}
+.ed .sd .l.c,.ed .sd .card i.c,.ed .sd .hier .c{width:62%}
+.ed .s1{background:#6032FD;color:#fff;justify-content:space-between}
+.ed .s1 .pill{align-self:flex-start;font-size:5.6cqw;font-weight:700;text-transform:uppercase;letter-spacing:.06em;background:#B7F36B;color:#1E0B5C;border-radius:99px;padding:2.4cqw 5cqw}
+.ed .s1 .tt{font-size:13.5cqw}
+.ed .s1 .sq{width:46%}
+.ed .s1 .arr{display:flex;align-items:center;gap:2cqw;font-size:6cqw;font-weight:600;opacity:.85}.ed .s1 .arr svg{width:7cqw}
+.ed .s2{background:#fff;color:#6032FD}.ed .s2 .tt{color:#1E0B5C;margin-bottom:3cqw}
+.ed .s3{background:#B7F36B;color:#1E0B5C}.ed .s3 .tt{margin-bottom:6cqw}
+.ed .s3 .card{display:block;background:#fff;border-radius:4cqw;padding:5cqw;margin-bottom:12cqw}.ed .s3 .card i{display:block;height:3.4cqw;border-radius:9px;background:rgba(30,11,92,.16)}.ed .s3 .card i+i{margin-top:4cqw}.ed .s3 .card i:first-child{background:#6032FD;width:40%}
+.ed .s4{background:#EFE9FF;color:#6032FD}.ed .s4 .tt{color:#1E0B5C;margin-bottom:6cqw}
+.ed .s4 .hier i{display:block;border-radius:9px;background:#1E0B5C;margin-top:4cqw}.ed .s4 .hier .g{height:7cqw;width:85%}.ed .s4 .hier .m{height:4.6cqw;width:65%;background:#6032FD}.ed .s4 .hier .p{height:3cqw;background:rgba(30,11,92,.18)}
+.ed .s5{background:#1E0B5C;color:#fff;justify-content:center;gap:7cqw}
+.ed .s5 .bm{width:18cqw;height:18cqw}
+.ed .s5 .cta{align-self:flex-start;font-size:6cqw;font-weight:700;background:#FF70FE;color:#1E0B5C;border-radius:99px;padding:3cqw 6cqw}
+.ed .fr.sel::after{content:"";position:absolute;inset:-3px;border:2px solid #6032FD;border-radius:3px;pointer-events:none}
+.ed .fr.sel>i{position:absolute;width:9px;height:9px;background:#fff;border:2px solid #6032FD;z-index:2}
+.ed .fr.sel>i:nth-of-type(1){left:-7px;top:-7px}.ed .fr.sel>i:nth-of-type(2){right:-7px;top:-7px}.ed .fr.sel>i:nth-of-type(3){left:-7px;bottom:-7px}.ed .fr.sel>i:nth-of-type(4){right:-7px;bottom:-7px}
+.ed .fr.sel em{position:absolute;left:50%;bottom:-30px;transform:translateX(-50%);font-style:normal;font-size:11px;font-weight:600;background:#6032FD;color:#fff;border-radius:6px;padding:3px 8px;white-space:nowrap}
+.ed .cur{position:absolute;z-index:3;display:flex;align-items:flex-start;gap:2px;pointer-events:none}
+.ed .cur svg{width:20px;height:20px}
+.ed .cur span{margin-top:14px;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:999px 999px 999px 4px;color:#fff;background:#6032FD}
+.ed .cur.c1{left:34%;top:30%;animation:cur1 9s ease-in-out infinite}
+.ed .cur.c2{left:64%;top:58%;animation:cur2 11s ease-in-out infinite}
+.ed .cur.c2 span{background:#FF70FE}
+@keyframes cur1{0%,100%{translate:0 0}40%{translate:60px 40px}70%{translate:-30px 70px}}
+@keyframes cur2{0%,100%{translate:0 0}35%{translate:-70px -30px}65%{translate:40px -60px}}
+.ed .ferr{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:4px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:0 10px 24px -14px rgba(26,11,26,.3)}
+.ed .ferr b{width:32px;height:32px;border-radius:8px;display:grid;place-items:center}
+.ed .ferr b.on{background:#6032FD}
+.ed .ferr svg{width:18px;height:18px}
+.stage-hero .badge{z-index:4}
+.stage-hero .tool.t1{left:auto;right:1%;top:24%}.stage-hero .tool.t2{right:2%;top:8%}.stage-hero .tool.t3{right:auto;left:1%;bottom:12%;top:auto}
+
+/* caminho do curso: ícone no lugar da letra */
+.step .ico{width:60px;height:60px;border-radius:18px;display:grid;place-items:center;margin-bottom:22px;background:color-mix(in srgb,var(--accent) 12%,#fff);border:1px solid color-mix(in srgb,var(--accent) 22%,transparent)}
+.step .ico svg{width:30px;height:30px}
+
+/* módulos em carrossel automático */
+.car.modcar figure{width:220px;padding:0;border:0;background:none}
+.car.modcar img{aspect-ratio:2/3;height:auto;border-radius:16px;box-shadow:var(--card-shadow)}
+
+/* projetos dos alunos: um carrossel por aluno, como no Instagram */
+.igrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.ig{border-radius:20px;background:var(--card);border:1px solid var(--line);box-shadow:var(--card-shadow);overflow:hidden}
+.ig .top{display:flex;align-items:center;gap:10px;padding:12px 14px}
+.ig .top img{width:34px;height:34px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 0 0 2px #fff,0 0 0 3.5px #6032FD}
+.ig .top div{line-height:1.2;min-width:0}
+.ig .top a{display:block;font-size:11.5px;color:var(--dim)}
+.ig .top a:hover{color:var(--accent)}
+.ig .top b{display:block;font-size:13.5px;font-weight:600;letter-spacing:-.02em}
+.ig .top span{margin-left:auto;font-size:12px;color:var(--dim);font-variant-numeric:tabular-nums}
+.ig .sl{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+.ig .sl::-webkit-scrollbar{display:none}
+.ig .sl img{flex:0 0 100%;width:100%;aspect-ratio:4/5;height:auto;object-fit:cover;scroll-snap-align:center}
+.ig .dots{display:flex;justify-content:center;gap:5px;padding:12px 0 14px}
+.ig .dots i{width:6px;height:6px;border-radius:50%;background:var(--line-2);transition:background .3s,transform .3s}
+.ig .dots i.on{background:var(--accent);transform:scale(1.2)}
+
+/* depoimentos em texto, com foto */
+.depo .txt{display:flex;flex-direction:column;gap:12px}
+.depo .pessoa{display:flex;align-items:center;gap:12px}
+.depo .pessoa img,.depo .pessoa .ini{width:46px;height:46px;border-radius:50%;object-fit:cover;flex:none}
+.depo .pessoa .ini{display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 14%,#fff);color:var(--accent);font-weight:700}
+.depo .pessoa .who{margin:0;font-size:16.5px}
+.depo .pessoa small{display:block;font-size:13px;color:var(--dim)}
+.depo q{quotes:none;font-size:15.5px;line-height:1.5;color:var(--muted);font-weight:400}
+
+/* bônus */
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.bcard{border-radius:20px;overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:var(--card-shadow)}
+.bcard img{width:100%;aspect-ratio:540/301;object-fit:cover}
+.bcard div{padding:18px 20px 22px}
+.bcard h3{font-size:18px;letter-spacing:-.02em}
+.bcard p{color:var(--muted);font-size:15px;margin-top:6px;line-height:1.45}
+.aulas{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.aulas img{width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:16px;box-shadow:var(--card-shadow)}
+
+.about .photo img{border-radius:28px;height:auto}
+
+@media (max-width:960px){.igrid{grid-template-columns:1fr 1fr}.bgrid{grid-template-columns:1fr}.aulas{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){
+  .ed .corpo{grid-template-columns:1fr}.ed .camadas{display:none}
+  .ed .canvas{padding:36px 16px 64px}.ed .fr{width:150px}.ed .bar .nome{display:none}
+  .stage-hero .tool{display:none}
+  .car.modcar figure{width:170px}
+  .igrid{grid-template-columns:1fr;gap:22px}
+}
+</style>
+</head>
+<body data-curso="FigPost">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="chk" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#6032FD"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ring" viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-70,0 a70,70 0 1,1 140,0 a70,70 0 1,1 -140,0"/></defs><circle cx="100" cy="100" r="96" style="fill:var(--ringfill,#1E0B5C)" stroke="rgba(96,50,253,.5)" stroke-width="1.5"/><text style="fill:var(--ringtxt,#fff)" font-family="Euclid,Arial" font-size="17" font-weight="600" textLength="432" lengthAdjust="spacing"><textPath href="#circ">CURSO VERIFICADO PELO FIGMA ✦</textPath></text></symbol>
+</svg>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a href="../" aria-label="Lari Tedeschi, página inicial" style="display:flex;align-items:center;gap:14px">
+      <img class="logo" src="../assets/img/figpost/logo-figpost.png" alt="FigPost" width="84" height="28">
+    </a>
+    <div class="links">
+      <a href="#curso">O curso</a>
+      <a href="#conteudo">Conteúdo</a>
+      <a href="#alunos">Alunos</a>
+      <a href="#professora">Professora</a>
+      <a href="#faq">Dúvidas</a>
+    </div>
+    <a class="btn" href="#matricula">Matricular-se</a>
+  </div>
+</nav>
+
+<!-- Abertura -->
+<header class="hero">
+  <div class="bgfx"><div class="glow"></div></div>
+  <div class="wrap">
+    <span class="pillbar"><img src="../assets/img/comum/alunos.webp" alt=""><span><b>+800 alunos</b> na escola da Lari Tedeschi</span></span>
+    <h1 id="h1"><span class="grad">Crie posts e carrosséis profissionais no Figma,</span> mesmo começando do zero.</h1>
+    <p class="sub rv">O FigPost é o curso de posts e carrosséis da Lari Tedeschi. Você aprende o Figma do zero, cria carrosséis que vendem e <strong>estrutura o seu estúdio com preço, posicionamento e processos.</strong></p>
+    <div class="ctas rv">
+      <a class="btn" href="#matricula">Quero me matricular <span class="arr">→</span></a>
+      <a class="btn ghost" href="#conteudo">Ver o que tem dentro</a>
+    </div>
+
+    <div class="stage-hero">
+      <div class="halo"></div>
+      <div class="badge" aria-label="Curso verificado pelo Figma"><svg viewBox="0 0 200 200"><use href="#ring"/></svg><img src="../assets/img/figpost/figma.webp" alt="" style="object-fit:contain"></div>
+      <div class="tool t1 hot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
+      <div class="tool t3 hot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="4" width="10" height="16" rx="2"/><path d="M4 7v10M20 7v10"/></svg></div>
+      <div class="ed" role="img" aria-label="Carrossel sendo criado no Figma">
+        <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="nome">carrossel-que-vende.fig</span><span class="gente"><img src="../assets/img/comum/lari-avatar.webp" alt=""><b>V</b></span><span class="share">Share</span></div>
+        <div class="corpo">
+          <div class="camadas"><b>Camadas</b><span>Slide 1</span><span class="on">Slide 2</span><span>Slide 3</span><span>Slide 4</span><span>Slide 5</span></div>
+          <div class="canvas">
+            <div class="tira"><div class="fr"><small>Slide 1</small><div class="sd s1"><span class="pill">Guia rápido</span><b class="tt">5 passos para um carrossel que vende</b><svg class="sq" viewBox="0 0 120 40" fill="none"><path d="M4 30C20 4 34 4 44 22s26 18 36-2 26-14 36 6" stroke="#B7F36B" stroke-width="8" stroke-linecap="round"/></svg><span class="arr">Arraste <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></div><div class="fr sel"><small>Slide 2</small><div class="sd s2"><span class="num">01</span><b class="tt">Comece pelo gancho</b><i class="l"></i><i class="l"></i><i class="l c"></i><span class="prog"><i style="width:20%"></i></span></div><i></i><i></i><i></i><i></i><em>1080 × 1350</em></div><div class="fr"><small>Slide 3</small><div class="sd s3"><span class="num">02</span><b class="tt">Uma ideia por slide</b><span class="card"><i></i><i></i><i class="c"></i></span><span class="prog"><i style="width:40%"></i></span></div></div><div class="fr"><small>Slide 4</small><div class="sd s4"><span class="num">03</span><b class="tt">Hierarquia clara</b><span class="hier"><i class="g"></i><i class="m"></i><i class="p"></i><i class="p c"></i></span><span class="prog"><i style="width:60%"></i></span></div></div><div class="fr"><small>Slide 5</small><div class="sd s5"><svg class="bm" viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z" fill="#FF70FE"/></svg><b class="tt">Salve para usar no próximo post</b><span class="cta">Seguir @laritedeschi</span></div></div></div>
+            <div class="cur c1"><svg viewBox="0 0 24 24"><path d="M4 3l7 18 2.6-7.4L21 11z" fill="#6032FD" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg><span>Lari</span></div>
+            <div class="cur c2"><svg viewBox="0 0 24 24"><path d="M4 3l7 18 2.6-7.4L21 11z" fill="#FF70FE" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg><span>você</span></div>
+            <div class="ferr" aria-hidden="true">
+              <b class="on"><svg viewBox="0 0 24 24" fill="#fff"><path d="M4 3l7 18 2.6-7.4L21 11z"/></svg></b>
+              <b><svg viewBox="0 0 24 24" fill="none" stroke="#1E0B5C" stroke-width="2" stroke-linecap="round"><path d="M8 3v18M16 3v18M3 8h18M3 16h18"/></svg></b>
+              <b><svg viewBox="0 0 24 24" fill="none" stroke="#1E0B5C" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/></svg></b>
+              <b><svg viewBox="0 0 24 24" fill="none" stroke="#1E0B5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg></b>
+              <b><svg viewBox="0 0 24 24" fill="none" stroke="#1E0B5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7V5h14v2M9 19h6M12 5v14"/></svg></b>
+              <b><svg viewBox="0 0 24 24" fill="none" stroke="#1E0B5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg></b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- O curso em resumo -->
+<section id="curso" style="padding-top:60px" data-blur="r">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">O curso em resumo</span>
+      <h2>Tudo o que você precisa saber <span class="grad">antes de começar.</span></h2>
+    </div>
+    <div class="facts rv">
+      <div class="fact"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M7 10.5V15c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5"/></svg></div><div><div class="k">Nível</div><div class="v">Iniciante, do zero</div><div class="d">Não precisa saber nenhum programa de design.</div></div></div>
+      <div class="fact"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M10 9l4 2-4 2z"/><path d="M8 21h8"/></svg></div><div><div class="k">Formato</div><div class="v">Aulas gravadas</div><div class="d">Cerca de 10 horas, no seu ritmo.</div></div></div>
+      <div class="fact"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><div><div class="k">Acesso</div><div class="v">1 ano</div><div class="d">Assinatura anual, com as atualizações do Figma incluídas.</div></div></div>
+      <div class="fact"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h4v6.5H8a3.25 3.25 0 0 1 0-6.5z"/><path d="M12 2h4a3.25 3.25 0 0 1 0 6.5h-4z"/><path d="M12 8.5h4a3.25 3.25 0 1 1 0 6.5 3.25 3.25 0 0 1 0-6.5z"/><path d="M8 8.5h4V15H8a3.25 3.25 0 0 1 0-6.5z"/><path d="M8 15h4v3.25A3.25 3.25 0 1 1 8 15z"/></svg></div><div><div class="k">Ferramenta</div><div class="v">Figma Pro gratuito</div><div class="d">Curso verificado pelo Figma: você pede o plano educacional.</div></div></div>
+      <div class="fact"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 10.5h7M8.5 13.5h4"/></svg></div><div><div class="k">Suporte</div><div class="v">Comunidade no WhatsApp</div><div class="d">Com a própria Lari tirando dúvidas sobre o Figma.</div></div></div>
+      <div class="fact"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14l-1.5 7 5-3 5 3-1.5-7"/></svg></div><div><div class="k">Certificado</div><div class="v">10 horas de aulas</div><div class="d">Para complementar o currículo na área de design.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- O caminho do curso -->
+<section id="metodo" data-blur="l">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">O caminho do curso</span>
+      <h2>Da primeira aula de Figma <span class="grad">ao seu estúdio funcionando.</span></h2>
+      <p>O curso segue a ordem em que você precisa aprender: primeiro a ferramenta, depois o design, depois o carrossel e, por fim, como transformar isso em trabalho.</p>
+    </div>
+    <div class="steps4">
+      <div class="step rv"><span class="n">01</span><div class="ico"><svg viewBox="0 0 24 24" fill="var(--accent)"><path d="M8.5 2h3.5v7H8.5a3.5 3.5 0 0 1 0-7z"/><path d="M12 2h3.5a3.5 3.5 0 0 1 0 7H12z" opacity=".55"/><circle cx="15.5" cy="12.5" r="3.5" opacity=".55"/><path d="M8.5 9H12v7H8.5a3.5 3.5 0 0 1 0-7z" opacity=".8"/><path d="M8.5 16H12v3.5A3.5 3.5 0 1 1 8.5 16z" opacity=".4"/></svg></div><h3>Figma do zero</h3><p>Da instalação às ferramentas avançadas, para criar mais rápido e com mais controle.</p></div>
+      <div class="step rv"><span class="n">02</span><div class="ico"><svg viewBox="0 0 24 24" fill="var(--accent)"><rect x="3" y="3" width="8" height="8" rx="2"/><circle cx="17" cy="7" r="4" opacity=".55"/><path d="M7 13l4.5 8h-9z" opacity=".55"/><rect x="13" y="13" width="8" height="8" rx="4" opacity=".8"/></svg></div><h3>Fundamentos do design</h3><p>A base que deixa um post com cara de profissional, e não de modelo pronto.</p></div>
+      <div class="step rv"><span class="n">03</span><div class="ico"><svg viewBox="0 0 24 24" fill="var(--accent)"><rect x="2" y="6" width="4" height="12" rx="1.5" opacity=".4"/><rect x="18" y="6" width="4" height="12" rx="1.5" opacity=".4"/><rect x="7.5" y="3" width="9" height="18" rx="2.5"/></svg></div><h3>Carrossel passo a passo</h3><p>A estrutura de um carrossel que prende a atenção, criado na prática com você.</p></div>
+      <div class="step rv"><span class="n">04</span><div class="ico"><svg viewBox="0 0 24 24" fill="var(--accent)"><path d="M9 3h6a2 2 0 0 1 2 2v2h-2V5H9v2H7V5a2 2 0 0 1 2-2z" opacity=".55"/><rect x="2" y="7" width="20" height="14" rx="3"/><rect x="10" y="12" width="4" height="3" rx="1" fill="#fff"/></svg></div><h3>Seu estúdio</h3><p>Precificação, posicionamento e processos para conquistar e atender clientes.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Conteúdo -->
+<section id="conteudo" data-blur="lr">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">O que tem dentro</span>
+      <h2>Os módulos do curso, <span class="grad">um por um.</span></h2>
+      <p>É assim que o FigPost aparece na área de membros.</p>
+    </div>
+  </div>
+  <div class="car modcar rv"><div class="ct">
+    <figure><img src="../assets/img/figpost/modulo-0.webp" alt="Módulo 00: Onboarding" loading="lazy" width="320" height="480"></figure>
+    <figure><img src="../assets/img/figpost/modulo-1.webp" alt="Módulo 01: Figma do zero" loading="lazy" width="320" height="480"></figure>
+    <figure><img src="../assets/img/figpost/modulo-2.webp" alt="Módulo 02: Ferramentas avançadas" loading="lazy" width="320" height="480"></figure>
+    <figure><img src="../assets/img/figpost/modulo-3.webp" alt="Módulo 03: Fundamentos do design" loading="lazy" width="320" height="480"></figure>
+    <figure><img src="../assets/img/figpost/modulo-4.webp" alt="Módulo 04: Passo a passo do carrossel" loading="lazy" width="320" height="480"></figure>
+    <figure><img src="../assets/img/figpost/modulo-5.webp" alt="Módulo 05: Na prática" loading="lazy" width="320" height="480"></figure>
+    <figure><img src="../assets/img/figpost/modulo-6.webp" alt="Módulo 06: Seu estúdio de design" loading="lazy" width="320" height="480"></figure>
+    <figure><img src="../assets/img/figpost/modulo-7.webp" alt="Módulo 07: Aulas bônus" loading="lazy" width="320" height="480"></figure>
+    <figure><img src="../assets/img/figpost/modulo-8.webp" alt="Módulo 08: Atualizações do Figma" loading="lazy" width="320" height="480"></figure>
+  </div></div>
+  <div class="wrap">
+
+    <div class="head rv" style="margin-top:100px">
+      <span class="eyebrow">O que você aprende</span>
+      <h2>Cada etapa do curso, <span class="grad">em detalhe.</span></h2>
+    </div>
+    <div class="mods">
+      <details class="mod rv" open><summary><span class="tag">ETAPA 1</span><span class="name">Figma do zero</span><span class="plus">+</span></summary>
+        <ul>
+          <li>Como começar no Figma sem saber nenhum programa de design.</li>
+          <li>As ferramentas avançadas que deixam o trabalho mais rápido e organizado.</li>
+          <li>As atualizações do Figma, explicadas sempre que a plataforma muda.</li>
+        </ul>
+      </details>
+      <details class="mod rv"><summary><span class="tag">ETAPA 2</span><span class="name">Fundamentos do design</span><span class="plus">+</span></summary>
+        <ul>
+          <li>Os fundamentos básicos de design aplicados a posts e carrosséis.</li>
+          <li>O grid de carrossel, que organiza cada slide e acelera a criação.</li>
+        </ul>
+      </details>
+      <details class="mod rv"><summary><span class="tag">ETAPA 3</span><span class="name">Carrossel passo a passo</span><span class="plus">+</span></summary>
+        <ul>
+          <li>Toda a estruturação de um post e de um carrossel, do primeiro ao último slide.</li>
+          <li>Aulas práticas para criar carrosséis do início ao fim junto com a Lari.</li>
+          <li>Ideias de carrosséis para usar no seu perfil e nos dos seus clientes.</li>
+        </ul>
+      </details>
+      <details class="mod rv"><summary><span class="tag">ETAPA 4</span><span class="name">Seu estúdio de design</span><span class="plus">+</span></summary>
+        <ul>
+          <li>Como definir o preço dos seus posts e carrosséis.</li>
+          <li>Posicionamento e processos para atender clientes como um estúdio.</li>
+        </ul>
+      </details>
+      <details class="mod rv"><summary><span class="tag">EXTRA</span><span class="name">Aulas bônus</span><span class="plus">+</span></summary>
+        <ul>
+          <li>Aulas com profissionais convidados: landing page, ilustração, carrosséis que vendem e estilo próprio.</li>
+        </ul>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Figma Pro -->
+<section class="seal-sec">
+  <div class="rays"></div>
+  <div class="tool f1"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M4 9h16M4 15h16M9 4v16M15 4v16"/></svg></div>
+  <div class="tool f2"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7"/></svg></div>
+  <div class="tool f3 hot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l7.5 18 2.5-7.5L20.5 11z"/></svg></div>
+  <div class="tool f4"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
+  <div class="wrap rv">
+    <div class="seal"><svg viewBox="0 0 200 200"><use href="#ring"/></svg><img src="../assets/img/figpost/figma.webp" alt="Figma" style="object-fit:contain"></div>
+    <h2>Aprenda no Figma Pro, <span class="grad">sem pagar pela licença.</span></h2>
+    <p class="s">O FigPost é reconhecido pelo Figma como curso online.</p>
+    <p class="t">Com isso, você pode se inscrever no plano educacional e usar os recursos Pro da plataforma de graça enquanto aprende.</p>
+  </div>
+</section>
+
+<!-- Alunos -->
+<section id="alunos" data-blur="lr">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Quem já fez</span>
+      <h2>O que os alunos <span class="grad">contam do curso.</span></h2>
+    </div>
+    <div class="rgrid">
+      <article class="res depo rv"><div class="txt"><div class="pessoa"><span class="ini">M</span><div><div class="who">Michelle Rodrigues</div><small>Aluna FigPost</small></div></div><span class="big">De R$35 para R$90 por carrossel</span><q>A aula de grid de carrossel deu um up no meu processo de criação! As ideias de carrosséis também agregaram demais. Antes eu cobrava 35 reais num carrossel. Hoje cobro 90 e ainda acham barato.</q></div></article>
+      <article class="res depo rv"><div class="txt"><div class="pessoa"><img src="../assets/img/figpost/depo-1.webp" alt="" loading="lazy"><div><div class="who">Ana Carolina Costa</div><small>Aluna FigPost</small></div></div><span class="big">Conteúdo atualizado e prático</span><q>A didática é clara e os passos são bem explicados, o que me permitiu compreender melhor o Figma. Agora tô confiante pra fazer designs arrasadores nas mídias sociais.</q></div></article>
+      <article class="res depo rv"><div class="txt"><div class="pessoa"><img src="../assets/img/figpost/depo-6.webp" alt="" loading="lazy"><div><div class="who">Sabrina Santos</div><small>Aluna FigPost</small></div></div><span class="big">Do “só editar” a querer fazer tudo no Figma</span><q>Didática maravilhosa, curso super prático e organizado. Meu objetivo era só aprender a editar umas landing pages. Hoje eu quero fazer tudo com ele.</q></div></article>
+      <article class="res depo rv"><div class="txt"><div class="pessoa"><img src="../assets/img/figpost/depo-2.webp" alt="" loading="lazy"><div><div class="who">Cecília Consulin</div><small>Aluna FigPost</small></div></div><span class="big">Trocando o Canva pelo Figma</span><q>Estou aprendendo muito com o curso e sempre que posso uso o Figma ao invés do Canva. Estou me “desprendendo” aos poucos, mas estou amando o curso.</q></div></article>
+      <article class="res depo rv"><div class="txt"><div class="pessoa"><img src="../assets/img/figpost/depo-5.webp" alt="" loading="lazy"><div><div class="who">Michel M</div><small>Aluno FigPost</small></div></div><span class="big">Mais rápido nos posts e apresentações</span><q>Finalmente estou aprendendo a usar o Figma. Não é que é fácil mesmo? Já vi que ele vai adiantar muito meu fluxo de apresentações e construção de posts e carrosséis.</q></div></article>
+      <article class="res depo rv"><div class="txt"><div class="pessoa"><img src="../assets/img/figpost/depo-3.webp" alt="" loading="lazy"><div><div class="who">Gabs</div><small>Aluna FigPost</small></div></div><span class="big">Já foi para o próximo curso</span><q>Estou amando o curso, inclusive já adquiri o de logo! As edições impecáveis, tudo muito bom, aprendi demais.</q></div></article>
+      <article class="res depo rv"><div class="txt"><div class="pessoa"><img src="../assets/img/figpost/depo-7.webp" alt="" loading="lazy"><div><div class="who">Thalia Giusti</div><small>Aluna FigPost</small></div></div><span class="big">Apaixonada pela plataforma</span><q>Sua didática é ótima, consegui aprender bem vendo a aula. Não quero mais voltar pro Canva.</q></div></article>
+      <article class="res depo rv"><div class="txt"><div class="pessoa"><span class="ini">S</span><div><div class="who">Suzy</div><small>Aluna FigPost</small></div></div><span class="big">Uma experiência fora da curva</span><q>Já comprei muitos cursos online, mas a experiência que tive com os cursos da Lari foi fora da curva. Me surpreendi positivamente.</q></div></article>
+      <article class="res depo rv"><div class="txt"><div class="pessoa"><img src="../assets/img/figpost/depo-8.webp" alt="" loading="lazy"><div><div class="who">Kedley Patricio</div><small>Aluno FigPost</small></div></div><span class="big">Qualidade de produção</span><q>A qualidade da produção me surpreendeu bastante. Pelos seus posts senti que você tinha um método bem bacana de construção.</q></div></article>
+    </div>
+    <div class="head rv" style="margin:90px auto 40px">
+      <span class="eyebrow">Hall criativo</span>
+      <h2>Projetos criados <span class="grad">pelos alunos.</span></h2>
+      <p>Carrosséis completos feitos no Figma por alunos do FigPost. Arraste para ver cada slide, ou toque no nome para ver o portfólio.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="igrid">
+      <article class="ig rv"><a class="top" href="https://www.behance.net/marianesantana9" target="_blank" rel="noopener"><img src="../assets/img/figpost/av-mariane.webp" alt=""><b>Mariane Soares</b><span>1/5</span></a><div class="sl" aria-label="Carrossel de saúde e estética"><img src="../assets/img/figpost/mariane-01.webp" alt="Carrossel de saúde e estética, slide 1 de 5, por Mariane Soares" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/mariane-02.webp" alt="Carrossel de saúde e estética, slide 2 de 5, por Mariane Soares" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/mariane-03.webp" alt="Carrossel de saúde e estética, slide 3 de 5, por Mariane Soares" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/mariane-04.webp" alt="Carrossel de saúde e estética, slide 4 de 5, por Mariane Soares" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/mariane-05.webp" alt="Carrossel de saúde e estética, slide 5 de 5, por Mariane Soares" loading="lazy" width="600" height="750"></div><div class="dots"><i></i><i></i><i></i><i></i><i></i></div></article>
+      <article class="ig rv"><a class="top" href="https://www.behance.net/idrodrigomelo" target="_blank" rel="noopener"><img src="../assets/img/figpost/av-rodrigo.webp" alt=""><b>Rodrigo Melo</b><span>1/6</span></a><div class="sl" aria-label="Carrossel para banco digital"><img src="../assets/img/figpost/rodrigo-a06.webp" alt="Carrossel para banco digital, slide 1 de 6, por Rodrigo Melo" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/rodrigo-a07.webp" alt="Carrossel para banco digital, slide 2 de 6, por Rodrigo Melo" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/rodrigo-a08.webp" alt="Carrossel para banco digital, slide 3 de 6, por Rodrigo Melo" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/rodrigo-a09.webp" alt="Carrossel para banco digital, slide 4 de 6, por Rodrigo Melo" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/rodrigo-a10.webp" alt="Carrossel para banco digital, slide 5 de 6, por Rodrigo Melo" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/rodrigo-a11.webp" alt="Carrossel para banco digital, slide 6 de 6, por Rodrigo Melo" loading="lazy" width="600" height="750"></div><div class="dots"><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+      <article class="ig rv"><a class="top" href="https://www.behance.net/vitriarodrigu8" target="_blank" rel="noopener"><img src="../assets/img/figpost/av-vitoria.webp" alt=""><b>Vitoria Paz</b><span>1/5</span></a><div class="sl" aria-label="Carrossel para clínica de estética"><img src="../assets/img/figpost/vitoria-1.webp" alt="Carrossel para clínica de estética, slide 1 de 5, por Vitoria Paz" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/vitoria-2.webp" alt="Carrossel para clínica de estética, slide 2 de 5, por Vitoria Paz" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/vitoria-3.webp" alt="Carrossel para clínica de estética, slide 3 de 5, por Vitoria Paz" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/vitoria-4.webp" alt="Carrossel para clínica de estética, slide 4 de 5, por Vitoria Paz" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/vitoria-5.webp" alt="Carrossel para clínica de estética, slide 5 de 5, por Vitoria Paz" loading="lazy" width="600" height="750"></div><div class="dots"><i></i><i></i><i></i><i></i><i></i></div></article>
+      <article class="ig rv"><a class="top" href="https://www.behance.net/idrodrigomelo" target="_blank" rel="noopener"><img src="../assets/img/figpost/av-rodrigo.webp" alt=""><b>Rodrigo Melo</b><span>1/5</span></a><div class="sl" aria-label="Carrossel de tecnologia e IA"><img src="../assets/img/figpost/rodrigo-b17.webp" alt="Carrossel de tecnologia e IA, slide 1 de 5, por Rodrigo Melo" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/rodrigo-b18.webp" alt="Carrossel de tecnologia e IA, slide 2 de 5, por Rodrigo Melo" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/rodrigo-b19.webp" alt="Carrossel de tecnologia e IA, slide 3 de 5, por Rodrigo Melo" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/rodrigo-b20.webp" alt="Carrossel de tecnologia e IA, slide 4 de 5, por Rodrigo Melo" loading="lazy" width="600" height="750"><img src="../assets/img/figpost/rodrigo-b21.webp" alt="Carrossel de tecnologia e IA, slide 5 de 5, por Rodrigo Melo" loading="lazy" width="600" height="750"></div><div class="dots"><i></i><i></i><i></i><i></i><i></i></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- Bônus -->
+<section id="bonus" data-blur="r">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Também incluído</span>
+      <h2>Além das aulas, <span class="grad">você recebe.</span></h2>
+    </div>
+    <div class="bgrid">
+      <div class="bcard rv"><img src="../assets/img/figpost/bonus-comunidade.webp" alt="" loading="lazy"><div><h3>Comunidade no WhatsApp</h3><p>Uma comunidade exclusiva em que a própria Lari tira as suas dúvidas sobre o Figma.</p></div></div>
+      <div class="bcard rv"><img src="../assets/img/figpost/bonus-certificado.webp" alt="" loading="lazy"><div><h3>Certificado de conclusão</h3><p>Certificado de 10 horas de aulas para complementar o seu currículo na área de design.</p></div></div>
+      <div class="bcard rv"><img src="../assets/img/figpost/bonus-educacional.webp" alt="" loading="lazy"><div><h3>Plano educacional do Figma</h3><p>Como o curso é reconhecido pelo Figma, você pode usar os recursos Pro de graça.</p></div></div>
+    </div>
+    <div class="head rv" style="margin:70px auto 10px">
+      <h3 style="font-size:22px;letter-spacing:-.02em">Aulas bônus com profissionais convidados</h3>
+    </div>
+    <div class="aulas">
+      <img class="rv" src="../assets/img/figpost/aula-landing.webp" alt="Aula bônus: criando uma landing page" loading="lazy">
+      <img class="rv" src="../assets/img/figpost/aula-ilustracao.webp" alt="Aula bônus: ilustração no Figma" loading="lazy">
+      <img class="rv" src="../assets/img/figpost/aula-carrosseis.webp" alt="Aula bônus: como escrever carrosséis que vendem" loading="lazy">
+      <img class="rv" src="../assets/img/figpost/aula-estilo.webp" alt="Aula bônus: como definir o seu estilo" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- Para quem é -->
+<section data-blur="l">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Para quem é</span>
+      <h2>O FigPost foi feito <span class="grad">para você que…</span></h2>
+    </div>
+    <div class="fgrid">
+      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Está começando do zero</h3><p>Sente insegurança e precisa de um método validado para criar posts e carrosséis.</p></div>
+      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>É freelancer ou autônoma</h3><p>Já cria, mas ainda não tem processos, preços bem definidos e postura de designer profissional.</p></div>
+      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Trabalha fixo e quer evoluir</h3><p>Atua como designer ou social media e quer mais qualidade e velocidade nos projetos.</p></div>
+      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Quer sair do Canva</h3><p>E trabalhar numa ferramenta profissional, gratuita, com tudo em uma única tela.</p></div>
+      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Quer cobrar melhor</h3><p>Carrosséis com cara profissional sustentam um preço mais alto.</p></div>
+      <div class="fcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Cria o próprio conteúdo</h3><p>Para quem precisa produzir posts para o próprio perfil e portfólio com menos tempo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Professora -->
+<section class="about" id="professora">
+  <div class="streak"></div>
+  <div class="wrap grid">
+    <div class="rv">
+      <span class="eyebrow">A professora</span>
+      <h2>Opa, eu sou a <span class="grad">Lari</span> <span class="wave">👋</span></h2>
+      <p class="first">Designer especialista em marcas, formada em Design Gráfico pela Unicuritiba e em Expressão Gráfica pela Universidade Federal do Paraná.</p>
+      <p>Em 2021 comecei a me especializar no Figma e, desde então, compartilho o que sei da plataforma para ajudar designers que não podem pagar por programas caros, mas precisam de uma ferramenta profissional.</p>
+      <p>No FigPost eu ensino o que uso no dia a dia: criar posts e carrosséis com processo, e organizar o trabalho como um estúdio.</p>
+      <div class="creds"><span>Design Gráfico · Unicuritiba</span><span>Expressão Gráfica · UFPR</span><span>Figma desde 2021</span></div>
+    </div>
+    <div class="photo rv">
+      <img src="../assets/img/figpost/lari-professora.webp" alt="Lari Tedeschi" loading="lazy" width="355" height="468">
+    </div>
+  </div>
+</section>
+
+<!-- Trilha da escola -->
+<section id="trilha" data-blur="l">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">A trilha da escola</span>
+      <h2>Onde o FigPost entra <span class="grad">na sua formação.</span></h2>
+      <p>O FigPost não depende dos outros cursos: dá para fazer antes, depois ou junto. Se quiser ir além dos posts, os cursos de marca complementam o seu aprendizado sobre identidade visual e permitem oferecer um serviço a mais aos seus clientes.</p>
+    </div>
+    <div class="path">
+      <div class="course here rv">
+        <span class="here-tag">Você está aqui</span>
+        <span class="lvl">Em paralelo</span>
+        <h3>FigPost</h3>
+        <p>Posts e carrosséis no Figma, com precificação e estrutura de estúdio. É o curso para quem quer trabalhar com redes sociais.</p>
+      </div>
+      <a class="course rv" href="../figlogo/" style="--c:#ff58fc">
+        <span class="dot"></span>
+        <span class="lvl">Para complementar · marcas</span>
+        <h3>FigLogo</h3>
+        <p>Aprenda a criar logotipos no Figma e passe a oferecer também a criação da marca, não só os posts.</p>
+        <span class="go">Conhecer o FigLogo →</span>
+      </a>
+      <a class="course rv" href="../figbrand/" style="--c:#9131F6">
+        <span class="dot"></span>
+        <span class="lvl">Para ir além · identidade visual</span>
+        <h3>FigBrand</h3>
+        <p>Identidade visual completa e estratégica, para entregar projetos de marca do briefing à entrega.</p>
+        <span class="go">Conhecer o FigBrand →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Matrícula -->
+<section class="offer" id="matricula">
+  <div class="bgglow"></div>
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Matrícula</span>
+      <h2>Comece o FigPost <span class="grad">hoje.</span></h2>
+    </div>
+    <div class="obox rv">
+      <div class="left">
+        <p class="quote">O que está incluído:</p>
+        <ul class="inc">
+          <li><svg width="20" height="20"><use href="#chk"/></svg>1 ano de acesso a todas as aulas</li>
+          <li><svg width="20" height="20"><use href="#chk"/></svg>Figma do zero ao avançado</li>
+          <li><svg width="20" height="20"><use href="#chk"/></svg>Fundamentos do design e estruturação de posts</li>
+          <li><svg width="20" height="20"><use href="#chk"/></svg>Aulas práticas para criar carrosséis</li>
+          <li><svg width="20" height="20"><use href="#chk"/></svg>Precificação, posicionamento e processos de estúdio</li>
+          <li><svg width="20" height="20"><use href="#chk"/></svg>Aulas bônus com profissionais convidados</li>
+          <li><svg width="20" height="20"><use href="#chk"/></svg>Comunidade exclusiva no WhatsApp</li>
+          <li><svg width="20" height="20"><use href="#chk"/></svg>Plano educacional do Figma Pro</li>
+          <li><svg width="20" height="20"><use href="#chk"/></svg>Certificado de conclusão</li>
+        </ul>
+      </div>
+      <div class="price">
+        <span class="lbl">Acesso anual</span>
+        <p class="de">De <s>R$597,90</s> por</p>
+        <p class="val"><small>R$</small>397</p>
+        <p class="avista">à vista</p>
+        <p class="parc">ou em até 12x de R$41,06 no cartão</p>
+        <a class="btn" href="https://pay.kiwify.com.br/U2OVA6U">Matricular-se no FigPost</a>
+        <div class="secure"><span>🔒 Pagamento seguro</span><span>Pix ou cartão</span><span>Acesso imediato por e-mail</span></div>
+      </div>
+    </div>
+    <p class="rv" style="text-align:center;margin-top:22px;color:var(--muted);font-size:15px">Já é aluno? <a href="https://figclub.laritedeschi.com/" style="color:var(--accent);font-weight:600">Entre na área de membros →</a></p>
+  </div>
+</section>
+
+<!-- Garantia -->
+<section class="guarantee" id="garantia" data-blur="l">
+  <div class="wrap">
+    <div class="guar rv">
+      <div class="selo"><svg viewBox="0 0 240 240" role="img" aria-label="Garantia de 7 dias"><defs><path id="arco" d="M120,120 m-86,0 a86,86 0 1,1 172,0 a86,86 0 1,1 -172,0"/></defs><style>.fundo{fill:currentColor}.anel{fill:none;stroke:#fff;stroke-opacity:.35;stroke-width:1.5}.txt{fill:#fff;font-family:Euclid,"Helvetica Neue",Arial,sans-serif;font-weight:600}</style><circle class="fundo" cx="120" cy="120" r="116"/><circle class="anel" cx="120" cy="120" r="100"/><circle class="anel" cx="120" cy="120" r="70"/><g class="gira"><text class="txt" font-size="15" letter-spacing="3.2" textLength="530" lengthAdjust="spacing"><textPath href="#arco">GARANTIA INCONDICIONAL ✦ SEM RISCO ✦ </textPath></text></g><text class="txt" x="120" y="134" text-anchor="middle" font-size="64" font-weight="700" letter-spacing="-3">7</text><text class="txt" x="120" y="160" text-anchor="middle" font-size="17" letter-spacing="2">DIAS</text></svg></div>
+      <div>
+        <span class="eyebrow">Garantia</span>
+        <h2>Você tem 7 dias para se adaptar <span class="grad">sem risco.</span></h2>
+        <p>Entre, mergulhe nos conteúdos e conheça a plataforma com calma. Se nesse período você perceber que o FigPost não é o que esperava, é só pedir o reembolso e devolvemos 100% do seu investimento.</p>
+        <div class="steps3">
+          <div><b>Entre no curso</b>O acesso chega no seu e-mail logo após a compra.</div>
+          <div><b>Assista às aulas</b>Explore os módulos e a área de membros.</div>
+          <div><b>Decida em 7 dias</b>Não gostou? Reembolso de 100% do valor.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dúvidas -->
+<section class="faq" id="faq" data-blur="r">
+  <div class="wrap">
+    <div class="top rv">
+      <h2><span class="grad">Perguntas</span> frequentes</h2>
+      <p>Ficou alguma dúvida?<br>Chama no WhatsApp.</p>
+    </div>
+    <div class="list">
+      <details class="rv"><summary>Preciso já saber usar o Figma?</summary><p>Não. Você não precisa saber nenhum programa de design: o curso começa do completo zero.</p></details>
+      <details class="rv"><summary>Preciso pagar o Figma?</summary><p>Não. O Figma tem plano gratuito e o curso funciona com qualquer licença. E, como o FigPost é reconhecido pelo Figma, você pode pedir o plano educacional e usar os recursos Pro de graça.</p></details>
+      <details class="rv"><summary>As aulas são gravadas?</summary><p>Sim. Você assiste quando e quantas vezes quiser, no seu ritmo.</p></details>
+      <details class="rv"><summary>Por quanto tempo tenho acesso?</summary><p>O acesso é anual: 12 meses de acesso a todas as aulas, aos bônus e à comunidade.</p></details>
+      <details class="rv"><summary>Vou receber certificado?</summary><p>Sim. Ao concluir o curso você recebe o certificado de conclusão de 10 horas de aulas.</p></details>
+      <details class="rv"><summary>E se eu não gostar do curso?</summary><p>Você tem 7 dias de garantia. Peça o reembolso e devolvemos 100% do valor.</p></details>
+      <details class="rv"><summary>Qual a diferença entre o FigPost e o FigLogo?</summary><p>O FigPost é focado em posts, carrosséis e na estrutura do seu estúdio. O FigLogo ensina a criar logotipos e é o primeiro passo para quem quer trabalhar com marcas. Dá para fazer os dois em paralelo.</p></details>
+    </div>
+    <div class="support rv">
+      <p>Ainda ficou com dúvida?</p>
+      <a href="https://wa.me/5541999401055" target="_blank" rel="noopener">Fale com o suporte no WhatsApp →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Rodapé da escola -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div><div class="brand">Lari Tedeschi</div><p style="margin-top:8px;max-width:30ch">Cursos de design de marca no Figma.</p></div>
+      <div><h4>Cursos</h4><ul><li><a href="../figlogo/">FigLogo</a></li><li><a href="../figbrand/">FigBrand</a></li><li><a href="../figpost/">FigPost</a></li></ul></div>
+      <div><h4>Produtos</h4><ul><li><a href="https://kitdesignstudio.laritedeschi.com">Kit Design Studio</a></li><li><a href="https://dashboardfinanceiro.com">Dashboard Financeiro</a></li><li><a href="../estudio/">Studio Tedeschi</a></li></ul></div>
+      <div><h4>Contato</h4><ul><li><a href="https://www.instagram.com/laritedeschi" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/@laritedeschi" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://wa.me/5541999401055" target="_blank" rel="noopener">WhatsApp</a></li><li>contato@laritedeschi.com</li></ul></div>
+    </div>
+    <p class="copy">© Lari Tedeschi · Todos os direitos reservados</p>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5541999401055" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 20 20" fill="#fff"><path d="M17.085 2.91A9.9 9.9 0 0 0 10.04 0C4.553 0 .08 4.45.08 9.91c0 1.75.463 3.45 1.327 4.95L0 20l5.276-1.38a9.97 9.97 0 0 0 4.764 1.21C15.528 19.83 20 15.38 20 9.92c0-2.65-1.035-5.14-2.915-7.01zM10.04 18.15a8.3 8.3 0 0 1-4.221-1.15l-.301-.18-3.136.82.834-3.04-.201-.31a8.2 8.2 0 0 1-1.266-4.38c0-4.54 3.718-8.24 8.281-8.24 2.211 0 4.292.86 5.849 2.42a8.15 8.15 0 0 1 2.423 5.83c.02 4.54-3.699 8.23-8.262 8.23zm4.543-6.16c-.251-.12-1.477-.72-1.699-.81-.231-.08-.392-.12-.562.12-.171.25-.644.81-.784.97-.141.17-.292.19-.543.06-.251-.12-1.055-.39-2-1.230-.744-.66-1.236-1.47-1.387-1.72-.141-.25-.02-.38.111-.51.11-.11.251-.29.371-.43.121-.14.171-.25.252-.41.08-.17.04-.31-.02-.43-.061-.12-.563-1.34-.764-1.840-.201-.48-.412-.42-.563-.43h-.482c-.171 0-.433.06-.664.31-.221.25-.864.85-.864 2.07s.894 2.4 1.015 2.56c.121.17 1.759 2.67 4.251 3.74.593.26 1.056.41 1.417.52.593.19 1.136.16 1.568.1.483-.07 1.478-.6 1.679-1.180.211-.58.211-1.070.14-1.180-.07-.11-.221-.16-.472-.28z"/></svg>
+</a>
+
+<script>
+/* carrosséis dos alunos: passam sozinhos e também dá para arrastar */
+document.querySelectorAll('.ig').forEach(function(ig,k){
+  var sl=ig.querySelector('.sl'),dots=[].slice.call(ig.querySelectorAll('.dots i')),cnt=ig.querySelector('.top span'),n=dots.length,i=0,mexeu=0;
+  var marca=function(){i=Math.round(sl.scrollLeft/sl.clientWidth);dots.forEach(function(d,j){d.classList.toggle('on',j===i)});cnt.textContent=(i+1)+'/'+n};
+  sl.addEventListener('scroll',function(){clearTimeout(sl._t);sl._t=setTimeout(marca,60)},{passive:true});
+  sl.addEventListener('pointerdown',function(){mexeu=Date.now()});sl.addEventListener('touchstart',function(){mexeu=Date.now()},{passive:true});
+  marca();
+  setTimeout(function(){setInterval(function(){
+    if(Date.now()-mexeu<6000)return;
+    var r=sl.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;
+    sl.scrollTo({left:((i+1)%n)*sl.clientWidth,behavior:'smooth'});
+  },2800)},k*700);
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="../assets/js/escola.js"></script>
+</body>
+</html>

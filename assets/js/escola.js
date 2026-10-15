@@ -33,6 +33,15 @@
       });
       if(wrapIn){wrapIn.textContent='';wrapIn.classList.remove('grad');wrapIn.appendChild(frag)}else{h.replaceChild(frag,node)}
     });
+    /* o degradê corre pela frase inteira, e não palavra por palavra */
+    var alinha=function(){
+      var ws=[].slice.call(h.querySelectorAll('.w.grad'));if(!ws.length)return;
+      var L=Infinity,R=-Infinity;
+      ws.forEach(function(w){L=Math.min(L,w.offsetLeft);R=Math.max(R,w.offsetLeft+w.offsetWidth)});
+      ws.forEach(function(w){w.style.backgroundSize=(R-L)+'px 100%';w.style.backgroundPosition=(L-w.offsetLeft)+'px 0'});
+    };
+    alinha();addEventListener('load',alinha);addEventListener('resize',alinha);
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(alinha);
     requestAnimationFrame(function(){setTimeout(function(){h.classList.add('go')},120)});
   }
 
