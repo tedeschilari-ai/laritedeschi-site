@@ -47,6 +47,15 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 .duvida h2{font-size:clamp(26px,3.6vw,36px)}
 .duvida a{display:inline-flex;align-items:center;gap:10px;margin-top:18px;font-weight:600;color:#1E0B5C;background:#fff;border:1px solid var(--line);border-radius:999px;padding:13px 22px;box-shadow:var(--card-shadow)}
 .duvida a svg{width:20px;height:20px}
+/* botão de 1 clique da Kiwify, adaptado ao fundo claro */
+#kiwify-upsell-Gj25H3s{max-width:440px;margin:0 auto}
+#kiwify-upsell-trigger-Gj25H3s{font-family:inherit!important;font-size:18px!important;font-weight:700!important;letter-spacing:-.02em;border-radius:999px!important;padding:19px 24px!important;color:#fff!important;border:0!important;width:100%;background:linear-gradient(180deg,#7be05a 0%,#3fbf18 50%,#289c02 100%)!important;box-shadow:0 0 0 1px rgba(255,255,255,.25) inset,0 14px 34px -12px rgba(63,191,24,.75)!important;cursor:pointer}
+#kiwify-upsell-Gj25H3s .kiwify-upsell-inline-label{font-family:inherit;text-align:left}
+#kiwify-upsell-Gj25H3s select{font-family:inherit;border-radius:14px!important}
+#kiwify-upsell-Gj25H3s label,#kiwify-upsell-Gj25H3s [class*="parcel"]{color:#1E0B5C!important}
+#kiwify-upsell-Gj25H3s select{color:#000!important;background-color:#fff!important}
+#kiwify-upsell-Gj25H3s select option{color:#000!important;background-color:#fff!important}
+#kiwify-upsell-cancel-trigger-Gj25H3s{color:rgba(26,11,26,.55)!important;font-size:14px;margin-top:14px;text-decoration:underline;cursor:pointer}
 @media (max-width:860px){.bgrid{grid-template-columns:1fr}}
 @media (max-width:640px){.up{padding-top:40px}.up .sub{font-size:16.5px}.cta-up .btn,.final .btn{width:100%}}
 </style>
@@ -67,7 +76,13 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
       <span><svg viewBox="0 0 24 24" fill="#6032FD"><path d="M18.2 8.4a3.6 3.6 0 1 1 0 7.2c-2.6 0-4-3.6-6.2-3.6S8.4 15.6 5.8 15.6a3.6 3.6 0 1 1 0-7.2c2.6 0 4 3.6 6.2 3.6s3.6-3.6 6.2-3.6z" fill="none" stroke="#6032FD" stroke-width="2.2"/></svg>Acesso vitalício</span>
       <span><svg viewBox="0 0 24 24"><path d="M12 2l8 3.5v6c0 5-3.4 8.6-8 10.5-4.6-1.9-8-5.5-8-10.5v-6z" fill="#6032FD"/><path d="M8.5 12l2.4 2.4L15.5 10" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Garantia de 7 dias</span>
     </div>
-    <div class="cta-up"><a class="btn" href="https://pay.kiwify.com.br/Gj25H3s">Entrar para o FigPost <span class="arr">→</span></a></div>
+    <!-- Botão de compra com 1 clique da Kiwify: usa os dados da compra do FigLogo -->
+    <div class="cta-up" id="comprar">
+      <div id="kiwify-upsell-Gj25H3s" data-upsell-url="" data-downsell-url="" style="--kiwify-upsell-accept-bg:#2ECC70;--kiwify-upsell-accept-color:#FFFFFF">
+        <button id="kiwify-upsell-trigger-Gj25H3s">Sim, eu aceito essa oferta especial!</button>
+        <div id="kiwify-upsell-cancel-trigger-Gj25H3s">Não, eu gostaria de recusar essa oferta</div>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -83,7 +98,7 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 </section>
 
 <section class="final">
-  <div class="wrap"><a class="btn" href="https://pay.kiwify.com.br/Gj25H3s">Entrar para o FigPost <span class="arr">→</span></a></div>
+  <div class="wrap"><a class="btn" href="#comprar">Entrar para o FigPost <span class="arr">→</span></a></div>
 </section>
 
 <section class="duvida">
@@ -93,6 +108,8 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
   </div>
 </section>
 
+<script src="https://snippets.kiwify.com/upsell-v2/upsell.min.js"></script>
+<script>document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('#kiwify-upsell-trigger-Gj25H3s')){try{fbq('track','InitiateCheckout',{content_name:'FigPost upsell'})}catch(x){}}});</script>
 <script src="../../assets/js/escola.js"></script>
 </body>
 </html>
