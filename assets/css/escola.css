@@ -3,11 +3,11 @@
    Cada página define só as cores do curso (bloco :root dela).
    ========================================================= */
 
-@font-face{font-family:"Euclid";src:url("https://framerusercontent.com/assets/lckLNXmav5SRnkpI7xh7SvgI.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"Euclid";src:url("https://framerusercontent.com/assets/PqhxH3vOnnM9m1fyMosmHfA4PUY.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:"Euclid";src:url("https://framerusercontent.com/assets/hoeKROubFCIfmmvaHsEdp0L9Y.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
-@font-face{font-family:"Euclid";src:url("https://framerusercontent.com/assets/sI1dG3OBiGxOyxE98bBDF5KZIk.woff2") format("woff2");font-weight:600;font-style:italic;font-display:swap}
-@font-face{font-family:"Euclid";src:url("https://framerusercontent.com/assets/wmFlo8Ds1lA3SqktqmV7lYFHPk.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Euclid";src:url("../fonts/lckLNXmav5SRnkpI7xh7SvgI.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Euclid";src:url("../fonts/PqhxH3vOnnM9m1fyMosmHfA4PUY.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Euclid";src:url("../fonts/hoeKROubFCIfmmvaHsEdp0L9Y.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Euclid";src:url("../fonts/sI1dG3OBiGxOyxE98bBDF5KZIk.woff2") format("woff2");font-weight:600;font-style:italic;font-display:swap}
+@font-face{font-family:"Euclid";src:url("../fonts/wmFlo8Ds1lA3SqktqmV7lYFHPk.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
 
 /* Cores padrão (FigLogo). Cada curso sobrescreve no próprio arquivo. */
 :root{
