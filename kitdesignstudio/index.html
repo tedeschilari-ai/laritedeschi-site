@@ -198,14 +198,6 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 .recibo.in .tot b span::after{transform:scaleX(1)}
 .mas{max-width:640px;margin:44px auto 0;text-align:center;font-size:clamp(19px,2.2vw,23px);font-weight:600;letter-spacing:-.02em}
 
-/* ---------- criadora: foto como nas páginas dos cursos, com as pastinhas do Kit ---------- */
-.about .foto{position:relative;width:100%;max-width:400px;margin-left:auto}
-.about .foto img{max-width:none;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:48% 50%;border:1px solid var(--line-2);box-shadow:0 40px 80px -40px rgba(74,132,255,.6)}
-.about .foto .tag{position:absolute;width:70px;height:52px;animation:flutua2 6s ease-in-out infinite;z-index:2;filter:drop-shadow(0 10px 14px rgba(0,0,0,.5))}
-.about .foto .t1{right:-18px;top:8%;rotate:12deg}.about .foto .t2{left:-22px;bottom:14%;rotate:-10deg;animation-delay:-3s}
-.about .foto .t3{right:10%;bottom:-18px;rotate:-6deg;animation-delay:-1.5s;width:56px;height:42px}
-@media (max-width:960px){.about .foto{width:min(340px,82%);margin:0 auto}.about .foto img{width:100%}.about .foto .tag{width:52px;height:39px}.about .foto .t1{right:-14px}.about .foto .t2{left:-14px}}
-
 /* ---------- trilha com 4 cards ---------- */
 .path.quatro{grid-template-columns:repeat(4,1fr);max-width:1080px}
 
@@ -599,12 +591,7 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
       <div class="creds"><span>Design Gráfico · Unicuritiba</span><span>Expressão Gráfica · UFPR</span><span>+800 alunos</span></div>
     </div>
     <div class="photo rv">
-      <div class="foto">
-        <svg class="tag t1" style="color:var(--azul)"><use href="#pasta"/></svg>
-        <svg class="tag t2" style="color:var(--verde)"><use href="#pasta"/></svg>
-        <svg class="tag t3" style="color:var(--rosa)"><use href="#pasta"/></svg>
-        <img src="../assets/img/kit-design-studio/lari-tedeschi.webp" alt="Lari Tedeschi" loading="lazy" width="600" height="600">
-      </div>
+      <div class="retrato" style="--rbg:#2B70F8;--rtile:#0b0b0f"><svg class="rpasta" viewBox="0 0 64 48" style="color:var(--rosa);right:4%;top:7%;width:30%;rotate:10deg" aria-hidden="true"><use href="#pasta"/></svg><svg class="rpasta" viewBox="0 0 64 48" style="color:var(--verde);right:-6%;top:30%;width:26%;rotate:-8deg;animation-delay:-2s" aria-hidden="true"><use href="#pasta"/></svg><svg class="rpasta" viewBox="0 0 64 48" style="color:var(--amarelo);left:-5%;top:40%;width:24%;rotate:-12deg;animation-delay:-4s" aria-hidden="true"><use href="#pasta"/></svg><span class="rtile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/><path d="M14.5 5.5l3 3"/></svg></span><img class="rpessoa" src="../assets/img/comum/lari-recorte.webp" alt="Lari Tedeschi" loading="lazy" width="720" height="947"><div class="rbarra" aria-hidden="true"><img src="../assets/img/kit-design-studio/logo-figma.webp" alt="" width="149" height="223"><img src="../assets/img/kit-design-studio/logo-canva.webp" alt="" width="223" height="223"><img src="../assets/img/kit-design-studio/logo-word.webp" alt="" width="218" height="223"><img src="../assets/img/kit-design-studio/logo-powerpoint.webp" alt="" width="260" height="223"><img src="../assets/img/kit-design-studio/logo-notion.webp" alt="" width="214" height="223"></div></div>
     </div>
   </div>
 </section>
