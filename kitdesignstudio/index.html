@@ -157,22 +157,25 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 .mat .cap small{display:block;font-size:12.5px;font-weight:500;color:var(--dim);letter-spacing:0}
 .mods .mod .tag{min-width:auto}
 
-/* ---------- editável (bloco azul) ---------- */
+/* ---------- editável: fundo escuro com as quatro pastas do logo ---------- */
 .edit-sec{padding:40px 0 60px}
-.edit{position:relative;isolation:isolate;overflow:hidden;text-align:center;border-radius:36px;padding:70px 40px 60px;background:linear-gradient(140deg,#2B70F8 0%,#1f55d6 55%,#3b2bd0 100%);box-shadow:0 50px 100px -50px rgba(43,112,248,.8)}
-.edit::before,.edit::after{content:"";position:absolute;z-index:-1;width:520px;height:520px;border-radius:50%;filter:blur(70px);animation:drift 14s ease-in-out infinite}
-.edit::before{left:-160px;top:-200px;background:rgba(255,112,254,.55)}
-.edit::after{right:-180px;bottom:-240px;background:rgba(42,233,121,.35);animation-delay:-7s}
-.selo100{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#13245e;background:#fff;border-radius:99px;padding:8px 16px;box-shadow:0 10px 24px -12px rgba(0,0,0,.5)}
+.edit{position:relative;isolation:isolate;overflow:hidden;text-align:center;border-radius:36px;padding:74px 40px 64px;background:radial-gradient(80% 70% at 50% 0%,#1d1d27,var(--card) 70%);border:1px solid var(--line-2);box-shadow:0 50px 100px -60px rgba(0,0,0,.9)}
+.edit .pz{position:absolute;z-index:-1;width:120px;height:90px;animation:flutua2 7s ease-in-out infinite;filter:drop-shadow(0 18px 24px rgba(0,0,0,.5))}
+.edit .pz.p1{left:5%;top:12%;rotate:-14deg;color:var(--rosa)}
+.edit .pz.p2{right:6%;top:9%;rotate:12deg;color:var(--azul);animation-delay:-2s}
+.edit .pz.p3{left:9%;bottom:10%;rotate:9deg;color:var(--verde);animation-delay:-4s;width:96px;height:72px}
+.edit .pz.p4{right:8%;bottom:13%;rotate:-10deg;color:var(--amarelo);animation-delay:-5.5s;width:104px;height:78px}
+.selo100{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#0b0b0f;background:#fff;border-radius:99px;padding:8px 16px}
 .edit h2{margin:20px auto 0;max-width:720px;color:#fff}
-.edit h2 .sub{color:#FFB8FF}
-.edit p{max-width:600px;margin:18px auto 0;color:rgba(255,255,255,.86);font-size:18px}
+.edit p{max-width:600px;margin:18px auto 0;color:var(--muted);font-size:18px}
 .apps{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-top:42px}
-.apps span{width:116px;padding:20px 10px 14px;border-radius:24px;background:#fff;box-shadow:0 24px 40px -22px rgba(0,0,0,.6);display:flex;flex-direction:column;align-items:center;gap:10px;animation:flutua2 5s ease-in-out infinite;animation-delay:var(--d);transition:transform .3s}
+.apps span{position:relative;width:116px;padding:22px 10px 14px;border-radius:22px;background:#fff;box-shadow:0 24px 40px -22px rgba(0,0,0,.8);display:flex;flex-direction:column;align-items:center;gap:10px;animation:flutua2 5s ease-in-out infinite;animation-delay:var(--d);transition:transform .3s}
+.apps span::before{content:"";position:absolute;left:14px;top:-6px;width:34px;height:12px;border-radius:5px 5px 0 0;background:var(--c)}
 .apps span:hover{transform:translateY(-6px) rotate(-3deg)}
 .apps img{height:52px;width:auto}
 .apps b{font-size:13.5px;font-weight:600;color:#1a1f36;letter-spacing:-.02em}
 @keyframes flutua2{50%{translate:0 -8px}}
+@media (max-width:640px){.edit{padding:50px 18px 40px;border-radius:26px}.edit p{font-size:16px}.edit .pz{width:64px;height:48px}.edit .pz.p1{left:-10px;top:4%}.edit .pz.p2{right:-10px;top:3%}.edit .pz.p3,.edit .pz.p4{display:none}.apps{gap:12px 10px}.apps span{width:calc(33.3% - 8px);padding:16px 6px 10px;border-radius:18px}.apps span::before{left:10px;width:26px;height:9px;top:-5px}.apps img{height:38px}.apps b{font-size:12px}}
 
 /* ---------- para quem é (com o check animado) ---------- */
 .fcard .ic svg{stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .6s .4s}
@@ -242,7 +245,6 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
   .pasta{font-size:7px;gap:2px;padding:3px 2px;border-radius:7px}.pasta svg{width:7.5cqw;height:5.6cqw}
   .matgrid{gap:10px}
   .mat .cap{padding:10px 12px 12px;gap:8px}.mat .cap svg{width:20px;height:16px}.mat .cap b{font-size:13.5px}.mat .cap small{font-size:11px}
-  .edit{padding:48px 18px 40px;border-radius:26px}.edit p{font-size:16px}.apps{gap:10px}.apps span{width:calc(33.3% - 8px);padding:14px 6px 10px;border-radius:18px}.apps img{height:38px}.apps b{font-size:12px}
   .recibo{padding:26px 18px 38px;rotate:0deg}
   .linha{font-size:14.5px;gap:8px}.linha .nm small{font-size:11.5px}
   .about .foto{width:250px}
@@ -468,15 +470,19 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 <section class="edit-sec">
   <div class="wrap">
     <div class="edit rv">
+      <svg class="pz p1" aria-hidden="true"><use href="#pasta"/></svg>
+      <svg class="pz p2" aria-hidden="true"><use href="#pasta"/></svg>
+      <svg class="pz p3" aria-hidden="true"><use href="#pasta"/></svg>
+      <svg class="pz p4" aria-hidden="true"><use href="#pasta"/></svg>
       <span class="selo100">100% editável</span>
-      <h2>Edite no programa que <span class="sub">você já usa.</span></h2>
+      <h2>Edite no programa que <span class="grad" style="--hl:var(--amarelo)">você já usa.</span></h2>
       <p>Todos os materiais podem ser editados no Figma, Canva, Word, Google Docs, PowerPoint ou Notion. É só escolher a ferramenta que você já usa.</p>
       <div class="apps">
-        <span style="--d:0s"><img src="../assets/img/kit-design-studio/logo-figma.webp" alt="" width="149" height="223"><b>Figma</b></span>
-        <span style="--d:-1s"><img src="../assets/img/kit-design-studio/logo-canva.webp" alt="" width="223" height="223"><b>Canva</b></span>
-        <span style="--d:-2s"><img src="../assets/img/kit-design-studio/logo-word.webp" alt="" width="218" height="223"><b>Word</b></span>
-        <span style="--d:-3s"><img src="../assets/img/kit-design-studio/logo-powerpoint.webp" alt="" width="260" height="223"><b>PowerPoint</b></span>
-        <span style="--d:-4s"><img src="../assets/img/kit-design-studio/logo-notion.webp" alt="" width="214" height="223"><b>Notion</b></span>
+        <span style="--d:0s;--c:var(--rosa)"><img src="../assets/img/kit-design-studio/logo-figma.webp" alt="" width="149" height="223"><b>Figma</b></span>
+        <span style="--d:-1s;--c:var(--azul)"><img src="../assets/img/kit-design-studio/logo-canva.webp" alt="" width="223" height="223"><b>Canva</b></span>
+        <span style="--d:-2s;--c:var(--verde)"><img src="../assets/img/kit-design-studio/logo-word.webp" alt="" width="218" height="223"><b>Word</b></span>
+        <span style="--d:-3s;--c:var(--amarelo)"><img src="../assets/img/kit-design-studio/logo-powerpoint.webp" alt="" width="260" height="223"><b>PowerPoint</b></span>
+        <span style="--d:-4s;--c:var(--rosa)"><img src="../assets/img/kit-design-studio/logo-notion.webp" alt="" width="214" height="223"><b>Notion</b></span>
       </div>
     </div>
   </div>
@@ -487,7 +493,7 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
   <div class="wrap">
     <div class="head rv">
       <span class="eyebrow">Para quem é</span>
-      <h2>O Kit foi feito para <span class="grad" style="--hl:var(--amarelo)">designers que atendem clientes.</span></h2>
+      <h2>O Kit foi feito para <span class="grad" style="--hl:var(--azul)">designers que atendem clientes.</span></h2>
     </div>
     <div class="fgrid">
       <div class="fcard rv" style="--accent:var(--rosa)"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Designers autônomas e estúdios</h3><p>Identidade visual, logo, social media, papelaria ou embalagem.</p></div>
@@ -505,7 +511,7 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
   <div class="wrap">
     <div class="head rv">
       <span class="eyebrow">O valor do Kit</span>
-      <h2>Quanto valeria <span class="grad" style="--hl:var(--azul)">cada material separado.</span></h2>
+      <h2>Quanto valeria <span class="grad" style="--hl:var(--rosa)">cada material separado.</span></h2>
     </div>
     <div class="recibo rv">
       <div class="tt"><img src="../assets/img/kit/logo-kit-escuro.png" alt="Kit Design Studio" width="61" height="30"><span>O QUE VEM NO KIT</span></div>
@@ -520,70 +526,7 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
       <div class="linha"><svg><use href="#v"/></svg><span class="nm">Edição em qualquer programa <small>(Figma, Canva, Word, PowerPoint e Notion)</small></span><span class="pt"></span><span class="vl">R$97</span></div>
       <div class="tot"><b>TUDO ISSO DEVERIA CUSTAR: <span>+R$473,00</span></b></div>
     </div>
-    <p class="mas rv">No Kit Design Studio, você leva tudo por <span class="grad" style="--hl:var(--rosa)">R$47, em um pagamento único.</span></p>
-  </div>
-</section>
-
-<!-- Criadora -->
-<section class="about" id="criadora">
-  <div class="streak"></div>
-  <div class="wrap grid">
-    <div class="rv">
-      <span class="eyebrow">Quem criou</span>
-      <h2>Opa, eu sou a <span class="grad" style="--hl:var(--verde)">Lari</span> <span class="wave">👋</span></h2>
-      <p class="first">Designer especialista em marcas e criadora do Kit Design Studio.</p>
-      <p>Durante muito tempo, vi designers talentosas perdendo clientes por falta de estrutura: proposta improvisada, contrato copiado da internet, nenhum processo.</p>
-      <p>Por isso, criei um material prático, editável e pensado para a realidade da designer autônoma, para você atender com mais confiança, credibilidade e tranquilidade, do primeiro contato à entrega.</p>
-      <div class="creds"><span>Design Gráfico · Unicuritiba</span><span>Expressão Gráfica · UFPR</span><span>+800 alunos</span></div>
-    </div>
-    <div class="photo rv">
-      <div class="foto">
-        <svg class="tag t1" style="color:var(--azul)"><use href="#pasta"/></svg>
-        <svg class="tag t2" style="color:var(--verde)"><use href="#pasta"/></svg>
-        <svg class="tag t3" style="color:var(--rosa)"><use href="#pasta"/></svg>
-        <img src="../assets/img/kit-design-studio/lari-tedeschi.webp" alt="Lari Tedeschi" loading="lazy" width="600" height="600">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Trilha da escola -->
-<section id="trilha" data-blur="l">
-  <div class="wrap">
-    <div class="head rv">
-      <span class="eyebrow">Para ir além</span>
-      <h2>O Kit organiza o atendimento. <span class="grad" style="--hl:var(--amarelo)">Os cursos ensinam a criar.</span></h2>
-      <p>Os materiais da Lari se complementam. Use o Kit com os projetos que você aprende a fazer nos cursos.</p>
-    </div>
-    <div class="path quatro">
-      <div class="course here rv">
-        <span class="here-tag">Você está aqui</span>
-        <span class="lvl">Templates</span>
-        <h3>Kit Design Studio</h3>
-        <p>Contratos, proposta, briefing e scripts para atender como um estúdio.</p>
-      </div>
-      <a class="course rv" href="../figlogo/" style="--c:#ff58fc">
-        <span class="dot"></span>
-        <span class="lvl">Primeiro passo</span>
-        <h3>FigLogo</h3>
-        <p>Criação de logotipos no Figma, do briefing à entrega.</p>
-        <span class="go">Conhecer o FigLogo →</span>
-      </a>
-      <a class="course rv" href="../figbrand/" style="--c:#9131F6">
-        <span class="dot"></span>
-        <span class="lvl">Próximo passo</span>
-        <h3>FigBrand</h3>
-        <p>Identidade visual completa e estratégica, com mentorias em grupo.</p>
-        <span class="go">Conhecer o FigBrand →</span>
-      </a>
-      <a class="course rv" href="../figpost/" style="--c:#FF70FE">
-        <span class="dot"></span>
-        <span class="lvl">Em paralelo</span>
-        <h3>FigPost</h3>
-        <p>Posts e carrosséis no Figma, com precificação e estrutura de estúdio.</p>
-        <span class="go">Conhecer o FigPost →</span>
-      </a>
-    </div>
+    <p class="mas rv">No Kit Design Studio, você leva tudo por <span class="grad" style="--hl:var(--verde)">R$47, em um pagamento único.</span></p>
   </div>
 </section>
 
@@ -593,7 +536,7 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
   <div class="wrap">
     <div class="head rv">
       <span class="eyebrow">Comprar</span>
-      <h2>Comece a usar o Kit <span class="grad" style="--hl:var(--azul)">hoje.</span></h2>
+      <h2>Comece a usar o Kit <span class="grad" style="--hl:var(--amarelo)">hoje.</span></h2>
     </div>
     <div class="obox rv">
       <div class="left">
@@ -631,7 +574,7 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
       <div class="selo"><svg viewBox="0 0 240 240" role="img" aria-label="Garantia de 7 dias"><defs><path id="arco" d="M120,120 m-86,0 a86,86 0 1,1 172,0 a86,86 0 1,1 -172,0"/></defs><style>.fundo{fill:currentColor}.anel{fill:none;stroke:#fff;stroke-opacity:.35;stroke-width:1.5}.txt{fill:#fff;font-family:Euclid,"Helvetica Neue",Arial,sans-serif;font-weight:600}</style><circle class="fundo" cx="120" cy="120" r="116"/><circle class="anel" cx="120" cy="120" r="100"/><circle class="anel" cx="120" cy="120" r="70"/><g class="gira"><text class="txt" font-size="15" letter-spacing="3.2" textLength="530" lengthAdjust="spacing"><textPath href="#arco">GARANTIA INCONDICIONAL ✦ SEM RISCO ✦ </textPath></text></g><text class="txt" x="120" y="134" text-anchor="middle" font-size="64" font-weight="700" letter-spacing="-3">7</text><text class="txt" x="120" y="160" text-anchor="middle" font-size="17" letter-spacing="2">DIAS</text></svg></div>
       <div>
         <span class="eyebrow">Garantia</span>
-        <h2>Você tem 7 dias para decidir <span class="grad" style="--hl:var(--rosa)">sem risco.</span></h2>
+        <h2>Você tem 7 dias para decidir <span class="grad" style="--hl:var(--azul)">sem risco.</span></h2>
         <p>Abra os arquivos, veja cada material e teste no programa que você usa. Se sentir que o Kit não é para você, é só pedir o reembolso em até 7 dias e devolvemos 100% do valor, sem burocracia.</p>
         <div class="steps3">
           <div><b>Receba o Kit</b>Os arquivos chegam no seu e-mail logo após a compra.</div>
@@ -643,11 +586,74 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
   </div>
 </section>
 
+<!-- Criadora -->
+<section class="about" id="criadora">
+  <div class="streak"></div>
+  <div class="wrap grid">
+    <div class="rv">
+      <span class="eyebrow">Quem criou</span>
+      <h2>Opa, eu sou a <span class="grad" style="--hl:var(--rosa)">Lari</span> <span class="wave">👋</span></h2>
+      <p class="first">Designer especialista em marcas e criadora do Kit Design Studio.</p>
+      <p>Durante muito tempo, vi designers talentosas perdendo clientes por falta de estrutura: proposta improvisada, contrato copiado da internet, nenhum processo.</p>
+      <p>Por isso, criei um material prático, editável e pensado para a realidade da designer autônoma, para você atender com mais confiança, credibilidade e tranquilidade, do primeiro contato à entrega.</p>
+      <div class="creds"><span>Design Gráfico · Unicuritiba</span><span>Expressão Gráfica · UFPR</span><span>+800 alunos</span></div>
+    </div>
+    <div class="photo rv">
+      <div class="foto">
+        <svg class="tag t1" style="color:var(--azul)"><use href="#pasta"/></svg>
+        <svg class="tag t2" style="color:var(--verde)"><use href="#pasta"/></svg>
+        <svg class="tag t3" style="color:var(--rosa)"><use href="#pasta"/></svg>
+        <img src="../assets/img/kit-design-studio/lari-tedeschi.webp" alt="Lari Tedeschi" loading="lazy" width="600" height="600">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trilha da escola -->
+<section id="trilha" data-blur="l">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Para ir além</span>
+      <h2>O Kit organiza o atendimento. <span class="grad" style="--hl:var(--verde)">Os cursos ensinam a criar.</span></h2>
+      <p>Os materiais da Lari se complementam. Use o Kit com os projetos que você aprende a fazer nos cursos.</p>
+    </div>
+    <div class="path quatro">
+      <div class="course here rv">
+        <span class="here-tag">Você está aqui</span>
+        <span class="lvl">Templates</span>
+        <h3>Kit Design Studio</h3>
+        <p>Contratos, proposta, briefing e scripts para atender como um estúdio.</p>
+      </div>
+      <a class="course rv" href="../figlogo/" style="--c:#ff58fc">
+        <span class="dot"></span>
+        <span class="lvl">Primeiro passo</span>
+        <h3>FigLogo</h3>
+        <p>Criação de logotipos no Figma, do briefing à entrega.</p>
+        <span class="go">Conhecer o FigLogo →</span>
+      </a>
+      <a class="course rv" href="../figbrand/" style="--c:#9131F6">
+        <span class="dot"></span>
+        <span class="lvl">Próximo passo</span>
+        <h3>FigBrand</h3>
+        <p>Identidade visual completa e estratégica, com mentorias em grupo.</p>
+        <span class="go">Conhecer o FigBrand →</span>
+      </a>
+      <a class="course rv" href="../figpost/" style="--c:#FF70FE">
+        <span class="dot"></span>
+        <span class="lvl">Em paralelo</span>
+        <h3>FigPost</h3>
+        <p>Posts e carrosséis no Figma, com precificação e estrutura de estúdio.</p>
+        <span class="go">Conhecer o FigPost →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- Dúvidas -->
 <section class="faq" id="faq" data-blur="r">
   <div class="wrap">
     <div class="top rv">
-      <h2><span class="grad" style="--hl:var(--verde)">Perguntas</span> frequentes</h2>
+      <h2><span class="grad" style="--hl:var(--amarelo)">Perguntas</span> frequentes</h2>
       <p>Ficou alguma dúvida?<br>Chama no WhatsApp.</p>
     </div>
     <div class="list">
