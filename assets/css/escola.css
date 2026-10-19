@@ -259,6 +259,17 @@ p+p{margin-top:14px}
 .about p{color:var(--muted)}
 .about p.first{color:var(--txt);font-size:18px;margin-top:22px}
 .about .photo img{width:100%;max-width:400px;border-radius:26px;margin-left:auto;transform:rotate(2deg);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--accent) 70%,transparent)}
+.about .photo img{height:auto}
+/* celular e tablet: título "Opa, eu sou a Lari", depois a foto, depois o texto */
+@media (max-width:960px){
+  .about .wrap.grid{gap:0}
+  .about .grid>div:first-child{display:contents}
+  .about .grid>div:first-child>*{order:3}
+  .about .grid>div:first-child>.eyebrow{order:0;justify-self:start}
+  .about .grid>div:first-child>h2{order:1}
+  .about .grid>.photo{order:2;margin:30px 0 8px;opacity:1;transform:none;filter:none}
+  .about .photo img{width:min(340px,82%)}
+}
 .creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
 .creds span{font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px;border:1px solid var(--line-2);color:var(--muted)}
 

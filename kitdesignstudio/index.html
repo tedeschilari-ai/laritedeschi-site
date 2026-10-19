@@ -198,12 +198,13 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 .recibo.in .tot b span::after{transform:scaleX(1)}
 .mas{max-width:640px;margin:44px auto 0;text-align:center;font-size:clamp(19px,2.2vw,23px);font-weight:600;letter-spacing:-.02em}
 
-/* ---------- criadora ---------- */
-.about .foto{position:relative;width:min(380px,100%);margin:0 auto}
-.about .foto img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;max-width:none;transform:none;box-shadow:0 0 0 10px var(--card-2),0 40px 80px -30px rgba(74,132,255,.5)}
-.about .foto .tag{position:absolute;width:70px;height:52px;animation:flutua2 6s ease-in-out infinite;z-index:2}
-.about .foto .t1{right:-6px;top:10%;rotate:12deg}.about .foto .t2{left:-10px;bottom:12%;rotate:-10deg;animation-delay:-3s}
-.about .foto .t3{right:6%;bottom:-2%;rotate:-6deg;animation-delay:-1.5s;width:54px;height:40px}
+/* ---------- criadora: foto como nas páginas dos cursos, com as pastinhas do Kit ---------- */
+.about .foto{position:relative;width:100%;max-width:400px;margin-left:auto}
+.about .foto img{max-width:none;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:48% 50%;border:1px solid var(--line-2);box-shadow:0 40px 80px -40px rgba(74,132,255,.6)}
+.about .foto .tag{position:absolute;width:70px;height:52px;animation:flutua2 6s ease-in-out infinite;z-index:2;filter:drop-shadow(0 10px 14px rgba(0,0,0,.5))}
+.about .foto .t1{right:-18px;top:8%;rotate:12deg}.about .foto .t2{left:-22px;bottom:14%;rotate:-10deg;animation-delay:-3s}
+.about .foto .t3{right:10%;bottom:-18px;rotate:-6deg;animation-delay:-1.5s;width:56px;height:42px}
+@media (max-width:960px){.about .foto{width:min(340px,82%);margin:0 auto}.about .foto img{width:100%}.about .foto .tag{width:52px;height:39px}.about .foto .t1{right:-14px}.about .foto .t2{left:-14px}}
 
 /* ---------- trilha com 4 cards ---------- */
 .path.quatro{grid-template-columns:repeat(4,1fr);max-width:1080px}
@@ -247,7 +248,6 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
   .mat .cap{padding:10px 12px 12px;gap:8px}.mat .cap svg{width:20px;height:16px}.mat .cap b{font-size:13.5px}.mat .cap small{font-size:11px}
   .recibo{padding:26px 18px 38px;rotate:0deg}
   .linha{font-size:14.5px;gap:8px}.linha .nm small{font-size:11.5px}
-  .about .foto{width:250px}
   .path.quatro{grid-template-columns:1fr}
   .selos-p{gap:5px;flex-wrap:nowrap}.selos-p span{font-size:12px;padding:6px 8px;gap:4px;white-space:nowrap}.selos-p svg{width:14px;height:14px}
 }
