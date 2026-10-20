@@ -6,7 +6,7 @@
 <title>Parabéns! Um recado antes de você entrar · FigPost</title>
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#f3f1f3">
-<!-- FigPost · upsell depois da compra do FigLogo (etapa 1 de 2). Não aparece em buscas. -->
+<!-- FigPost · upsell depois da compra do FigLogo (etapa 1 de 2), v2: crédito do FigLogo. Não aparece em buscas. -->
 
 <!-- Meta Pixel -->
 <script>
@@ -17,88 +17,290 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 
 <link rel="stylesheet" href="../../assets/css/escola.css">
 <style>
-:root{--accent:#6032FD; --accent-2:#B01CFF; --accent-3:#1E0B5C; --accent-lt:#9C7BFF}
+:root{--accent:#6032FD; --accent-2:#B01CFF; --accent-3:#1E0B5C; --accent-lt:#9C7BFF; --lima:#B7F36B; --tinta:#1E0B5C; --verm:#e04a4a}
 .grad{background:linear-gradient(95deg,#6032FD 0%,#7A3BFF 55%,#9B4DFF 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.aviso{position:sticky;top:0;z-index:20;background:#1E0B5C;color:#fff;text-align:center;font-size:13.5px;font-weight:600;padding:10px 16px;letter-spacing:-.01em}
-.aviso b{color:#B7F36B}
-.up{position:relative;isolation:isolate;overflow-x:clip;text-align:center;padding:56px 0 30px}
-.up .logo{height:30px;width:auto;margin:0 auto 26px}
-.up .pill{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1E0B5C;background:#B7F36B;border-radius:999px;padding:7px 16px}
-.up h1{font-size:clamp(32px,5.4vw,58px);max-width:820px;margin:20px auto 0;line-height:1.05}
-.up .sub{color:var(--muted);font-size:18px;margin:16px auto 0;max-width:520px}
-.video{position:relative;width:min(360px,100%);margin:36px auto 0;aspect-ratio:9/16;border-radius:24px;overflow:hidden;background:#1E0B5C;box-shadow:0 40px 80px -30px rgba(48,20,160,.45),0 0 0 6px #fff}
+section{padding:90px 0}
+.aviso{position:sticky;top:0;z-index:20;background:var(--tinta);color:#fff;text-align:center;font-size:13.5px;font-weight:600;padding:10px 16px;letter-spacing:-.01em}
+.aviso b{color:var(--lima)}
+.estreito{max-width:760px;margin:0 auto}
+.estreito h2{font-size:clamp(28px,4vw,44px);text-align:center}
+.estreito>p{font-size:18px;color:var(--muted);margin-top:18px}
+.estreito>p b,.estreito>p strong{color:var(--txt)}
+
+/* ---------- abertura com o vídeo ---------- */
+.up{position:relative;isolation:isolate;overflow-x:clip;text-align:center;padding:52px 0 40px}
+.up .logo{height:30px;width:auto;margin:0 auto 24px}
+.up .pill{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta);background:var(--lima);border-radius:999px;padding:7px 16px}
+.up h1{font-size:clamp(30px,4.8vw,52px);max-width:860px;margin:20px auto 0;line-height:1.06}
+.up .sub{color:var(--muted);font-size:18px;margin:18px auto 0;max-width:560px}
+.video{position:relative;width:min(360px,100%);margin:34px auto 0;aspect-ratio:9/16;border-radius:24px;overflow:hidden;background:var(--tinta);box-shadow:0 40px 80px -30px rgba(48,20,160,.45),0 0 0 6px #fff}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .halo2{position:absolute;left:50%;top:58%;width:min(640px,100vw);height:640px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,color-mix(in srgb,#6032FD 30%,transparent),transparent);filter:blur(30px);z-index:-1}
-.selos{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:28px}
+.selos{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px}
 .selos span{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:14.5px;font-weight:600;box-shadow:var(--card-shadow)}
 .selos svg{width:18px;height:18px}
-.cta-up{margin-top:26px}
-.cta-up .btn{font-size:18px;padding:20px 40px}
-.extra{padding:70px 0 40px}
-.extra h2{text-align:center;font-size:clamp(28px,4vw,40px)}
-.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
-.bcard{border-radius:20px;overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:var(--card-shadow);text-align:left}
-.bcard img{width:100%;height:auto;aspect-ratio:540/301;object-fit:cover;display:block}
-.bcard div{padding:18px 20px 22px}
-.bcard h3{font-size:18px;letter-spacing:-.02em}
-.bcard p{color:var(--muted);font-size:15px;margin-top:6px;line-height:1.45}
-.final{text-align:center;padding:20px 0 60px}
-.duvida{text-align:center;padding:56px 0 70px;border-top:1px solid var(--line);background:var(--bg-2)}
-.duvida h2{font-size:clamp(26px,3.6vw,36px)}
-.duvida a{display:inline-flex;align-items:center;gap:10px;margin-top:18px;font-weight:600;color:#1E0B5C;background:#fff;border:1px solid var(--line);border-radius:999px;padding:13px 22px;box-shadow:var(--card-shadow)}
-.duvida a svg{width:20px;height:20px}
+.cta-topo{margin-top:26px}
+.cta-topo .btn{font-size:18px;padding:20px 34px;max-width:440px;width:100%}
+
+/* ---------- bloco 1: o problema ---------- */
+.problema{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pergunta{display:block;max-width:460px;margin:30px auto 8px;padding:16px 20px;border-radius:20px 20px 20px 6px;background:#fff;box-shadow:var(--card-shadow);font-size:19px;font-weight:600;color:var(--tinta);text-align:left;position:relative}
+.pergunta small{display:block;font-size:12.5px;font-weight:500;color:var(--dim);margin-bottom:4px}
+.erros{list-style:none;display:grid;gap:10px;margin:26px auto 0;max-width:640px}
+.erros li{display:flex;gap:12px;align-items:flex-start;padding:16px 18px;border-radius:16px;background:#fff;border:1px solid var(--line);box-shadow:var(--card-shadow);font-size:16.5px;line-height:1.45}
+.erros li i{flex:none;width:24px;height:24px;border-radius:50%;background:#fde4e4;color:var(--verm);display:grid;place-items:center;font-style:normal;font-weight:700;font-size:13px;margin-top:1px}
+.resultado{max-width:640px;margin:26px auto 0;text-align:center;font-size:18px;font-weight:600;letter-spacing:-.02em}
+
+/* ---------- bloco 2: a virada ---------- */
+.virada .frase{font-size:clamp(30px,4.6vw,52px);text-align:center;line-height:1.08;letter-spacing:-.04em;font-weight:600}
+.compara{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:880px;margin:44px auto 0}
+.col{border-radius:22px;padding:24px 22px;border:1px solid var(--line);background:#fff;box-shadow:var(--card-shadow)}
+.col h3{font-size:17px;display:flex;align-items:center;gap:10px}
+.col h3 i{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:14px;color:#fff}
+.col ul{list-style:none;margin-top:16px;display:grid;gap:12px}
+.col li{font-size:15.5px;line-height:1.45;color:var(--muted);padding-left:18px;position:relative}
+.col li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%}
+.col.so h3 i{background:#c9c2cc}.col.so li::before{background:#c9c2cc}
+.col.mais{border-color:color-mix(in srgb,var(--accent) 40%,transparent);background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 9%,#fff),#fff 60%);box-shadow:0 30px 60px -36px rgba(96,50,253,.55)}
+.col.mais h3 i{background:var(--accent)}.col.mais li{color:var(--txt)}.col.mais li::before{background:var(--accent)}
+
+/* ---------- bloco 3: o que você recebe ---------- */
+.recebe{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:880px;margin:36px auto 0}
+.recebe div{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border-radius:18px;background:#fff;border:1px solid var(--line);box-shadow:var(--card-shadow)}
+.recebe svg{flex:none;width:24px;height:24px;margin-top:1px}
+.recebe b{display:block;font-size:16.5px;letter-spacing:-.02em}
+.recebe span{display:block;font-size:14.5px;color:var(--muted);margin-top:3px;line-height:1.45}
+
+/* ---------- bloco 4: prova ---------- */
+.provas{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:880px;margin:36px auto 0}
+.prova{padding:26px;border-radius:22px;background:#fff;border:1px solid var(--line);box-shadow:var(--card-shadow);display:flex;flex-direction:column;gap:16px}
+.prova q{quotes:none;font-size:17px;line-height:1.5;color:var(--txt)}
+.prova q::before{content:"“";color:var(--accent);font-weight:700}.prova q::after{content:"”";color:var(--accent);font-weight:700}
+.prova .quem{display:flex;align-items:center;gap:12px;margin-top:auto}
+.prova .quem img,.prova .quem .ini{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none}
+.prova .quem .ini{display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 14%,#fff);color:var(--accent);font-weight:700}
+.prova .quem b{display:block;font-size:15.5px}
+.prova .quem small{font-size:13px;color:var(--dim)}
+
+/* ---------- bloco 5: a oferta com o crédito do FigLogo ---------- */
+.oferta{position:relative;overflow:hidden}
+.oferta .bgglow{position:absolute;left:50%;top:50%;width:1000px;height:800px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 18%,transparent),transparent);pointer-events:none}
+.recibo{position:relative;max-width:520px;margin:34px auto 0;background:#fff;color:var(--tinta);padding:30px 30px 40px;border-radius:20px 20px 0 0;box-shadow:0 40px 70px -36px rgba(30,11,92,.45),0 0 0 1px rgba(30,11,92,.06)}
+.recibo::after{content:"";position:absolute;left:0;right:0;bottom:-14px;height:14px;background:radial-gradient(circle at 10px -2px,transparent 12px,#fff 12.5px) -10px 0/20px 14px repeat-x}
+.recibo .tt{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;letter-spacing:.14em;color:rgba(30,11,92,.5);padding-bottom:14px;border-bottom:2px dashed rgba(30,11,92,.16)}
+.recibo .tt img{height:24px;width:auto}
+.linha{display:flex;align-items:baseline;gap:10px;padding:12px 0;font-size:16.5px}
+.linha .pt{flex:1;border-bottom:2px dotted rgba(30,11,92,.18);translate:0 -4px}
+.linha .vl{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.linha.cheio .vl{color:#9a92a6;text-decoration:line-through;text-decoration-color:var(--verm);text-decoration-thickness:2px}
+.linha.credito .vl{color:#1f9d4c}
+.linha.credito .nm b{color:#1f9d4c}
+.recibo .tot{margin-top:10px;padding-top:18px;border-top:2px dashed rgba(30,11,92,.16);display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.recibo .tot span{font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.recibo .tot b{font-size:clamp(44px,7vw,60px);letter-spacing:-.05em;line-height:1;color:#16a34a}
+.recibo .tot b small{font-size:.42em;letter-spacing:-.02em;margin-right:4px;vertical-align:.7em}
+.recibo .parc{text-align:right;font-size:14px;color:#6b6478;margin-top:6px}
+.dois{max-width:640px;margin:40px auto 0;text-align:center;font-size:clamp(19px,2.3vw,23px);font-weight:600;letter-spacing:-.02em;line-height:1.35}
+.porque{max-width:640px;margin:22px auto 0;padding:20px 22px;border-radius:18px;background:#fff;border:1px solid var(--line);box-shadow:var(--card-shadow);font-size:16px;color:var(--muted);line-height:1.55}
+.porque b{color:var(--txt)}
+.so-aqui{display:flex;align-items:center;justify-content:center;gap:10px;max-width:640px;margin:22px auto 0;padding:13px 18px;border-radius:14px;background:#fff7e0;border:1px solid #f4dc95;color:#6b4e00;font-size:15px;font-weight:600;text-align:left}
+.cta-up{margin-top:28px}
+
 /* botão de 1 clique da Kiwify, adaptado ao fundo claro */
 #kiwify-upsell-Gj25H3s{max-width:440px;margin:0 auto}
 #kiwify-upsell-trigger-Gj25H3s{font-family:inherit!important;font-size:18px!important;font-weight:700!important;letter-spacing:-.02em;border-radius:999px!important;padding:19px 24px!important;color:#fff!important;border:0!important;width:100%;background:linear-gradient(180deg,#7be05a 0%,#3fbf18 50%,#289c02 100%)!important;box-shadow:0 0 0 1px rgba(255,255,255,.25) inset,0 14px 34px -12px rgba(63,191,24,.75)!important;cursor:pointer}
 #kiwify-upsell-Gj25H3s .kiwify-upsell-inline-label{font-family:inherit;text-align:left}
 #kiwify-upsell-Gj25H3s select{font-family:inherit;border-radius:14px!important}
-#kiwify-upsell-Gj25H3s label,#kiwify-upsell-Gj25H3s [class*="parcel"]{color:#1E0B5C!important}
+#kiwify-upsell-Gj25H3s label,#kiwify-upsell-Gj25H3s [class*="parcel"]{color:var(--tinta)!important}
 #kiwify-upsell-Gj25H3s select{color:#000!important;background-color:#fff!important}
 #kiwify-upsell-Gj25H3s select option{color:#000!important;background-color:#fff!important}
-#kiwify-upsell-cancel-trigger-Gj25H3s{color:rgba(26,11,26,.55)!important;font-size:14px;margin-top:14px;text-decoration:underline;cursor:pointer}
-@media (max-width:860px){.bgrid{grid-template-columns:1fr}}
-@media (max-width:640px){.up{padding-top:40px}.up .sub{font-size:16.5px}.cta-up .btn,.final .btn{width:100%}}
+#kiwify-upsell-cancel-trigger-Gj25H3s{text-align:center;color:rgba(26,11,26,.55)!important;font-size:14px;margin-top:14px;text-decoration:underline;cursor:pointer}
+
+/* ---------- garantia, dúvidas e final ---------- */
+.garantia{display:flex;align-items:center;gap:22px;max-width:720px;margin:0 auto;padding:26px 28px;border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:var(--card-shadow)}
+.garantia svg{flex:none;width:84px;height:84px}
+.garantia h2{font-size:24px;text-align:left}
+.garantia p{color:var(--muted);margin-top:6px;font-size:16px}
+.faq .list{max-width:760px;margin:30px auto 0}
+.fim{text-align:center;padding:30px 0 70px}
+.fim h2{font-size:clamp(26px,3.6vw,40px);max-width:760px;margin:0 auto}
+.fim p{color:var(--muted);font-size:18px;margin:14px auto 0;max-width:560px}
+.fim .btn{margin-top:26px;font-size:18px;padding:20px 34px;max-width:440px;width:100%}
+.fim .nao{display:block;margin-top:14px;font-size:14px;color:rgba(26,11,26,.55);text-decoration:underline}
+.duvida{text-align:center;padding:56px 0 70px;border-top:1px solid var(--line);background:var(--bg-2)}
+.duvida h2{font-size:clamp(26px,3.6vw,36px)}
+.duvida a{display:inline-flex;align-items:center;gap:10px;margin-top:18px;font-weight:600;color:var(--tinta);background:#fff;border:1px solid var(--line);border-radius:999px;padding:13px 22px;box-shadow:var(--card-shadow)}
+.duvida a svg{width:20px;height:20px}
+
+@media (max-width:760px){.compara,.recebe,.provas{grid-template-columns:1fr}}
+@media (max-width:640px){
+  section{padding:70px 0}
+  .up{padding-top:36px}.up .sub{font-size:16.5px}
+  .estreito>p{font-size:16.5px}
+  .recibo{padding:24px 18px 34px}.linha{font-size:15px;gap:8px}
+  .garantia{flex-direction:column;text-align:center}.garantia h2{text-align:center}
+}
 </style>
 </head>
 <body data-curso="FigPost">
 
 <div class="aviso"><b>Etapa 1 de 2:</b> não feche nem atualize esta página ainda</div>
 
+<!-- Abertura -->
 <header class="up">
   <div class="halo2"></div>
   <div class="wrap">
     <img class="logo" src="../../assets/img/figpost/logo-figpost.png" alt="FigPost" width="90" height="30">
     <div><span class="pill">Parabéns!</span></div>
-    <h1>Você já está com acesso ao FigLogo, <span class="grad">mas…</span></h1>
-    <p class="sub">Tenho um recado importante para você. Assista ao vídeo abaixo:</p>
+    <h1>Você já está com acesso ao FigLogo, <span class="grad">mas o seu primeiro projeto ainda não está completo…</span></h1>
+    <p class="sub">Gravei um recado rápido sobre o que o seu cliente vai te pedir logo depois que você entregar o logo. Assista antes de sair:</p>
     <div class="video"><iframe src="https://player.vimeo.com/video/1229557521?autoplay=1&amp;autopause=0&amp;playsinline=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Recado da Lari sobre o FigPost"></iframe></div>
+    <div class="cta-topo"><a class="btn" href="#oferta">Sim! Quero o FigPost usando meu crédito</a></div>
     <div class="selos">
-      <span><svg viewBox="0 0 24 24" fill="#6032FD"><path d="M18.2 8.4a3.6 3.6 0 1 1 0 7.2c-2.6 0-4-3.6-6.2-3.6S8.4 15.6 5.8 15.6a3.6 3.6 0 1 1 0-7.2c2.6 0 4 3.6 6.2 3.6s3.6-3.6 6.2-3.6z" fill="none" stroke="#6032FD" stroke-width="2.2"/></svg>Acesso vitalício</span>
       <span><svg viewBox="0 0 24 24"><path d="M12 2l8 3.5v6c0 5-3.4 8.6-8 10.5-4.6-1.9-8-5.5-8-10.5v-6z" fill="#6032FD"/><path d="M8.5 12l2.4 2.4L15.5 10" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Garantia de 7 dias</span>
-    </div>
-    <!-- Botão de compra com 1 clique da Kiwify: usa os dados da compra do FigLogo -->
-    <div class="cta-up" id="comprar">
-      <div id="kiwify-upsell-Gj25H3s" data-upsell-url="" data-downsell-url="" style="--kiwify-upsell-accept-bg:#2ECC70;--kiwify-upsell-accept-color:#FFFFFF">
-        <button id="kiwify-upsell-trigger-Gj25H3s">Sim, eu aceito essa oferta especial!</button>
-        <div id="kiwify-upsell-cancel-trigger-Gj25H3s">Não, eu gostaria de recusar essa oferta</div>
-      </div>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="#6032FD" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Compra com 1 clique</span>
     </div>
   </div>
 </header>
 
-<section class="extra">
+<!-- Bloco 1: o problema -->
+<section class="problema">
+  <div class="wrap estreito">
+    <h2>O logo é só o começo do projeto. <span class="grad">E é justamente a parte que o cliente paga uma vez só.</span></h2>
+    <p>Pensa comigo: depois que você entrega o logo, onde o seu cliente vai ver essa marca todo dia?</p>
+    <p>Não é no arquivo PNG. É no Instagram dele. No post de segunda, no carrossel de quinta, no destaque da bio.</p>
+    <p>E é aí que a maioria trava. O cliente pergunta:</p>
+    <span class="pergunta"><small>Cliente, logo depois da entrega</small>“E os posts, você faz também?”</span>
+    <p style="text-align:center;margin-top:20px">E a designer:</p>
+    <ul class="erros">
+      <li><i>✕</i>diz que não faz, e o cliente leva a marca que ela criou pra outra pessoa aplicar</li>
+      <li><i>✕</i>tenta resolver no Canva e perde toda a identidade que acabou de construir</li>
+      <li><i>✕</i>aceita fazer, mas cobra R$30 por post porque não tem um processo pra isso</li>
+    </ul>
+    <p class="resultado">Resultado: você fez a parte mais difícil (a marca) e deixou o dinheiro recorrente (o feed) na mesa.</p>
+  </div>
+</section>
+
+<!-- Bloco 2: a virada -->
+<section class="virada">
   <div class="wrap">
-    <h2>E você ainda <span class="grad">recebe:</span></h2>
-    <div class="bgrid">
-      <div class="bcard"><img src="../../assets/img/figpost/bonus-comunidade.webp" alt="" loading="lazy" width="540" height="301"><div><h3>Comunidade no WhatsApp</h3><p>Uma comunidade exclusiva em que eu mesma estou lá para te ajudar, de forma personalizada, nas dúvidas sobre o Figma.</p></div></div>
-      <div class="bcard"><img src="../../assets/img/figpost/bonus-certificado.webp" alt="" loading="lazy" width="540" height="301"><div><h3>Certificado de conclusão</h3><p>Certificado de 10 horas de aulas para complementar o seu currículo na área de design.</p></div></div>
-      <div class="bcard"><img src="../../assets/img/figpost/bonus-educacional.webp" alt="" loading="lazy" width="540" height="301"><div><h3>Plano EDU do Figma liberado</h3><p>O FigPost é reconhecido pelo Figma e dá acesso ao plano educacional, com recursos Pro de graça.</p></div></div>
+    <p class="frase">O logo você vende uma vez.<br><span class="grad">A marca aplicada no feed, você vende todo mês.</span></p>
+    <div class="estreito">
+      <p>O FigPost é o mesmo processo que você acabou de aprender no FigLogo, aplicado a posts e carrosséis. O mesmo Figma, a mesma lógica de conceito, hierarquia e refinamento. Só que agora o projeto não termina no logo.</p>
+      <p>Em vez de entregar um arquivo e esperar o próximo cliente, você entrega <strong>a marca funcionando no Instagram</strong> e pode transformar o mesmo cliente em pacote mensal.</p>
+    </div>
+    <div class="compara">
+      <div class="col so">
+        <h3><i>✕</i>Quem entrega só o logo</h3>
+        <ul>
+          <li>Cobra uma vez pelo projeto</li>
+          <li>Cliente leva a marca pra outra pessoa aplicar</li>
+          <li>Precisa achar um cliente novo todo mês</li>
+          <li>Identidade se perde no Canva</li>
+        </ul>
+      </div>
+      <div class="col mais">
+        <h3><i>✓</i>Quem entrega logo + feed</h3>
+        <ul>
+          <li>Cobra o projeto + um pacote mensal de posts</li>
+          <li>A marca continua nas suas mãos</li>
+          <li>O mesmo cliente paga todo mês</li>
+          <li>Identidade aplicada com o mesmo padrão do logo</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="final">
-  <div class="wrap"><a class="btn" href="#comprar">Entrar para o FigPost <span class="arr">→</span></a></div>
+<!-- Bloco 3: o que você recebe -->
+<section class="problema">
+  <div class="wrap">
+    <div class="estreito"><h2>Dentro do <span class="grad">FigPost:</span></h2></div>
+    <div class="recebe">
+      <div><svg viewBox="0 0 24 24"><use href="#ok"/></svg><p><b>Figma aplicado a posts e carrosséis</b><span>Conteúdo específico pra redes, sem repetir o que você viu no FigLogo.</span></p></div>
+      <div><svg viewBox="0 0 24 24"><use href="#ok"/></svg><p><b>Fundamentos de design pra carrossel</b><span>Hierarquia, grid e tipografia que prendem o scroll.</span></p></div>
+      <div><svg viewBox="0 0 24 24"><use href="#ok"/></svg><p><b>Passo a passo completo de carrossel</b><span>Do conceito à entrega.</span></p></div>
+      <div><svg viewBox="0 0 24 24"><use href="#ok"/></svg><p><b>Estruturação de estúdio</b><span>Como precificar e vender esse serviço pros mesmos clientes que já compraram o logo com você.</span></p></div>
+      <div><svg viewBox="0 0 24 24"><use href="#ok"/></svg><p><b>Comunidade exclusiva no WhatsApp</b></p></div>
+      <div><svg viewBox="0 0 24 24"><use href="#ok"/></svg><p><b>Licença educacional do Figma</b><span>Liberada também pra esse curso.</span></p></div>
+      <div><svg viewBox="0 0 24 24"><use href="#ok"/></svg><p><b>Aulas bônus</b><span>Com profissionais convidados.</span></p></div>
+      <div><svg viewBox="0 0 24 24"><use href="#ok"/></svg><p><b>Certificado de conclusão (10h)</b></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Bloco 4: prova -->
+<section>
+  <div class="wrap">
+    <div class="estreito"><h2>Quem já <span class="grad">aplicou:</span></h2></div>
+    <div class="provas">
+      <figure class="prova"><q>Só pra compartilhar com vocês que antes eu cobrava R$35 num carrossel! Hoje cobro R$90,00 e ainda acham barato. Sempre feito no Figma!</q><figcaption class="quem"><span class="ini">M</span><span><b>Michelle Rodrigues</b><small>Aluna FigPost</small></span></figcaption></figure>
+      <figure class="prova"><q>A Lari realmente se superou, trouxe conteúdos atualizados e práticos. Agora tô confiante pra fazer designs arrasadores nas mídias sociais.</q><figcaption class="quem"><img src="../../assets/img/figpost/depo-1.webp" alt="" loading="lazy" width="46" height="46"><span><b>Ana Carolina Costa</b><small>Aluna FigPost</small></span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- Bloco 5: a oferta + crédito do FigLogo -->
+<section class="oferta problema" id="oferta">
+  <div class="bgglow"></div>
+  <div class="wrap">
+    <div class="estreito">
+      <h2>Só pra quem acabou de entrar no FigLogo, <span class="grad">e só nesta página:</span></h2>
+      <p>O FigPost custa <strong>R$397</strong> pra quem chega pela página normal. Aqui, ele já começa pela <strong>metade do preço: R$197.</strong></p>
+      <p><strong>E tem mais:</strong> os <strong>R$67 que você acabou de pagar no FigLogo viram crédito</strong> e saem direto desse valor.</p>
+    </div>
+    <div class="recibo">
+      <div class="tt"><img src="../../assets/img/figpost/logo-figpost.png" alt="FigPost" width="90" height="30"><span>SUA CONTA</span></div>
+      <div class="linha cheio"><span class="nm">FigPost (preço normal)</span><span class="pt"></span><span class="vl">R$397</span></div>
+      <div class="linha"><span class="nm">50% OFF só nesta página</span><span class="pt"></span><span class="vl">R$197</span></div>
+      <div class="linha credito"><span class="nm"><b>Seu crédito do FigLogo</b></span><span class="pt"></span><span class="vl">− R$67</span></div>
+      <div class="tot"><span>Você paga hoje</span><b><small>R$</small>130</b></div>
+      <p class="parc">ou em até 12x no cartão</p>
+    </div>
+    <p class="dois">Na prática, <span class="grad">é como se o FigLogo saísse de graça:</span> você leva os dois cursos pelo preço de um. Menos do que muita designer cobra por um único carrossel.</p>
+    <p class="porque"><b>Por que eu faço isso?</b> Porque a aluna que faz os dois cursos sai daqui pronta pra vender o projeto inteiro (marca + feed) e tem muito mais chance de fechar o primeiro cliente. Prefiro colocar esse desconto em quem já decidiu levar isso a sério.</p>
+    <p class="so-aqui">🔒 Essa condição (50% OFF + crédito do FigLogo) existe só nesta página. Se você sair ou atualizar, ela não aparece de novo.</p>
+    <!-- Botão de compra com 1 clique da Kiwify: usa os dados da compra do FigLogo -->
+    <div class="cta-up" id="comprar">
+      <div id="kiwify-upsell-Gj25H3s" data-upsell-url="" data-downsell-url="" style="--kiwify-upsell-accept-bg:#2ECC70;--kiwify-upsell-accept-color:#FFFFFF">
+        <button id="kiwify-upsell-trigger-Gj25H3s">Sim! Quero o FigPost usando meu crédito</button>
+        <div id="kiwify-upsell-cancel-trigger-Gj25H3s">Não, prefiro pagar R$397 depois</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bloco 6: garantia -->
+<section style="padding-bottom:40px">
+  <div class="wrap">
+    <div class="garantia">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3l17 6v12c0 11-7.4 19.4-17 24C14.4 40.4 7 32 7 21V9z" fill="#6032FD"/><text x="24" y="27" text-anchor="middle" fill="#fff" font-family="Euclid,Arial,sans-serif" font-weight="700" font-size="15">7</text><text x="24" y="35" text-anchor="middle" fill="#fff" font-family="Euclid,Arial,sans-serif" font-weight="600" font-size="5.5" letter-spacing=".6">DIAS</text></svg>
+      <div><h2>Garantia de 7 dias.</h2><p>Entra, assiste, aplica. Se não fizer sentido pra você, devolvemos 100% do FigPost, sem burocracia.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Bloco 7: dúvidas -->
+<section class="faq" style="padding-top:50px">
+  <div class="wrap">
+    <div class="estreito"><h2><span class="grad">Dúvidas</span> frequentes</h2></div>
+    <div class="list">
+      <details open><summary>Como funciona o crédito do FigLogo?</summary><p>É automático. Os R$67 que você pagou no FigLogo já foram descontados do preço do FigPost nesta página. Você não precisa pedir nada nem esperar reembolso: o valor que aparece no botão já é o final.</p></details>
+      <details><summary>Preciso terminar o FigLogo antes de começar o FigPost?</summary><p>Não. O FigPost também começa do zero. Mas quem faz os dois junto vê que é o mesmo processo, só aplicado em outro formato.</p></details>
+      <details><summary>É diferente do FigLogo?</summary><p>Sim. O FigLogo ensina a criar a marca. O FigPost ensina a aplicar essa marca em posts e carrosséis e a vender isso como serviço mensal.</p></details>
+      <details><summary>Essa condição volta depois?</summary><p>Não. O preço de 50% e o crédito do FigLogo existem só nesta página, pra quem acabou de comprar o FigLogo.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA final -->
+<section class="fim">
+  <div class="wrap">
+    <h2>Você já fez a parte mais difícil: <span class="grad">decidiu aprender a criar marcas.</span></h2>
+    <p>Agora é só não deixar o resto do projeto na mão de outra pessoa.</p>
+    <a class="btn" href="#oferta">Sim! Quero o FigPost usando meu crédito</a>
+    <a class="nao" href="#" id="recusa-final">Não, vou continuar só com o FigLogo</a>
+  </div>
 </section>
 
 <section class="duvida">
@@ -108,8 +310,16 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
   </div>
 </section>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="ok" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#6032FD"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol></svg>
+
 <script src="https://snippets.kiwify.com/upsell-v2/upsell.min.js"></script>
-<script>document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('#kiwify-upsell-trigger-Gj25H3s')){try{fbq('track','InitiateCheckout',{content_name:'FigPost upsell'})}catch(x){}}});</script>
+<script>
+document.addEventListener('click',function(e){
+  if(e.target.closest&&e.target.closest('#kiwify-upsell-trigger-Gj25H3s')){try{fbq('track','InitiateCheckout',{content_name:'FigPost upsell'})}catch(x){}}
+  /* a recusa do final usa a mesma recusa da Kiwify, para seguir o fluxo certo */
+  if(e.target.id==='recusa-final'){e.preventDefault();var c=document.getElementById('kiwify-upsell-cancel-trigger-Gj25H3s');if(c)c.click()}
+});
+</script>
 <script src="../../assets/js/escola.js"></script>
 </body>
 </html>
