@@ -35,6 +35,10 @@ section{padding:90px 0}
 .up .sub{color:var(--muted);font-size:18px;margin:18px auto 0;max-width:560px}
 .video{position:relative;width:min(360px,100%);margin:34px auto 0;aspect-ratio:9/16;border-radius:24px;overflow:hidden;background:var(--tinta);box-shadow:0 40px 80px -30px rgba(48,20,160,.45),0 0 0 6px #fff}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video .som{position:absolute;z-index:2;left:50%;bottom:22px;translate:-50% 0;display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border:0;border-radius:999px;background:#B7F36B;color:#1E0B5C;font-family:inherit;font-size:15.5px;font-weight:700;letter-spacing:-.02em;white-space:nowrap;cursor:pointer;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);animation:pulsom 2s ease-in-out infinite}
+.video .som svg{width:20px;height:20px}
+.video .som.off{display:none}
+@keyframes pulsom{50%{scale:1.06}}
 .halo2{position:absolute;left:50%;top:58%;width:min(640px,100vw);height:640px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,color-mix(in srgb,#6032FD 30%,transparent),transparent);filter:blur(30px);z-index:-1}
 .selos{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px}
 .selos span{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:14.5px;font-weight:600;box-shadow:var(--card-shadow)}
@@ -154,7 +158,7 @@ section{padding:90px 0}
     <div><span class="pill">Parabéns!</span></div>
     <h1>Você já está com acesso ao FigLogo, <span class="grad">mas o seu primeiro projeto ainda não está completo…</span></h1>
     <p class="sub">Gravei um recado rápido sobre o que o seu cliente vai te pedir logo depois que você entregar o logo. Assista antes de sair:</p>
-    <div class="video"><iframe src="https://player.vimeo.com/video/1229557521?autoplay=1&amp;autopause=0&amp;playsinline=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Recado da Lari sobre o FigPost"></iframe></div>
+    <div class="video"><iframe id="vsl" src="https://player.vimeo.com/video/1229557521?autoplay=1&amp;muted=1&amp;autopause=0&amp;playsinline=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Recado da Lari sobre o FigPost"></iframe><button class="som" id="ativar-som" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>Clique para ativar o som</button></div>
     <div class="cta-topo"><a class="btn" href="#oferta">Sim! Quero o FigPost usando meu crédito</a></div>
     <div class="selos">
       <span><svg viewBox="0 0 24 24"><path d="M12 2l8 3.5v6c0 5-3.4 8.6-8 10.5-4.6-1.9-8-5.5-8-10.5v-6z" fill="#6032FD"/><path d="M8.5 12l2.4 2.4L15.5 10" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Garantia de 7 dias</span>
@@ -319,6 +323,20 @@ document.addEventListener('click',function(e){
   /* a recusa do final usa a mesma recusa da Kiwify, para seguir o fluxo certo */
   if(e.target.id==='recusa-final'){e.preventDefault();var c=document.getElementById('kiwify-upsell-cancel-trigger-Gj25H3s');if(c)c.click()}
 });
+</script>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+/* o vídeo começa sem som (o navegador só deixa tocar sozinho assim); o botão liga o som e volta para o começo */
+(function(){
+  var b=document.getElementById('ativar-som'),f=document.getElementById('vsl');if(!b||!f)return;
+  var p=window.Vimeo?new Vimeo.Player(f):null;
+  b.addEventListener('click',function(){
+    b.classList.add('off');
+    if(!p)return;
+    p.setMuted(false).then(function(){return p.setVolume(1)}).then(function(){return p.setCurrentTime(0)}).then(function(){return p.play()}).catch(function(){});
+  });
+  if(p)p.on('volumechange',function(d){if(d&&d.volume>0)b.classList.add('off')});
+})();
 </script>
 <script src="../../assets/js/escola.js"></script>
 </body>
