@@ -1,6 +1,8 @@
 # Endereços antigos do Framer → páginas novas (301 = mudou de vez)
 /cursos                        /                                         301
-/upsell-figpost                /figpost/upsell/                          301
+/upsell-figpost                /figlogo/upsell/                          301
+/figpost/upsell                /figlogo/upsell/                          301
+/figpost/upsell/               /figlogo/upsell/                          301
 /figpost/1                     /figpost/                                 301
 /figpost/2                     /figpost/                                 301
 /figpost/3                     /figpost/                                 301
