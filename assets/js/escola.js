@@ -118,3 +118,17 @@
     a.addEventListener('click',function(){try{if(window.fbq)fbq('track','InitiateCheckout',{content_name:document.body.dataset.curso||''})}catch(e){}});
   });
 })();
+
+/* VSL: começa sozinho no mudo; ao tocar no aviso volta do início com som */
+(function(){
+  var f=document.querySelector('.vsl iframe'),b=document.querySelector('.vsl-som');
+  if(!f||!b||!window.Vimeo)return;
+  var pl=new Vimeo.Player(f);
+  pl.play().catch(function(){});
+  b.addEventListener('click',function(){
+    b.classList.add('off');
+    pl.setMuted(false).then(function(){return pl.setVolume(1)}).catch(function(){});
+    pl.setCurrentTime(0).catch(function(){});
+    pl.play().catch(function(){});
+  });
+})();
