@@ -114,6 +114,12 @@ section{padding:90px 0}
 #kiwify-upsell-Gj25H3s label,#kiwify-upsell-Gj25H3s [class*="parcel"]{color:var(--tinta)!important}
 #kiwify-upsell-Gj25H3s select{color:#000!important;background-color:#fff!important}
 #kiwify-upsell-Gj25H3s select option{color:#000!important;background-color:#fff!important}
+.kiwi-topo{max-width:440px;margin:0 auto}
+#kiwi-topo-btn{font-family:inherit;font-size:18px;font-weight:700;letter-spacing:-.02em;border-radius:999px;padding:19px 24px;color:#fff;border:0;width:100%;background:linear-gradient(180deg,#7be05a 0%,#3fbf18 50%,#289c02 100%);box-shadow:0 0 0 1px rgba(255,255,255,.25) inset,0 14px 34px -12px rgba(63,191,24,.75);cursor:pointer}
+#kiwi-topo-btn[disabled]{opacity:.7;cursor:wait}
+.kiwi-parc{text-align:left;margin-bottom:12px}
+.kiwi-parc label{display:block;font-size:14px;margin-bottom:6px;color:var(--tinta)}
+.kiwi-parc select{width:100%;font-family:inherit;font-size:16px;padding:12px 14px;border-radius:14px;border:1px solid rgba(26,11,26,.18);color:#000;background:#fff}
 #kiwify-upsell-cancel-trigger-Gj25H3s{text-align:center;color:rgba(26,11,26,.55)!important;font-size:14px;margin-top:14px;text-decoration:underline;cursor:pointer}
 
 /* ---------- garantia, dúvidas e final ---------- */
@@ -155,7 +161,10 @@ section{padding:90px 0}
     <h1>Você já está com acesso ao FigLogo, <span class="grad">mas o seu primeiro projeto ainda não está completo…</span></h1>
     <p class="sub">Gravei um recado rápido sobre o que o seu cliente vai te pedir logo depois que você entregar o logo. Assista antes de sair:</p>
     <div class="video"><iframe src="https://player.vimeo.com/video/1229557521?autoplay=1&amp;autopause=0&amp;playsinline=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Recado da Lari sobre o FigPost"></iframe></div>
-    <div class="cta-topo"><a class="btn" href="#oferta">Sim! Quero o FigPost usando meu crédito</a></div>
+    <div class="cta-topo cta-up" id="comprar-topo">
+      <!-- Espelho do botão da Kiwify: as parcelas e o clique vão para o botão oficial lá de baixo -->
+      <div class="kiwi-topo"><div class="kiwi-parc" hidden></div><button type="button" id="kiwi-topo-btn">Sim! Quero o FigPost usando meu crédito</button></div>
+    </div>
     <div class="selos">
       <span><svg viewBox="0 0 24 24"><path d="M12 2l8 3.5v6c0 5-3.4 8.6-8 10.5-4.6-1.9-8-5.5-8-10.5v-6z" fill="#6032FD"/><path d="M8.5 12l2.4 2.4L15.5 10" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Garantia de 7 dias</span>
       <span><svg viewBox="0 0 24 24" fill="none" stroke="#6032FD" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Compra com 1 clique</span>
@@ -316,9 +325,17 @@ section{padding:90px 0}
 <script>
 document.addEventListener('click',function(e){
   if(e.target.closest&&e.target.closest('#kiwify-upsell-trigger-Gj25H3s')){try{fbq('track','InitiateCheckout',{content_name:'FigPost upsell'})}catch(x){}}
+  /* botão do topo: copia as parcelas escolhidas e aciona o botão oficial da Kiwify */
+  if(e.target.closest&&e.target.closest('#kiwi-topo-btn')){var s=document.getElementById('kiwify-upsell-inline-installments-Gj25H3s'),t=document.querySelector('.kiwi-parc select'),b=document.getElementById('kiwify-upsell-trigger-Gj25H3s');if(s&&t&&s.value!==t.value){s.value=t.value;s.dispatchEvent(new Event('change',{bubbles:true}))}if(b){e.target.closest('button').disabled=true;e.target.closest('button').textContent='Processando…';setTimeout(function(){b.click()},250);setTimeout(function(){var x=document.getElementById('kiwi-topo-btn');x.disabled=false;x.textContent='Sim! Quero o FigPost usando meu crédito'},12000)}}
   /* a recusa do final usa a mesma recusa da Kiwify, para seguir o fluxo certo */
   if(e.target.id==='recusa-final'){e.preventDefault();var c=document.getElementById('kiwify-upsell-cancel-trigger-Gj25H3s');if(c)c.click()}
 });
+</script>
+<script>
+/* quando a Kiwify carregar as parcelas, repete o mesmo seletor no topo */
+(function(){var n=0,iv=setInterval(function(){var s=document.getElementById('kiwify-upsell-inline-installments-Gj25H3s'),box=document.querySelector('.kiwi-parc');if(s&&box){clearInterval(iv);var c=s.cloneNode(true);c.removeAttribute('id');c.id='kiwi-topo-parc';c.value=s.value;var l=document.createElement('label');l.htmlFor='kiwi-topo-parc';l.textContent='Selecione o número de parcelas';box.appendChild(l);box.appendChild(c);box.hidden=false;
+  c.addEventListener('change',function(){s.value=c.value;s.dispatchEvent(new Event('change',{bubbles:true}))});s.addEventListener('change',function(){if(c.value!==s.value)c.value=s.value})}
+  if(++n>160)clearInterval(iv)},250)})();
 </script>
 <script src="../../assets/js/escola.js"></script>
 </body>
