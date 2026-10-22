@@ -103,6 +103,9 @@ section{padding:90px 0}
 .dois{max-width:640px;margin:40px auto 0;text-align:center;font-size:clamp(19px,2.3vw,23px);font-weight:600;letter-spacing:-.02em;line-height:1.35}
 .porque{max-width:640px;margin:22px auto 0;padding:20px 22px;border-radius:18px;background:#fff;border:1px solid var(--line);box-shadow:var(--card-shadow);font-size:16px;color:var(--muted);line-height:1.55}
 .porque b{color:var(--txt)}
+.destaque{display:flex;align-items:center;gap:12px;max-width:440px;margin:0 auto 16px;padding:12px 14px;border-radius:16px;background:#fff;border:2px solid var(--accent);text-align:left;font-size:14.5px;line-height:1.4;color:var(--tinta);box-shadow:0 14px 30px -18px rgba(96,50,253,.6)}
+.destaque .tag{flex:none;background:var(--accent);color:#fff;font-weight:800;font-size:15px;letter-spacing:-.01em;padding:8px 10px;border-radius:10px}
+.recibo .vit{text-align:right;font-size:15px;font-weight:700;color:var(--accent);margin-top:10px}
 .so-aqui{display:flex;align-items:center;justify-content:center;gap:10px;max-width:640px;margin:22px auto 0;padding:13px 18px;border-radius:14px;background:#fff7e0;border:1px solid #f4dc95;color:#6b4e00;font-size:15px;font-weight:600;text-align:left}
 .cta-up{margin-top:28px}
 
@@ -150,7 +153,7 @@ section{padding:90px 0}
 </head>
 <body data-curso="FigPost">
 
-<div class="aviso"><b>Etapa 1 de 2:</b> não feche nem atualize esta página ainda</div>
+<div class="aviso"><b>Etapa 1 de 2:</b> não feche esta página · FigPost com <b>50% OFF</b> e <b>acesso vitalício</b> só aqui</div>
 
 <!-- Abertura -->
 <header class="up">
@@ -163,6 +166,7 @@ section{padding:90px 0}
     <div class="video"><iframe src="https://player.vimeo.com/video/1229557521?autoplay=1&amp;autopause=0&amp;playsinline=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Recado da Lari sobre o FigPost"></iframe></div>
     <div class="cta-topo cta-up" id="comprar-topo">
       <!-- Espelho do botão da Kiwify: as parcelas e o clique vão para o botão oficial lá de baixo -->
+      <p class="destaque"><span class="tag">50% OFF</span><span><b>FigPost pela metade do preço, com acesso vitalício.</b> Só nesta página: se fechar, essa condição não volta.</span></p>
       <div class="kiwi-topo"><div class="kiwi-parc" hidden></div><button type="button" id="kiwi-topo-btn">Sim! Quero o FigPost usando meu crédito</button></div>
     </div>
     <div class="selos">
@@ -255,7 +259,7 @@ section{padding:90px 0}
   <div class="wrap">
     <div class="estreito">
       <h2>Só pra quem acabou de entrar no FigLogo, <span class="grad">e só nesta página:</span></h2>
-      <p>O FigPost custa <strong>R$397</strong> pra quem chega pela página normal. Aqui, ele já começa pela <strong>metade do preço: R$197.</strong></p>
+      <p>O FigPost custa <strong>R$397</strong> pra quem chega pela página normal. Aqui, ele já começa pela <strong>metade do preço (50% OFF): R$197, com acesso vitalício.</strong></p>
       <p><strong>E tem mais:</strong> os <strong>R$67 que você acabou de pagar no FigLogo viram crédito</strong> e saem direto desse valor.</p>
     </div>
     <div class="recibo">
@@ -264,11 +268,12 @@ section{padding:90px 0}
       <div class="linha"><span class="nm">50% OFF só nesta página</span><span class="pt"></span><span class="vl">R$197</span></div>
       <div class="linha credito"><span class="nm"><b>Seu crédito do FigLogo</b></span><span class="pt"></span><span class="vl">− R$67</span></div>
       <div class="tot"><span>Você paga hoje</span><b><small>R$</small>130</b></div>
+      <p class="vit">✓ Acesso vitalício ao FigPost · pagamento único</p>
       <p class="parc">ou 12x de R$13,45 no cartão</p>
     </div>
     <p class="dois">Na prática, <span class="grad">é como se o FigLogo saísse de graça:</span> você leva os dois cursos pelo preço de um. Menos do que muita designer cobra por um único carrossel.</p>
     <p class="porque"><b>Por que eu faço isso?</b> Porque a aluna que faz os dois cursos sai daqui pronta pra vender o projeto inteiro (marca + feed) e tem muito mais chance de fechar o primeiro cliente. Prefiro colocar esse desconto em quem já decidiu levar isso a sério.</p>
-    <p class="so-aqui">🔒 Essa condição (50% OFF + crédito do FigLogo) existe só nesta página. Se você sair ou atualizar, ela não aparece de novo.</p>
+    <p class="so-aqui">🔒 <span><b>Não feche esta página.</b> Essa condição (50% OFF + crédito do FigLogo + acesso vitalício) existe só aqui. Se você sair ou atualizar, ela não aparece de novo.</span></p>
     <!-- Botão de compra com 1 clique da Kiwify: usa os dados da compra do FigLogo -->
     <div class="cta-up" id="comprar">
       <div id="kiwify-upsell-Gj25H3s" data-upsell-url="" data-downsell-url="" style="--kiwify-upsell-accept-bg:#2ECC70;--kiwify-upsell-accept-color:#FFFFFF">
@@ -297,6 +302,7 @@ section{padding:90px 0}
       <details open><summary>Como funciona o crédito do FigLogo?</summary><p>É automático. Os R$67 que você pagou no FigLogo já foram descontados do preço do FigPost nesta página. Você não precisa pedir nada nem esperar reembolso: o valor que aparece no botão já é o final.</p></details>
       <details><summary>Preciso terminar o FigLogo antes de começar o FigPost?</summary><p>Não. O FigPost também começa do zero. Mas quem faz os dois junto vê que é o mesmo processo, só aplicado em outro formato.</p></details>
       <details><summary>É diferente do FigLogo?</summary><p>Sim. O FigLogo ensina a criar a marca. O FigPost ensina a aplicar essa marca em posts e carrosséis e a vender isso como serviço mensal.</p></details>
+      <details><summary>O acesso ao FigPost é vitalício?</summary><p>Sim. Você paga esse valor uma vez e o FigPost fica liberado pra sempre, com as atualizações do curso. Sem mensalidade.</p></details>
       <details><summary>Essa condição volta depois?</summary><p>Não. O preço de 50% e o crédito do FigLogo existem só nesta página, pra quem acabou de comprar o FigLogo.</p></details>
     </div>
   </div>
