@@ -1,32 +1,12 @@
-/* Depoimentos em print de WhatsApp, com número borrado e frase marcada (marca-texto) */
+/* Depoimentos: prints originais do WhatsApp (número borrado na própria imagem) + marca-texto animado por cima */
 .depos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:980px;margin:0 auto;align-items:start}
 .depos .col{display:grid;gap:22px}
-.zap{--c:var(--azul);position:relative;border-radius:26px;overflow:hidden;background:#efeae2;color:#111;
-  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  box-shadow:0 40px 70px -40px rgba(0,0,0,.95),0 0 0 1px rgba(255,255,255,.06);
-  background-image:radial-gradient(rgba(0,0,0,.035) 1.2px,transparent 1.3px);background-size:18px 18px}
-.zap .z-topo{display:flex;align-items:center;gap:10px;padding:14px 14px 12px;background:rgba(246,244,240,.96);border-bottom:1px solid rgba(0,0,0,.05)}
-.zap .z-volta{display:flex;align-items:center;gap:2px;height:38px;padding:0 12px 0 8px;border-radius:999px;background:#fff;font-size:16px;color:#111;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.zap .z-volta svg{width:16px;height:16px}
-.zap .z-av{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 22%,#fff)}
-.zap .z-av svg{width:20px;height:20px;color:color-mix(in srgb,var(--c) 75%,#000)}
-.zap .z-num{font-weight:600;font-size:16.5px;letter-spacing:-.01em;white-space:nowrap;display:flex;gap:6px;align-items:center;min-width:0}
-.zap .z-num .z-bl{filter:blur(6px);user-select:none;-webkit-user-select:none;opacity:.9}
-.zap .z-cam{margin-left:auto;width:44px;height:36px;border-radius:999px;background:#fff;display:grid;place-items:center;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.zap .z-cam svg{width:22px;height:22px}
-.zap .z-conv{padding:16px 14px 18px}
-.zap .z-bal{position:relative;background:#fff;border-radius:18px 18px 18px 6px;padding:13px 15px 22px;font-size:16.5px;line-height:1.45;letter-spacing:-.005em;box-shadow:0 1px 1.5px rgba(0,0,0,.08)}
-.zap .z-bal small{position:absolute;right:12px;bottom:6px;font-size:12px;color:#8a8a8a}
-/* marca-texto: pinta da esquerda para a direita quando o card aparece */
-.zap mark{color:inherit;padding:0 .12em;margin:0 -.05em;border-radius:.3em .5em .35em .45em;
-  background:linear-gradient(100deg,color-mix(in srgb,var(--c) 55%,transparent),color-mix(in srgb,var(--c) 42%,transparent) 60%,color-mix(in srgb,var(--c) 55%,transparent)) no-repeat 0 60%/0% 82%;
-  -webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size 1.1s cubic-bezier(.6,.1,.2,1) .55s;font-weight:500}
-.zap.in mark,.no-js .zap mark,html:not(.js) .zap mark{background-size:100% 82%}
-.depos-nota{text-align:center;margin-top:26px;color:var(--muted);font-size:14px}
-@media (max-width:760px){
-  .depos{grid-template-columns:1fr;gap:18px;max-width:460px}
-  .depos .col{gap:18px}
-  .zap .z-bal{font-size:15.5px}
-  .zap .z-num{font-size:15px}
-}
-@media (prefers-reduced-motion:reduce){.zap mark{transition:none;background-size:100% 82%}}
+.print{--c:var(--azul);position:relative;margin:0;border-radius:24px;overflow:hidden;background:#efeae2;
+  box-shadow:0 40px 70px -40px rgba(0,0,0,.95),0 0 0 1px rgba(255,255,255,.06)}
+.print img{display:block;width:100%;height:auto}
+/* marca-texto: pinta da esquerda para a direita, linha por linha, quando o print aparece */
+.print .mk{position:absolute;border-radius:7px 10px 8px 11px;background:color-mix(in srgb,var(--c) 58%,#fff);mix-blend-mode:multiply;
+  transform:scaleX(0);transform-origin:left center;transition:transform .7s cubic-bezier(.6,.1,.2,1);transition-delay:calc(.6s + var(--i,0) * .6s);pointer-events:none}
+.print.in .mk,html:not(.js) .print .mk{transform:none}
+@media (max-width:760px){.depos{grid-template-columns:1fr;gap:18px;max-width:460px}.depos .col{gap:18px}}
+@media (prefers-reduced-motion:reduce){.print .mk{transition:none;transform:none}}
