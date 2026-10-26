@@ -1,0 +1,204 @@
+/* FigOS · Black Friday 2026. Área de trabalho do Mac, modo claro (a captação).
+   No dia 09/11 o tema vira escuro ("Modo Black ativado"). */
+@font-face{font-family:"Euclid";src:url("../fonts/lckLNXmav5SRnkpI7xh7SvgI.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Euclid";src:url("../fonts/PqhxH3vOnnM9m1fyMosmHfA4PUY.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Euclid";src:url("../fonts/hoeKROubFCIfmmvaHsEdp0L9Y.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+
+:root{
+  --bg:#f3f1f3;
+  --grade:rgba(20,16,24,.055);
+  --papel:#fff;
+  --tinta:#141118;
+  --tinta-2:#5b5662;
+  --linha:#e2dee4;
+  --sel:#0d99ff;           /* azul da seleção do Figma */
+  --azul:#4aa3ff; --azul-2:#2f86ee;
+  --rosa:#ff9fcf; --lilas:#b7a3ff; --lima:#d6f27a; --coral:#ffb48f;
+  --font:"Euclid","Helvetica Neue",Arial,sans-serif;
+  --sombra:0 24px 50px -28px rgba(30,20,40,.45);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg);overflow-x:clip}
+body{
+  font:400 17px/1.5 var(--font);color:var(--tinta);background:var(--bg);
+  background-image:linear-gradient(var(--grade) 1px,transparent 1px),linear-gradient(90deg,var(--grade) 1px,transparent 1px);
+  background-size:36px 36px;background-position:-1px -1px;
+  -webkit-font-smoothing:antialiased;overflow-x:clip;min-height:100vh;
+}
+img,svg{display:block}
+b{font-weight:600}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--sel);outline-offset:3px;border-radius:6px}
+
+/* pasta do Mac (o mesmo desenho em todo lugar, a cor vem de --c e --c2) */
+svg .tras{fill:var(--c2,#2f86ee)}
+svg .frente{fill:var(--c,#4aa3ff)}
+
+/* ---------- barra de menu ---------- */
+.menubar{position:sticky;top:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  height:34px;padding:0 18px;background:rgba(246,244,247,.78);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);
+  border-bottom:1px solid rgba(20,16,24,.07);font-size:13.5px;color:var(--tinta)}
+.mb-esq,.mb-dir{display:flex;align-items:center;gap:18px;white-space:nowrap}
+.mb-esq .maca{width:13px;height:16px;margin-top:-2px}
+.mb-esq b{font-weight:600}
+.mb-dir .relogio{font-variant-numeric:tabular-nums}
+.mb-dir .so-desk{display:inline-flex;align-items:center;gap:7px}
+.mb-dir .so-desk::before{content:"";width:7px;height:7px;border-radius:50%;background:#28c840;box-shadow:0 0 0 3px rgba(40,200,64,.18)}
+
+/* ---------- topo ---------- */
+.hero{max-width:1160px;margin:0 auto;padding:clamp(40px,7vw,88px) 24px clamp(56px,7vw,96px);
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,6vw,80px);align-items:center}
+.marca{display:inline-flex;align-items:center;gap:12px;padding:8px 16px 8px 10px;background:var(--papel);border:1px solid var(--linha);border-radius:999px;box-shadow:0 8px 20px -14px rgba(30,20,40,.4);margin-bottom:28px}
+.marca .pasta-logo{width:30px;height:24px}
+.marca span{font-size:15px;color:var(--tinta-2);line-height:1.25}
+.marca b{color:var(--tinta);font-weight:600}
+.marca i{font-style:normal}
+
+h1{font-weight:500;font-size:clamp(38px,5.3vw,64px);line-height:1.06;letter-spacing:-.035em;text-wrap:balance}
+h2{font-weight:500;font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing:-.03em;text-wrap:balance}
+
+/* caixa de seleção do Figma na palavra-chave */
+.sel{position:relative;display:inline-block;padding:0 .14em;margin:0 .02em;outline:1.5px solid var(--sel);outline-offset:0;background:rgba(13,153,255,.07);line-height:1.02}
+.sel::before{content:"";position:absolute;inset:-4px;pointer-events:none;
+  background:
+   linear-gradient(#fff,#fff) 1.5px 1.5px/5px 5px no-repeat,
+   linear-gradient(#fff,#fff) calc(100% - 1.5px) 1.5px/5px 5px no-repeat,
+   linear-gradient(#fff,#fff) 1.5px calc(100% - 1.5px)/5px 5px no-repeat,
+   linear-gradient(#fff,#fff) calc(100% - 1.5px) calc(100% - 1.5px)/5px 5px no-repeat,
+   linear-gradient(var(--sel),var(--sel)) 0 0/8px 8px no-repeat,
+   linear-gradient(var(--sel),var(--sel)) 100% 0/8px 8px no-repeat,
+   linear-gradient(var(--sel),var(--sel)) 0 100%/8px 8px no-repeat,
+   linear-gradient(var(--sel),var(--sel)) 100% 100%/8px 8px no-repeat}
+.sel .medida{position:absolute;left:50%;top:calc(100% + 10px);translate:-50% 0;background:var(--sel);color:#fff;font:500 11px/1 var(--font);letter-spacing:0;padding:4px 7px;border-radius:4px;white-space:nowrap}
+
+.sub{font-size:clamp(17px,1.6vw,19px);color:var(--tinta-2);max-width:32em;margin-top:34px;text-wrap:pretty}
+.sub b{color:var(--tinta)}
+
+/* ---------- cadastro (AirDrop) ---------- */
+.airdrop{position:relative;margin-top:32px;max-width:480px;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:1px solid var(--linha);border-radius:24px;padding:22px;box-shadow:var(--sombra)}
+.ad-topo{display:flex;gap:14px;align-items:center;padding-bottom:18px;margin-bottom:16px;border-bottom:1px solid var(--linha)}
+.ad-ico{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:#fff;background:linear-gradient(160deg,#5fb4ff,#1d7ff0);box-shadow:0 8px 16px -8px rgba(29,127,240,.7)}
+.ad-ico svg{width:28px;height:28px}
+.ad-topo p{display:grid;gap:2px;font-size:15.5px;line-height:1.35}
+.ad-topo p>b{font-size:13px;color:var(--tinta-2);font-weight:500;text-transform:uppercase;letter-spacing:.06em}
+.campo{display:block;margin-bottom:12px}
+.campo span{display:block;font-size:13.5px;color:var(--tinta-2);margin:0 0 5px 2px}
+.campo input{width:100%;font:400 16px var(--font);color:var(--tinta);padding:13px 15px;border:1.5px solid var(--linha);border-radius:13px;background:#fff;transition:border-color .15s,box-shadow .15s}
+.campo input::placeholder{color:#a9a3ae}
+.campo input:focus{outline:none;border-color:var(--sel);box-shadow:0 0 0 4px rgba(13,153,255,.15)}
+.campo input.invalido{border-color:#e5484d;box-shadow:0 0 0 4px rgba(229,72,77,.12)}
+
+.check{position:relative;display:flex;gap:12px;align-items:flex-start;margin:16px 0 4px;font-size:14.5px;line-height:1.4;color:var(--tinta-2);cursor:pointer}
+.check input{position:absolute;opacity:0;width:22px;height:22px;margin:0;cursor:pointer}
+.check .caixa{flex:none;width:22px;height:22px;border-radius:6px;border:1.5px solid #bdb6c2;background:#fff;display:grid;place-items:center;transition:.15s}
+.check .caixa svg{width:14px;height:14px;opacity:0;transform:scale(.6);transition:.15s}
+.check input:checked + .caixa{background:var(--sel);border-color:var(--sel)}
+.check input:checked + .caixa svg{opacity:1;transform:none}
+.check input:focus-visible + .caixa{outline:2px solid var(--sel);outline-offset:2px}
+.check.invalido .caixa{border-color:#e5484d;box-shadow:0 0 0 4px rgba(229,72,77,.12)}
+
+.erro{min-height:20px;font-size:13.5px;color:#d4343a;margin:8px 2px 4px}
+.erro:empty{min-height:8px}
+.botoes{display:grid;grid-template-columns:1fr 1.7fr;gap:10px}
+.botoes button,.b-volta{font:600 17px var(--font);border:0;border-radius:14px;padding:16px 18px;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s}
+.b-recusar{background:#ece9ee;color:var(--tinta)}
+.b-recusar:hover{background:#e3dfe6}
+.b-aceitar{background:var(--sel);color:#fff;box-shadow:0 12px 24px -12px rgba(13,153,255,.8)}
+.b-aceitar:hover{background:#0a88e6;transform:translateY(-1px)}
+.b-aceitar:disabled{opacity:.7;cursor:wait;transform:none}
+.nota{font-size:13px;color:var(--tinta-2);text-align:center;margin-top:12px;text-wrap:balance}
+.nota.aviso{color:var(--tinta)}
+.airdrop.treme{animation:treme .45s}
+@keyframes treme{20%,60%{translate:-6px 0}40%,80%{translate:6px 0}}
+
+.instalando{position:absolute;inset:0;border-radius:24px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:28px;text-align:center}
+.instalando[hidden]{display:none}
+.instalando .pasta-inst{width:84px;height:66px;animation:pula 1.2s ease-in-out infinite}
+.instalando b{font-size:20px;font-weight:500;letter-spacing:-.01em}
+.instalando .barra{width:min(260px,80%);height:8px;border-radius:99px;background:#ece9ee;overflow:hidden}
+.instalando .barra i{display:block;height:100%;width:0;border-radius:inherit;background:var(--sel);transition:width 1.6s cubic-bezier(.3,.6,.3,1)}
+.instalando p{font-size:14px;color:var(--tinta-2)}
+@keyframes pula{50%{translate:0 -6px}}
+
+/* ---------- palco: Lari no meio das pastas ---------- */
+.palco{position:relative;width:100%;max-width:480px;aspect-ratio:4/5;margin:0 auto;container-type:inline-size}
+.cartao{position:absolute;inset:16% 4% 0;border-radius:32px;background:linear-gradient(165deg,#e4dcff 0%,#f3dcec 100%);border:1px solid rgba(255,255,255,.7);box-shadow:var(--sombra)}
+.foto{position:absolute;left:50%;bottom:0;translate:-50% 0;height:96%;width:auto;max-width:none;border-radius:0 0 32px 32px;
+  -webkit-mask-image:linear-gradient(#000 90%,transparent);mask-image:linear-gradient(#000 90%,transparent)}
+.pasta{position:absolute;width:19cqw;display:flex;flex-direction:column;align-items:center;gap:1.2cqw;animation:flutua 6s ease-in-out infinite}
+.pasta svg{width:100%;height:auto;aspect-ratio:64/50;filter:drop-shadow(0 2.4cqw 2.4cqw rgba(30,20,40,.22))}
+.pasta span{font-size:max(10px,2.7cqw);font-weight:500;line-height:1.2;padding:.4cqw 1.6cqw;border-radius:1.2cqw;background:rgba(255,255,255,.88);white-space:nowrap}
+.pasta .nome-sel{background:var(--sel);color:#fff}
+.p1{left:-3%;top:20%}
+.p2{right:-2%;top:11%;animation-delay:-1s}
+.p3{left:-6%;top:51%;animation-delay:-2s}
+.p3 svg{outline:1.5px solid var(--sel);outline-offset:1.4cqw;border-radius:1cqw}
+.p4{right:-5%;top:43%;animation-delay:-3s}
+.p5{left:3%;top:79%;animation-delay:-4s}
+.p6{right:1%;top:72%;animation-delay:-5s}
+@keyframes flutua{50%{translate:0 -1.6cqw}}
+.cursor{position:absolute;left:12%;top:69%;width:5cqw;filter:drop-shadow(0 1cqw 1cqw rgba(0,0,0,.25));animation:aponta 4s ease-in-out infinite}
+@keyframes aponta{0%,100%{translate:0 0}50%{translate:-2cqw -3cqw}}
+.notif{position:absolute;left:50%;top:3%;translate:-50% 0;width:72%;display:flex;gap:3cqw;align-items:center;padding:2.6cqw 3.4cqw;border-radius:5cqw;
+  background:rgba(255,255,255,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.9);box-shadow:0 3cqw 6cqw -3cqw rgba(30,20,40,.45);
+  animation:chega 1s .6s both cubic-bezier(.2,.9,.3,1.2)}
+.notif svg{flex:none;width:9cqw;height:auto;aspect-ratio:64/50}
+.notif p{display:grid;line-height:1.25;font-size:max(11px,3.2cqw);min-width:0}
+.notif b{display:flex;justify-content:space-between;gap:8px;font-weight:600}
+.notif small{font-weight:400;color:var(--tinta-2);font-size:.85em}
+.notif span{color:var(--tinta-2)}
+@keyframes chega{from{opacity:0;translate:-50% -30%}}
+
+/* ---------- o que acontece no grupo ---------- */
+.grupo{max-width:760px;margin:0 auto;padding:clamp(24px,4vw,40px) 24px clamp(64px,9vw,112px);text-align:center}
+.grupo .sub{margin:16px auto 0;max-width:30em}
+.notifs{display:grid;gap:12px;margin:36px auto 0;max-width:560px;text-align:left}
+.nt{display:flex;gap:14px;align-items:center;padding:16px 18px;border-radius:22px;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--linha);box-shadow:0 14px 30px -22px rgba(30,20,40,.45)}
+.nt:nth-child(2){translate:22px 0}
+.nt:nth-child(3){translate:-14px 0}
+.nt svg{flex:none;width:46px;height:36px}
+.nt p{display:grid;gap:2px;font-size:15.5px;line-height:1.35;min-width:0}
+.nt b{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-weight:600}
+.nt small{font-weight:400;font-size:13px;color:var(--tinta-2);white-space:nowrap}
+.nt span{color:var(--tinta-2)}
+.b-volta{display:inline-block;margin-top:36px;text-decoration:none;padding:16px 34px}
+
+.rodape{text-align:center;font-size:13px;color:var(--tinta-2);padding:0 24px 40px;text-wrap:balance}
+
+/* entrada suave */
+.rv{opacity:0;translate:0 18px;filter:blur(6px);transition:opacity .8s ease,translate .8s ease,filter .8s ease}
+.rv.vis{opacity:1;translate:0 0;filter:none}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;translate:none;filter:none;transition:none}
+  .pasta,.cursor,.notif,.instalando .pasta-inst{animation:none}
+}
+
+/* ---------- celular ---------- */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;padding-top:36px;gap:44px}
+  .hero-txt{text-align:left}
+  .palco{max-width:400px}
+}
+@media (max-width:640px){
+  .menubar{padding:0 14px;font-size:13px}
+  .so-desk{display:none!important}
+  .hero{padding:28px 16px 48px}
+  .marca{margin-bottom:22px;padding:6px 14px 6px 8px}
+  .marca .pasta-logo{width:26px;height:20px}
+  .marca span{font-size:13.5px}
+  h1{font-size:clamp(34px,9.6vw,42px)}
+  .sub{margin-top:30px}
+  .airdrop{padding:18px;border-radius:22px;margin-top:26px}
+  .ad-ico{width:46px;height:46px}
+  .ad-ico svg{width:24px;height:24px}
+  .botoes{grid-template-columns:1fr 1.6fr}
+  .grupo{padding:8px 16px 72px}
+  .nt:nth-child(2),.nt:nth-child(3){translate:0 0}
+  .nt{padding:14px}
+  .nt svg{width:40px;height:31px}
+  .nt b{flex-direction:column;gap:0}
+  .p1,.p3,.p5{align-items:flex-start;left:1%}
+  .p2,.p4,.p6{align-items:flex-end;right:1%}
+  .p3 svg{outline-offset:.8cqw}
+}
