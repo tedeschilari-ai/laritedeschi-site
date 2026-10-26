@@ -1,0 +1,12 @@
+/* Depoimentos: prints originais do WhatsApp (número borrado na própria imagem) + marca-texto animado por cima */
+.depos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:980px;margin:0 auto;align-items:start}
+.depos .col{display:grid;gap:22px}
+.print{--c:var(--azul);position:relative;margin:0;border-radius:24px;overflow:hidden;background:#efeae2;
+  box-shadow:0 40px 70px -40px rgba(0,0,0,.95),0 0 0 1px rgba(255,255,255,.06)}
+.print img{display:block;width:100%;height:auto}
+/* marca-texto: pinta da esquerda para a direita, linha por linha, quando o print aparece */
+.print .mk{position:absolute;border-radius:7px 10px 8px 11px;background:color-mix(in srgb,var(--c) 58%,#fff);mix-blend-mode:multiply;
+  transform:scaleX(0);transform-origin:left center;transition:transform .7s cubic-bezier(.6,.1,.2,1);transition-delay:calc(.6s + var(--i,0) * .6s);pointer-events:none}
+.print.in .mk,html:not(.js) .print .mk{transform:none}
+@media (max-width:760px){.depos{grid-template-columns:1fr;gap:18px;max-width:460px}.depos .col{gap:18px}}
+@media (prefers-reduced-motion:reduce){.print .mk{transition:none;transform:none}}
