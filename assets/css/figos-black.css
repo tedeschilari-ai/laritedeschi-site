@@ -1,0 +1,179 @@
+/* Black FigOS · modo escuro ("Modo Black ativado"). Carregar depois de figos.css. */
+.modo-black{
+  --bg:#0e0c11;
+  --papel:#1a171e;
+  --papel-2:#221e27;
+  --tinta:#f6f3f8;
+  --tinta-2:rgba(246,243,248,.66);
+  --linha:rgba(255,255,255,.09);
+  --sombra:0 30px 60px -30px rgba(0,0,0,.8);
+  color-scheme:dark;
+}
+html:has(.modo-black){background:#0e0c11}
+.modo-black{background:var(--bg);color:var(--tinta)}
+
+/* brilhos de fundo: lilás e vermelho bem suaves */
+.modo-black [data-blur]::before,.modo-black [data-blur]::after{background:radial-gradient(closest-side,rgba(146,110,255,.22),rgba(227,38,45,.06) 55%,transparent);filter:blur(70px)}
+.modo-black [data-blur*="r"]::after{background:radial-gradient(closest-side,rgba(227,38,45,.16),rgba(146,110,255,.05) 55%,transparent)}
+
+/* textos que ficam sobre o verde-lima continuam escuros */
+.modo-black .sel{color:#141118}
+.modo-black .sel::before{background:
+   linear-gradient(var(--bg),var(--bg)) 1.5px 1.5px/5px 5px no-repeat,
+   linear-gradient(var(--bg),var(--bg)) calc(100% - 1.5px) 1.5px/5px 5px no-repeat,
+   linear-gradient(var(--bg),var(--bg)) 1.5px calc(100% - 1.5px)/5px 5px no-repeat,
+   linear-gradient(var(--bg),var(--bg)) calc(100% - 1.5px) calc(100% - 1.5px)/5px 5px no-repeat,
+   linear-gradient(var(--sel),var(--sel)) 0 0/8px 8px no-repeat,
+   linear-gradient(var(--sel),var(--sel)) 100% 0/8px 8px no-repeat,
+   linear-gradient(var(--sel),var(--sel)) 0 100%/8px 8px no-repeat,
+   linear-gradient(var(--sel),var(--sel)) 100% 100%/8px 8px no-repeat}
+
+/* barra do topo com contador */
+.modo-black .topo-black{gap:8px;flex-wrap:wrap}
+.topo-black .cont{font-variant-numeric:tabular-nums;background:rgba(0,0,0,.22);padding:2px 9px;border-radius:6px;letter-spacing:.04em;font-size:14.5px}
+.topo-black .cont[hidden]{display:none}
+.logo .logo-modo{font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--verm);padding:3px 9px;border-radius:99px;margin-left:4px}
+
+/* palco */
+.modo-black .cartao{background:linear-gradient(165deg,#3a2f5e 0%,#4a2340 100%);border-color:rgba(255,255,255,.08)}
+.modo-black .pasta span{background:rgba(26,23,30,.9);color:var(--tinta)}
+.modo-black .pasta .nome-sel{background:var(--sel);color:#fff}
+.modo-black .notif,.modo-black .al-notif{background:rgba(34,30,39,.88);border-color:rgba(255,255,255,.08)}
+.modo-black .cursor path{fill:#fff;stroke:#111}
+
+/* cards e janelas */
+.modo-black .pc{background:var(--papel);border-color:var(--linha);box-shadow:0 20px 40px -26px rgba(0,0,0,.9)}
+.modo-black .pc .num{color:rgba(255,255,255,.05)}
+.modo-black .pc.bonus{background:var(--papel)}
+.modo-black .pc.bonus::before,.modo-black .pc.bonus::after,.modo-black .pc.bonus .alca::before,.modo-black .pc.bonus .alca::after{background:var(--bg)}
+.modo-black .pc.surpresa.escuro{background:#000;border-color:rgba(255,255,255,.08)}
+.modo-black .janela,.modo-black .msg,.modo-black .dp,.modo-black .instalar,.modo-black .garantia,.modo-black .tr-card,.modo-black .final-card,.modo-black .faq-lista details{background:var(--papel);border-color:var(--linha)}
+.modo-black .j-barra,.modo-black .msg-topo,.modo-black .d-barra,.modo-black .ad-barra{background:var(--papel-2);border-color:var(--linha)}
+.modo-black .j-lista li+li{border-color:var(--linha)}
+.modo-black .j-total{border-color:var(--tinta)}
+.modo-black .j-spoiler{background:linear-gradient(180deg,#232a12,#1c2410)}
+.modo-black .j-spoiler p:not(.j-pct){color:var(--tinta-2)}
+.modo-black .j-badge{background:var(--verm)}
+.modo-black .j-pct b{color:var(--lima)}
+.modo-black .d-prod{background:var(--papel-2);color:var(--tinta-2)}
+.modo-black .d-img img{border-color:var(--linha)}
+.modo-black .ver-mais button{background:var(--papel);color:var(--tinta);border-color:var(--linha)}
+.modo-black .ver-mais button:hover{background:var(--papel-2)}
+.modo-black .b.ela,.modo-black .digitando{background:#2c2831;color:var(--tinta)}
+.modo-black .alunos{color:#141118}
+.modo-black .rodape{border-color:var(--linha)}
+
+/* o que tem dentro (pastas) */
+.pc-dentro{position:relative;margin-top:2px;border-top:1px dashed var(--linha);padding-top:12px}
+.pc-dentro summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;color:var(--sel)}
+.pc-dentro summary::-webkit-details-marker{display:none}
+.pc-dentro summary::before{content:"";width:0;height:0;border-left:6px solid currentColor;border-top:5px solid transparent;border-bottom:5px solid transparent;transition:rotate .2s}
+.pc-dentro[open] summary::before{rotate:90deg}
+.pc-dentro ul{list-style:none;display:grid;gap:8px;margin-top:12px}
+.pc-dentro li{position:relative;padding-left:20px;font-size:15px;color:var(--tinta-2);line-height:1.45}
+.pc-dentro li::before{content:"";position:absolute;left:3px;top:8px;width:7px;height:7px;border-radius:2px;background:var(--lima)}
+
+/* guia que saiu do pacote */
+.pc.saiu{opacity:.45;filter:grayscale(1)}
+.pc.saiu .tag{background:#555!important;color:#fff!important}
+.pc.saiu .tag::after{content:" · saiu do pacote"}
+.j-lista li.saiu{opacity:.4;text-decoration:line-through}
+
+/* trio da narrativa */
+.narrativa>.wrap>h2{max-width:none}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(32px,5vw,52px)}
+.tr-card{border:1px solid var(--linha);border-radius:22px;overflow:hidden}
+.tr-card:nth-child(2){translate:0 18px}
+.tr-corpo{padding:22px;display:grid;gap:10px}
+.tr-rot{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--lima)}
+.tr-card:nth-child(1) .tr-rot{color:#ff7b80}
+.tr-card:nth-child(2) .tr-rot{color:#7cc2ff}
+.tr-corpo h3{font-size:21px;font-weight:600;letter-spacing:-.01em;line-height:1.2}
+.tr-corpo p:last-child{color:var(--tinta-2);font-size:16px}
+
+/* garantia antes do preço */
+.garantia{display:flex;align-items:center;gap:22px;max-width:820px;margin:28px auto 0;padding:22px 26px;border:1px solid var(--linha);border-radius:22px;text-align:left}
+.g-selo{flex:none;width:86px;height:86px;border-radius:50%;display:grid;place-content:center;text-align:center;background:var(--lima);color:#141118;box-shadow:0 0 0 6px rgba(214,242,122,.15)}
+.g-selo b{font-size:34px;font-weight:600;line-height:.9}
+.g-selo span{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.garantia h3{font-size:20px;font-weight:600;margin-bottom:6px}
+.garantia p{color:var(--tinta-2)}
+
+/* caixa de compra */
+.instalar{max-width:480px;margin:28px auto 0;border:1px solid var(--linha);border-radius:26px;overflow:hidden;box-shadow:0 40px 90px -40px rgba(13,153,255,.55);text-align:center}
+.instalar .ad-barra{margin:0;border-radius:0}
+.in-corpo{padding:26px 26px 28px;display:grid;justify-items:center;gap:6px}
+.in-topo{display:flex;align-items:center;gap:12px;text-align:left;margin-bottom:10px}
+.in-pasta{width:52px;height:41px}
+.in-topo b{display:block;font-size:18px;font-weight:600}
+.in-topo span{font-size:13.5px;color:var(--tinta-2)}
+.in-de{color:var(--tinta-2);font-size:16px}
+.in-de s{text-decoration-color:var(--verm);text-decoration-thickness:2px}
+.in-preco{font-size:clamp(64px,9vw,88px);font-weight:600;letter-spacing:-.05em;line-height:.95;color:var(--lima)}
+.in-preco small{font-size:.32em;letter-spacing:0;vertical-align:1.6em;margin-right:6px;color:var(--tinta)}
+.in-parc{color:var(--tinta-2);font-size:15px;margin-bottom:10px}
+.cta-comprar{width:100%;font-size:19px;padding:19px 22px;animation:chama 2.4s ease-in-out infinite}
+.in-selos{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;margin-top:12px;font-size:13.5px;color:var(--tinta-2)}
+.in-selos li::before{content:"✓ ";color:var(--lima);font-weight:600}
+.in-barra{width:100%;height:8px;border-radius:99px;background:var(--papel-2);overflow:hidden;margin-top:16px}
+.in-barra i{display:block;height:100%;width:72%;border-radius:inherit;background:var(--sel);animation:carrega 2.6s ease-in-out infinite alternate}
+@keyframes carrega{from{width:18%}to{width:92%}}
+.in-nota{font-size:12.5px;color:var(--tinta-2);margin-top:6px}
+
+/* aviso dos guias */
+.aviso-guias{position:fixed;right:18px;bottom:18px;z-index:40;display:flex;align-items:center;gap:12px;max-width:380px;padding:12px 14px;border-radius:18px;background:rgba(34,30,39,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.1);box-shadow:0 20px 40px -18px rgba(0,0,0,.8);animation:chega2 .6s cubic-bezier(.2,1.2,.4,1)}
+.aviso-guias[hidden]{display:none}
+.aviso-guias svg{flex:none;width:36px;height:28px}
+.aviso-guias p{display:grid;font-size:13.5px;line-height:1.3;color:var(--tinta-2);text-align:left}
+.aviso-guias b{display:flex;justify-content:space-between;gap:10px;color:var(--tinta);font-weight:600}
+.aviso-guias small{font-weight:400;color:var(--tinta-2)}
+.av-bt{flex:none;font-size:13px;font-weight:600;color:#fff;background:var(--sel);text-decoration:none;padding:7px 12px;border-radius:10px}
+@keyframes chega2{from{opacity:0;translate:0 20px}}
+
+/* aluna */
+.modo-black .aluna p{color:var(--tinta-2)}
+.modo-black .aluna p b{color:var(--tinta)}
+.aluna-ok{display:flex;gap:14px;align-items:flex-start;max-width:820px;margin:28px auto 0;padding:20px 22px;border-radius:20px;background:rgba(214,242,122,.08);border:1px solid rgba(214,242,122,.3);text-align:left}
+.al-ic{flex:none;width:30px;height:30px;border-radius:50%;background:var(--lima);color:#141118;display:grid;place-items:center;font-weight:600}
+.aluna-ok p{color:var(--tinta-2)}
+.aluna-ok b{color:var(--tinta)}
+
+/* dúvidas */
+.faq>.wrap{max-width:820px}
+.faq-lista{display:grid;gap:10px;margin-top:clamp(28px,4vw,44px)}
+.faq-lista details{border:1px solid var(--linha);border-radius:16px;padding:0 20px}
+.faq-lista summary{cursor:pointer;list-style:none;padding:18px 28px 18px 0;font-weight:600;font-size:17px;position:relative}
+.faq-lista summary::-webkit-details-marker{display:none}
+.faq-lista summary::after{content:"+";position:absolute;right:0;top:50%;translate:0 -50%;font-size:22px;font-weight:400;color:var(--sel);transition:rotate .2s}
+.faq-lista details[open] summary::after{rotate:45deg}
+.faq-lista details p{color:var(--tinta-2);padding-bottom:18px}
+
+/* fechamento */
+.final-card{max-width:820px;margin:0 auto;text-align:center;padding:clamp(32px,6vw,64px) 24px;border:1px solid var(--linha);border-radius:30px;display:grid;justify-items:center;gap:16px;background:radial-gradient(80% 120% at 50% 0%,rgba(13,153,255,.18),transparent 60%),var(--papel)!important}
+.final-card .rotulo{color:var(--lima);margin:0}
+.final-card h2{max-width:14em}
+
+/* fases: carrinho fechado */
+body[data-fase="antes"] .cta-comprar,body[data-fase="pausa"] .cta-comprar,body[data-fase="fechado"] .cta-comprar{pointer-events:none;background:#3a3540;box-shadow:none;animation:none}
+body[data-fase="antes"] .cta-comprar::after{content:" · abre 09/11 às 8h"}
+body[data-fase="pausa"] .cta-comprar::after{content:" · reabre 12/11"}
+body[data-fase="fechado"] .cta-comprar::after{content:" · encerrado"}
+body[data-fase="pausa"] .topo-black,body[data-fase="fechado"] .topo-black{background:#2a2630}
+
+@media (max-width:900px){
+  .trio{grid-template-columns:1fr}
+  .tr-card:nth-child(2){translate:none}
+}
+@media (max-width:640px){
+  .topo-black .cont{font-size:13px}
+  .logo .logo-modo{font-size:10px}
+  .garantia{flex-direction:column;text-align:center;padding:22px 18px}
+  .in-corpo{padding:22px 18px 24px}
+  .aviso-guias{left:12px;right:12px;bottom:12px;max-width:none}
+  .faq-lista summary{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  .cta-comprar,.in-barra i,.aviso-guias{animation:none}
+}
+.modo-black .pc.bonus .tag,.modo-black .pc.surpresa .tag-b{color:#141118}
+.pc.bonus.saiu .alca,.pc.bonus.saiu .sel-tag,.pc.bonus.saiu::before,.pc.bonus.saiu::after{display:none}
