@@ -206,6 +206,7 @@ body.travado{overflow:hidden}
 .sel-tag{position:absolute;left:50%;bottom:-19px;translate:-50% 50%;z-index:2;background:var(--sel);color:#fff;font-size:11.5px;font-weight:500;padding:4px 9px;border-radius:5px;white-space:nowrap}
 .pastas-grid{row-gap:40px}
 .pc.surpresa{grid-column:1/-1}
+.pastas-grid>.pc{min-width:0;grid-template-columns:minmax(0,1fr)}
 /* teste A: listrado */
 .pc.surpresa.listrado{background:repeating-linear-gradient(135deg,#fbfafb 0 12px,#efecf1 12px 24px)}
 /* teste B: escuro */
@@ -216,6 +217,7 @@ body.travado{overflow:hidden}
 .pasta-surpresa{position:relative;flex:none;display:grid;place-items:center}
 .pasta-surpresa svg{width:58px;height:45px;filter:drop-shadow(0 6px 8px rgba(30,20,40,.25))}
 .pasta-surpresa b{position:absolute;top:13px;left:0;right:0;text-align:center;color:var(--lima);font-size:22px;font-weight:600;animation:pisca 1.6s ease-in-out infinite}
+.tags{display:inline-flex;flex-wrap:nowrap;gap:6px}
 .tag-rev{background:var(--verm)!important;color:#fff!important}
 
 /* ---------- a conta: janela única ---------- */
@@ -355,6 +357,9 @@ body.travado{overflow:hidden}
   .pc .num{font-size:48px}
   .pc-topo svg{width:48px;height:37px}
   .pasta-surpresa b{top:10px;font-size:19px}
+  .pc.surpresa .tags .tag{font-size:9.5px;padding:4px 8px;letter-spacing:.06em}
+  .pc.surpresa .pc-topo{gap:10px}
+  .pc.surpresa .pc-topo>.pc-nome{padding-right:0}
   .pc h3{font-size:18px}
   .pc-topo>.pc-nome{padding-right:56px}
   .cta{width:100%;text-align:center;font-size:16px;padding:16px 18px}
@@ -389,3 +394,5 @@ body.travado{overflow:hidden}
   .p2,.p4,.p6{align-items:flex-end;right:1%}
   .p3 svg{outline-offset:.8cqw}
 }
+
+@media (max-width:370px){.pc.surpresa .tags{flex-wrap:wrap}}
