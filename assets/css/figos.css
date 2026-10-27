@@ -280,7 +280,7 @@ h2{font-weight:500;font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing
 .alunos{display:inline-block;margin:22px 0 4px;background:var(--lima);padding:8px 16px;border-radius:999px;font-size:15px}
 .alunos b{font-weight:600}
 
-.rodape{max-width:1120px;margin:0 auto;padding:12px 24px 48px;font-size:13.5px;color:var(--tinta-2);display:grid;gap:8px;border-top:1px solid var(--linha);padding-top:28px}
+.rodape{max-width:1120px;margin:0 auto;text-align:center;justify-items:center;padding:12px 24px 48px;font-size:13.5px;color:var(--tinta-2);display:grid;gap:8px;border-top:1px solid var(--linha);padding-top:28px}
 .rodape b{color:var(--tinta)}
 
 /* entrada suave */
