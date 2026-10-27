@@ -54,7 +54,7 @@
     }
   });
   var nome = form.nome, zap = form.whatsapp, email = form.email, aceite = form.aceite;
-  var erro = document.getElementById('erro'), nota = document.getElementById('nota');
+  var erro = document.getElementById('erro');
 
   // máscara do WhatsApp: (41) 99999-9999
   zap.addEventListener('input', function(){
@@ -68,12 +68,6 @@
   [nome,zap,email].forEach(function(i){ i.addEventListener('input', function(){ i.classList.remove('invalido'); erro.textContent=''; }); });
   aceite.addEventListener('change', function(){ aceite.closest('.check').classList.remove('invalido'); erro.textContent=''; });
 
-  var convite = document.getElementById('convite');
-  document.getElementById('recusar').addEventListener('click', function(){
-    convite.classList.remove('treme'); void convite.offsetWidth; convite.classList.add('treme');
-    nota.textContent = 'Tem certeza? A condição da Black só aparece para quem está no grupo 😉';
-    nota.classList.add('aviso');
-  });
 
   function falha(campo, msg){
     if(campo.type === 'checkbox') campo.closest('.check').classList.add('invalido');
