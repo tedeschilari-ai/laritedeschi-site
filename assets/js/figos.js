@@ -28,12 +28,30 @@
 
   var form = document.getElementById('form');
   if(!form) return;
-  document.querySelectorAll('a.cta').forEach(function(a){
-    a.addEventListener('click', function(ev){
-      ev.preventDefault();
-      form.scrollIntoView({behavior:'smooth', block:'center'});
-      setTimeout(function(){ form.nome.focus({preventScroll:true}); }, 600);
-    });
+  var modal = document.getElementById('modal'), quemAbriu = null;
+  function abrir(ev){
+    if(ev) ev.preventDefault();
+    quemAbriu = document.activeElement;
+    modal.hidden = false; document.body.classList.add('travado');
+    try{ if(window.fbq) fbq('trackCustom','AbriuFormulario'); }catch(e){}
+    setTimeout(function(){ form.nome.focus(); }, 60);
+  }
+  function fechar(){
+    if(document.getElementById('instalando').hidden === false && /^https?:/.test(CONFIG.grupo)) return;
+    modal.hidden = true; document.body.classList.remove('travado');
+    if(quemAbriu && quemAbriu.focus) quemAbriu.focus();
+  }
+  document.querySelectorAll('a.cta, .abrir-form').forEach(function(b){ b.addEventListener('click', abrir); });
+  modal.querySelectorAll('.fechar').forEach(function(b){ b.addEventListener('click', fechar); });
+  document.addEventListener('keydown', function(e){
+    if(modal.hidden) return;
+    if(e.key === 'Escape') fechar();
+    if(e.key === 'Tab'){
+      var f = [].slice.call(form.querySelectorAll('button,input,a[href]')).filter(function(x){ return x.offsetParent !== null; });
+      if(!f.length) return;
+      if(e.shiftKey && document.activeElement === f[0]){ e.preventDefault(); f[f.length-1].focus(); }
+      else if(!e.shiftKey && document.activeElement === f[f.length-1]){ e.preventDefault(); f[0].focus(); }
+    }
   });
   var nome = form.nome, zap = form.whatsapp, email = form.email, aceite = form.aceite;
   var erro = document.getElementById('erro'), nota = document.getElementById('nota');
@@ -50,9 +68,10 @@
   [nome,zap,email].forEach(function(i){ i.addEventListener('input', function(){ i.classList.remove('invalido'); erro.textContent=''; }); });
   aceite.addEventListener('change', function(){ aceite.closest('.check').classList.remove('invalido'); erro.textContent=''; });
 
+  var convite = document.getElementById('convite');
   document.getElementById('recusar').addEventListener('click', function(){
-    form.classList.remove('treme'); void form.offsetWidth; form.classList.add('treme');
-    nota.textContent = 'Tudo bem! Mas a condição só aparece no grupo, na noite de 08/11 😉';
+    convite.classList.remove('treme'); void convite.offsetWidth; convite.classList.add('treme');
+    nota.textContent = 'Tem certeza? A condição da Black só aparece para quem está no grupo 😉';
     nota.classList.add('aviso');
   });
 

@@ -44,45 +44,18 @@ fbq('init','874750447646279');fbq('track','PageView');
 
       <p class="sub rv">Acesso vitalício a todos os cursos, workshops e guias da Lari, com <b>todas as atualizações</b> e <b>1 ano de Figma Edu de graça</b>. Nunca mais se preocupe em comprar outro curso solto para aprender Figma e cobrar melhor pelo seu trabalho.</p>
 
-      <!-- Cadastro em janela de convite (FigDrop) -->
-      <form class="airdrop rv" id="form" novalidate>
-        <div class="ad-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><b>FigDrop</b></div>
-        <div class="ad-topo">
+      <!-- Convite (FigDrop): o botão Aceitar abre o cadastro -->
+      <div class="convite rv" id="convite">
+        <div class="cv-topo">
           <span class="ad-ico"><svg aria-hidden="true"><use href="#airdrop"/></svg></span>
-          <p><b>Convite</b><span>Lari quer compartilhar a condição da <b>Black FigOS</b> com você.</span></p>
+          <p><b>FigDrop</b><span>Lari quer compartilhar a condição da <b>Black FigOS</b> com você.</span></p>
         </div>
-
-        <label class="campo"><span>Nome</span>
-          <input name="nome" type="text" autocomplete="given-name" placeholder="Como posso te chamar?" required>
-        </label>
-        <label class="campo"><span>WhatsApp</span>
-          <input name="whatsapp" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="(41) 99999-9999" required>
-        </label>
-        <label class="campo"><span>E-mail</span>
-          <input name="email" type="email" inputmode="email" autocomplete="email" placeholder="voce@email.com" required>
-        </label>
-
-        <label class="check">
-          <input name="aceite" type="checkbox" required>
-          <span class="caixa" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></span>
-          <span>Confirmo que quero receber as informações da Black Friday do FigOS por WhatsApp e e-mail.</span>
-        </label>
-
-        <p class="erro" id="erro" role="alert" aria-live="polite"></p>
-
         <div class="botoes">
           <button type="button" class="b-recusar" id="recusar">Recusar</button>
-          <button type="submit" class="b-aceitar">Aceitar</button>
+          <button type="button" class="b-aceitar abrir-form">Aceitar</button>
         </div>
         <p class="nota" id="nota">Grupo gratuito e sem compromisso. A condição só aparece para quem está no grupo.</p>
-
-        <div class="instalando" id="instalando" hidden>
-          <svg class="pasta-inst" style="--c:#4aa3ff;--c2:#2f86ee" aria-hidden="true"><use href="#pasta"/></svg>
-          <b>Recebendo a Black FigOS…</b>
-          <div class="barra"><i id="progresso"></i></div>
-          <p>Abrindo o grupo do WhatsApp. Se não abrir, <a id="link-grupo" href="#">toque aqui</a>.</p>
-        </div>
-      </form>
+      </div>
     </div>
 
     <!-- Lari no meio das pastas -->
@@ -379,6 +352,49 @@ fbq('init','874750447646279');fbq('track','PageView');
   <p>O vitalício vale para os produtos listados e as atualizações deles. Produtos lançados no futuro não entram.</p>
   <p>© 2026 Lari Tedeschi · Seus dados são usados só para te avisar sobre o FigOS.</p>
 </footer>
+
+<!-- Popup do cadastro -->
+<div class="modal" id="modal" hidden>
+  <div class="modal-fundo fechar"></div>
+  <form class="airdrop" id="form" novalidate aria-labelledby="form-titulo">
+    <div class="ad-barra"><span class="luzes"><button type="button" class="fechar" aria-label="Fechar"></button><i></i><i></i></span><b id="form-titulo">FigDrop</b></div>
+    <div class="ad-topo">
+      <span class="ad-ico"><svg aria-hidden="true"><use href="#airdrop"/></svg></span>
+      <p><b>Convite aceito</b><span>Preencha para entrar no grupo da <b>Black FigOS</b>.</span></p>
+    </div>
+
+    <label class="campo"><span>Nome</span>
+      <input name="nome" type="text" autocomplete="given-name" placeholder="Como posso te chamar?" required>
+    </label>
+    <label class="campo"><span>WhatsApp</span>
+      <input name="whatsapp" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="(41) 99999-9999" required>
+    </label>
+    <label class="campo"><span>E-mail</span>
+      <input name="email" type="email" inputmode="email" autocomplete="email" placeholder="voce@email.com" required>
+    </label>
+
+    <label class="check">
+      <input name="aceite" type="checkbox" required>
+      <span class="caixa" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></span>
+      <span>Confirmo que quero receber as informações da Black Friday do FigOS por WhatsApp e e-mail.</span>
+    </label>
+
+    <p class="erro" id="erro" role="alert" aria-live="polite"></p>
+
+    <div class="botoes">
+      <button type="button" class="b-recusar fechar">Cancelar</button>
+      <button type="submit" class="b-aceitar">Entrar no grupo</button>
+    </div>
+    <p class="nota">Grupo gratuito e sem compromisso.</p>
+
+    <div class="instalando" id="instalando" hidden>
+      <svg class="pasta-inst" style="--c:#4aa3ff;--c2:#2f86ee" aria-hidden="true"><use href="#pasta"/></svg>
+      <b>Recebendo a Black FigOS…</b>
+      <div class="barra"><i id="progresso"></i></div>
+      <p>Abrindo o grupo do WhatsApp. Se não abrir, <a id="link-grupo" href="#">toque aqui</a>.</p>
+    </div>
+  </form>
+</div>
 
 <script src="../assets/js/figos.js"></script>
 </body>

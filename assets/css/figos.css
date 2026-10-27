@@ -73,7 +73,7 @@ h2{font-weight:500;font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing
 .sub b{color:var(--tinta)}
 
 /* ---------- cadastro (AirDrop) ---------- */
-.airdrop{position:relative;margin-top:32px;max-width:480px;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+.airdrop{position:relative;width:100%;max-width:460px;max-height:calc(100dvh - 32px);overflow:auto;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
   border:1px solid var(--linha);border-radius:24px;padding:22px;box-shadow:var(--sombra)}
 .airdrop{padding-top:0}
 .ad-barra{position:relative;display:flex;align-items:center;justify-content:center;height:44px;margin:0 -22px 18px;border-bottom:1px solid var(--linha);background:rgba(246,244,247,.7);border-radius:24px 24px 0 0;font-size:14px}
@@ -113,7 +113,7 @@ h2{font-weight:500;font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing
 .b-aceitar:disabled{opacity:.7;cursor:wait;transform:none}
 .nota{font-size:13px;color:var(--tinta-2);text-align:center;margin-top:12px;text-wrap:balance}
 .nota.aviso{color:var(--tinta)}
-.airdrop.treme{animation:treme .45s}
+.convite.treme{animation:treme .45s}
 @keyframes treme{20%,60%{translate:-6px 0}40%,80%{translate:6px 0}}
 
 .instalando{position:absolute;inset:0;border-radius:24px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:28px;text-align:center}
@@ -124,6 +124,27 @@ h2{font-weight:500;font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing
 .instalando .barra i{display:block;height:100%;width:0;border-radius:inherit;background:var(--sel);transition:width 1.6s cubic-bezier(.3,.6,.3,1)}
 .instalando p{font-size:14px;color:var(--tinta-2)}
 @keyframes pula{50%{translate:0 -6px}}
+
+/* ---------- convite no topo ---------- */
+.convite{position:relative;margin-top:32px;max-width:460px;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:1px solid var(--linha);border-radius:24px;padding:20px;box-shadow:var(--sombra)}
+.cv-topo{display:flex;gap:14px;align-items:center;margin-bottom:18px}
+.cv-topo p{display:grid;gap:2px;font-size:16px;line-height:1.35}
+.cv-topo p>b{font-size:13px;color:var(--tinta-2);font-weight:500;text-transform:uppercase;letter-spacing:.06em}
+.convite .b-aceitar{animation:chama 2.4s ease-in-out 1.5s infinite}
+@keyframes chama{0%,100%{box-shadow:0 12px 24px -12px rgba(13,153,255,.8)}50%{box-shadow:0 0 0 7px rgba(13,153,255,.18),0 12px 24px -12px rgba(13,153,255,.8)}}
+
+/* ---------- popup ---------- */
+.modal{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:16px}
+.modal[hidden]{display:none}
+.modal-fundo{position:absolute;inset:0;background:rgba(20,17,24,.45);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:aparece .25s ease}
+.modal .airdrop{background:#fff;animation:abre .35s cubic-bezier(.2,1.2,.4,1)}
+@keyframes aparece{from{opacity:0}}
+@keyframes abre{from{opacity:0;scale:.92;translate:0 12px}}
+.luzes .fechar{width:12px;height:12px;border-radius:50%;background:#ff5f57;border:0;padding:0;cursor:pointer;box-shadow:inset 0 0 0 .5px rgba(0,0,0,.12);position:relative}
+.luzes .fechar::after{content:"×";position:absolute;inset:0;display:grid;place-items:center;font-size:11px;line-height:1;color:#7a0d08;opacity:0}
+.ad-barra:hover .fechar::after,.luzes .fechar:focus-visible::after{opacity:1}
+body.travado{overflow:hidden}
 
 /* ---------- palco: Lari no meio das pastas ---------- */
 .palco{position:relative;width:100%;max-width:480px;aspect-ratio:4/5;margin:0 auto;container-type:inline-size}
@@ -292,7 +313,7 @@ h2{font-weight:500;font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing
 .rv.vis{opacity:1;translate:0 0;filter:none}
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;translate:none;filter:none;transition:none}
-  .pasta,.cursor,.notif,.instalando .pasta-inst,.trilho,.digitando i{animation:none}
+  .convite .b-aceitar,.modal .airdrop,.modal-fundo,.pasta,.cursor,.notif,.instalando .pasta-inst,.trilho,.digitando i{animation:none}
   .msg .anim{opacity:1;scale:1;translate:none;transition:none}
 }
 
@@ -304,7 +325,7 @@ h2{font-weight:500;font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing
   .hero h1{order:2}
   .palco{order:3;max-width:380px;margin-top:40px}
   .hero .sub{order:4;margin-left:auto;margin-right:auto}
-  .airdrop{order:5;width:100%;text-align:left}
+  .convite{order:5;width:100%;text-align:left}
   .pastas-grid,.aluna,.lari-g{grid-template-columns:1fr}
   .lari-g{text-align:center;justify-items:center}
   .lari .sub-sec{margin-left:auto;margin-right:auto}
@@ -316,7 +337,9 @@ h2{font-weight:500;font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing
   .luzes i{width:11px;height:11px}
   h1{font-size:clamp(34px,9.6vw,42px)}
   .sub{margin-top:30px}
-  .airdrop{padding:0 18px 18px;border-radius:22px;margin-top:26px}
+  .airdrop{padding:0 18px 18px;border-radius:22px}
+  .convite{padding:18px;border-radius:22px;margin-top:26px}
+  .modal{padding:12px}
   .ad-ico{width:46px;height:46px}
   .ad-ico svg{width:24px;height:24px}
   .botoes{grid-template-columns:1fr 1.6fr}
