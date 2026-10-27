@@ -3,7 +3,7 @@
   // ====== CONFIGURAÇÃO ======
   var CONFIG = {
     grupo: 'https://chat.whatsapp.com/DkxE6vZTGekGDeehm1a86Q?mode=gi_t',   // link do grupo de WhatsApp (chat.whatsapp.com/...)
-    envio: ''                  // endereço que recebe os cadastros (planilha/ferramenta). Vazio = não envia.
+    envio: 'https://script.google.com/macros/s/AKfycbywHMAP7sfjolv_SzIlHtDPYPpzLmvP3hKTEDaacgrTXzZ72u5BcU5YaTbvp2gIq-xQeA/exec'                  // endereço que recebe os cadastros (planilha/ferramenta). Vazio = não envia.
   };
   // ==========================
 
