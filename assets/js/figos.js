@@ -17,6 +17,9 @@
     io.observe(el);
   });
 
+  var vm = document.getElementById('ver-mais');
+  if(vm) vm.addEventListener('click', function(){ document.getElementById('depos').classList.add('aberto'); vm.parentNode.hidden = true; });
+
   var form = document.getElementById('form');
   if(!form) return;
   document.querySelectorAll('a.cta').forEach(function(a){
