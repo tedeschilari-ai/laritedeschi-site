@@ -241,14 +241,18 @@ h2{font-weight:500;font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing
 .cupom small{display:block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.9}
 .cupom strong{display:block;font-size:30px;font-weight:600;letter-spacing:-.03em;line-height:1.05}
 .cupom em{display:block;font-style:normal;font-size:13px;opacity:.8}
+.msg .anim{opacity:0;scale:.6;translate:0 14px;transition:opacity .35s ease,scale .45s cubic-bezier(.2,1.4,.4,1),translate .45s cubic-bezier(.2,1.4,.4,1);transition-delay:var(--d,0s)}
+.msg .b.eu.anim{transform-origin:right bottom}.msg .b.ela.anim,.msg .digitando.anim{transform-origin:left bottom}
+.msg.ativa .anim{opacity:1;scale:1;translate:0 0}
 .digitando{align-self:flex-start;display:flex;gap:4px;padding:12px 14px;border-radius:20px;background:#e9e9eb;margin-top:3px}
 .digitando i{width:8px;height:8px;border-radius:50%;background:#9b9ba1;animation:pisca 1.2s infinite}
 .digitando i:nth-child(2){animation-delay:.2s}.digitando i:nth-child(3){animation-delay:.4s}
 
 /* ---------- depoimentos ---------- */
-.depos{columns:3 300px;column-gap:18px;margin-top:clamp(32px,5vw,52px)}
+.depos{columns:2 320px;column-gap:20px;max-width:920px;margin-left:auto;margin-right:auto;margin-top:clamp(32px,5vw,52px)}
 .dp{break-inside:avoid;margin:0 0 18px;background:#fff;border:1px solid var(--linha);border-radius:22px;overflow:hidden;box-shadow:0 1px 2px rgba(26,11,26,.04),0 14px 30px -20px rgba(26,11,26,.25)}
 .dp.mais{display:none}
+.depo-sec>.wrap>.rotulo,.depo-sec>.wrap>h2,.depo-sec>.wrap>.sub-sec{text-align:center;margin-left:auto;margin-right:auto}
 .depos.aberto .dp.mais{display:block}
 .d-prod{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--tinta-2);background:#f4f2f5;padding:4px 10px 4px 7px;border-radius:99px}
 .d-prod svg{width:18px;height:14px}
@@ -289,6 +293,7 @@ h2{font-weight:500;font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;translate:none;filter:none;transition:none}
   .pasta,.cursor,.notif,.instalando .pasta-inst,.trilho,.digitando i{animation:none}
+  .msg .anim{opacity:1;scale:1;translate:none;transition:none}
 }
 
 /* ---------- celular ---------- */

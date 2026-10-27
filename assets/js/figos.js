@@ -17,6 +17,12 @@
     io.observe(el);
   });
 
+  var conv = document.getElementById('conversa');
+  if(conv){
+    if(!('IntersectionObserver' in window)) conv.classList.add('ativa');
+    else { var co = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ conv.classList.add('ativa'); co.disconnect(); } }); },{threshold:.55}); co.observe(conv); }
+  }
+
   var vm = document.getElementById('ver-mais');
   if(vm) vm.addEventListener('click', function(){ document.getElementById('depos').classList.add('aberto'); vm.parentNode.hidden = true; });
 
