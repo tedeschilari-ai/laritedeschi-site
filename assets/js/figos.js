@@ -19,6 +19,13 @@
 
   var form = document.getElementById('form');
   if(!form) return;
+  document.querySelectorAll('a.cta').forEach(function(a){
+    a.addEventListener('click', function(ev){
+      ev.preventDefault();
+      form.scrollIntoView({behavior:'smooth', block:'center'});
+      setTimeout(function(){ form.nome.focus({preventScroll:true}); }, 600);
+    });
+  });
   var nome = form.nome, zap = form.whatsapp, email = form.email, aceite = form.aceite;
   var erro = document.getElementById('erro'), nota = document.getElementById('nota');
 
@@ -36,7 +43,7 @@
 
   document.getElementById('recusar').addEventListener('click', function(){
     form.classList.remove('treme'); void form.offsetWidth; form.classList.add('treme');
-    nota.textContent = 'Tudo bem! Mas lembra: dia 09/11 às 8h, e quem está no grupo vê primeiro 😉';
+    nota.textContent = 'Tudo bem! Mas a condição só aparece no grupo, na noite de 08/11 😉';
     nota.classList.add('aviso');
   });
 
@@ -69,7 +76,7 @@
     dados.append('data', new Date().toISOString());
     ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){ dados.append(k, q.get(k) || ''); });
 
-    try{ if(window.fbq) fbq('track','Lead',{content_name:'FigOS lista de espera'}); }catch(e){}
+    try{ if(window.fbq) fbq('track','Lead',{content_name:'Black FigOS lista de espera'}); }catch(e){}
     var envio = CONFIG.envio ? Promise.race([
       fetch(CONFIG.envio,{method:'POST',mode:'no-cors',body:dados}).catch(function(){}),
       new Promise(function(r){ setTimeout(r, 4000); })
