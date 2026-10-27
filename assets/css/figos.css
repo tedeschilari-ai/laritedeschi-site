@@ -205,6 +205,11 @@ body.travado{overflow:hidden}
 .pc.bonus .alca{position:absolute;inset:-7px;border:2px solid var(--sel);border-radius:0;pointer-events:none;z-index:1}
 .sel-tag{position:absolute;left:50%;bottom:-19px;translate:-50% 50%;z-index:2;background:var(--sel);color:#fff;font-size:11.5px;font-weight:500;padding:4px 9px;border-radius:5px;white-space:nowrap}
 .pastas-grid{row-gap:40px}
+.pc.surpresa{grid-column:1/-1}
+.pasta-surpresa{position:relative;flex:none;display:grid;place-items:center}
+.pasta-surpresa svg{width:58px;height:45px;filter:drop-shadow(0 6px 8px rgba(30,20,40,.25))}
+.pasta-surpresa b{position:absolute;top:13px;left:0;right:0;text-align:center;color:var(--lima);font-size:22px;font-weight:600;animation:pisca 1.6s ease-in-out infinite}
+.tag-rev{background:var(--verm)!important;color:#fff!important}
 
 /* ---------- a conta: janela única ---------- */
 .conta>.wrap{text-align:center}
@@ -342,6 +347,7 @@ body.travado{overflow:hidden}
   .pc{padding:20px 20px 22px}
   .pc .num{font-size:48px}
   .pc-topo svg{width:48px;height:37px}
+  .pasta-surpresa b{top:10px;font-size:19px}
   .pc h3{font-size:18px}
   .pc-topo>.pc-nome{padding-right:56px}
   .cta{width:100%;text-align:center;font-size:16px;padding:16px 18px}
@@ -354,6 +360,7 @@ body.travado{overflow:hidden}
   .j-lista{padding:6px 16px}
   .j-lista li{font-size:14.5px;gap:10px}
   .j-lista li svg{width:24px;height:19px}
+  .j-lista li i.inc{font-size:13px}
   .j-total{margin:0 16px;font-size:15px}
   .j-spoiler{padding:26px 18px 24px}
   .aluna{text-align:center}
