@@ -2,7 +2,7 @@
 (function(){
   // ====== CONFIGURAÇÃO ======
   var CONFIG = {
-    grupo: '#LINK-DO-GRUPO',   // link do grupo de WhatsApp (chat.whatsapp.com/...)
+    grupo: 'https://chat.whatsapp.com/DkxE6vZTGekGDeehm1a86Q?mode=gi_t',   // link do grupo de WhatsApp (chat.whatsapp.com/...)
     envio: ''                  // endereço que recebe os cadastros (planilha/ferramenta). Vazio = não envia.
   };
   // ==========================
@@ -89,7 +89,7 @@
     if(!valido()) return;
     form.querySelector('.b-aceitar').disabled = true;
 
-    var q = new URLSearchParams(location.search), dados = new FormData();
+    var q = new URLSearchParams(location.search), dados = new URLSearchParams();
     dados.append('nome', nome.value.trim());
     dados.append('whatsapp', '+55' + zap.value.replace(/\D/g,''));
     dados.append('email', email.value.trim().toLowerCase());
@@ -100,7 +100,7 @@
 
     try{ if(window.fbq) fbq('track','Lead',{content_name:'Black FigOS lista de espera'}); }catch(e){}
     var envio = CONFIG.envio ? Promise.race([
-      fetch(CONFIG.envio,{method:'POST',mode:'no-cors',body:dados}).catch(function(){}),
+      fetch(CONFIG.envio,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:dados.toString()}).catch(function(){}),
       new Promise(function(r){ setTimeout(r, 4000); })
     ]) : Promise.resolve();
 
