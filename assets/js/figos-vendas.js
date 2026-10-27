@@ -1,10 +1,8 @@
 /* Black FigOS · página de vendas (pública e de alunas) */
 (function(){
   // ====== CONFIGURAÇÃO ======
-  var CHECKOUT = {
-    black: '#CHECKOUT-PUBLICO',   // link da Kiwify do FigOS a R$397
-    aluna: '#CHECKOUT-ALUNA'      // link da Kiwify (ou com cupom) a R$297
-  };
+  // Um link só: o cupom de aluna é aplicado automaticamente pelo e-mail no checkout.
+  var CHECKOUT = '#CHECKOUT';   // link da Kiwify do Black FigOS
   // Datas no horário de Brasília (-03:00)
   var D = {
     abre:      new Date('2026-11-09T08:00:00-03:00'),
@@ -38,61 +36,51 @@
   if(vm) vm.addEventListener('click', function(){ document.getElementById('depos').classList.add('aberto'); vm.parentNode.hidden = true; });
 
   // checkout
-  var oferta = document.body.getAttribute('data-oferta') || 'black';
-  var link = CHECKOUT[oferta];
   var q = location.search;
   document.querySelectorAll('[data-checkout]').forEach(function(a){
-    a.href = /^https?:/.test(link) ? link + (q ? (link.indexOf('?') > -1 ? '&' : '?') + q.slice(1) : '') : '#oferta';
-    a.addEventListener('click', function(){ try{ if(window.fbq) fbq('track','InitiateCheckout',{value: oferta === 'aluna' ? 297 : 397, currency:'BRL'}); }catch(e){} });
+    if(/^https?:/.test(CHECKOUT)) a.href = CHECKOUT + (q ? (CHECKOUT.indexOf('?') > -1 ? '&' : '?') + q.slice(1) : '');
+    a.addEventListener('click', function(){ try{ if(window.fbq) fbq('track','InitiateCheckout',{value:397, currency:'BRL'}); }catch(e){} });
   });
 
-  // fases (para testar: ?fase=antes | aberto | pausa | relampago | fechado)
-  var forcada = (q.match(/[?&]fase=(\w+)/) || [])[1];
-  var agoraFixo = (q.match(/[?&]agora=([^&]+)/) || [])[1];
-  function agora(){ return agoraFixo ? new Date(decodeURIComponent(agoraFixo)) : new Date(); }
-  function fase(t){
-    if(forcada) return forcada;
-    if(t < D.abre) return 'antes';
-    if(t < D.fecha) return 'aberto';
-    if(t < D.reabre) return 'pausa';
-    if(t < D.fechaRe) return 'relampago';
-    return 'fechado';
+  // abas da caixa de compra (preço normal / aluna)
+  var caixa = document.querySelector('[data-abas]');
+  function abre(nome){
+    caixa.querySelectorAll('.aba').forEach(function(b){ var on = b.getAttribute('data-aba') === nome; b.classList.toggle('ativa', on); b.setAttribute('aria-selected', on); });
+    caixa.querySelectorAll('[data-painel]').forEach(function(p){ p.hidden = p.getAttribute('data-painel') !== nome; });
   }
-  var TXT = {
-    antes:     ['Abre segunda, 09/11, às 8h', D.abre],
-    aberto:    ['Modo Black ativado · termina em', D.fecha],
-    pausa:     ['Esta versão saiu do ar · reiniciando em', D.reabre],
-    relampago: ['Reiniciando… última janela · termina em', D.fechaRe],
-    fechado:   ['Esta versão saiu do ar', null]
-  };
-  var faseTxt = document.querySelector('[data-fase-txt]'), cont = document.querySelector('[data-contador]');
-  var aviso = document.querySelector('[data-aviso-guias]'), avisoTxt = document.querySelector('[data-aviso-txt]');
+  if(caixa){
+    caixa.querySelectorAll('.aba').forEach(function(b){ b.addEventListener('click', function(){ abre(b.getAttribute('data-aba')); }); });
+    caixa.querySelectorAll('[data-ir-aba]').forEach(function(b){ b.addEventListener('click', function(){ abre(b.getAttribute('data-ir-aba')); }); });
+  }
 
+  // contagem regressiva (para testar: ?agora=2026-11-09T15:00:00-03:00)
+  var agoraFixo = (q.match(/[?&]agora=([^&]+)/) || [])[1];
+  var inicio = Date.now();
+  function agora(){ return agoraFixo ? new Date(new Date(decodeURIComponent(agoraFixo)).getTime() + (Date.now() - inicio)) : new Date(); }
+  var CD = {}; document.querySelectorAll('[data-cd]').forEach(function(el){ CD[el.getAttribute('data-cd')] = el; });
+  var aviso = document.querySelector('[data-aviso-guias]'), avisoTxt = document.querySelector('[data-aviso-txt]');
   function dois(n){ return (n < 10 ? '0' : '') + n; }
-  function falta(ms){
+  function partes(ms){
     if(ms < 0) ms = 0;
     var s = Math.floor(ms/1000), d = Math.floor(s/86400); s -= d*86400;
     var h = Math.floor(s/3600); s -= h*3600; var m = Math.floor(s/60); s -= m*60;
-    return (d ? d + 'd ' : '') + dois(h) + ':' + dois(m) + ':' + dois(s);
+    return {d:d, h:h, m:m, s:s};
   }
+  function falta(ms){ var p = partes(ms); return (p.d ? p.d + 'd ' : '') + dois(p.h) + ':' + dois(p.m) + ':' + dois(p.s); }
 
   function atualiza(){
-    var t = agora(), f = fase(t), info = TXT[f] || TXT.aberto;
-    document.body.setAttribute('data-fase', f);
-    faseTxt.textContent = info[0];
-    cont.textContent = info[1] ? falta(info[1] - t) : '';
-    cont.hidden = !info[1];
+    var t = agora();
+    var alvoFim = (t >= D.reabre && t < D.fechaRe) ? D.fechaRe : D.fecha;
+    var p = partes(alvoFim - t);
+    CD.d.textContent = dois(p.d); CD.h.textContent = dois(p.h); CD.m.textContent = dois(p.m); CD.s.textContent = dois(p.s);
 
-    // guias que saem do pacote
-    var saiuG = t >= D.guias || f === 'pausa' || f === 'relampago' || f === 'fechado';
-    var saiuB = t >= D.behance || f === 'pausa' || f === 'relampago' || f === 'fechado';
+    var saiuG = t >= D.guias, saiuB = t >= D.behance;
     marcaSaiu('Guia de precificação', saiuG);
     marcaSaiu('Guia de posicionamento', saiuG);
     marcaSaiu('Guia de Behance', saiuB);
-
     if(aviso){
       var alvo = !saiuG ? D.guias : (!saiuB ? D.behance : null);
-      if(f === 'aberto' && alvo){
+      if(alvo){
         aviso.hidden = false;
         avisoTxt.textContent = (!saiuG ? 'Os guias de precificação e de posicionamento' : 'O guia de Behance') + ' saem do pacote em ' + falta(alvo - t) + '.';
       } else aviso.hidden = true;

@@ -28,7 +28,12 @@ html:has(.modo-black){background:#0e0c11}
    linear-gradient(var(--sel),var(--sel)) 0 100%/8px 8px no-repeat,
    linear-gradient(var(--sel),var(--sel)) 100% 100%/8px 8px no-repeat}
 
-/* barra do topo com contador */
+/* barra do topo: só a contagem */
+.topo-cont{gap:6px;padding:8px 12px;align-items:flex-start}
+.topo-cont .cd{display:grid;justify-items:center;min-width:46px;line-height:1}
+.topo-cont .cd b{font-size:26px;font-weight:600;letter-spacing:-.01em;font-variant-numeric:tabular-nums;text-transform:none}
+.topo-cont .cd small{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;opacity:.85;margin-top:4px}
+.topo-cont>i{font-style:normal;font-size:22px;font-weight:600;line-height:26px;opacity:.7}
 .modo-black .topo-black{gap:8px;flex-wrap:wrap}
 .topo-black .cont{font-variant-numeric:tabular-nums;background:rgba(0,0,0,.22);padding:2px 9px;border-radius:6px;letter-spacing:.04em;font-size:14.5px}
 .topo-black .cont[hidden]{display:none}
@@ -79,11 +84,23 @@ html:has(.modo-black){background:#0e0c11}
 .pc.saiu .tag::after{content:" · saiu do pacote"}
 .j-lista li.saiu{opacity:.4;text-decoration:line-through}
 
+/* produtos: resumo e tipo */
+.resumo{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.resumo li{font-size:15px;color:var(--tinta-2);background:var(--papel);border:1px solid var(--linha);padding:7px 14px;border-radius:99px}
+.resumo b{color:var(--lima);font-weight:600;margin-right:3px}
+.pc-nome .tipo{flex-basis:100%;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-2);margin-bottom:-4px}
+
 /* trio da narrativa */
 .narrativa>.wrap>h2{max-width:none}
 .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(32px,5vw,52px)}
 .tr-card{border:1px solid var(--linha);border-radius:22px;overflow:hidden}
-.tr-card:nth-child(2){translate:0 18px}
+.duo{grid-template-columns:1fr 1fr}
+.duo .tr-card:nth-child(2){translate:none}
+.tr-corpo h3 span{font-weight:600}
+.tr-prob h3 span{color:#ff5a60}
+.tr-sol h3 span{color:#3aa8ff}
+.duo .tr-corpo h3{font-size:clamp(24px,2.6vw,30px);line-height:1.15;font-weight:500}
+.duo .tr-corpo{padding:26px 26px 28px;gap:14px}
 .tr-corpo{padding:22px;display:grid;gap:10px}
 .tr-rot{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--lima)}
 .tr-card:nth-child(1) .tr-rot{color:#ff7b80}
@@ -120,6 +137,21 @@ html:has(.modo-black){background:#0e0c11}
 @keyframes carrega{from{width:18%}to{width:92%}}
 .in-nota{font-size:12.5px;color:var(--tinta-2);margin-top:6px}
 
+/* abas da caixa de compra (estilo Safari) */
+.abas{display:flex;align-items:flex-end;gap:6px;padding:10px 10px 0 76px;background:var(--papel-2);border-bottom:1px solid var(--linha);position:relative}
+.abas .luzes{left:16px;top:20px;translate:none}
+.aba{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 14px var(--font);color:var(--tinta-2);background:transparent;border:1px solid transparent;border-bottom:0;border-radius:12px 12px 0 0;padding:10px 12px;cursor:pointer;position:relative;top:1px}
+.aba svg{width:20px;height:16px}
+.aba.ativa{background:var(--papel);color:var(--tinta);border-color:var(--linha)}
+.aba em{font-style:normal;font-size:11px;font-weight:600;background:var(--verm);color:#fff;padding:2px 7px;border-radius:99px}
+.aba-aluna:not(.ativa){color:#ffb3d6;animation:pisca2 1.8s ease-in-out infinite}
+@keyframes pisca2{50%{background:rgba(255,159,207,.12)}}
+.in-dica{margin-top:12px;font:600 14px var(--font);color:#ffb3d6;background:rgba(255,159,207,.1);border:1px dashed rgba(255,159,207,.45);border-radius:12px;padding:10px 14px;cursor:pointer}
+.in-dica:hover{background:rgba(255,159,207,.18)}
+.in-aluna{font-size:14px;color:var(--tinta-2);margin-top:10px;max-width:22em}
+.in-aluna b{color:var(--tinta)}
+[data-painel][hidden]{display:none}
+
 /* aviso dos guias */
 .aviso-guias{position:fixed;right:18px;bottom:18px;z-index:40;display:flex;align-items:center;gap:12px;max-width:380px;padding:12px 14px;border-radius:18px;background:rgba(34,30,39,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.1);box-shadow:0 20px 40px -18px rgba(0,0,0,.8);animation:chega2 .6s cubic-bezier(.2,1.2,.4,1)}
 .aviso-guias[hidden]{display:none}
@@ -153,19 +185,19 @@ html:has(.modo-black){background:#0e0c11}
 .final-card .rotulo{color:var(--lima);margin:0}
 .final-card h2{max-width:14em}
 
-/* fases: carrinho fechado */
-body[data-fase="antes"] .cta-comprar,body[data-fase="pausa"] .cta-comprar,body[data-fase="fechado"] .cta-comprar{pointer-events:none;background:#3a3540;box-shadow:none;animation:none}
-body[data-fase="antes"] .cta-comprar::after{content:" · abre 09/11 às 8h"}
-body[data-fase="pausa"] .cta-comprar::after{content:" · reabre 12/11"}
-body[data-fase="fechado"] .cta-comprar::after{content:" · encerrado"}
-body[data-fase="pausa"] .topo-black,body[data-fase="fechado"] .topo-black{background:#2a2630}
-
 @media (max-width:900px){
-  .trio{grid-template-columns:1fr}
+  .trio,.duo{grid-template-columns:1fr}
+  .resumo{justify-content:center}
   .tr-card:nth-child(2){translate:none}
 }
 @media (max-width:640px){
-  .topo-black .cont{font-size:13px}
+  .topo-cont .cd{min-width:40px}
+  .topo-cont .cd b{font-size:22px}
+  .topo-cont>i{font-size:18px;line-height:22px}
+  .abas{padding-left:10px}
+  .abas .luzes{display:none}
+  .aba{font-size:13px;padding:10px 6px;white-space:nowrap;gap:6px}
+  .aba svg{display:none}
   .logo .logo-modo{font-size:10px}
   .garantia{flex-direction:column;text-align:center;padding:22px 18px}
   .in-corpo{padding:22px 18px 24px}
@@ -173,7 +205,7 @@ body[data-fase="pausa"] .topo-black,body[data-fase="fechado"] .topo-black{backgr
   .faq-lista summary{font-size:16px}
 }
 @media (prefers-reduced-motion:reduce){
-  .cta-comprar,.in-barra i,.aviso-guias{animation:none}
+  .cta-comprar,.aviso-guias,.aba-aluna{animation:none}
 }
 .modo-black .pc.bonus .tag,.modo-black .pc.surpresa .tag-b{color:#141118}
 .pc.bonus.saiu .alca,.pc.bonus.saiu .sel-tag,.pc.bonus.saiu::before,.pc.bonus.saiu::after{display:none}

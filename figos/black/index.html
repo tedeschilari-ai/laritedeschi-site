@@ -34,7 +34,12 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 </svg>
 
 <!-- Barra vermelha fixa com o contador -->
-<div class="topo-black"><span>🔥</span> <b data-fase-txt>Modo Black ativado</b> <span class="cont" data-contador>··</span></div>
+<div class="topo-black topo-cont" role="timer" aria-label="Tempo até o fim da Black FigOS">
+  <div class="cd"><b data-cd="d">00</b><small>dias</small></div><i>:</i>
+  <div class="cd"><b data-cd="h">00</b><small>horas</small></div><i>:</i>
+  <div class="cd"><b data-cd="m">00</b><small>minutos</small></div><i>:</i>
+  <div class="cd"><b data-cd="s">00</b><small>segundos</small></div>
+</div>
 
 <main>
   <section class="hero" data-blur="lr">
@@ -46,7 +51,7 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
       <p class="sub rv">Todos os meus cursos, workshops e guias num lugar só, com <b>acesso vitalício</b>, <b>todas as atualizações</b> e <b>1 ano de Figma Edu de graça</b>. Instale uma vez. Use para sempre.</p>
 
       <div class="acao-topo rv">
-        <a class="cta cta-topo" href="#oferta">Instalar agora</a>
+        <a class="cta cta-topo" href="#oferta" data-checkout>Instalar agora</a>
         <p class="nota-topo">Pagamento único · Acesso vitalício · Garantia de 7 dias</p>
       </div>
     </div>
@@ -80,18 +85,14 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
     <div class="wrap">
       <p class="rotulo rv">Por que um sistema</p>
       <h2 class="rv">Você não precisa de mais um tutorial. Precisa de um <span class="sel">sistema<span class="medida">sistema</span></span>.</h2>
-      <div class="trio">
-        <div class="tr-card rv">
+      <div class="trio duo">
+        <div class="tr-card tr-prob rv">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>pecas_soltas.zip</span></div>
-          <div class="tr-corpo"><p class="tr-rot">O problema</p><h3>Aprender em peças soltas.</h3><p>O tutorial do YouTube, o prompt pronto, o curso que não termina e a assinatura nova todo mês. Você até mexe no Figma, mas refaz tudo e não tem coragem de cobrar.</p></div>
+          <div class="tr-corpo"><h3>O problema é aprender em <span>peças soltas</span>.</h3><p>O tutorial do YouTube, o prompt pronto, o curso que não termina e a assinatura nova todo mês. Você até mexe no Figma, mas refaz tudo e não tem coragem de cobrar.</p></div>
         </div>
-        <div class="tr-card rv">
+        <div class="tr-card tr-sol rv">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>sistema.fig</span></div>
-          <div class="tr-corpo"><p class="tr-rot">A virada</p><h3>Um caminho com ordem.</h3><p>O problema não é você, é aprender sem ordem. O FigOS junta o olhar, o critério e o processo no Figma, do primeiro rascunho até a entrega para o cliente.</p></div>
-        </div>
-        <div class="tr-card rv">
-          <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>ia_no_sistema.app</span></div>
-          <div class="tr-corpo"><p class="tr-rot">E a IA?</p><h3>A IA gera. Quem tem sistema decide.</h3><p>Sem sistema, a IA entrega qualquer coisa. Com sistema, você sabe o que pedir e o que corrigir no Figma. Dois workshops do FigOS são justamente sobre isso.</p></div>
+          <div class="tr-corpo"><h3>Para mudar isso, você precisa de um <span>caminho com ordem</span>.</h3><p>O problema não é você, é aprender sem ordem. O FigOS junta o olhar, o critério e o processo no Figma, do primeiro rascunho até a entrega para o cliente.</p></div>
         </div>
       </div>
     </div>
@@ -100,67 +101,68 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
   <!-- As pastas -->
   <section class="sec" data-blur="l">
     <div class="wrap">
-      <p class="rotulo rv">O que você instala</p>
-      <h2 class="rv">7 pastas, 3 guias e um bônus surpresa.</h2>
-      <p class="sub-sec rv">Toque em “Ver o que tem dentro” para abrir cada pasta.</p>
+      <p class="rotulo rv">O que você leva</p>
+      <h2 class="rv">11 produtos da Lari, com acesso vitalício.</h2>
+      <ul class="resumo rv"><li><b>3</b> cursos completos</li><li><b>3</b> workshops</li><li><b>1</b> kit de documentos</li><li><b>3</b> guias</li><li><b>1</b> bônus surpresa</li></ul>
+      <p class="sub-sec rv">Toque em “Ver o que tem dentro” para abrir cada curso.</p>
       <div class="pastas-grid">
       <article class="pc rv">
         <span class="num">01</span>
-        <div class="pc-topo"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg><div class="pc-nome"><h3>FigPost</h3><em class="tag">acesso vitalício</em></div></div>
+        <div class="pc-topo"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg><div class="pc-nome"><span class="tipo">curso completo</span><h3>FigPost</h3><em class="tag">acesso vitalício</em></div></div>
         <p>Do zero a posts e carrosséis no Figma, com um processo que você repete em todo cliente.</p>
         <details class="pc-dentro"><summary>Ver o que tem dentro</summary><ul><li>Figma do zero: da instalação às ferramentas avançadas</li><li>Fundamentos do design aplicados a posts e o grid de carrossel</li><li>Carrossel passo a passo, com aulas práticas do início ao fim</li><li>Seu estúdio: preço, posicionamento e processos para atender clientes</li><li>Aulas bônus com profissionais convidados</li><li>No FigOS o acesso é vitalício (vendido avulso, é assinatura de 1 ano)</li></ul></details>
       </article>
       <article class="pc rv">
         <span class="num">02</span>
-        <div class="pc-topo"><svg style="--c:#d6f27a;--c2:#b4d84b" aria-hidden="true"><use href="#pasta"/></svg><div class="pc-nome"><h3>FigLab</h3><em class="tag">acesso vitalício</em></div></div>
+        <div class="pc-topo"><svg style="--c:#d6f27a;--c2:#b4d84b" aria-hidden="true"><use href="#pasta"/></svg><div class="pc-nome"><span class="tipo">curso completo</span><h3>FigLab</h3><em class="tag">acesso vitalício</em></div></div>
         <p>Exercícios práticos no Figma, e as aulas novas entram no seu acesso sem custo. Você pode conhecer como Desafio 7D.</p>
       </article>
       <article class="pc rv">
         <span class="num">03</span>
-        <div class="pc-topo"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg><div class="pc-nome"><h3>FigLogo</h3><em class="tag">acesso vitalício</em></div></div>
+        <div class="pc-topo"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg><div class="pc-nome"><span class="tipo">curso completo</span><h3>FigLogo</h3><em class="tag">acesso vitalício</em></div></div>
         <p>Do rascunho à finalização: as técnicas para tirar qualquer logo do papel.</p>
         <details class="pc-dentro"><summary>Ver o que tem dentro</summary><ul><li>O Método PCRA: Pesquisa, Conceito, Refinamento e Apresentação</li><li>Briefing, referências e Gestalt para entender a marca antes de desenhar</li><li>Grid, proporção, pen tool e kerning: os detalhes de um logo profissional</li><li>Mockups, pacote de entrega e como explicar cada decisão ao cliente</li><li>Desafios práticos para sair com logos prontos para o portfólio</li></ul></details>
         
       </article>
       <article class="pc rv">
         <span class="num">04</span>
-        <div class="pc-topo"><svg style="--c:#4aa3ff;--c2:#2f86ee" aria-hidden="true"><use href="#pasta"/></svg><div class="pc-nome"><h3>Kit Design Studio</h3><em class="tag">acesso vitalício</em></div></div>
+        <div class="pc-topo"><svg style="--c:#4aa3ff;--c2:#2f86ee" aria-hidden="true"><use href="#pasta"/></svg><div class="pc-nome"><span class="tipo">kit de documentos</span><h3>Kit Design Studio</h3><em class="tag">acesso vitalício</em></div></div>
         <p>Guia de marca, proposta, contrato e apresentação de identidade prontos para usar. Você pode conhecer como FigFile.</p>
         <details class="pc-dentro"><summary>Ver o que tem dentro</summary><ul><li>8 contratos, um para cada área (identidade visual, social media, logotipo, embalagem…)</li><li>Proposta comercial, roteiro de briefing e processo comercial completo</li><li>Scripts de WhatsApp e e-mail para follow-up, objeções e fechamento</li><li>Apresentação de marca, manual de marca e dashboard de projetos no Notion</li><li>Tudo editável no Figma, Canva, Word, Google Docs, PowerPoint ou Notion</li></ul></details>
       </article>
       <article class="pc rv">
         <span class="num">05</span>
-        <div class="pc-topo"><svg style="--c:#ffb48f;--c2:#f6935f" aria-hidden="true"><use href="#pasta"/></svg><div class="pc-nome"><h3>Workshop de impressão no Figma</h3><em class="tag">acesso vitalício</em></div></div>
+        <div class="pc-topo"><svg style="--c:#ffb48f;--c2:#f6935f" aria-hidden="true"><use href="#pasta"/></svg><div class="pc-nome"><span class="tipo">workshop</span><h3>Workshop de impressão no Figma</h3><em class="tag">acesso vitalício</em></div></div>
         <p>Aprenda a fazer impressos no Figma: exportar em CMYK, fechar o arquivo para a gráfica e entregar sem susto.</p>
       </article>
       <article class="pc rv">
         <span class="num">06</span>
-        <div class="pc-topo"><svg style="--c:#a9d8ff;--c2:#7dbcf2" aria-hidden="true"><use href="#pasta"/></svg><div class="pc-nome"><h3>Workshop de mockups com Figma e IA</h3><em class="tag">acesso vitalício</em></div></div>
+        <div class="pc-topo"><svg style="--c:#a9d8ff;--c2:#7dbcf2" aria-hidden="true"><use href="#pasta"/></svg><div class="pc-nome"><span class="tipo">workshop</span><h3>Workshop de mockups com Figma e IA</h3><em class="tag">acesso vitalício</em></div></div>
         <p>Aprenda a criar mockups de três formas: editando PSDs no Figma, criando do zero no Figma ou com IA.</p>
       </article>
       <article class="pc rv">
         <span class="num">07</span>
-        <div class="pc-topo"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg><div class="pc-nome"><h3>Workshop de fotografia com IA</h3><em class="tag">acesso vitalício</em></div></div>
+        <div class="pc-topo"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg><div class="pc-nome"><span class="tipo">workshop</span><h3>Workshop de fotografia com IA</h3><em class="tag">acesso vitalício</em></div></div>
         <p>Aprenda a criar fotos realistas com IA, faça o seu próprio ensaio fotográfico e até tire uma renda extra com isso.</p>
       </article>
       <article class="pc bonus rv"><i class="alca" aria-hidden="true"></i><span class="sel-tag" aria-hidden="true">já selecionado na sua compra</span>
         <span class="num">08</span>
-        <div class="pc-topo"><svg style="--c:#d6f27a;--c2:#b4d84b" aria-hidden="true"><use href="#pasta"/></svg><div class="pc-nome"><h3>Guia de precificação</h3><em class="tag tag-b">bônus incluso</em></div></div>
+        <div class="pc-topo"><svg style="--c:#d6f27a;--c2:#b4d84b" aria-hidden="true"><use href="#pasta"/></svg><div class="pc-nome"><span class="tipo">guia</span><h3>Guia de precificação</h3><em class="tag tag-b">bônus incluso</em></div></div>
         <p>Saiba quanto cobrar em cada projeto e pare de chutar o preço do seu trabalho.</p>
       </article>
       <article class="pc bonus rv"><i class="alca" aria-hidden="true"></i><span class="sel-tag" aria-hidden="true">já selecionado na sua compra</span>
         <span class="num">09</span>
-        <div class="pc-topo"><svg style="--c:#ffb48f;--c2:#f6935f" aria-hidden="true"><use href="#pasta"/></svg><div class="pc-nome"><h3>Guia de posicionamento para designers</h3><em class="tag tag-b">bônus incluso</em></div></div>
+        <div class="pc-topo"><svg style="--c:#ffb48f;--c2:#f6935f" aria-hidden="true"><use href="#pasta"/></svg><div class="pc-nome"><span class="tipo">guia</span><h3>Guia de posicionamento para designers</h3><em class="tag tag-b">bônus incluso</em></div></div>
         <p>Descubra como você quer ser vista e quais clientes quer atrair.</p>
       </article>
       <article class="pc bonus rv"><i class="alca" aria-hidden="true"></i><span class="sel-tag" aria-hidden="true">já selecionado na sua compra</span>
         <span class="num">10</span>
-        <div class="pc-topo"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg><div class="pc-nome"><h3>Guia de Behance</h3><em class="tag tag-b">bônus incluso</em></div></div>
+        <div class="pc-topo"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg><div class="pc-nome"><span class="tipo">guia</span><h3>Guia de Behance</h3><em class="tag tag-b">bônus incluso</em></div></div>
         <p>Monte um portfólio no Behance que mostra o seu processo e atrai cliente.</p>
       </article>
       <article class="pc bonus surpresa escuro rv"><i class="alca" aria-hidden="true"></i><span class="sel-tag" aria-hidden="true">já selecionado na sua compra</span>
         <span class="num">11</span>
-        <div class="pc-topo"><span class="pasta-surpresa" aria-hidden="true"><svg style="--c:#2b2631;--c2:#141118"><use href="#pasta"/></svg><b>?</b></span><div class="pc-nome"><h3>Bônus surpresa</h3><span class="tags"><em class="tag tag-b">bônus incluso</em><em class="tag tag-rev">revelado em 09/11</em></span></div></div>
+        <div class="pc-topo"><span class="pasta-surpresa" aria-hidden="true"><svg style="--c:#2b2631;--c2:#141118"><use href="#pasta"/></svg><b>?</b></span><div class="pc-nome"><span class="tipo">produto novo</span><h3>Bônus surpresa</h3><span class="tags"><em class="tag tag-b">bônus incluso</em><em class="tag tag-rev">revelado em 09/11</em></span></div></div>
         <p>Um produto novo, que eu nunca vendi, entra no FigOS de presente. Eu só revelo o que é no dia 09/11 🤫</p>
       </article>
       </div>
@@ -196,7 +198,7 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
         <div class="j-spoiler j-preco">
           <span class="j-badge">Modo Black ativado</span>
           <p class="j-pct">Tudo por <b>R$ 397</b></p>
-          <p>Pagamento único, à vista ou em até 12x. Acesso vitalício a tudo, com as atualizações. São <b>61% de desconto</b> em cima do valor separado.</p>
+          <p>Pagamento único, à vista ou em até 12x. Acesso vitalício a tudo, com as atualizações. São <b>61% de desconto</b> em cima do valor separado. E se você já é aluna, paga <b>R$ 297</b>.</p>
         </div>
       </div>
 
@@ -205,14 +207,18 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
         <div class="g-selo" aria-hidden="true"><b>7</b><span>dias</span></div>
         <div>
           <h3>Garantia de 7 dias, sem risco.</h3>
-          <p>Instale, abra as pastas e assista às aulas. Se em 7 dias você sentir que o FigOS não é para você, é só pedir o reembolso e devolvemos 100% do valor.</p>
+          <p>Entre, abra os cursos e assista às aulas. Se em 7 dias você sentir que o FigOS não é para você, é só pedir o reembolso e devolvemos 100% do valor.</p>
         </div>
       </div>
 
-      <!-- Oferta -->
-      <div class="instalar rv">
-        <div class="ad-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><b>Instalar Black FigOS</b></div>
-        <div class="in-corpo">
+      <!-- Oferta com abas: preço normal e preço de aluna -->
+      <div class="instalar rv" data-abas>
+        <div class="abas" role="tablist" aria-label="Escolha a sua condição">
+          <span class="luzes" aria-hidden="true"><i></i><i></i><i></i></span>
+          <button type="button" role="tab" class="aba ativa" aria-selected="true" data-aba="normal"><svg style="--c:#4aa3ff;--c2:#2f86ee" aria-hidden="true"><use href="#pasta"/></svg>Black FigOS</button>
+          <button type="button" role="tab" class="aba aba-aluna" aria-selected="false" data-aba="aluna"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg>Sou aluna <em>−R$100</em></button>
+        </div>
+        <div class="in-corpo" data-painel="normal">
           <div class="in-topo">
             <svg class="in-pasta" style="--c:#4aa3ff;--c2:#2f86ee" aria-hidden="true"><use href="#pasta"/></svg>
             <div><b>Black FigOS</b><span>Acesso vitalício · todas as atualizações</span></div>
@@ -220,10 +226,21 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
           <p class="in-de">De <s>R$ 1.018,70</s> por</p>
           <p class="in-preco"><small>R$</small>397</p>
           <p class="in-parc">à vista ou em até 12x no cartão</p>
-          <a class="cta cta-comprar" href="#" data-checkout>Instalar agora</a>
+          <a class="cta cta-comprar" href="#oferta" data-checkout>Instalar agora</a>
           <ul class="in-selos"><li>Pagamento único</li><li>Acesso vitalício</li><li>Garantia de 7 dias</li></ul>
-          <div class="in-barra" aria-hidden="true"><i></i></div>
-          <p class="in-nota">Atualizações vitalícias inclusas. Pix ou cartão, pagamento seguro.</p>
+          <button type="button" class="in-dica" data-ir-aba="aluna">Já é minha aluna? Veja o seu preço →</button>
+        </div>
+        <div class="in-corpo" data-painel="aluna" hidden>
+          <div class="in-topo">
+            <svg class="in-pasta" style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg>
+            <div><b>Black FigOS · aluna</b><span>Para quem já comprou qualquer produto da Lari</span></div>
+          </div>
+          <p class="in-de">De <s>R$ 397</s> por</p>
+          <p class="in-preco"><small>R$</small>297</p>
+          <p class="in-parc">à vista ou em até 12x no cartão</p>
+          <a class="cta cta-comprar" href="#oferta" data-checkout>Instalar com o preço de aluna</a>
+          <p class="in-aluna">Use o <b>e-mail da sua conta</b> no checkout: o cupom de aluna é aplicado automaticamente.</p>
+          <ul class="in-selos"><li>Pagamento único</li><li>Acesso vitalício</li><li>Garantia de 7 dias</li></ul>
         </div>
       </div>
 
@@ -238,7 +255,7 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
       <div class="aluna">
         <div class="al-txt rv">
           <h2>Se você já é minha aluna, a sua condição é ainda mais <span class="sel">bizarra<span class="medida">só para alunas</span></span>.</h2>
-          <p>Já comprou qualquer produto meu, inclusive nas Blacks anteriores? Você paga <b>R$ 297</b>, R$ 100 a menos. O link com a sua condição chegou no grupo de alunas, no seu e-mail e no WhatsApp da lista.</p>
+          <p>Já comprou qualquer produto meu, inclusive nas Blacks anteriores? Você paga <b>R$ 297</b>, R$ 100 a menos. É só usar o <b>e-mail da sua conta</b> no checkout que o cupom de aluna é aplicado automaticamente.</p>
         </div>
         <div class="msg rv" id="conversa" aria-label="Conversa: a aluna pergunta se tem condição especial e a Lari responde que alunas ganham mais R$ 100 de desconto">
           <div class="msg-topo" aria-hidden="true">
@@ -396,7 +413,7 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
         <p class="sub-sec">Sou designer de marcas e há 5 anos ensino designers a usar o Figma com ordem: do primeiro rascunho à entrega para o cliente, sem refazer tudo e sem ter medo de cobrar.</p>
         <p class="sub-sec">Todo ano eu junto meus produtos na Black. Este ano, pela primeira vez, você leva tudo com acesso vitalício.</p>
         <span class="alunos"><b>+800 alunos</b> já aprenderam o método</span>
-        <div><a class="cta" href="#oferta">Instalar agora</a></div>
+        <div><a class="cta" href="#oferta" data-checkout>Instalar agora</a></div>
       </div>
     </div>
   </section>
@@ -413,7 +430,7 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
         <details class="rv"><summary>Como funciona o 1 ano de Figma Edu?</summary><p>É o plano educacional do Figma, que libera os recursos profissionais sem você pagar a assinatura. Depois da compra você recebe o passo a passo para ativar.</p></details>
         <details class="rv"><summary>Qual é a garantia?</summary><p>Você tem 7 dias. Se não for para você, é só pedir o reembolso e devolvemos 100% do valor.</p></details>
         <details class="rv"><summary>Posso parcelar?</summary><p>Sim. Você paga à vista no Pix ou no cartão, ou parcela em até 12x no cartão.</p></details>
-        <details class="rv"><summary>Já sou aluna. Tenho desconto?</summary><p>Tem. Quem já comprou qualquer produto da Lari, inclusive nas Blacks anteriores, paga R$ 297. O link com a sua condição chega no grupo de alunas, no seu e-mail e no WhatsApp da lista.</p></details>
+        <details class="rv"><summary>Já sou aluna. Tenho desconto?</summary><p>Tem. Quem já comprou qualquer produto da Lari, inclusive nas Blacks anteriores, paga R$ 297. Use o e-mail da sua conta no checkout e o cupom de aluna é aplicado automaticamente.</p></details>
         <details class="rv"><summary>Até quando fica aberto?</summary><p>Até terça, 10/11, às 23h59. Os guias de precificação e de posicionamento saem do pacote em 09/11, às 23h59, e o guia de Behance em 10/11, às 23h59.</p></details>
       </div>
     </div>
@@ -425,7 +442,7 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
       <div class="final-card rv">
         <p class="rotulo">Instale uma vez. Use para sempre.</p>
         <h2>Tudo da Lari, por R$&nbsp;397, para sempre.</h2>
-        <a class="cta" href="#oferta">Instalar agora</a>
+        <a class="cta" href="#oferta" data-checkout>Instalar agora</a>
       </div>
     </div>
   </section>
