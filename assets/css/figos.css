@@ -206,6 +206,13 @@ body.travado{overflow:hidden}
 .sel-tag{position:absolute;left:50%;bottom:-19px;translate:-50% 50%;z-index:2;background:var(--sel);color:#fff;font-size:11.5px;font-weight:500;padding:4px 9px;border-radius:5px;white-space:nowrap}
 .pastas-grid{row-gap:40px}
 .pc.surpresa{grid-column:1/-1}
+/* teste A: listrado */
+.pc.surpresa.listrado{background:repeating-linear-gradient(135deg,#fbfafb 0 12px,#efecf1 12px 24px)}
+/* teste B: escuro */
+.pc.surpresa.escuro{background:var(--tinta);border-color:var(--tinta);color:#fff;box-shadow:0 24px 50px -24px rgba(20,17,24,.7)}
+.pc.surpresa.escuro p{color:rgba(255,255,255,.72)}
+.pc.surpresa.escuro .num{color:rgba(255,255,255,.08)}
+.pc.surpresa.escuro .pasta-surpresa svg{--c:#4d4556!important;--c2:#353040!important;filter:drop-shadow(0 6px 14px rgba(214,242,122,.18))}
 .pasta-surpresa{position:relative;flex:none;display:grid;place-items:center}
 .pasta-surpresa svg{width:58px;height:45px;filter:drop-shadow(0 6px 8px rgba(30,20,40,.25))}
 .pasta-surpresa b{position:absolute;top:13px;left:0;right:0;text-align:center;color:var(--lima);font-size:22px;font-weight:600;animation:pisca 1.6s ease-in-out infinite}
