@@ -97,6 +97,11 @@
     requestAnimationFrame(function(){ requestAnimationFrame(function(){ document.getElementById('progresso').style.width = '100%'; }); });
 
     var espera = new Promise(function(r){ setTimeout(r, 1800); });
-    Promise.all([envio, espera]).then(function(){ location.href = CONFIG.grupo; });
+    var temGrupo = /^https?:/.test(CONFIG.grupo);
+    if(!temGrupo){
+      tela.querySelector('p').textContent = 'Cadastro feito! O link do grupo chega no seu WhatsApp e no seu e-mail.';
+      tela.querySelector('b').textContent = 'FigOS recebido ✓';
+    }
+    Promise.all([envio, espera]).then(function(){ if(temGrupo) location.href = CONFIG.grupo; });
   });
 })();
