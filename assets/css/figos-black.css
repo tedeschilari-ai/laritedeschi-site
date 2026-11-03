@@ -78,12 +78,6 @@ html:has(.modo-black){background:#0e0c11}
 .pc-dentro li{position:relative;padding-left:20px;font-size:15px;color:var(--tinta-2);line-height:1.45}
 .pc-dentro li::before{content:"";position:absolute;left:3px;top:8px;width:7px;height:7px;border-radius:2px;background:var(--lima)}
 
-/* guia que saiu do pacote */
-.pc.saiu{opacity:.45;filter:grayscale(1)}
-.pc.saiu .tag{background:#555!important;color:#fff!important}
-.pc.saiu .tag::after{content:" · saiu do pacote"}
-.j-lista li.saiu{opacity:.4;text-decoration:line-through}
-
 /* produtos: resumo e tipo */
 .resumo{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
 .resumo li{font-size:15px;color:var(--tinta-2);background:var(--papel);border:1px solid var(--linha);padding:7px 14px;border-radius:99px}
@@ -152,16 +146,6 @@ html:has(.modo-black){background:#0e0c11}
 .in-aluna b{color:var(--tinta)}
 [data-painel][hidden]{display:none}
 
-/* aviso dos guias */
-.aviso-guias{position:fixed;right:18px;bottom:18px;z-index:40;display:flex;align-items:center;gap:12px;max-width:380px;padding:12px 14px;border-radius:18px;background:rgba(34,30,39,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.1);box-shadow:0 20px 40px -18px rgba(0,0,0,.8);animation:chega2 .6s cubic-bezier(.2,1.2,.4,1)}
-.aviso-guias[hidden]{display:none}
-.aviso-guias svg{flex:none;width:36px;height:28px}
-.aviso-guias p{display:grid;font-size:13.5px;line-height:1.3;color:var(--tinta-2);text-align:left}
-.aviso-guias b{display:flex;justify-content:space-between;gap:10px;color:var(--tinta);font-weight:600}
-.aviso-guias small{font-weight:400;color:var(--tinta-2)}
-.av-bt{flex:none;font-size:13px;font-weight:600;color:#fff;background:var(--sel);text-decoration:none;padding:7px 12px;border-radius:10px}
-@keyframes chega2{from{opacity:0;translate:0 20px}}
-
 /* aluna */
 .modo-black .aluna p{color:var(--tinta-2)}
 .modo-black .aluna p b{color:var(--tinta)}
@@ -201,11 +185,23 @@ html:has(.modo-black){background:#0e0c11}
   .logo .logo-modo{font-size:10px}
   .garantia{flex-direction:column;text-align:center;padding:22px 18px}
   .in-corpo{padding:22px 18px 24px}
-  .aviso-guias{left:12px;right:12px;bottom:12px;max-width:none}
   .faq-lista summary{font-size:16px}
 }
 @media (prefers-reduced-motion:reduce){
-  .cta-comprar,.aviso-guias,.aba-aluna{animation:none}
+  .cta-comprar,.aba-aluna{animation:none}
 }
 .modo-black .pc.bonus .tag,.modo-black .pc.surpresa .tag-b{color:#141118}
-.pc.bonus.saiu .alca,.pc.bonus.saiu .sel-tag,.pc.bonus.saiu::before,.pc.bonus.saiu::after{display:none}
+
+/* estados da campanha: pausa (11/11), reabertura (12/11) e fechado */
+.cd-rot{align-self:center;margin-right:14px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;line-height:1.2;max-width:150px}
+@media (max-width:520px){.cd-rot{display:none}}
+.faixa-re{position:relative;z-index:2;margin:0 auto;padding:14px 20px;text-align:center;font-size:15px;line-height:1.45;background:var(--lima,#d9f86a);color:#141118}
+.faixa-re b{margin-right:6px}
+.tela-off{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:24px;background:var(--bg,#0e0c11);color:var(--tinta,#f6f3f8);text-align:center}
+.tela-off[hidden]{display:none}
+.to-card{max-width:520px}
+.to-icone{width:56px;height:56px;margin:0 auto 22px;border-radius:50%;border:2px solid currentColor;display:grid;place-items:center;font-size:26px;opacity:.8}
+.to-card h2{font-size:clamp(28px,6vw,44px);line-height:1.1;margin:0 0 16px}
+.to-card p{font-size:17px;line-height:1.55;color:var(--tinta-2,rgba(246,243,248,.66));margin:0 0 10px}
+.to-card .to-peq{font-size:14px;margin-top:18px}
+body.off{overflow:hidden}
