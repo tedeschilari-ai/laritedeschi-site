@@ -280,3 +280,36 @@ body.off{overflow:hidden}
 .modo-black .conta{background:radial-gradient(70% 34% at 50% 100%,rgba(214,242,122,.16),transparent 70%),#000}
 .ofertas .in-preco{font-size:clamp(84px,10vw,112px);text-shadow:0 0 42px rgba(214,242,122,.35)}
 .ofertas .instalar{box-shadow:0 40px 110px -36px rgba(214,242,122,.4)}
+
+/* Botões verdes: a cor da oferta na Black */
+.modo-black .cta{background:#2bd65f;color:#06210f;box-shadow:0 12px 24px -12px rgba(43,214,95,.85)}
+.modo-black .cta:hover{background:#22c052}
+@keyframes chama{0%,100%{box-shadow:0 12px 24px -12px rgba(43,214,95,.85)}50%{box-shadow:0 0 0 8px rgba(43,214,95,.2),0 12px 24px -12px rgba(43,214,95,.85)}}
+
+/* Mockups da oferta: tudo o que a pessoa recebe */
+.mk-palco{position:relative;width:100%;max-width:1040px;aspect-ratio:16/10;margin:clamp(28px,4vw,48px) auto 0;text-align:left}
+.mk-palco img{display:block;width:100%;height:100%;object-fit:cover}
+.mk-dev,.mk-doc,.mk-pasta{position:absolute}
+.mk-tela{overflow:hidden;background:#000;border:solid #1c1c20;box-shadow:0 0 0 1px rgba(255,255,255,.16)}
+.mk-mac{left:21%;top:7%;width:58%;z-index:2;filter:drop-shadow(0 30px 40px rgba(0,0,0,.7))}
+.mk-mac .mk-tela{aspect-ratio:16/9.6;border-width:clamp(5px,1.1vw,12px);border-radius:clamp(8px,1.4vw,16px)}
+.mk-haste{display:block;width:17%;aspect-ratio:3/2;margin:0 auto;background:linear-gradient(180deg,#8d8d94,#c9c9cf)}
+.mk-pe{display:block;width:27%;height:clamp(3px,.6vw,7px);margin:0 auto;border-radius:3px 3px 0 0;background:#d9d9de}
+.mk-lap{right:0;top:13%;width:37%;z-index:1;rotate:3deg;filter:drop-shadow(0 24px 30px rgba(0,0,0,.6))}
+.mk-lap .mk-tela{aspect-ratio:16/10;border-width:clamp(3px,.7vw,8px);border-radius:clamp(6px,1vw,12px) clamp(6px,1vw,12px) 0 0}
+.mk-base{display:block;width:112%;height:clamp(4px,.8vw,9px);margin-left:-6%;border-radius:0 0 8px 8px;background:linear-gradient(180deg,#d9d9de,#8d8d94)}
+.mk-ipad{left:0;top:30%;width:33%;z-index:3;rotate:-5deg;filter:drop-shadow(0 26px 32px rgba(0,0,0,.65))}
+.mk-ipad .mk-tela{aspect-ratio:4/3;border-width:clamp(5px,1vw,11px);border-radius:clamp(10px,1.6vw,20px)}
+.mk-fone{left:30%;bottom:0;width:13%;z-index:5;rotate:4deg;filter:drop-shadow(0 20px 24px rgba(0,0,0,.7))}
+.mk-fone .mk-tela{aspect-ratio:9/18;border-width:clamp(3px,.6vw,7px);border-radius:clamp(12px,2vw,24px)}
+.mk-doc{overflow:hidden;background:#fff;border-radius:clamp(4px,.7vw,8px);box-shadow:0 22px 30px -10px rgba(0,0,0,.7)}
+.mk-doc-1{right:17%;bottom:4%;width:33%;aspect-ratio:16/9;z-index:3;rotate:-3deg}
+.mk-doc-2{right:1%;bottom:12%;width:33%;aspect-ratio:16/9;z-index:4;rotate:5deg}
+.mk-pasta{z-index:6;display:grid;justify-items:center;gap:3px;font-size:clamp(9px,1.2vw,13px);font-weight:600;color:var(--tinta);white-space:nowrap;animation:mk-flutua 4s ease-in-out infinite}
+.mk-pasta svg{width:clamp(34px,5.4vw,60px);height:clamp(27px,4.3vw,47px)}
+.mk-pasta>span:last-child{padding:2px 8px;border-radius:7px;background:rgba(0,0,0,.72)}
+.mk-pasta .pasta-surpresa b{top:22%;left:0;right:0;width:40%;height:50%;margin-inline:auto;font-size:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' stroke='%23fff' stroke-width='8' stroke-linecap='round'%3E%3Cpath d='M50 50V4M50 50l19-33M50 50l38-22M50 50h36M50 50l40 23M50 50l20 35M50 50v46M50 50L32 81M50 50L10 73M50 50H14M50 50L10 27M50 50L30 15'/%3E%3C/svg%3E") center/contain no-repeat}
+.mk-pasta-ia{animation-delay:-2s}
+@keyframes mk-flutua{50%{translate:0 -6px}}
+@media (prefers-reduced-motion:reduce){.mk-pasta{animation:none}}
+@media (max-width:640px){.mk-palco{margin-top:44px}}
