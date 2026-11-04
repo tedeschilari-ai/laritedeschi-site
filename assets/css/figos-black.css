@@ -213,3 +213,12 @@ body.off{overflow:hidden}
 .pc.surpresa .pc-topo>.pc-nome{padding-right:0}
 @media (max-width:640px){.pc.surpresa .pasta-surpresa svg{width:60px;height:47px}.pc.surpresa .pasta-surpresa b{top:13px;font-size:22px}}
 @media (prefers-reduced-motion:reduce){.pc>.tag,.pc.bonus>.tag,.pc>.tags .tag-b,.modo-black .pc.surpresa.escuro{animation:none}}
+
+/* Garantia: 3 bolinhas atrás do selo, mais fracas para fora, pulsando */
+.g-selo{animation:pulsa-selo 2.4s ease-in-out infinite;margin:20px 22px}
+@keyframes pulsa-selo{
+  0%,100%{box-shadow:0 0 0 7px rgba(214,242,122,.26),0 0 0 14px rgba(214,242,122,.15),0 0 0 21px rgba(214,242,122,.07)}
+  50%{box-shadow:0 0 0 10px rgba(214,242,122,.3),0 0 0 20px rgba(214,242,122,.17),0 0 0 30px rgba(214,242,122,.08)}
+}
+@media (max-width:640px){.g-selo{margin:24px 0 26px}}
+@media (prefers-reduced-motion:reduce){.g-selo{animation:none;box-shadow:0 0 0 7px rgba(214,242,122,.26),0 0 0 14px rgba(214,242,122,.15),0 0 0 21px rgba(214,242,122,.07)}}
