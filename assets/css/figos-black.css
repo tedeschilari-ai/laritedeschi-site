@@ -262,3 +262,21 @@ body.off{overflow:hidden}
 .pc.surpresa.escuro .pasta-surpresa svg{--c:#e08a68!important;--c2:#c9623f!important;filter:drop-shadow(0 6px 14px rgba(224,138,104,.3))}
 .pc.surpresa .pasta-surpresa b{margin-inline:auto}
 .vit,b.vit{color:var(--lima)!important;font-weight:600}
+
+/* Ritmo da página: seções claras para o preto do preço ter mais força */
+.clara{--bg:#fff;--papel:#fff;--papel-2:#f3f1f3;--tinta:#141118;--tinta-2:#5b5662;--linha:#e2dee4;--sombra:0 24px 50px -28px rgba(30,20,40,.3);color-scheme:light;background:var(--bg);color:var(--tinta)}
+.clara-2{--bg:#f3f1f3}
+.clara[data-blur]::before,.clara[data-blur]::after{content:none}
+.modo-black .clara .pc,.modo-black .clara .dp,.modo-black .clara .fia{box-shadow:0 14px 30px -22px rgba(30,20,40,.35)}
+.modo-black .clara .pc .num{color:rgba(20,17,24,.06)}
+.clara .vit,.clara b.vit{color:#141118!important;background:var(--lima);padding:0 .28em;border-radius:6px}
+.sec-ia.clara{background:var(--bg)}
+.clara .ia-tit{color:var(--tinta)}
+/* blocos que continuam pretos dentro das seções claras */
+.modo-black .clara .pc.surpresa.escuro,.clara .ia-porque{--papel:#000;--papel-2:#221e27;--tinta:#f6f3f8;--tinta-2:rgba(246,243,248,.72);--linha:rgba(255,255,255,.09);color:var(--tinta)}
+.modo-black .clara .pc.surpresa.escuro .num{color:rgba(255,255,255,.07)}
+
+/* A hora do preço: o trecho mais escuro e mais forte da página */
+.modo-black .conta{background:radial-gradient(70% 34% at 50% 100%,rgba(214,242,122,.16),transparent 70%),#000}
+.ofertas .in-preco{font-size:clamp(84px,10vw,112px);text-shadow:0 0 42px rgba(214,242,122,.35)}
+.ofertas .instalar{box-shadow:0 40px 110px -36px rgba(214,242,122,.4)}
