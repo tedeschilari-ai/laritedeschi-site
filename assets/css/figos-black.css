@@ -448,7 +448,7 @@ body.off{overflow:hidden}
 @media (max-width:640px){.pc-val{right:16px;top:16px}.pc-val b{font-size:16px}.pc-val s{font-size:13px}}
 
 /* Mockup de tudo o que vem no FigOS, com as pastas flutuando em cima */
-.mock-final{position:relative;max-width:1040px;margin:clamp(40px,6vw,72px) auto 0;padding-top:clamp(36px,6vw,72px);isolation:isolate}
+.mock-final{position:relative;max-width:1040px;margin:clamp(32px,5vw,56px) auto 0;isolation:isolate}
 .mock-final::before{content:"";position:absolute;z-index:-1;inset:8% -4% -2%;background:radial-gradient(50% 50% at 50% 50%,rgba(74,163,255,.42),rgba(147,120,245,.22) 55%,transparent 100%)}
 .mock-final img{display:block;width:100%;height:auto}
 .mock-pastas{position:absolute;inset:0;z-index:2;pointer-events:none}
