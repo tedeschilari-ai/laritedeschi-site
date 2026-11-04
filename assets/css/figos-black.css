@@ -17,7 +17,6 @@ html:has(.modo-black){background:#0e0c11}
 .modo-black [data-blur*="r"]::after{background:radial-gradient(closest-side,rgba(227,38,45,.16),rgba(146,110,255,.05) 55%,transparent)}
 
 /* textos que ficam sobre o verde-lima continuam escuros */
-.modo-black .sel{color:#141118}
 .modo-black .sel::before{background:
    linear-gradient(var(--bg),var(--bg)) 1.5px 1.5px/5px 5px no-repeat,
    linear-gradient(var(--bg),var(--bg)) calc(100% - 1.5px) 1.5px/5px 5px no-repeat,
@@ -200,30 +199,21 @@ body.off{overflow:hidden}
 /* Respiro entre a condição de aluno e a caixa do preço */
 
 /* Dois banners de oferta: aluno e quem ainda não é */
-.ofertas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch;max-width:980px;margin:clamp(64px,8vw,96px) auto 0;scroll-margin-top:90px}
 .ofertas .instalar{max-width:none;margin:0;display:flex;flex-direction:column}
 .ofertas .in-corpo{flex:1;align-content:start}
 .ofertas .in-selos{margin-top:auto;padding-top:12px}
 .of-para{display:flex;align-items:center;justify-content:center;gap:10px;margin:0;padding:14px 16px;font-size:16px;font-weight:600;background:var(--papel-2);border-bottom:1px solid var(--linha)}
 .of-para em{font-style:normal;font-size:11.5px;font-weight:600;background:var(--verm);color:#fff;padding:3px 9px;border-radius:99px;white-space:nowrap}
-.oferta-aluno{border:2px solid #ff9fcf;animation:pulsa-aluno 2.4s ease-in-out infinite}
-.modo-black .oferta-aluno{border-color:#ff9fcf}
-.oferta-aluno .of-para{background:#ff9fcf;color:#141118;border-color:#ff9fcf}
-@keyframes pulsa-aluno{0%,100%{box-shadow:0 0 0 0 rgba(255,159,207,.35),0 40px 90px -40px rgba(255,159,207,.55)}50%{box-shadow:0 0 0 8px rgba(255,159,207,0),0 40px 90px -30px rgba(255,159,207,.7)}}
 .of-inclui{list-style:none;width:100%;margin:16px 0 0;padding:14px 0 0;border-top:1px solid var(--linha);display:grid;gap:9px;text-align:left;font-size:15px;line-height:1.4;color:var(--tinta-2)}
 .of-inclui li{position:relative;padding-left:24px}
 .of-inclui li::before{content:"✓";position:absolute;left:2px;color:var(--lima);font-weight:600}
 .of-inclui b{color:var(--tinta)}
-.of-inclui b.vit{color:var(--lima)}
 
 /* "Vitalício" sempre em destaque */
 
-.j-lista li.j-ia>span{font-weight:600}
 
 @media (max-width:760px){
-  .ofertas{grid-template-columns:minmax(0,1fr)}
 }
-@media (prefers-reduced-motion:reduce){.oferta-aluno{animation:none}}
 
 /* Pasta do bônus de IA: laranja, com o símbolo no estilo do Claude */
 
@@ -241,73 +231,58 @@ body.off{overflow:hidden}
 .ofertas .instalar{box-shadow:0 40px 110px -36px rgba(214,242,122,.4)}
 
 
-/* Mockups da oferta: tudo o que a pessoa recebe */
-.mk-palco{position:relative;width:100%;max-width:1040px;aspect-ratio:16/10;margin:clamp(28px,4vw,48px) auto 0;text-align:left}
-.mk-palco img{display:block;width:100%;height:100%;object-fit:cover}
-.mk-dev,.mk-doc,.mk-pasta{position:absolute}
-.mk-tela{overflow:hidden;background:#000;border:solid #1c1c20;box-shadow:0 0 0 1px rgba(255,255,255,.16)}
-.mk-mac{left:21%;top:7%;width:58%;z-index:2;filter:drop-shadow(0 30px 40px rgba(0,0,0,.7))}
-.mk-mac .mk-tela{aspect-ratio:16/9.6;border-width:clamp(5px,1.1vw,12px);border-radius:clamp(8px,1.4vw,16px)}
-.mk-haste{display:block;width:17%;aspect-ratio:3/2;margin:0 auto;background:linear-gradient(180deg,#8d8d94,#c9c9cf)}
-.mk-pe{display:block;width:27%;height:clamp(3px,.6vw,7px);margin:0 auto;border-radius:3px 3px 0 0;background:#d9d9de}
-.mk-lap{right:0;top:13%;width:37%;z-index:1;rotate:3deg;filter:drop-shadow(0 24px 30px rgba(0,0,0,.6))}
-.mk-lap .mk-tela{aspect-ratio:16/10;border-width:clamp(3px,.7vw,8px);border-radius:clamp(6px,1vw,12px) clamp(6px,1vw,12px) 0 0}
-.mk-base{display:block;width:112%;height:clamp(4px,.8vw,9px);margin-left:-6%;border-radius:0 0 8px 8px;background:linear-gradient(180deg,#d9d9de,#8d8d94)}
-.mk-ipad{left:0;top:30%;width:33%;z-index:3;rotate:-5deg;filter:drop-shadow(0 26px 32px rgba(0,0,0,.65))}
-.mk-ipad .mk-tela{aspect-ratio:4/3;border-width:clamp(5px,1vw,11px);border-radius:clamp(10px,1.6vw,20px)}
-.mk-fone{left:30%;bottom:0;width:13%;z-index:5;rotate:4deg;filter:drop-shadow(0 20px 24px rgba(0,0,0,.7))}
-.mk-fone .mk-tela{aspect-ratio:9/18;border-width:clamp(3px,.6vw,7px);border-radius:clamp(12px,2vw,24px)}
-.mk-doc{overflow:hidden;background:#fff;border-radius:clamp(4px,.7vw,8px);box-shadow:0 22px 30px -10px rgba(0,0,0,.7)}
-.mk-doc-1{right:17%;bottom:4%;width:33%;aspect-ratio:16/9;z-index:3;rotate:-3deg}
-.mk-doc-2{right:1%;bottom:12%;width:33%;aspect-ratio:16/9;z-index:4;rotate:5deg}
-@media (max-width:640px){.mk-palco{margin-top:44px}}
 
-/* Mockups: logo do Claude, FigLab, terceiro documento e prateleira */
-.mk-tela{container-type:inline-size}
-.mk-doc-1{right:21%;bottom:0;width:30%}
-.mk-doc-2{right:0;bottom:7%;width:30%}
-.mk-doc-3{right:9%;bottom:22%;width:27%;aspect-ratio:16/9;z-index:2;rotate:-7deg}
-.mk-fone{left:27%;width:12%}
-.mk-fone-2{left:39%;bottom:3%;width:11%;z-index:4;rotate:-5deg}
-.mk-claude{display:grid;place-content:center;justify-items:center;gap:3cqw;height:100%;padding:6cqw;text-align:center;color:#fff;background:#d97757}
-.mk-claude img{width:18cqw;height:18cqw;object-fit:contain;border-radius:18%;box-shadow:0 0 0 1px rgba(255,255,255,.4)}
-.mk-claude b{font-size:7.5cqw;font-weight:600;line-height:1.1}
-.mk-claude span{font-size:5.5cqw}
-.mk-capa{display:grid;align-content:center;gap:4cqw;height:100%;padding:10cqw;background:var(--f);color:var(--t)}
-.mk-capa b{font-size:22cqw;font-weight:600;letter-spacing:-.03em;line-height:1}
-.mk-capa span{font-size:11cqw;line-height:1.1}
 @media (max-width:760px){
 }
-/* o Mac cobre a esquerda do notebook: o conteúdo fica na parte visível */
-.mk-claude{padding:5cqw 4cqw 5cqw 46cqw}
-.mk-claude img{width:15cqw;height:15cqw}
-.mk-claude b{font-size:6.2cqw}
-.mk-claude span{font-size:5cqw}
 
 /* Botões no verde da marca */
 .modo-black .cta{background:var(--lima);color:#141118;box-shadow:0 12px 24px -12px rgba(214,242,122,.75)}
 .modo-black .cta:hover{background:#c6e665}
 @keyframes chama{0%,100%{box-shadow:0 12px 24px -12px rgba(214,242,122,.75)}50%{box-shadow:0 0 0 8px rgba(214,242,122,.2),0 12px 24px -12px rgba(214,242,122,.75)}}
 
-/* Destaque de palavras: seleção azul do iPhone */
-.modo-black .sel{background:#0a84ff;color:#fff;outline:0;border-radius:.14em;padding:0 .16em}
-.modo-black .sel::before,.modo-black .sel .medida{display:none}
-.vit,b.vit{color:#fff!important;background:#0a84ff;font-weight:600;padding:0 .24em;border-radius:.2em}
 
 /* Etiquetas dos cards em azul: o verde fica para os botões */
 .modo-black .pc .tag,.modo-black .pc.bonus .tag{background:#0a84ff;color:#fff;--pulso:rgba(10,132,255,.45)}
-.j-lista li.j-ia{background:rgba(10,132,255,.16);border-radius:10px}
 
-/* Bônus: seção azul inteira sobre os funcionários de IA */
-.modo-black .sec-ia{--papel:rgba(255,255,255,.14);--tinta:#fff;--tinta-2:rgba(255,255,255,.88);--linha:rgba(255,255,255,.28);color:#fff;scroll-margin-top:70px;background:radial-gradient(70% 55% at 50% 0,rgba(255,255,255,.26),transparent 72%),linear-gradient(180deg,#2f8ff2,#0a5fd8)}
-.sec-ia .rotulo{color:#fff}
-.modo-black .sec-ia .sel{background:#fff;color:#0a5fd8}
-.ia-icone{display:block;width:72px;height:72px;margin-bottom:18px;filter:drop-shadow(0 14px 22px rgba(4,40,110,.45))}
-.fia-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:clamp(24px,3.5vw,36px) 0}
-.fia{padding:18px 20px;background:var(--papel);border:1px solid var(--linha);border-radius:16px}
-.fia h3{margin:0 0 4px;font-size:18px;font-weight:600}
-.fia p{margin:0;font-size:15.5px;line-height:1.4;color:var(--tinta-2)}
-@media (max-width:980px){.fia-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:640px){.fia-grid{gap:8px}.fia{padding:12px}.fia h3{font-size:15px}.fia p{font-size:13.5px}.sec-ia .ia-icone{margin-inline:auto}}
-.modo-black .sel{display:inline;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .modo-black .alunos{background:#0a84ff;color:#fff}
+
+/* Destaque de palavras: seleção de texto do iPhone (fundo claro e duas barrinhas com bolinha) */
+.modo-black .sel,.vit{--d:max(8px,.17em);position:relative;display:inline-block;margin:0 .1em;padding:0 .08em;outline:0;border-radius:0;line-height:1.08;color:#fff;background:rgba(10,132,255,.42);font-weight:inherit}
+.modo-black .clara .sel,.clara .vit{color:#141118;background:#bfd8f8}
+.modo-black .sel .medida{display:none}
+.modo-black .sel::before,.modo-black .sel::after,.vit::before,.vit::after{content:"";position:absolute;inset:auto;width:var(--d);pointer-events:none}
+.modo-black .sel::before,.vit::before{left:calc(var(--d) / -2);top:calc(var(--d) * -.6);bottom:0;background:radial-gradient(circle at 50% calc(var(--d) / 2),#0a84ff calc(var(--d) / 2 - .5px),transparent calc(var(--d) / 2)) no-repeat,linear-gradient(#0a84ff,#0a84ff) center/2px 100% no-repeat}
+.modo-black .sel::after,.vit::after{right:calc(var(--d) / -2);top:0;bottom:calc(var(--d) * -.6);background:radial-gradient(circle at 50% calc(100% - var(--d) / 2),#0a84ff calc(var(--d) / 2 - .5px),transparent calc(var(--d) / 2)) no-repeat,linear-gradient(#0a84ff,#0a84ff) center/2px 100% no-repeat}
+
+/* Topo: botão do iPhone ligado */
+.modo-chave{display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;font-size:16px}
+.modo-chave b{font-weight:600}
+.chave{position:relative;flex:none;width:46px;height:28px;border-radius:99px;background:var(--lima);animation:chave-fundo .5s .6s both}
+.chave i{position:absolute;top:2px;left:20px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.35);animation:chave-bola .5s .6s both}
+@keyframes chave-fundo{from{background:rgba(255,255,255,.22)}to{background:var(--lima)}}
+@keyframes chave-bola{from{left:2px}to{left:20px}}
+
+/* Bônus: retângulo grande, no fundo claro */
+.bonus-ia{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:center;padding:clamp(24px,4vw,44px);background:var(--papel);border:2px solid var(--lima);border-radius:24px;scroll-margin-top:80px;animation:pulsa-bonus 2.4s ease-in-out infinite}
+@keyframes pulsa-bonus{0%,100%{box-shadow:0 0 0 0 rgba(180,216,75,.45),0 22px 44px -26px rgba(30,20,40,.4)}50%{box-shadow:0 0 0 9px rgba(180,216,75,0),0 22px 44px -26px rgba(30,20,40,.4)}}
+.bi-tag{display:inline-block;margin-bottom:14px;padding:6px 12px;font-size:13px;font-weight:600;color:#fff;background:var(--verm);border-radius:99px}
+.bi-tit{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.bi-tit img{flex:none;width:64px;height:64px}
+.bi-tit h3{font-size:clamp(24px,3vw,32px);font-weight:600;line-height:1.12;letter-spacing:-.01em}
+.bonus-ia p{font-size:17px;color:var(--tinta-2)}
+.bi-lista{list-style:none;display:grid;gap:10px;margin:0;padding:0}
+.bi-lista li{position:relative;padding-left:30px;font-size:17px;font-weight:600}
+.bi-lista li::before{content:"✓";position:absolute;left:0;top:1px;display:grid;place-items:center;width:21px;height:21px;font-size:13px;color:#141118;background:var(--lima);border-radius:50%}
+
+/* Oferta: normal e, embaixo, a de aluno com contorno azul */
+.ofertas{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;max-width:560px;margin:clamp(28px,4vw,44px) auto 0;scroll-margin-top:90px}
+.modo-black .oferta-aluno{border:2px solid #0a84ff;box-shadow:0 30px 80px -36px rgba(10,132,255,.75)}
+.oferta-aluno .of-para em{background:#0a84ff}
+.ofertas + .garantia{margin-top:clamp(28px,4vw,44px)}
+
+@media (max-width:760px){
+  .bonus-ia{grid-template-columns:minmax(0,1fr)}
+  .bi-tit{align-items:flex-start}
+  .bi-tit img{width:52px;height:52px}
+}
+@media (prefers-reduced-motion:reduce){.bonus-ia,.chave,.chave i{animation:none}}
