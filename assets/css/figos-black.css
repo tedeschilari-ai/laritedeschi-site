@@ -432,3 +432,8 @@ body.off{overflow:hidden}
 .bn.vis .be-proj{animation:mk-entra .5s var(--d) both}
 .be-aviso{left:12px;right:12px;top:auto;bottom:14px}
 @media (prefers-reduced-motion:reduce){.bn{animation:none}.bn .be-proj{opacity:1;animation:none!important}.be-aviso{display:none}}
+
+/* Bônus: o que os funcionários fazem */
+.bonus-ia .bi-faz{margin-top:16px;font-weight:600;color:var(--tinta)}
+.bonus-ia .bi-lista{grid-template-columns:minmax(0,1fr);gap:8px;margin-top:10px}
+.bonus-ia .bi-lista li{font-size:16px}
