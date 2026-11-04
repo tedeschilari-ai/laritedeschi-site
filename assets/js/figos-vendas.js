@@ -59,9 +59,6 @@
     else { var vChat = new IntersectionObserver(function(es){ if(es[0].isIntersecting){ vChat.disconnect(); conversa(0); } },{threshold:.3}); vChat.observe(chat); }
   }
 
-  // mural: repete as capas para a faixa não ter fim
-  document.querySelectorAll('[data-mural]').forEach(function(t){ t.innerHTML += t.innerHTML; });
-
   // ver mais depoimentos
   var vm = document.getElementById('ver-mais');
   if(vm) vm.addEventListener('click', function(){ document.getElementById('depos').classList.add('aberto'); vm.parentNode.hidden = true; });

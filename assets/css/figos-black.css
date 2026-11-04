@@ -438,17 +438,6 @@ body.off{overflow:hidden}
 .bonus-ia .bi-lista{grid-template-columns:minmax(0,1fr);gap:8px;margin-top:10px}
 .bonus-ia .bi-lista li{font-size:16px}
 
-/* Cards: pasta aberta, com as imagens reais saindo dela */
-.pc-fan{position:relative;width:min(100%,250px);height:112px}
-.pc-fan .pc-pasta{position:absolute;left:0;bottom:0;z-index:5;width:92px;height:72px}
-.pc-fan img{position:absolute;bottom:24px;left:calc(14px + var(--i) * 46px);z-index:calc(3 - var(--i));object-fit:cover;background:#fff;border-radius:6px;box-shadow:0 8px 16px -6px rgba(30,20,40,.5);transform:rotate(calc(-9deg + var(--i) * 10deg));transform-origin:50% 100%}
-.fan-v{width:62px;height:88px}
-.fan-h{width:112px;height:66px}
-.pc-fan .fan-h{left:calc(8px + var(--i) * 52px)}
-.rv.pc .pc-fan img{opacity:0}
-.pc.vis .pc-fan img{opacity:1;animation:fan-sai .6s calc(.15s + var(--i) * .14s) both}
-@keyframes fan-sai{from{opacity:0;transform:translateY(46px) rotate(0)}to{opacity:1;transform:rotate(calc(-9deg + var(--i) * 10deg))}}
-
 /* Valor de cada produto */
 .pc-val{position:absolute;right:22px;top:20px;display:grid;justify-items:end;line-height:1.15}
 .pc-val s{font-size:14px;color:var(--tinta-2);text-decoration-color:var(--verm);text-decoration-thickness:2px}
@@ -456,13 +445,4 @@ body.off{overflow:hidden}
 .bn-val{font-size:13px;font-weight:600;color:#0a84ff;white-space:nowrap}
 .bn-val s{font-weight:400;color:var(--tinta-2);text-decoration-color:var(--verm)}
 
-/* Mural de capas */
-.mural-tit{margin:clamp(24px,4vw,40px) 0 18px;font-size:clamp(18px,2.2vw,22px);font-weight:600;text-align:center}
-.mural{width:100vw;margin-inline:calc(50% - 50vw);display:grid;gap:12px;overflow:hidden}
-.mural-trilho{display:flex;gap:12px;width:max-content;animation:mural 70s linear infinite}
-.mural-volta{animation-direction:reverse;animation-duration:50s}
-.mural-trilho img{flex:none;width:auto;height:clamp(90px,12vw,140px);object-fit:cover;border-radius:10px;box-shadow:0 12px 24px -12px #000}
-.mural-alto img{height:clamp(150px,19vw,230px)}
-@keyframes mural{to{transform:translateX(calc(-50% - 6px))}}
 @media (max-width:640px){.pc-val{right:16px;top:16px}.pc-val b{font-size:16px}.pc-val s{font-size:13px}}
-@media (prefers-reduced-motion:reduce){.mural{overflow-x:auto}.mural-trilho{animation:none}.rv.pc .pc-fan img{opacity:1;animation:none}}
