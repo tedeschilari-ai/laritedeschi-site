@@ -21,6 +21,44 @@
     io.observe(el);
   });
 
+  // chat animado dos funcionários de IA
+  var chat = document.querySelector('[data-chat]');
+  if(chat){
+    var pedidos = [
+      ['Comercial', 'Transforme a reunião com o cliente em uma proposta.', 'Proposta pronta, com a mensagem de envio e o follow-up.', 'proposta_cliente.fig'],
+      ['Gerente de Projetos', 'Monte o contrato a partir da proposta aprovada.', 'Contrato montado e etapas do projeto organizadas.', 'contrato_cliente.fig'],
+      ['Copywriter', 'Escreva o roteiro do Reels desta semana.', 'Roteiro e legenda prontos, no seu tom de voz.', 'roteiro_reels.txt']
+    ];
+    var balao = function(cls, txt){ var p = document.createElement('p'); p.className = cls; p.textContent = txt; chat.appendChild(p); return p; };
+    var resposta = function(c){
+      balao('ch-quem', c[0]);
+      balao('ch-b ch-ia', c[2]);
+      balao('ch-arq', c[3]);
+    };
+    var parado = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var conversa = function(i){
+      var c = pedidos[i % pedidos.length], n = 0;
+      chat.textContent = '';
+      var eu = balao('ch-b ch-eu', '');
+      var digita = setInterval(function(){
+        eu.textContent = c[1].slice(0, ++n);
+        if(n < c[1].length) return;
+        clearInterval(digita);
+        setTimeout(function(){
+          var pontos = balao('ch-pontos', '');
+          pontos.innerHTML = '<i></i><i></i><i></i>';
+          setTimeout(function(){
+            chat.removeChild(pontos);
+            resposta(c);
+            setTimeout(function(){ conversa(i + 1); }, 3200);
+          }, 1300);
+        }, 350);
+      }, 32);
+    };
+    if(parado || !('IntersectionObserver' in window)){ balao('ch-b ch-eu', pedidos[0][1]); resposta(pedidos[0]); }
+    else { var vChat = new IntersectionObserver(function(es){ if(es[0].isIntersecting){ vChat.disconnect(); conversa(0); } },{threshold:.3}); vChat.observe(chat); }
+  }
+
   // ver mais depoimentos
   var vm = document.getElementById('ver-mais');
   if(vm) vm.addEventListener('click', function(){ document.getElementById('depos').classList.add('aberto'); vm.parentNode.hidden = true; });
