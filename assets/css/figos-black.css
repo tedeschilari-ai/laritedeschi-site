@@ -370,12 +370,7 @@ body.off{overflow:hidden}
 @keyframes ig-aviso{0%,8%{opacity:0;transform:translateY(-10px)}14%,84%{opacity:1;transform:none}92%,100%{opacity:0;transform:translateY(-10px)}}
 
 /* Behance */
-.mk-be img{display:block;width:100%;height:auto}
 .mk-be{max-width:420px}
-.be-info{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;font-size:13px}
-.be-info b{display:block;font-weight:600}
-.be-info span{color:var(--tinta-2);font-size:12px}
-.be-info em{flex:none;font-style:normal;font-weight:600;color:#e3262d}
 
 /* Funcionários de IA */
 .bonus-ia{margin-top:18px;border:2px solid var(--lima);scroll-margin-top:90px;animation:pulsa-bonus 2.4s ease-in-out infinite}
@@ -413,3 +408,27 @@ body.off{overflow:hidden}
 .bonus-ia .ch-ia,.bonus-ia .ch-corpo .ch-arq{color:#141118}
 .bonus-ia .ch-corpo .ch-quem{font-size:12px}
 .bonus-ia .ch-corpo .ch-arq{font-size:13px}
+
+/* Os três guias: tudo em azul, com contorno pulsando. O bônus surpresa é o único de contorno verde */
+.bn{border:2px solid #0a84ff;box-shadow:none;animation:pulsa-bn 2.4s ease-in-out infinite}
+@keyframes pulsa-bn{0%,100%{box-shadow:0 0 0 0 rgba(10,132,255,.35),0 24px 46px -28px rgba(10,132,255,.6)}50%{box-shadow:0 0 0 9px rgba(10,132,255,0),0 24px 46px -24px rgba(10,132,255,.8)}}
+.bn .bi-tag{color:#fff;background:#0a84ff;--pulso:rgba(10,132,255,.5)}
+.modo-black .bn .tag.tag-nome{color:#0a5fd8;background:color-mix(in srgb,var(--c) 22%,#fff)}
+
+/* Portfólio */
+.mk-be{position:relative;max-width:420px}
+.be-perfil{display:flex;align-items:center;gap:10px;padding:12px 14px}
+.be-perfil .ig-foto{width:38px;height:38px;font-size:14px;box-shadow:none}
+.be-perfil p{display:grid;flex:1;min-width:0;font-size:11.5px!important;line-height:1.25;color:var(--tinta-2)!important}
+.be-perfil b{font-size:13.5px;font-weight:600;color:var(--tinta)}
+.be-botao{flex:none;padding:6px 12px;font-size:12px;font-weight:600;color:#fff;background:#0a84ff;border-radius:99px}
+.be-grade{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:0 14px 14px}
+.be-capa{display:grid;place-items:center;aspect-ratio:4/3;border-radius:8px}
+.be-capa b{font-size:clamp(20px,2.4vw,26px);font-weight:600;letter-spacing:-.03em}
+.be-proj p{display:flex;justify-content:space-between;gap:6px;margin-top:5px!important;font-size:11px!important;line-height:1.2;color:var(--tinta)!important}
+.be-proj span{min-width:0;font-weight:600}
+.be-proj em{flex:none;font-style:normal;font-weight:600;color:#e3262d}
+.bn .be-proj{opacity:0}
+.bn.vis .be-proj{animation:mk-entra .5s var(--d) both}
+.be-aviso{left:12px;right:12px;top:auto;bottom:14px}
+@media (prefers-reduced-motion:reduce){.bn{animation:none}.bn .be-proj{opacity:1;animation:none!important}.be-aviso{display:none}}
