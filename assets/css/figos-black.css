@@ -257,7 +257,7 @@ body.off{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.oferta-aluno{animation:none}}
 
 /* Pasta do bônus de IA: laranja, com o símbolo no estilo do Claude */
-.pc.surpresa .pasta-surpresa b{width:28px;height:28px;font-size:0;color:transparent;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%20stroke%3D%22%23fff%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22round%22%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2250.0%22%20y2%3D%224.0%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2269.0%22%20y2%3D%2217.1%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2288.1%22%20y2%3D%2228.0%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2286.0%22%20y2%3D%2250.0%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2289.8%22%20y2%3D%2273.0%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2270.0%22%20y2%3D%2284.6%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2250.0%22%20y2%3D%2294.0%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2231.0%22%20y2%3D%2282.9%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2210.2%22%20y2%3D%2273.0%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2214.0%22%20y2%3D%2250.0%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2211.9%22%20y2%3D%2228.0%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2230.0%22%20y2%3D%2215.4%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat}
+.pc.surpresa .pasta-surpresa b{width:28px;height:28px;font-size:0;color:transparent;background:url("../img/figos/claude-simbolo.png") center/contain no-repeat}
 @media (max-width:640px){.pc.surpresa .pasta-surpresa b{width:22px;height:22px;font-size:0}}
 .pc.surpresa.escuro .pasta-surpresa svg{--c:#e08a68!important;--c2:#c9623f!important;filter:drop-shadow(0 6px 14px rgba(224,138,104,.3))}
 .pc.surpresa .pasta-surpresa b{margin-inline:auto}
@@ -308,8 +308,47 @@ body.off{overflow:hidden}
 .mk-pasta{z-index:6;display:grid;justify-items:center;gap:3px;font-size:clamp(9px,1.2vw,13px);font-weight:600;color:var(--tinta);white-space:nowrap;animation:mk-flutua 4s ease-in-out infinite}
 .mk-pasta svg{width:clamp(34px,5.4vw,60px);height:clamp(27px,4.3vw,47px)}
 .mk-pasta>span:last-child{padding:2px 8px;border-radius:7px;background:rgba(0,0,0,.72)}
-.mk-pasta .pasta-surpresa b{top:22%;left:0;right:0;width:40%;height:50%;margin-inline:auto;font-size:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' stroke='%23fff' stroke-width='8' stroke-linecap='round'%3E%3Cpath d='M50 50V4M50 50l19-33M50 50l38-22M50 50h36M50 50l40 23M50 50l20 35M50 50v46M50 50L32 81M50 50L10 73M50 50H14M50 50L10 27M50 50L30 15'/%3E%3C/svg%3E") center/contain no-repeat}
+.mk-pasta .pasta-surpresa b{top:22%;left:0;right:0;width:40%;height:50%;margin-inline:auto;font-size:0;background:url("../img/figos/claude-simbolo.png") center/contain no-repeat}
 .mk-pasta-ia{animation-delay:-2s}
 @keyframes mk-flutua{50%{translate:0 -6px}}
 @media (prefers-reduced-motion:reduce){.mk-pasta{animation:none}}
 @media (max-width:640px){.mk-palco{margin-top:44px}}
+
+/* Mockups: logo do Claude, FigLab, terceiro documento e prateleira */
+.mk-tela{container-type:inline-size}
+.mk-doc-1{right:21%;bottom:0;width:30%}
+.mk-doc-2{right:0;bottom:7%;width:30%}
+.mk-doc-3{right:9%;bottom:22%;width:27%;aspect-ratio:16/9;z-index:2;rotate:-7deg}
+.mk-fone{left:27%;width:12%}
+.mk-fone-2{left:39%;bottom:3%;width:11%;z-index:4;rotate:-5deg}
+.mk-claude{display:grid;place-content:center;justify-items:center;gap:3cqw;height:100%;padding:6cqw;text-align:center;color:#fff;background:#d97757}
+.mk-claude img{width:18cqw;height:18cqw;object-fit:contain;border-radius:18%;box-shadow:0 0 0 1px rgba(255,255,255,.4)}
+.mk-claude b{font-size:7.5cqw;font-weight:600;line-height:1.1}
+.mk-claude span{font-size:5.5cqw}
+.mk-capa{display:grid;align-content:center;gap:4cqw;height:100%;padding:10cqw;background:var(--f);color:var(--t)}
+.mk-capa b{font-size:22cqw;font-weight:600;letter-spacing:-.03em;line-height:1}
+.mk-capa span{font-size:11cqw;line-height:1.1}
+.mk-tit{margin:clamp(20px,3vw,32px) 0 14px;font-size:clamp(18px,2.2vw,22px);font-weight:600;text-align:center}
+.mk-prat{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;max-width:1040px;margin:0 auto clamp(28px,4vw,48px);text-align:left}
+.mk-wk,.mk-gu{position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;min-height:148px;padding:14px;overflow:hidden;color:#141118;background:var(--f);box-shadow:0 18px 26px -14px rgba(0,0,0,.8)}
+.mk-wk{border-radius:14px}
+.mk-gu{border-radius:4px 12px 12px 4px;border-left:7px solid rgba(20,17,24,.28)}
+.mk-wk small,.mk-gu small{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.mk-wk b,.mk-gu b{font-size:15px;font-weight:600;line-height:1.2}
+.mk-play{position:absolute;left:14px;top:14px;width:34px;height:34px;border-radius:50%;background:#141118}
+.mk-play::after{content:"";position:absolute;left:13px;top:10px;border-left:11px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent}
+.ia-icone{display:block;width:72px;height:72px;margin-bottom:18px;border-radius:18px;box-shadow:0 16px 28px -12px rgba(217,119,87,.7)}
+@media (max-width:760px){
+  .mk-prat{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .mk-wk,.mk-gu{min-height:126px;padding:10px}
+  .mk-wk b,.mk-gu b{font-size:13px}
+  .mk-wk small,.mk-gu small{font-size:10px}
+  .mk-play{left:10px;top:10px;width:28px;height:28px}
+  .mk-play::after{left:11px;top:8px;border-left-width:9px;border-top-width:6px;border-bottom-width:6px}
+  .sec-ia .ia-icone{margin-inline:auto}
+}
+/* o Mac cobre a esquerda do notebook: o conteúdo fica na parte visível */
+.mk-claude{padding:5cqw 4cqw 5cqw 46cqw}
+.mk-claude img{width:15cqw;height:15cqw}
+.mk-claude b{font-size:6.2cqw}
+.mk-claude span{font-size:5cqw}
