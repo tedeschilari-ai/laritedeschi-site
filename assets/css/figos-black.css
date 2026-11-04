@@ -290,7 +290,6 @@ body.off{overflow:hidden}
 .notif b{justify-self:stretch}
 
 /* Cards: resultado na frente, produto na etiqueta */
-.pc-tit{padding-right:64px}
 .modo-black .pc h3.pc-tit{font-size:22px;line-height:1.18}
 .pc>.tags{flex-wrap:wrap;margin-top:2px}
 .pc>.tags .tag:not(.tag-nome){animation:pulsa-tag 2s ease-in-out infinite;--pulso:rgba(10,132,255,.45)}
@@ -315,7 +314,13 @@ body.off{overflow:hidden}
 .oferta-aluno .of-para em{background:var(--lima);color:#141118}
 @keyframes pulsa-aluno{0%,100%{box-shadow:0 0 0 0 rgba(214,242,122,.4),0 30px 80px -36px rgba(214,242,122,.6)}50%{box-shadow:0 0 0 9px rgba(214,242,122,0),0 30px 80px -30px rgba(214,242,122,.8)}}
 .ofertas .in-corpo{padding-top:22px}
-@media (max-width:640px){.topo-frase{font-size:12.5px}.modo-black .pc h3.pc-tit{font-size:20px}.pc-tit{padding-right:48px}}
+@media (max-width:640px){.topo-frase{font-size:12.5px}.modo-black .pc h3.pc-tit{font-size:20px}}
 @media (prefers-reduced-motion:reduce){.oferta-aluno,.bi-tag,.oferta-normal .cta,.pc>.tags .tag{animation:none!important}}
 /* Nome de produto nunca em caixa alta: FigOS, FigPost, FigLab, FigLogo */
 .modo-black .pc .tag.tag-nome,.topo-cont .cd-rot,.faixa span{text-transform:none;letter-spacing:0}
+
+/* Cards: pasta, destaque e etiqueta na cor de cada produto */
+.pc-pasta{width:58px;height:45px;filter:drop-shadow(0 6px 8px rgba(30,20,40,.16))}
+.pc-tit mark{color:#141118;background:color-mix(in srgb,var(--c) 62%,#fff);padding:0 .22em;border-radius:.26em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.modo-black .pc .tag.tag-nome{background:var(--c);color:#141118;box-shadow:none}
+.pastas-grid>.pc{grid-template-rows:auto auto 1fr auto}
