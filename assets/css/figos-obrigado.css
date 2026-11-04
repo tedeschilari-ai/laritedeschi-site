@@ -1,0 +1,13 @@
+/* Página de obrigado da Black FigOS: o obrigado.css dos cursos com as cores do modo black. Carregar depois dele. */
+.modo-black .ob{--accent:var(--lima);--accent-ink:#141118;--muted:var(--tinta-2);--dim:var(--tinta-2);--txt:var(--tinta);--card:var(--papel);--line:var(--linha);--line-2:var(--linha);--card-shadow:0 20px 40px -26px rgba(0,0,0,.9)}
+.ob .logo{height:auto;width:fit-content;display:flex;justify-content:center}
+.ob h1 .sel .medida{font-size:11px}
+.ob h1{margin-bottom:34px}
+.ob .sub{margin-top:0}
+.p-ob .n{color:var(--lima);background:rgba(214,242,122,.1);border-color:rgba(214,242,122,.25)}
+.p-ob.destaque .n{color:#141118}
+.tag-ob{color:#141118;background:var(--lima)}
+.p-ob .cta{margin-top:16px;padding:14px 24px;font-size:15.5px}
+.ajuda a{background:var(--papel)}
+@media (max-width:640px){.p-ob .cta{width:100%}}
+@media (max-width:640px){.ob .wrap{padding-inline:16px;width:100%;box-sizing:border-box}}

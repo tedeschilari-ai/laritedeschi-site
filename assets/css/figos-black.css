@@ -222,3 +222,6 @@ body.off{overflow:hidden}
 }
 @media (max-width:640px){.g-selo{margin:24px 0 26px}}
 @media (prefers-reduced-motion:reduce){.g-selo{animation:none;box-shadow:0 0 0 7px rgba(214,242,122,.26),0 0 0 14px rgba(214,242,122,.15),0 0 0 21px rgba(214,242,122,.07)}}
+
+/* Respiro entre a condição de aluno e a caixa do preço */
+.aluna + .instalar{margin-top:clamp(64px,8vw,96px)}
