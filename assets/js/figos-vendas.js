@@ -45,17 +45,6 @@
     });
   });
 
-  // abas da caixa de compra (preço normal / aluna)
-  var caixa = document.querySelector('[data-abas]');
-  function abre(nome){
-    caixa.querySelectorAll('.aba').forEach(function(b){ var on = b.getAttribute('data-aba') === nome; b.classList.toggle('ativa', on); b.setAttribute('aria-selected', on); });
-    caixa.querySelectorAll('[data-painel]').forEach(function(p){ p.hidden = p.getAttribute('data-painel') !== nome; });
-  }
-  if(caixa){
-    caixa.querySelectorAll('.aba').forEach(function(b){ b.addEventListener('click', function(){ abre(b.getAttribute('data-aba')); }); });
-    caixa.querySelectorAll('[data-ir-aba]').forEach(function(b){ b.addEventListener('click', function(){ abre(b.getAttribute('data-ir-aba')); }); });
-  }
-
   // contagem regressiva (para testar: ?agora=2026-11-09T15:00:00-03:00)
   var agoraFixo = (q.match(/[?&]agora=([^&]+)/) || [])[1];
   var inicio = Date.now(), agoraBase = NaN;
