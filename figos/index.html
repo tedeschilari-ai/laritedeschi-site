@@ -2,6 +2,16 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
+<script>
+/* Virada da Black: a partir de 09/11, 8h (Brasília), este link leva para a página de vendas, sem contar no Pixel da captura.
+   Para testar: ?agora=2026-11-09T15:00:00-03:00 */
+(function(){
+  var abre = new Date('2026-11-09T08:00:00-03:00').getTime(), m = location.search.match(/[?&]agora=([^&]+)/), t = NaN;
+  if(m){ try{ t = new Date(decodeURIComponent(m[1])).getTime(); }catch(e){} }
+  if(isNaN(t)) t = Date.now();
+  if(t >= abre) location.replace('black/' + location.search + location.hash);
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FigOS · Lista de espera</title>
 <meta name="description" content="FigOS: o sistema da designer que usa Figma. Dia 09/11, às 8h. Entre no grupo e veja tudo antes de abrir.">
