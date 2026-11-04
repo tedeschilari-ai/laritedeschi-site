@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Personalidade da Marca · tedeschi studio.</title>
+<style>
+:root{
+  /* tedeschi studio.: monocromático, Helvetica Neue, títulos em minúsculas, linha vertical como marcador */
+  --bg:#F8F8F8;
+  --ink:#303030;
+  --graphite:#44444C;
+  --steel:#CECED4;
+  --fog:#E9E9E9;
+  --mute:#A6A6A6;
+  --white:#FFFFFF;
+  --sans:"Helvetica Neue", Helvetica, Arial, sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+button{font-family:inherit;color:inherit}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px 130px}
+
+header.top{position:sticky;top:0;z-index:5;background:var(--bg)}
+.top-in{max-width:760px;margin:0 auto;padding:20px 24px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13px;letter-spacing:-.02em}
+.mark{color:rgba(48,48,48,.35)}
+.stepcount{color:var(--mute);font-variant-numeric:tabular-nums}
+.bar{height:1px;background:var(--fog)}
+.bar i{display:block;height:1px;background:var(--ink);width:0;transition:width .4s ease}
+
+section.step{display:none;padding-top:52px}
+section.step.on{display:block;animation:in .35s ease}
+@keyframes in{from{transform:translateY(8px)}to{transform:none}}
+@media (prefers-reduced-motion:reduce){section.step.on{animation:none}.bar i{transition:none}}
+
+.eyebrow{font-size:13px;color:var(--mute);margin:0 0 22px;letter-spacing:-.01em}
+h1,h2{font-weight:500;letter-spacing:-.05em;line-height:.95;margin:0 0 22px;text-wrap:balance}
+h1{font-size:clamp(46px,9vw,80px)}
+h2{font-size:clamp(36px,6.4vw,56px)}
+h1 .l,h2 .l{font-weight:300;color:var(--mute)}
+.lead{font-size:18px;line-height:1.4;color:var(--graphite);max-width:56ch;margin:0 0 34px;font-weight:300;letter-spacing:-.01em}
+.hint{font-size:15px;color:var(--mute);margin:0 0 28px;line-height:1.4;max-width:56ch}
+
+label.f{display:block;font-size:14px;margin:0 0 6px;color:var(--graphite)}
+input[type=text],textarea{width:100%;font:inherit;font-size:20px;font-weight:300;padding:12px 0;border:0;border-bottom:1px solid var(--steel);background:transparent;color:var(--ink);outline:none;border-radius:0;letter-spacing:-.01em}
+textarea{min-height:80px;resize:vertical;line-height:1.4}
+input[type=text]::placeholder,textarea::placeholder{color:var(--steel)}
+input[type=text]:focus,textarea:focus{border-bottom-color:var(--ink)}
+.field{margin:0 0 30px}
+
+/* lista com linha vertical, como nas peças de serviços */
+.vlist{list-style:none;padding:0;margin:0 0 44px;display:grid;gap:22px}
+.vlist li{border-left:1.5px solid var(--ink);padding:2px 0 2px 22px}
+.vlist b{display:block;font-weight:300;font-size:22px;letter-spacing:-.03em;margin-bottom:4px}
+.vlist span{font-size:15px;color:var(--mute);line-height:1.35}
+
+/* grupos */
+.groups{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.group{text-align:left;border:1px solid var(--fog);background:var(--white);border-radius:8px;padding:18px 18px 16px;cursor:pointer;display:flex;flex-direction:column;gap:10px;transition:border-color .15s,background .15s}
+.group:hover{border-color:var(--steel)}
+.group .gn{font-size:24px;font-weight:500;letter-spacing:-.04em;text-transform:lowercase;padding-right:30px}
+.group .gw{font-size:14px;line-height:1.4;color:var(--mute)}
+.group{position:relative;-webkit-tap-highlight-color:transparent}
+.group .ck{position:absolute;top:16px;right:16px;width:22px;height:22px;border-radius:50%;border:1px solid var(--steel);display:grid;place-items:center;transition:background .15s,border-color .15s}
+.group .ck svg{opacity:0;transition:opacity .15s}
+.group[aria-pressed=true]{border-color:var(--ink);box-shadow:inset 0 0 0 .5px var(--ink)}
+.group[aria-pressed=true] .ck{background:var(--ink);border-color:var(--ink)}
+.group[aria-pressed=true] .ck svg{opacity:1}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--fog);background:var(--white);border-radius:999px;padding:10px 16px;font-size:15px;cursor:pointer;transition:border-color .15s,background .15s;line-height:1.2;text-align:left;letter-spacing:-.01em}
+.chip:hover{border-color:var(--steel)}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip:disabled{opacity:.35;cursor:not-allowed}
+.chip:disabled:hover{border-color:var(--fog)}
+.adjgroup{padding:24px 0;border-top:1px solid var(--fog)}
+.adjgroup h3{font-size:24px;font-weight:500;letter-spacing:-.04em;margin:0 0 14px;text-transform:lowercase}
+
+/* escalas */
+.scale{padding:24px 0;border-top:1px solid var(--fog)}
+.scale:last-child{border-bottom:1px solid var(--fog)}
+.poles{display:flex;justify-content:space-between;font-size:20px;font-weight:300;letter-spacing:-.03em;margin-bottom:16px;gap:12px}
+.dots{display:grid;grid-template-columns:repeat(5,1fr);position:relative;align-items:center}
+.dots::before{content:"";position:absolute;left:10%;right:10%;top:50%;height:1px;background:var(--steel)}
+.dot{position:relative;justify-self:center;width:28px;height:28px;border-radius:50%;border:1px solid var(--steel);background:var(--bg);cursor:pointer;padding:0}
+.dot:nth-child(3){width:20px;height:20px}
+.dot:hover{border-color:var(--ink)}
+.dot[aria-pressed=true]{background:var(--ink);border-color:var(--ink);box-shadow:0 0 0 5px var(--fog)}
+.scale .read{font-size:13px;color:var(--mute);margin-top:12px;text-align:center;min-height:1.2em}
+
+.qblock{padding:26px 0 26px 22px;border-left:1.5px solid var(--ink);margin-bottom:22px}
+.qblock .q{font-size:22px;font-weight:300;letter-spacing:-.03em;margin:0 0 6px;line-height:1.15}
+.qblock .qh{font-size:14px;color:var(--mute);margin:0 0 14px}
+.qblock .chips{margin-top:12px}
+
+/* rodapé */
+nav.foot{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--fog);z-index:5}
+.foot-in{max-width:760px;margin:0 auto;padding:14px 24px calc(14px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:12px}
+.counter{flex:1;font-size:14px;color:var(--mute);font-variant-numeric:tabular-nums}
+.counter b{color:var(--ink);font-weight:500}
+.btn{border:1px solid var(--ink);background:var(--ink);color:var(--bg);border-radius:999px;padding:14px 26px;font-size:15px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:10px;text-decoration:none;letter-spacing:-.01em}
+.btn:disabled{background:var(--fog);border-color:var(--fog);color:var(--mute);cursor:not-allowed}
+.back{border:0;background:none;font-size:15px;color:var(--mute);cursor:pointer;padding:12px 4px}
+.back[hidden]{display:none}
+button,a{-webkit-tap-highlight-color:transparent}
+:focus{outline:none}
+:focus-visible{outline:1px solid var(--steel);outline-offset:3px}
+input:focus-visible,textarea:focus-visible{outline:none}
+
+/* revisão */
+.summary{background:var(--white);border:1px solid var(--fog);border-radius:8px;padding:28px 24px;display:grid;gap:26px}
+.summary .k{font-size:22px;font-weight:500;letter-spacing:-.04em;margin:0 0 12px;text-transform:lowercase}
+.summary .v{font-size:15px;line-height:1.45;color:var(--graphite)}
+.summary .v .qq{color:var(--mute)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{border:1px solid var(--ink);border-radius:999px;padding:6px 12px;font-size:14px}
+.tag.neg{border-style:dashed;color:var(--mute);border-color:var(--steel)}
+.mini{display:grid;gap:9px}
+.mini .row{display:grid;grid-template-columns:1fr 110px 1fr;gap:10px;align-items:center;font-size:14px;color:var(--graphite)}
+.mini .row span:last-child{text-align:right}
+.track{height:4px;background:var(--fog);border-radius:4px;position:relative}
+.track i{position:absolute;top:-4px;width:12px;height:12px;border-radius:50%;background:var(--ink);transform:translateX(-50%)}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;align-items:center}
+.note{font-size:14px;color:var(--mute);margin-top:14px;min-height:1.3em}
+
+/* tela final escura, como "solicitar orçamento" */
+section.done{min-height:70vh}
+html:has(body.dark),body.dark,body.dark header.top,body.dark nav.foot{background:var(--ink)}
+body.dark{color:var(--bg)}
+body.dark .mark{color:rgba(248,248,248,.35)}
+body.dark .bar{background:var(--graphite)}
+body.dark .bar i{background:var(--bg)}
+body.dark nav.foot{display:none}
+.ghost-word{font-size:clamp(90px,22vw,200px);font-weight:500;letter-spacing:-.06em;line-height:.8;color:var(--graphite);margin:60px 0 0;user-select:none}
+
+@media (max-width:420px){
+  .groups{grid-template-columns:1fr 1fr}
+  .group{padding:14px}
+  .group .gn{font-size:19px}
+  .group .gw{font-size:13px}
+  .mini .row{grid-template-columns:1fr 70px 1fr;font-size:13px}
+  .btn{padding:13px 20px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <div class="mark">tedeschi studio.</div>
+    <div class="stepcount" id="stepcount">Personalidade da marca</div>
+  </div>
+  <div class="bar"><i id="bar"></i></div>
+</header>
+
+<main class="wrap">
+
+  <!-- 0 · Intro -->
+  <section class="step on" data-step="0">
+    <p class="eyebrow">Personalidade da marca</p>
+    <h1>se a sua marca fosse uma pessoa, <span class="l">quem ela seria?</span></h1>
+    <p class="lead">Personalidade de marca é o conjunto de traços que faz as pessoas sentirem a sua marca de um jeito específico. Responda pensando na marca que você quer construir, e não só no que ela é hoje. Leva uns 8 minutos.</p>
+    <ul class="vlist">
+      <li><b>Grupos e adjetivos</b><span>Você escolhe os grupos de características que mais combinam e depois refina com as palavras exatas.</span></li>
+      <li><b>Escalas</b><span>Posiciona a marca entre opostos, como clássica e moderna.</span></li>
+      <li><b>A marca como pessoa</b><span>O que ela nunca seria, como se veste, como fala, como chega numa festa.</span></li>
+    </ul>
+    <div class="field">
+      <label class="f" for="nome">Seu nome</label>
+      <input type="text" id="nome" placeholder="Como você se chama?" autocomplete="name">
+    </div>
+    <div class="field">
+      <label class="f" for="marca">Nome da marca</label>
+      <input type="text" id="marca" placeholder="Qual é a marca?">
+    </div>
+  </section>
+
+  <!-- 1 · Grupos -->
+  <section class="step" data-step="1">
+    <p class="eyebrow">01 · Grupos</p>
+    <h2>quais grupos têm mais a ver <span class="l">com a sua marca?</span></h2>
+    <p class="hint">Escolha de 3 a 5 grupos pensando só na ideia de cada um. Na próxima etapa você escolhe as palavras exatas dentro deles.</p>
+    <div class="groups" id="groups"></div>
+  </section>
+
+  <!-- 2 · Adjetivos -->
+  <section class="step" data-step="2">
+    <p class="eyebrow">02 · Adjetivos</p>
+    <h2>agora, as palavras <span class="l">exatas.</span></h2>
+    <p class="hint">Dentro dos grupos que você escolheu, marque de 5 a 10 adjetivos que mais representam a personalidade que você quer construir.</p>
+    <div id="adjs"></div>
+  </section>
+
+  <!-- 3 · Escalas -->
+  <section class="step" data-step="3">
+    <p class="eyebrow">03 · Escalas</p>
+    <h2>onde a sua marca fica <span class="l">entre esses opostos?</span></h2>
+    <p class="hint">Não existe certo ou errado. O ponto do meio quer dizer equilíbrio entre os dois lados.</p>
+    <div id="scales"></div>
+  </section>
+
+  <!-- 4 · O que não é -->
+  <section class="step" data-step="4">
+    <p class="eyebrow">04 · O que ela não é</p>
+    <h2>e o que a sua marca <span class="l">nunca seria?</span></h2>
+    <p class="hint">Escolha até 6. Pode ser uma qualidade que simplesmente não combina com ela (uma marca corporativa, por exemplo, pode não ser nada criativa) ou uma impressão que ela nunca quer passar.</p>
+    <div id="nao"></div>
+    <div class="field" style="margin-top:34px">
+      <label class="f" for="naoTexto">Mais alguma coisa que ela nunca seria ou faria? <span style="color:var(--mute)">(opcional)</span></label>
+      <textarea id="naoTexto" placeholder="Ex.: nunca usaria gírias, nunca faria promoção relâmpago…"></textarea>
+    </div>
+  </section>
+
+  <!-- 5 · Pessoa -->
+  <section class="step" data-step="5">
+    <p class="eyebrow">05 · A marca como pessoa</p>
+    <h2>imagina a sua marca <span class="l">entrando na sala.</span></h2>
+    <p class="hint">Responda rápido, com a primeira imagem que vier à cabeça.</p>
+    <div id="pessoa"></div>
+  </section>
+
+  <!-- 6 · Revisão -->
+  <section class="step" data-step="6">
+    <p class="eyebrow">Revisão</p>
+    <h2>essa é a personalidade <span class="l" id="fimMarca">da sua marca.</span></h2>
+    <p class="hint">Confira suas respostas. Se quiser mudar alguma coisa, é só voltar.</p>
+    <div class="summary" id="summary"></div>
+    <div class="actions">
+      <button class="btn" id="send" type="button">Enviar respostas →</button>
+    </div>
+    <p class="note" id="note" role="status"></p>
+  </section>
+
+  <!-- 7 · Enviado -->
+  <section class="step done" data-step="7">
+    <p class="eyebrow" style="color:var(--mute)">Respostas enviadas</p>
+    <h1 style="color:var(--bg)">obrigada<span id="obNome"></span>.</h1>
+    <p class="lead" style="color:var(--steel)">Suas respostas chegaram para a Lari. Elas vão guiar as próximas etapas do projeto da sua marca.</p>
+    <p class="ghost-word" aria-hidden="true">tedeschi<br>studio.</p>
+  </section>
+
+</main>
+
+<nav class="foot">
+  <div class="foot-in">
+    <button class="back" id="back" type="button" hidden>← Voltar</button>
+    <div class="counter" id="counter"></div>
+    <button class="btn" id="next" type="button">Começar →</button>
+  </div>
+</nav>
+
+<script>
+/* Link do App da Web do Google Apps Script (termina em /exec).
+   Vazio = modo de teste: o formulário funciona, mas não envia para a planilha. */
+const SHEETS_URL = "";
+/* Nome da aba da planilha onde as respostas deste formulário entram */
+const FORM_NAME = "Personalidade da marca";
+
+const GROUPS = [
+  {n:"Acolhedora", d:"Cuida, escuta e faz as pessoas se sentirem bem-vindas.", w:"Acolhedora, Amigável, Atenciosa, Compreensiva, Cordial, Cuidadosa, Empática, Generosa, Gentil, Humana, Paciente, Parceira, Personalizada, Prestativa, Próxima, Receptiva, Sensível, Simpática"},
+  {n:"Alegre", d:"Tem astral alto, leveza e bom humor.", w:"Alegre, Animada, Divertida, Empolgante, Energética, Espontânea, Estimulante, Extrovertida, Positiva, Radiante, Vibrante, Viva"},
+  {n:"Envolvente", d:"Comunica bem, inspira e cria conexão com quem está perto.", w:"Apaixonada, Carismática, Cativante, Comunicativa, Conectada, Engajada, Envolvente, Expressiva, Influente, Inspiradora, Intensa, Motivadora"},
+  {n:"Criativa", d:"Tem olhar artístico, ideias próprias e foge do óbvio.", w:"Artística, Autoral, Criativa, Curiosa, Diferente, Estética, Experimental, Imaginativa, Intuitiva, Inventiva, Original"},
+  {n:"Ousada", d:"Tem coragem, atitude e não tem medo de se posicionar.", w:"Ambiciosa, Assertiva, Corajosa, Decidida, Destemida, Disruptiva, Forte, Independente, Livre, Marcante, Ousada, Provocativa"},
+  {n:"Moderna", d:"Está sempre atualizada, conectada e em evolução.", w:"Adaptável, Ágil, Atual, Contemporânea, Digital, Dinâmica, Evolutiva, Flexível, Global, Inovadora, Moderna, Tecnológica, Versátil, Visionária"},
+  {n:"Elegante", d:"É refinada, tem bom gosto e cuida dos detalhes.", w:"Chique, Delicada, Distinta, Elegante, Graciosa, Nobre, Polida, Refinada, Sofisticada"},
+  {n:"Exclusiva", d:"É premium, rara e feita para poucos.", w:"Curada, Exclusiva, Icônica, Impecável, Luxuosa, Premium, Prestigiada, Rara, Seleta, Singular"},
+  {n:"Serena", d:"É calma, equilibrada e essencial, sem excessos.", w:"Discreta, Equilibrada, Essencial, Harmônica, Harmoniosa, Leve, Limpa, Minimalista, Natural, Serena, Silenciosa, Simples, Sutil"},
+  {n:"Clássica", d:"É atemporal, sólida e passa tradição.", w:"Atemporal, Clássica, Consistente, Experiente, Referência, Sólida"},
+  {n:"Confiável", d:"É ética, transparente e segura no que diz.", w:"Autêntica, Confiante, Confiável, Consciente, Ética, Responsável, Segura, Sincera, Transparente"},
+  {n:"Especialista", d:"Domina o assunto e transmite competência técnica.", w:"Analítica, Competente, Especialista, Inteligente, Investigativa, Precisa, Preparada, Profissional, Qualificada, Racional, Técnica"},
+  {n:"Estratégica", d:"É organizada, metódica e pensa antes de agir.", w:"Detalhista, Disciplinada, Estratégica, Estruturada, Intencional, Metódica, Organizada, Ordenada, Planejada, Pontual, Sistemática"},
+  {n:"Prática", d:"É direta, eficiente e resolve sem complicação.", w:"Direta, Eficiente, Focada, Funcional, Objetiva, Persistente, Prática, Proativa, Produtiva, Resiliente, Resolutiva"},
+  {n:"Didática", d:"Explica com clareza e torna o complexo simples.", w:"Acessível, Clara, Didática, Educadora, Ensinável, Facilitadora, Inteligível, Orientadora"}
+].map(g => ({n:g.n, d:g.d, w:g.w.split(", ")}));
+
+const SCALES = [
+  ["Clássica","Moderna"],["Séria","Divertida"],["Acessível","Exclusiva"],["Discreta","Expressiva"],["Racional","Emocional"],
+  ["Minimalista","Maximalista"],["Jovem","Madura"],["Delicada","Forte"],["Conservadora","Ousada"],["Local","Global"]
+];
+
+const NAO = [
+  {t:"Características que ela não tem", o:["Criativa","Divertida","Séria","Corporativa","Romântica","Fofa","Sensual","Técnica","Emotiva","Rebelde","Polêmica","Luxuosa","Popular","Tradicional","Futurista","Colorida","Minimalista","Formal","Descontraída","Delicada"]},
+  {t:"Impressões que ela nunca quer passar", o:["Arrogante","Fria","Distante","Genérica","Óbvia","Infantil","Careta","Engessada","Barulhenta","Exagerada","Apelativa","Marqueteira","Confusa","Pretensiosa","Superficial","Barata","Agressiva","Elitista","Sem graça","Artificial"]}
+];
+
+const PESSOA = [
+  {k:"idade", col:"Idade que aparenta", q:"Quantos anos ela aparenta?", max:1, o:["18 a 25","26 a 35","36 a 45","46 a 60","Mais de 60","Não tem idade"]},
+  {k:"roupa", col:"Como se veste", q:"Como ela se veste?", h:"Até 2 opções.", max:2, o:["Básico atemporal","Minimalista e monocromático","Alfaiataria e linho","Executivo, de terno ou tailleur","Clássico e tradicional","Romântico e feminino","Delicado, em tons claros","Elegante e sofisticado","Luxuoso, de grife","Fashion, sempre na tendência","Artsy, cheio de personalidade","Colorido e divertido","Despojado e confortável","Boho e natural","Esportivo","Vintage","Streetwear","Alternativo, com atitude"]},
+  {k:"sabado", col:"Sábado à tarde", q:"Onde ela estaria num sábado à tarde?", h:"Até 2 opções.", max:2, o:["Trabalhando, como sempre","Numa viagem de negócios","Num evento de networking","Num coworking, cheia de ideias","Estudando ou num curso","Num café, com um livro","Numa exposição ou galeria","Num ateliê, criando","Numa feira ou mercado local","Fazendo compras","Num spa, cuidando de si","Na praia ou na natureza","Num almoço com a família","Com os amigos num bar","Numa festa ou num show","Viajando a passeio","Em casa, cozinhando","Treinando ou praticando um esporte","Fazendo trabalho voluntário"]},
+  {k:"fala", col:"Como fala", q:"Como ela fala?", h:"Até 2 opções.", max:2, o:["Calma e pausada","Animada, cheia de energia","Direta e objetiva","Firme e confiante","Formal e cerimoniosa","Sofisticada e reservada","Doce e acolhedora","Próxima, como uma amiga","Divertida e espirituosa","Irônica e afiada","Provocadora, faz pensar","Inspiradora e motivadora","Didática e paciente","Técnica e precisa","Poética e sensível","Descontraída, com gírias"]},
+  {k:"festa", col:"Numa festa", q:"Ela chega numa festa e…", max:1, o:["Conversa com todo mundo","Fica num grupo pequeno","Vira o centro das atenções","Observa e escolhe com quem falar","Cuida para todo mundo estar bem"]},
+  {k:"frase", col:"Frase que diria", q:"Uma frase que ela diria", text:"Ex.: “Menos, mas melhor.”"},
+  {k:"sentimento", col:"Como as pessoas se sentem", q:"Como as pessoas se sentem depois de conversar com ela?", text:"Ex.: inspiradas, seguras, com vontade de começar…"},
+  {k:"quem", col:"Se fosse alguém conhecido", q:"Se fosse alguém conhecido (pessoa ou personagem), quem seria?", h:"Opcional.", text:"Ex.: uma atriz, um chef, uma personagem de série…"}
+];
+
+const S = {nome:"", marca:"", grupos:[], adjetivos:[], escalas:{}, nao:[], naoTexto:"", pessoa:{}};
+const REVIEW = 6, DONE = 7;
+let step = 0;
+
+const $ = id => document.getElementById(id);
+function el(tag, attrs={}, html=""){ const e=document.createElement(tag); for(const k in attrs) e.setAttribute(k, attrs[k]); if(html) e.innerHTML=html; return e; }
+function toggle(arr, v, max){ const i=arr.indexOf(v); if(i>-1){arr.splice(i,1);return true} if(arr.length>=max) return false; arr.push(v); return true; }
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function save(){ try{ localStorage.setItem("ts-personalidade", JSON.stringify({S, step:Math.min(step,REVIEW)})); }catch(e){} }
+function load(){ try{ const d=JSON.parse(localStorage.getItem("ts-personalidade")||"null"); if(d&&d.S){ Object.assign(S,d.S); step=Math.min(d.step||0,REVIEW); } }catch(e){} }
+function clearDraft(){ try{ localStorage.removeItem("ts-personalidade"); }catch(e){} }
+
+function renderGroups(){
+  const box=$("groups"); box.innerHTML="";
+  GROUPS.forEach(g=>{
+    const b=el("button",{type:"button",class:"group","aria-pressed":S.grupos.includes(g.n)});
+    b.innerHTML=`<span class="ck" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#F8F8F8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="gn">${g.n}</span><span class="gw">${g.d}</span>`;
+    b.onclick=()=>{
+      if(!toggle(S.grupos,g.n,5)){ flash("Você já escolheu 5 grupos. Desmarque um para trocar."); return; }
+      const names=new Set(S.grupos.flatMap(n=>GROUPS.find(x=>x.n===n).w));
+      S.adjetivos=S.adjetivos.filter(a=>names.has(a));
+      renderGroups(); update();
+    };
+    box.appendChild(b);
+  });
+}
+
+function renderAdjs(){
+  const box=$("adjs"); box.innerHTML="";
+  const full=S.adjetivos.length>=10;
+  GROUPS.filter(g=>S.grupos.includes(g.n)).forEach(g=>{
+    const sec=el("div",{class:"adjgroup"},`<h3>${g.n}</h3>`);
+    const c=el("div",{class:"chips"});
+    g.w.forEach(w=>{
+      const on=S.adjetivos.includes(w);
+      const b=el("button",{type:"button",class:"chip","aria-pressed":on},w);
+      if(full&&!on) b.disabled=true;
+      b.onclick=()=>{ toggle(S.adjetivos,w,10); renderAdjs(); update(); };
+      c.appendChild(b);
+    });
+    sec.appendChild(c); box.appendChild(sec);
+  });
+}
+
+function readScale(a,b,v){ return ["Muito "+a.toLowerCase(),"Mais "+a.toLowerCase(),"Equilíbrio entre as duas","Mais "+b.toLowerCase(),"Muito "+b.toLowerCase()][v-1]; }
+function renderScales(){
+  const box=$("scales"); box.innerHTML="";
+  SCALES.forEach(([a,b])=>{
+    const key=a+"|"+b, v=S.escalas[key];
+    const s=el("div",{class:"scale",role:"group","aria-label":a+" ou "+b});
+    s.innerHTML=`<div class="poles"><span>${a}</span><span>${b}</span></div>`;
+    const d=el("div",{class:"dots"});
+    for(let i=1;i<=5;i++){
+      const dot=el("button",{type:"button",class:"dot","aria-pressed":v===i,"aria-label":readScale(a,b,i)});
+      dot.onclick=()=>{ S.escalas[key]=i; renderScales(); update(); };
+      d.appendChild(dot);
+    }
+    s.appendChild(d);
+    s.appendChild(el("div",{class:"read"}, v?readScale(a,b,v):"&nbsp;"));
+    box.appendChild(s);
+  });
+}
+
+function renderNao(){
+  const box=$("nao"); box.innerHTML="";
+  const full=S.nao.length>=6;
+  NAO.forEach(sec=>{
+    const wrap=el("div",{class:"adjgroup"},`<h3>${sec.t.toLowerCase()}</h3>`);
+    const c=el("div",{class:"chips"});
+    sec.o.forEach(w=>{
+      const on=S.nao.includes(w);
+      const b=el("button",{type:"button",class:"chip","aria-pressed":on},w);
+      if(full&&!on) b.disabled=true;
+      b.onclick=()=>{ toggle(S.nao,w,6); renderNao(); update(); };
+      c.appendChild(b);
+    });
+    wrap.appendChild(c); box.appendChild(wrap);
+  });
+  $("naoTexto").value=S.naoTexto;
+}
+
+function renderPessoa(){
+  const box=$("pessoa"); box.innerHTML="";
+  PESSOA.forEach(p=>{
+    const q=el("div",{class:"qblock"});
+    q.appendChild(el("p",{class:"q",id:"q-"+p.k},p.q));
+    if(p.h) q.appendChild(el("p",{class:"qh"},p.h));
+    if(p.text){
+      const t=el("textarea",{id:"p-"+p.k,placeholder:p.text,"aria-labelledby":"q-"+p.k});
+      t.style.minHeight="52px";
+      t.value=S.pessoa[p.k]||"";
+      t.oninput=()=>{ S.pessoa[p.k]=t.value; save(); };
+      q.appendChild(t);
+    }else{
+      const cur=S.pessoa[p.k]||[];
+      const c=el("div",{class:"chips"});
+      p.o.forEach(o=>{
+        const on=cur.includes(o);
+        const b=el("button",{type:"button",class:"chip","aria-pressed":on},o);
+        if(p.max>1 && cur.length>=p.max && !on) b.disabled=true;
+        b.onclick=()=>{
+          let arr=S.pessoa[p.k]||[];
+          if(p.max===1) arr = arr[0]===o ? [] : [o]; else toggle(arr,o,p.max);
+          S.pessoa[p.k]=arr; renderPessoa(); update();
+        };
+        c.appendChild(b);
+      });
+      q.appendChild(c);
+    }
+    box.appendChild(q);
+  });
+}
+
+function pessoaVal(k){ const v=S.pessoa[k]; return Array.isArray(v)? v.join(", ") : (v||"").trim(); }
+function renderSummary(){
+  $("fimMarca").textContent = S.marca.trim() ? "da "+S.marca.trim()+"." : "da sua marca.";
+  let h=`<div><p class="k">grupos</p><div class="tags">${S.grupos.map(g=>`<span class="tag">${g}</span>`).join("")}</div></div>`;
+  h+=`<div><p class="k">adjetivos</p><div class="tags">${S.adjetivos.map(a=>`<span class="tag">${a}</span>`).join("")}</div></div>`;
+  h+=`<div><p class="k">escalas</p><div class="mini">${SCALES.map(([a,b])=>{const v=S.escalas[a+"|"+b]||3;return `<div class="row"><span>${a}</span><div class="track"><i style="left:${(v-1)*25}%"></i></div><span>${b}</span></div>`}).join("")}</div></div>`;
+  h+=`<div><p class="k">o que ela não é</p><div class="tags">${S.nao.map(a=>`<span class="tag neg">${a}</span>`).join("")}</div>${S.naoTexto.trim()?`<p class="v" style="margin:12px 0 0">${esc(S.naoTexto.trim())}</p>`:""}</div>`;
+  const linhas=PESSOA.map(p=>{const v=pessoaVal(p.k);return v?`<p class="v" style="margin:0 0 10px"><span class="qq">${p.q}</span><br>${esc(v)}</p>`:""}).join("");
+  if(linhas) h+=`<div><p class="k">a marca como pessoa</p>${linhas}</div>`;
+  $("summary").innerHTML=h;
+  $("note").textContent="";
+}
+
+/* uma linha da planilha: cada chave vira uma coluna */
+function payload(){
+  const row={ _formulario: FORM_NAME, "Nome": S.nome.trim(), "Marca": S.marca.trim(),
+    "Grupos": S.grupos.join(", "), "Adjetivos": S.adjetivos.join(", ") };
+  SCALES.forEach(([a,b])=>{ row[`${a} (1) ↔ ${b} (5)`] = S.escalas[a+"|"+b] || ""; });
+  row["O que não é"] = S.nao.join(", ");
+  row["O que não é (texto)"] = S.naoTexto.trim();
+  PESSOA.forEach(p=>{ row[p.col] = pessoaVal(p.k); });
+  return row;
+}
+
+$("send").onclick=async()=>{
+  const btn=$("send"), note=$("note");
+  if(!SHEETS_URL){ note.textContent="Modo de teste: o formulário ainda não está ligado à planilha, então nada foi enviado."; return; }
+  btn.disabled=true; btn.textContent="Enviando…"; note.textContent="";
+  try{
+    await fetch(SHEETS_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(payload())});
+    clearDraft();
+    go(DONE);
+  }catch(e){
+    btn.disabled=false; btn.textContent="Enviar respostas →";
+    note.textContent="Não conseguimos enviar agora. Confira sua internet e tente de novo.";
+  }
+};
+
+function valid(){
+  switch(step){
+    case 0: return {ok:S.nome.trim().length>0 && S.marca.trim().length>0, c: S.nome.trim()&&S.marca.trim() ? "" : "Preencha seu nome e o da marca"};
+    case 1: return {ok:S.grupos.length>=3, c:`<b>${S.grupos.length}</b> de 3 a 5 grupos`};
+    case 2: return {ok:S.adjetivos.length>=5, c:`<b>${S.adjetivos.length}</b> de 5 a 10 adjetivos`};
+    case 3: { const n=Object.keys(S.escalas).length; return {ok:n>=SCALES.length, c:`<b>${n}</b> de ${SCALES.length} escalas`}; }
+    case 4: return {ok:S.nao.length>=1, c:`<b>${S.nao.length}</b> de até 6`};
+    default: return {ok:true, c:""};
+  }
+}
+let flashT;
+function flash(msg){ $("counter").textContent=msg; clearTimeout(flashT); flashT=setTimeout(update,2200); }
+function update(){
+  const v=valid();
+  $("counter").innerHTML = v.c;
+  const nb=$("next");
+  nb.disabled=!v.ok;
+  nb.textContent = step===0 ? "Começar →" : step===5 ? "Revisar →" : "Continuar →";
+  nb.style.display = step>=REVIEW ? "none" : "";
+  $("back").hidden = step===0 || step===DONE;
+  $("bar").style.width = Math.min(step/REVIEW,1)*100+"%";
+  $("stepcount").textContent = step===0 ? "Personalidade da marca" : step===REVIEW ? "Revisão" : step===DONE ? "Enviado" : `${step} / 5`;
+  document.body.classList.toggle("dark", step===DONE);
+  if(step!==DONE) save();
+}
+function go(n){
+  step=n;
+  document.querySelectorAll("section.step").forEach(s=>s.classList.toggle("on", +s.dataset.step===step));
+  if(step===1) renderGroups();
+  if(step===2) renderAdjs();
+  if(step===3) renderScales();
+  if(step===4) renderNao();
+  if(step===5) renderPessoa();
+  if(step===REVIEW) renderSummary();
+  if(step===DONE) $("obNome").textContent = S.nome.trim() ? ", "+S.nome.trim().split(" ")[0].toLowerCase() : "";
+  update();
+  window.scrollTo(0,0);
+}
+$("next").onclick=()=>{ if(valid().ok && step<REVIEW) go(step+1); };
+$("back").onclick=()=>{ if(step>0) go(step-1); };
+$("nome").oninput=e=>{ S.nome=e.target.value; update(); };
+$("marca").oninput=e=>{ S.marca=e.target.value; update(); };
+$("naoTexto").oninput=e=>{ S.naoTexto=e.target.value; save(); };
+
+load();
+$("nome").value=S.nome; $("marca").value=S.marca;
+go(step);
+</script>
+</body>
+</html>
