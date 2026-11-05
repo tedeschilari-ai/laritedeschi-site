@@ -241,7 +241,7 @@
   var app = document.getElementById('app');
   if(!app) return;
 
-  // Modo de teste: só fora do endereço oficial. Ex.: ?agora=2026-11-09T10:00
+  // Modo de teste: só fora do endereço oficial. Ex.: ?agora=2026-11-09T10:00 ou #agora-20261109-1000
   function dataSimulada(){
     var host = location.hostname;
     if(host === 'laritedeschi.com' || host === 'www.laritedeschi.com') return null;
@@ -529,6 +529,9 @@
     }
   }
 
+  if(location.hostname !== 'laritedeschi.com' && location.hostname !== 'www.laritedeschi.com'){
+    window.addEventListener('hashchange', function(){ location.reload(); });
+  }
   if(simulada !== null){
     document.body.appendChild(el('div', 'ca-teste', 'Modo de teste · data simulada: ' + new Date(simulada).toLocaleString('pt-BR', {timeZone:'America/Sao_Paulo', dateStyle:'short', timeStyle:'short'})));
   }
