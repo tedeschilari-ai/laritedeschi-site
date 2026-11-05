@@ -5,7 +5,7 @@
 
   // ====== CONFIGURAÇÃO ======
   // Endereço da planilha: é só colar aqui, entre as aspas. Vazio = não envia nada e não dá erro.
-  var ENDERECO_PLANILHA = '';
+  var ENDERECO_PLANILHA = 'https://script.google.com/macros/s/AKfycbz_cLHASwFVBTpEqpQd7egdCZOHh8tElBfYbRhHC-MCQOQdpGJdvuetyiLdC2gj_5CtrA/exec';
 
   var ABRIR_CURSO = 'https://figclub.laritedeschi.com';
   var UTM = '?utm_source=comece_aqui';
