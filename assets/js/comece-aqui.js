@@ -170,7 +170,10 @@
           passos:['Onboarding','Passo a passo do carrossel perfeito','Criando na prática','Desafios para evoluir'],
           consulta:['Fundamentos do design',NEGOCIO,'Bônus']
         };
-        if(semCliente) c.passos = inserirAntes(c.passos, 'Desafios para evoluir', AULAS);
+        if(semCliente){
+          c.passos = inserirAntes(c.passos, 'Desafios para evoluir', AULAS);
+          c.consulta = c.consulta.filter(function(m){ return m !== NEGOCIO; });
+        }
       } else if(r.p6 === 'frequente'){
         c = {
           porque:'Você já cria com frequência e quer melhorar a técnica, então as aulas de Efeitos e iluminação e Correção de imagens vêm antes de tudo. Depois disso, os Desafios para evoluir são onde você coloca em prática.',
