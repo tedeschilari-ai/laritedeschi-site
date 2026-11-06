@@ -9,7 +9,7 @@
   var abre = new Date('2026-11-09T08:00:00-03:00').getTime(), m = location.search.match(/[?&]agora=([^&]+)/), t = NaN;
   if(m){ try{ t = new Date(decodeURIComponent(m[1])).getTime(); }catch(e){} }
   if(isNaN(t)) t = Date.now();
-  if(t >= abre) location.replace('black/' + location.search + location.hash);
+  if(t >= abre) location.replace('vendas/' + location.search + location.hash);
 })();
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">

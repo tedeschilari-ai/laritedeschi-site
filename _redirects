@@ -26,3 +26,9 @@
 /kit                           /kitdesignstudio/                         301
 /kit-design-studio             /kitdesignstudio/                         301
 /kit-design-studio/            /kitdesignstudio/                         301
+
+# FigOS: páginas sem o "black" no endereço (06/11)
+/figos/black                   /figos/vendas/                            301
+/figos/black/                  /figos/vendas/                            301
+/figos/black/obrigado          /figos/obrigado/                          301
+/figos/black/obrigado/         /figos/obrigado/                          301
