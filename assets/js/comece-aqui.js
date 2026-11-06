@@ -119,8 +119,9 @@
       };
       return {
         porque:'Como você já domina o Figma, você pode usar este curso para complementar os seus conhecimentos no Figma, com ferramentas novas e com as atualizações.',
-        passos:[{nome:'Preparando a conta', nota:'Licença educacional, se ainda não pediu'},'Ferramentas avançadas','Atualizações do Figma','Biblioteca de ferramentas'],
-        consulta:['Bem-vindos','Ferramentas essenciais','Finalização e exportação']
+        passos:['Ferramentas avançadas','Atualizações do Figma','Biblioteca de ferramentas'],
+        consulta:['Bem-vindos','Preparando a conta','Ferramentas essenciais','Finalização e exportação'],
+        dicas:['Se ainda não pediu a licença educacional, ela tá em Preparando a conta.']
       };
     },
     figlogo: function(r, tem){
@@ -133,17 +134,17 @@
       else if(r.p6 === 'semmetodo') c = {
         porque:'Você já cria, e o que falta é um método, então a sua ordem começa no processo criativo e nas técnicas de construção, pra depois aplicar tudo em Criando na prática. O refinamento fica por último porque aí você já tem um logo pra refinar.',
         passos:['Comece por aqui','Entendendo o processo criativo','Técnicas de construção','Criando na prática','Sistema de refinamento'],
-        consulta:['A base de tudo','Desafios para evoluir','Plano de evolução','Bônus','Calculadora de Precificação']
+        consulta:['A base de tudo','Desafios para evoluir','Plano de evolução','Bônus']
       };
       else if(r.p6 === 'frequente'){ temCriando = false; c = {
         porque:'Com a frequência com que você já cria, faz mais sentido ir direto na técnica: primeiro Técnicas de construção, depois Sistema de refinamento. Os Desafios para evoluir vêm no fim, pra você praticar o que acabou de ver.',
         passos:['Comece por aqui','Técnicas de construção','Sistema de refinamento','Desafios para evoluir'],
-        consulta:['A base de tudo','Entendendo o processo criativo','Criando na prática','Plano de evolução','Bônus','Calculadora de Precificação']
+        consulta:['A base de tudo','Entendendo o processo criativo','Criando na prática','Plano de evolução','Bônus']
       }; }
       else c = {
         porque:'Você ainda não criou nenhum logo, então essa ordem vai construindo aos poucos: primeiro a base e o processo criativo, depois as técnicas, e aí você vai criar na prática já sabendo o que tá fazendo. Os desafios e o plano de evolução vêm no fim, pra você seguir evoluindo.',
         passos:['Comece por aqui','A base de tudo','Entendendo o processo criativo','Técnicas de construção','Criando na prática','Sistema de refinamento','Desafios para evoluir','Plano de evolução'],
-        consulta:['Bônus','Calculadora de Precificação']
+        consulta:['Bônus']
       };
       if(temCriando){
         if(r.p4 === 'tudo'){
@@ -157,7 +158,6 @@
         }
       }
       c.pular = pular; c.notaCrono = notaCrono; c.notaPular = notaPular;
-      c.dicas = ['Se o que mais te trava é cobrar, abre a Calculadora de Precificação logo no início.'];
       return c;
     },
     figpost: function(r, tem){
@@ -201,7 +201,7 @@
     },
     kit: function(r, tem, temOutro){
       var pos = posicaoKit(r), c;
-      var dicas = ['Se a sua dificuldade é cobrar, começa pela Calculadora de Precificação e depois olha a Tabela de Serviços e Preços.'];
+      var dicas = ['Se a sua dificuldade é cobrar, olha a Tabela de Serviços e Preços.'];
       if(r.p2 === 'nunca') dicas.push('E se você ainda não usa Figma, o Kit também funciona em Canva, Word, Google Docs, PowerPoint e Notion.');
       if(pos === 'consulta') return {
         posicao:{t:'Como o seu estúdio já tá estruturado, o Kit Design Studio fica aqui para você consultar quando precisar.'},
@@ -220,7 +220,7 @@
           ? 'Essa ordem segue o caminho de um cliente: primeiro o Processo Comercial, depois os Documentos Profissionais e a Gestão de Projetos. Como você tá montando tudo do começo, vai personalizando cada documento conforme avança.'
           : 'Essa ordem segue o caminho de um cliente: primeiro o Processo Comercial, depois os Documentos Profissionais e a Gestão de Projetos. Marca o que você já tem e personaliza só o que falta.',
         passos:['Bem-vindos','Processo Comercial','Documentos Profissionais','Gestão de Projetos','Próximos passos'],
-        consulta:['Bônus','Calculadora de Precificação']
+        consulta:['Bônus']
       };
       c.dicas = dicas;
       return c;
@@ -344,7 +344,7 @@
     var temOutro = ordem.some(function(id){ return id !== 'kit'; });
     function cartao(id, numero, grupo){
       var t = COMO_FAZER[id](r, tem, temOutro);
-      return {id:id, nome:CURSOS[id].nome, c:CURSOS[id].c, c2:CURSOS[id].c2, numero:numero, grupo:grupo,
+      return {id:id, nome:CURSOS[id].nome, c:CURSOS[id].c, c2:CURSOS[id].c2, numero:numero, grupo:grupo, cinza:grupo === 'complemento' && id === 'kit',
         posicao:t.posicao || null, aviso:t.aviso || '', porque:t.porque || '', passos:t.passos,
         consulta:t.consulta || [], pular:t.pular || [], notaCrono:t.notaCrono || '', notaPular:t.notaPular || '', dicas:t.dicas || []};
     }
@@ -692,7 +692,7 @@
   }
 
   function cartaoCurso(c){
-    var li = el('li', 'ca-curso' + (c.grupo === 'complemento' ? ' ca-curso-cinza' : ''));
+    var li = el('li', 'ca-curso' + (c.cinza ? ' ca-curso-cinza' : ''));
     li.style.setProperty('--c', c.c);
     var topo = el('div', 'ca-curso-topo');
     if(c.numero) topo.appendChild(el('span', 'ca-num', String(c.numero)));
@@ -746,7 +746,7 @@
     if(m.cartoes.length > 1){
       var resumo = el('ol', 'ca-resumo');
       m.cartoes.forEach(function(c){
-        var r = el('li', c.grupo === 'complemento' ? 'ca-resumo-cinza' : '');
+        var r = el('li', c.cinza ? 'ca-resumo-cinza' : (c.grupo === 'complemento' ? 'ca-resumo-semnum' : ''));
         if(c.numero) r.appendChild(el('span', 'ca-resumo-num', String(c.numero)));
         else if(c.grupo === 'paralelo'){ var pr = el('span', 'ca-resumo-num ca-num-paralelo'); pr.setAttribute('aria-hidden', 'true'); r.appendChild(pr); }
         r.append(c.nome);

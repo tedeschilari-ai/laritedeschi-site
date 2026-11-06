@@ -107,14 +107,15 @@ textarea.ca-campo:focus{outline:0;box-shadow:0 0 0 2px var(--azul) inset}
 .ca-resumo{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px;list-style:none}
 .ca-resumo li{display:inline-flex;align-items:center;gap:6px;padding:4px 11px 4px 5px;border-radius:99px;background:var(--card);box-shadow:0 0 0 1px var(--line) inset;font-size:14px;font-weight:500;letter-spacing:-.015em}
 .ca-resumo-num{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--txt);color:#fff;font-size:11.5px;font-weight:600;letter-spacing:0}
+.ca-resumo li.ca-resumo-semnum{padding-left:11px}
 .ca-resumo li.ca-resumo-cinza{padding-left:11px;background:transparent;color:var(--muted);box-shadow:0 0 0 1px var(--line-2) inset}
 
 /* em paralelo: duas barrinhas no lugar do número */
 .ca-num.ca-num-paralelo,.ca-resumo-num.ca-num-paralelo{background:transparent;box-shadow:0 0 0 1.5px var(--txt) inset;position:relative}
 .ca-num-paralelo::before{content:"";width:35%;height:40%;border-inline:2px solid var(--txt)}
 
-/* para complementar: no fim, em cinza */
-.ca-complementar h2{color:var(--muted);font-size:22px;margin-bottom:0}
+/* para complementar: no fim. Cinza só no que é só para consulta */
+.ca-complementar h2{font-size:22px;margin-bottom:0}
 .ca-complementar .ca-trilha{margin-top:14px}
 .ca-curso-cinza{background:transparent;box-shadow:0 0 0 1px var(--line-2) inset}
 .ca-curso-cinza .ca-curso-topo svg{filter:grayscale(1);opacity:.6}
