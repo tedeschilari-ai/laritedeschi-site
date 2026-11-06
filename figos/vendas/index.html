@@ -13,6 +13,9 @@
     window.fbq = function(){};
     document.documentElement.style.visibility = 'hidden';
     location.replace('../' + location.search.replace(/([?&])agora=[^&]*&?/, '$1').replace(/[?&]$/, '') + location.hash);
+  } else {
+    /* Endereço único: a barra do navegador mostra sempre /figos, mesmo depois da abertura. */
+    try{ history.replaceState(null, '', '/figos/' + location.search + location.hash); }catch(e){}
   }
 })();
 </script>
@@ -29,8 +32,8 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=874750447646279&ev=PageView&noscript=1" alt=""></noscript>
 
-<link rel="stylesheet" href="../../assets/css/figos.css">
-<link rel="stylesheet" href="../../assets/css/figos-black.css">
+<link rel="stylesheet" href="/assets/css/figos.css">
+<link rel="stylesheet" href="/assets/css/figos-black.css">
 </head>
 <body class="modo-black" data-oferta="black">
 
@@ -87,7 +90,7 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 
     <div class="palco rv" aria-hidden="true">
       <div class="cartao"></div>
-      <img class="foto" src="../../assets/img/comum/lari-recorte.webp" alt="" width="720" height="947">
+      <img class="foto" src="/assets/img/comum/lari-recorte.webp" alt="" width="720" height="947">
       <div class="pasta p1" style="--c:#b7a3ff;--c2:#9378f5"><svg><use href="#pasta"/></svg><span>figpost</span></div>
       <div class="pasta p2" style="--c:#ff9fcf;--c2:#f077b2"><svg><use href="#pasta"/></svg><span>figlogo_09</span></div>
       <div class="pasta p3" style="--c:#4aa3ff;--c2:#2f86ee"><svg><use href="#pasta"/></svg><span class="nome-sel">kit-design-studio</span></div>
@@ -276,7 +279,7 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
           <svg style="--c:#4aa3ff;--c2:#2f86ee;--x:57%;--y:60%;--t:44;--d:1.7s" aria-hidden="true"><use href="#pasta"/></svg>
           <svg style="--c:#ffb48f;--c2:#f6935f;--x:90%;--y:48%;--t:36;--d:0.2s" aria-hidden="true"><use href="#pasta"/></svg>
         </div>
-        <img src="../../assets/img/figos/mockup-figos.webp" width="2000" height="1068" loading="lazy" alt="Tudo o que vem no FigOS: as aulas no computador, no tablet e no celular, os contratos, os workshops, os guias e o selo de acesso vitalício.">
+        <img src="/assets/img/figos/mockup-figos.webp" width="2000" height="1068" loading="lazy" alt="Tudo o que vem no FigOS: as aulas no computador, no tablet e no celular, os contratos, os workshops, os guias e o selo de acesso vitalício.">
       </figure>
 
       <div class="janela rv">
@@ -360,96 +363,96 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
       <div class="depos" id="depos">
         <figure class="dp dp-print">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>julia.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg>FigLogo</span><p class="d-big">R$200 → R$2.000 por projeto</p><p class="d-nome">Julia</p><div class="d-img"><img src="../../assets/img/framer/cEOfkTulj5JxA9Arsq67KfACKtk.webp" width="851" height="1024" alt="Print do depoimento: R$200 → R$2.000 por projeto" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg>FigLogo</span><p class="d-big">R$200 → R$2.000 por projeto</p><p class="d-nome">Julia</p><div class="d-img"><img src="/assets/img/framer/cEOfkTulj5JxA9Arsq67KfACKtk.webp" width="851" height="1024" alt="Print do depoimento: R$200 → R$2.000 por projeto" loading="lazy"></div></div>
         </figure>
         <figure class="dp dp-print">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>quesia.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg>FigLogo</span><p class="d-big">R$150 → +R$1.000 por projeto</p><p class="d-nome">Quesia</p><div class="d-img"><img src="../../assets/img/framer/zXRTje0tnFe5INgP0lJgQYgD86A.webp" width="961" height="1024" alt="Print do depoimento: R$150 → +R$1.000 por projeto" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg>FigLogo</span><p class="d-big">R$150 → +R$1.000 por projeto</p><p class="d-nome">Quesia</p><div class="d-img"><img src="/assets/img/framer/zXRTje0tnFe5INgP0lJgQYgD86A.webp" width="961" height="1024" alt="Print do depoimento: R$150 → +R$1.000 por projeto" loading="lazy"></div></div>
         </figure>
         <figure class="dp dp-print">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>michelle.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg>FigPost</span><p class="d-big">De R$35 para R$90 por carrossel</p><p class="d-nome">Michelle</p><div class="d-img"><img src="../../assets/img/figos/depoimentos/michelle.webp" width="820" height="881" alt="Print do depoimento: De R$35 para R$90 por carrossel" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg>FigPost</span><p class="d-big">De R$35 para R$90 por carrossel</p><p class="d-nome">Michelle</p><div class="d-img"><img src="/assets/img/figos/depoimentos/michelle.webp" width="820" height="881" alt="Print do depoimento: De R$35 para R$90 por carrossel" loading="lazy"></div></div>
         </figure>
         <figure class="dp dp-print">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>davy.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg>FigPost</span><p class="d-big">Fechou contratos e comprou um computador novo</p><p class="d-nome">Davy</p><div class="d-img"><img src="../../assets/img/figos/depoimentos/davy.webp" width="820" height="1151" alt="Print do depoimento: Fechou contratos e comprou um computador novo" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg>FigPost</span><p class="d-big">Fechou contratos e comprou um computador novo</p><p class="d-nome">Davy</p><div class="d-img"><img src="/assets/img/figos/depoimentos/davy.webp" width="820" height="1151" alt="Print do depoimento: Fechou contratos e comprou um computador novo" loading="lazy"></div></div>
         </figure>
         <figure class="dp dp-print mais">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>rani.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg>FigPost</span><p class="d-big">Contratada para 3 perfis em 1 mês</p><p class="d-nome">Rani</p><div class="d-img"><img src="../../assets/img/figos/depoimentos/rani-perfis.webp" width="567" height="1069" alt="Print do depoimento: Contratada para 3 perfis em 1 mês" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg>FigPost</span><p class="d-big">Contratada para 3 perfis em 1 mês</p><p class="d-nome">Rani</p><div class="d-img"><img src="/assets/img/figos/depoimentos/rani-perfis.webp" width="567" height="1069" alt="Print do depoimento: Contratada para 3 perfis em 1 mês" loading="lazy"></div></div>
         </figure>
         <figure class="dp dp-print mais">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>aluna-do-kit.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#4aa3ff;--c2:#2f86ee" aria-hidden="true"><use href="#pasta"/></svg>Kit Design Studio</span><p class="d-big">Mais segurança para começar a carreira solo</p><p class="d-nome">Aluna do Kit</p><div class="d-img"><img src="../../assets/img/figos/depoimentos/kit-d2.webp" width="820" height="932" alt="Print do depoimento: Mais segurança para começar a carreira solo" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#4aa3ff;--c2:#2f86ee" aria-hidden="true"><use href="#pasta"/></svg>Kit Design Studio</span><p class="d-big">Mais segurança para começar a carreira solo</p><p class="d-nome">Aluna do Kit</p><div class="d-img"><img src="/assets/img/figos/depoimentos/kit-d2.webp" width="820" height="932" alt="Print do depoimento: Mais segurança para começar a carreira solo" loading="lazy"></div></div>
         </figure>
         <figure class="dp dp-print mais">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>aluno-do-figlogo.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg>FigLogo</span><p class="d-big">Coisas feitas “no olho” agora fazem sentido</p><p class="d-nome">Aluno do FigLogo</p><div class="d-img"><img src="../../assets/img/figlogo/depoimentos/depoimento-6.webp" width="820" height="1022" alt="Print do depoimento: Coisas feitas “no olho” agora fazem sentido" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg>FigLogo</span><p class="d-big">Coisas feitas “no olho” agora fazem sentido</p><p class="d-nome">Aluno do FigLogo</p><div class="d-img"><img src="/assets/img/figlogo/depoimentos/depoimento-6.webp" width="820" height="1022" alt="Print do depoimento: Coisas feitas “no olho” agora fazem sentido" loading="lazy"></div></div>
         </figure>
         <figure class="dp dp-print mais">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>rani_02.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg>FigPost</span><p class="d-big">Hoje usa 1% Canva e 99% Figma</p><p class="d-nome">Rani</p><div class="d-img"><img src="../../assets/img/figos/depoimentos/rani-canva.webp" width="820" height="1020" alt="Print do depoimento: Hoje usa 1% Canva e 99% Figma" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg>FigPost</span><p class="d-big">Hoje usa 1% Canva e 99% Figma</p><p class="d-nome">Rani</p><div class="d-img"><img src="/assets/img/figos/depoimentos/rani-canva.webp" width="820" height="1020" alt="Print do depoimento: Hoje usa 1% Canva e 99% Figma" loading="lazy"></div></div>
         </figure>
         
         <figure class="dp dp-print mais">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>designer-h-6-anos.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg>FigLogo</span><p class="d-big">Mais segurança no próprio processo</p><p class="d-nome">Designer há 6 anos</p><div class="d-img"><img src="../../assets/img/figlogo/depoimentos/depoimento-1.webp" width="820" height="753" alt="Print do depoimento: Mais segurança no próprio processo" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg>FigLogo</span><p class="d-big">Mais segurança no próprio processo</p><p class="d-nome">Designer há 6 anos</p><div class="d-img"><img src="/assets/img/figlogo/depoimentos/depoimento-1.webp" width="820" height="753" alt="Print do depoimento: Mais segurança no próprio processo" loading="lazy"></div></div>
         </figure>
         <figure class="dp dp-print mais">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>dan.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg>FigPost</span><p class="d-big">Os trabalhos melhoraram demais</p><p class="d-nome">Dan</p><div class="d-img"><img src="../../assets/img/figos/depoimentos/dan.webp" width="820" height="1197" alt="Print do depoimento: Os trabalhos melhoraram demais" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg>FigPost</span><p class="d-big">Os trabalhos melhoraram demais</p><p class="d-nome">Dan</p><div class="d-img"><img src="/assets/img/figos/depoimentos/dan.webp" width="820" height="1197" alt="Print do depoimento: Os trabalhos melhoraram demais" loading="lazy"></div></div>
         </figure>
         <figure class="dp dp-print mais">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>aluna-do-kit_02.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#4aa3ff;--c2:#2f86ee" aria-hidden="true"><use href="#pasta"/></svg>Kit Design Studio</span><p class="d-big">Economiza tempo em cada projeto</p><p class="d-nome">Aluna do Kit</p><div class="d-img"><img src="../../assets/img/figos/depoimentos/kit-d1.webp" width="820" height="967" alt="Print do depoimento: Economiza tempo em cada projeto" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#4aa3ff;--c2:#2f86ee" aria-hidden="true"><use href="#pasta"/></svg>Kit Design Studio</span><p class="d-big">Economiza tempo em cada projeto</p><p class="d-nome">Aluna do Kit</p><div class="d-img"><img src="/assets/img/figos/depoimentos/kit-d1.webp" width="820" height="967" alt="Print do depoimento: Economiza tempo em cada projeto" loading="lazy"></div></div>
         </figure>
         <figure class="dp dp-print mais">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>laura.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg>FigPost</span><p class="d-big">Uma virada de chave real</p><p class="d-nome">Laura</p><div class="d-img"><img src="../../assets/img/figos/depoimentos/laura.webp" width="820" height="1051" alt="Print do depoimento: Uma virada de chave real" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg>FigPost</span><p class="d-big">Uma virada de chave real</p><p class="d-nome">Laura</p><div class="d-img"><img src="/assets/img/figos/depoimentos/laura.webp" width="820" height="1051" alt="Print do depoimento: Uma virada de chave real" loading="lazy"></div></div>
         </figure>
         <figure class="dp dp-print mais">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>gioh.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg>FigLogo</span><p class="d-big">Primeiro logo criado</p><p class="d-nome">Gioh</p><div class="d-img"><img src="../../assets/img/figos/depoimentos/gioh.webp" width="476" height="520" alt="Print do depoimento: Primeiro logo criado" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg>FigLogo</span><p class="d-big">Primeiro logo criado</p><p class="d-nome">Gioh</p><div class="d-img"><img src="/assets/img/figos/depoimentos/gioh.webp" width="476" height="520" alt="Print do depoimento: Primeiro logo criado" loading="lazy"></div></div>
         </figure>
         <figure class="dp dp-print mais">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>vini.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg>FigPost</span><p class="d-big">Primeiro carrossel na primeira semana</p><p class="d-nome">Vini</p><div class="d-img"><img src="../../assets/img/figos/depoimentos/vini.webp" width="820" height="1257" alt="Print do depoimento: Primeiro carrossel na primeira semana" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg>FigPost</span><p class="d-big">Primeiro carrossel na primeira semana</p><p class="d-nome">Vini</p><div class="d-img"><img src="/assets/img/figos/depoimentos/vini.webp" width="820" height="1257" alt="Print do depoimento: Primeiro carrossel na primeira semana" loading="lazy"></div></div>
         </figure>
         <figure class="dp dp-print mais">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>aluna-do-kit_03.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#4aa3ff;--c2:#2f86ee" aria-hidden="true"><use href="#pasta"/></svg>Kit Design Studio</span><p class="d-big">Uma chavinha que virou na cabeça</p><p class="d-nome">Aluna do Kit</p><div class="d-img"><img src="../../assets/img/figos/depoimentos/kit-d6.webp" width="820" height="850" alt="Print do depoimento: Uma chavinha que virou na cabeça" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#4aa3ff;--c2:#2f86ee" aria-hidden="true"><use href="#pasta"/></svg>Kit Design Studio</span><p class="d-big">Uma chavinha que virou na cabeça</p><p class="d-nome">Aluna do Kit</p><div class="d-img"><img src="/assets/img/figos/depoimentos/kit-d6.webp" width="820" height="850" alt="Print do depoimento: Uma chavinha que virou na cabeça" loading="lazy"></div></div>
         </figure>
         <figure class="dp dp-print mais">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>bea.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg>FigLogo</span><p class="d-big">Começou sem nunca ter usado o Figma</p><p class="d-nome">Bea</p><div class="d-img"><img src="../../assets/img/framer/SOxju70KbkgDFKUJok6V9cqT4.webp" width="536" height="240" alt="Print do depoimento: Começou sem nunca ter usado o Figma" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg>FigLogo</span><p class="d-big">Começou sem nunca ter usado o Figma</p><p class="d-nome">Bea</p><div class="d-img"><img src="/assets/img/framer/SOxju70KbkgDFKUJok6V9cqT4.webp" width="536" height="240" alt="Print do depoimento: Começou sem nunca ter usado o Figma" loading="lazy"></div></div>
         </figure>
         <figure class="dp dp-print mais">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>cecilia.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg>FigPost</span><p class="d-big">Trocando o Canva pelo Figma</p><p class="d-nome">Cecília</p><div class="d-img"><img src="../../assets/img/figos/depoimentos/cecilia.webp" width="820" height="418" alt="Print do depoimento: Trocando o Canva pelo Figma" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg>FigPost</span><p class="d-big">Trocando o Canva pelo Figma</p><p class="d-nome">Cecília</p><div class="d-img"><img src="/assets/img/figos/depoimentos/cecilia.webp" width="820" height="418" alt="Print do depoimento: Trocando o Canva pelo Figma" loading="lazy"></div></div>
         </figure>
         <figure class="dp dp-print mais">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>ellen.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg>FigLogo</span><p class="d-big">Uma metodologia que explica de verdade</p><p class="d-nome">Ellen</p><div class="d-img"><img src="../../assets/img/figlogo/depoimentos/depoimento-5.webp" width="820" height="625" alt="Print do depoimento: Uma metodologia que explica de verdade" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg>FigLogo</span><p class="d-big">Uma metodologia que explica de verdade</p><p class="d-nome">Ellen</p><div class="d-img"><img src="/assets/img/figlogo/depoimentos/depoimento-5.webp" width="820" height="625" alt="Print do depoimento: Uma metodologia que explica de verdade" loading="lazy"></div></div>
         </figure>
         <figure class="dp dp-print mais">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>aluna-do-kit_04.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#4aa3ff;--c2:#2f86ee" aria-hidden="true"><use href="#pasta"/></svg>Kit Design Studio</span><p class="d-big">Salvou a parte burocrática da rotina</p><p class="d-nome">Aluna do Kit</p><div class="d-img"><img src="../../assets/img/figos/depoimentos/kit-d5.webp" width="820" height="669" alt="Print do depoimento: Salvou a parte burocrática da rotina" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#4aa3ff;--c2:#2f86ee" aria-hidden="true"><use href="#pasta"/></svg>Kit Design Studio</span><p class="d-big">Salvou a parte burocrática da rotina</p><p class="d-nome">Aluna do Kit</p><div class="d-img"><img src="/assets/img/figos/depoimentos/kit-d5.webp" width="820" height="669" alt="Print do depoimento: Salvou a parte burocrática da rotina" loading="lazy"></div></div>
         </figure>
         <figure class="dp dp-print mais">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>jessica.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg>FigPost</span><p class="d-big">Iniciante e já pegou de primeira</p><p class="d-nome">Jéssica</p><div class="d-img"><img src="../../assets/img/figos/depoimentos/jessica.webp" width="820" height="432" alt="Print do depoimento: Iniciante e já pegou de primeira" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#b7a3ff;--c2:#9378f5" aria-hidden="true"><use href="#pasta"/></svg>FigPost</span><p class="d-big">Iniciante e já pegou de primeira</p><p class="d-nome">Jéssica</p><div class="d-img"><img src="/assets/img/figos/depoimentos/jessica.webp" width="820" height="432" alt="Print do depoimento: Iniciante e já pegou de primeira" loading="lazy"></div></div>
         </figure>
         <figure class="dp dp-print mais">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>rapha-e-andressa.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg>FigLogo</span><p class="d-big">Mais segurança para criar</p><p class="d-nome">Rapha e Andressa</p><div class="d-img"><img src="../../assets/img/framer/VoBl2f6r2IMVxpXhZ4SoIgShc.webp" width="611" height="440" alt="Print do depoimento: Mais segurança para criar" loading="lazy"><img src="../../assets/img/framer/oZo7ijxrtAmch7dY1vcPtC0DgCU.webp" width="461" height="254" alt="" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg>FigLogo</span><p class="d-big">Mais segurança para criar</p><p class="d-nome">Rapha e Andressa</p><div class="d-img"><img src="/assets/img/framer/VoBl2f6r2IMVxpXhZ4SoIgShc.webp" width="611" height="440" alt="Print do depoimento: Mais segurança para criar" loading="lazy"><img src="/assets/img/framer/oZo7ijxrtAmch7dY1vcPtC0DgCU.webp" width="461" height="254" alt="" loading="lazy"></div></div>
         </figure>
         <figure class="dp dp-print mais">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>lari-martineri.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg>FigLogo</span><p class="d-big">Assistindo como uma série</p><p class="d-nome">Lari Martineri</p><div class="d-img"><img src="../../assets/img/figlogo/depoimentos/depoimento-3.webp" width="820" height="713" alt="Print do depoimento: Assistindo como uma série" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#ff9fcf;--c2:#f077b2" aria-hidden="true"><use href="#pasta"/></svg>FigLogo</span><p class="d-big">Assistindo como uma série</p><p class="d-nome">Lari Martineri</p><div class="d-img"><img src="/assets/img/figlogo/depoimentos/depoimento-3.webp" width="820" height="713" alt="Print do depoimento: Assistindo como uma série" loading="lazy"></div></div>
         </figure>
         <figure class="dp dp-print mais">
           <div class="d-barra" aria-hidden="true"><span class="luzes"><i></i><i></i><i></i></span><span>aluna-do-kit_05.png</span></div>
-          <div class="d-corpo"><span class="d-prod"><svg style="--c:#4aa3ff;--c2:#2f86ee" aria-hidden="true"><use href="#pasta"/></svg>Kit Design Studio</span><p class="d-big">Salva a vida de quem não tem tempo</p><p class="d-nome">Aluna do Kit</p><div class="d-img"><img src="../../assets/img/figos/depoimentos/kit-d4.webp" width="820" height="623" alt="Print do depoimento: Salva a vida de quem não tem tempo" loading="lazy"></div></div>
+          <div class="d-corpo"><span class="d-prod"><svg style="--c:#4aa3ff;--c2:#2f86ee" aria-hidden="true"><use href="#pasta"/></svg>Kit Design Studio</span><p class="d-big">Salva a vida de quem não tem tempo</p><p class="d-nome">Aluna do Kit</p><div class="d-img"><img src="/assets/img/figos/depoimentos/kit-d4.webp" width="820" height="623" alt="Print do depoimento: Salva a vida de quem não tem tempo" loading="lazy"></div></div>
         </figure>
       </div>
       <div class="ver-mais"><button type="button" id="ver-mais">Ver mais depoimentos</button></div>
@@ -461,7 +464,7 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
     <div class="wrap lari-g">
       <div class="palco palco-lari rv" aria-hidden="true">
       <div class="cartao"></div>
-      <img class="foto" src="../../assets/img/comum/lari-recorte.webp" alt="" width="720" height="947" loading="lazy">
+      <img class="foto" src="/assets/img/comum/lari-recorte.webp" alt="" width="720" height="947" loading="lazy">
       <div class="pasta p1" style="--c:#b7a3ff;--c2:#9378f5"><svg><use href="#pasta"/></svg><span>figpost</span></div>
       <div class="pasta p2" style="--c:#ff9fcf;--c2:#f077b2"><svg><use href="#pasta"/></svg><span>figlogo_09</span></div>
       <div class="pasta p3" style="--c:#4aa3ff;--c2:#2f86ee"><svg><use href="#pasta"/></svg><span class="nome-sel">kit-design-studio</span></div>
@@ -522,6 +525,6 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
   <p>© 2026 Lari Tedeschi</p>
 </footer>
 
-<script src="../../assets/js/figos-vendas.js"></script>
+<script src="/assets/js/figos-vendas.js"></script>
 </body>
 </html>
