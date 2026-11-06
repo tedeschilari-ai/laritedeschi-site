@@ -10,6 +10,8 @@
   var ABRIR_CURSO = 'https://figclub.laritedeschi.com';
   var UTM = '?utm_source=comece_aqui';
   var CARRINHO = [[1794222000000, 1794366000000], [1794452400000, 1794538800000]];
+  // Funcionários de IA: bônus surpresa da Black, só aparece na lista depois da revelação (09/11, 8h).
+  var REVELA_IA = 1794222000000;
   var WHATS_DEPOIMENTO = 'https://wa.me/5541999401055?text=Ol%C3%A1%2C%20vim%20dar%20meu%20depoimento%20do%20Kit%20Design%20Studio%20para%20desbloquear%20o%20curso%20de%20Figma%20do%20zero%21';
 
   function enviarRespostas(dados){
@@ -580,7 +582,7 @@
     app.appendChild(el('p', 'ca-apoio', 'Pode marcar vários.'));
 
     var f = el('fieldset', 'ca-grupo'), ops = el('div', 'ca-opcoes');
-    ITENS.forEach(function(it){
+    ITENS.filter(function(it){ return it[0] !== 'ia' || agoraMs() >= REVELA_IA; }).forEach(function(it){
       var l = opcao('checkbox', 'tem', it[0], it[1], tem[it[0]], function(i){
         if(i.checked) tem[it[0]] = true; else delete tem[it[0]];
         regraFiglab(it[0]);
