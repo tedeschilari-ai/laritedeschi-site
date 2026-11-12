@@ -6,8 +6,8 @@
   // Datas no horário de Brasília (-03:00). A abertura (09/11, 8h) fica na trava do início do <head> da página.
   var D = {
     fecha:     new Date('2026-11-11T00:00:00-03:00'),   // fim de 10/11, 23h59
-    reabre:    new Date('2026-11-12T00:00:00-03:00'),   // reabertura relâmpago
-    fechaRe:   new Date('2026-11-13T00:00:00-03:00')    // fim de 12/11, 23h59
+    reabre:    new Date('2026-11-12T00:00:00-03:00'),   // reabertura relâmpago (12 e 13/11)
+    fechaRe:   new Date('2026-11-14T00:00:00-03:00')    // fim de sexta, 13/11, 23h59
   };
   // ==========================
 
@@ -91,7 +91,7 @@
   }
   function falta(ms){ var p = partes(ms); return (p.d ? p.d + 'd ' : '') + dois(p.h) + ':' + dois(p.m) + ':' + dois(p.s); }
 
-  // estados: aberto (09 e 10/11) · pausa (11/11) · reaberto (12/11) · fechado (depois de 12/11, 23h59)
+  // estados: aberto (09 e 10/11) · pausa (11/11) · reaberto (12 e 13/11) · fechado (depois de 13/11, 23h59)
   var telaOff = document.querySelector('[data-tela-off]'), offTxt = document.querySelector('[data-off-txt]'), offPeq = document.querySelector('[data-off-peq]');
   var faixaRe = document.querySelector('[data-reabertura]'), rotCd = document.querySelector('[data-cd-rot]'), faqPrazo = document.querySelector('[data-faq-prazo]');
   var faqOriginal = faqPrazo ? faqPrazo.textContent : '', estadoAtual = '';
@@ -115,7 +115,7 @@
       else { a.href = HREF; a.removeAttribute('aria-disabled'); a.style.pointerEvents = ''; }
     });
     if(faixaRe) faixaRe.hidden = (e !== 'reaberto');
-    if(faqPrazo) faqPrazo.textContent = (e === 'reaberto') ? 'Só até hoje, quinta, 12/11, às 23h59.' : faqOriginal;
+    if(faqPrazo) faqPrazo.textContent = (e === 'reaberto') ? 'Só até sexta, 13/11, às 23h59.' : faqOriginal;
   }
 
   function atualiza(){
@@ -125,8 +125,8 @@
     var p = partes(alvoFim - t);
     CD.d.textContent = dois(p.d); CD.h.textContent = dois(p.h); CD.m.textContent = dois(p.m); CD.s.textContent = dois(p.s);
     if(rotCd){
-      var ultimas = (e === 'aberto' && D.fecha - t <= 6*3600*1000);
-      rotCd.textContent = e === 'reaberto' ? 'Reiniciando… fecha em' : (ultimas ? 'Últimas horas · o FigOS fecha em' : 'O FigOS fecha em');
+      var ultimas = ((e === 'aberto' || e === 'reaberto') && alvoFim - t <= 6*3600*1000);
+      rotCd.textContent = ultimas ? 'Últimas horas · o FigOS fecha em' : (e === 'reaberto' ? 'Reiniciando… fecha em' : 'O FigOS fecha em');
     }
   }
   atualiza(); setInterval(atualiza, 1000);
