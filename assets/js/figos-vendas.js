@@ -7,7 +7,7 @@
   var D = {
     fecha:     new Date('2026-11-11T00:00:00-03:00'),   // fim de 10/11, 23h59
     reabre:    new Date('2026-11-12T00:00:00-03:00'),   // reabertura relâmpago
-    fechaRe:   new Date('2026-11-13T00:00:00-03:00')    // fim de 12/11, 23h59
+    fechaRe:   new Date('2026-11-14T00:00:00-03:00')    // fim de 13/11, 23h59 (estendido a pedido da Lari em 13/11)
   };
   // ==========================
 
@@ -115,7 +115,7 @@
       else { a.href = HREF; a.removeAttribute('aria-disabled'); a.style.pointerEvents = ''; }
     });
     if(faixaRe) faixaRe.hidden = (e !== 'reaberto');
-    if(faqPrazo) faqPrazo.textContent = (e === 'reaberto') ? 'Só até hoje, quinta, 12/11, às 23h59.' : faqOriginal;
+    if(faqPrazo) faqPrazo.textContent = (e === 'reaberto') ? 'Só até hoje, sexta, 13/11, às 23h59.' : faqOriginal;
   }
 
   function atualiza(){
