@@ -39,7 +39,8 @@
 
 /* bônus nas listas do que vem no Kit (resumo e oferta) */
 .recibo .linha.bonus .vl,.anc li.bonus .bn-mini,.inc li.bonus .bn-mini{flex:none;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:rgba(42,233,121,.14);border:1px solid rgba(42,233,121,.45);color:#7ee08f;white-space:nowrap}
-.inc li.bonus{align-items:center}
+.recibo .linha.bonus .vl{background:rgba(22,163,74,.1);border-color:rgba(22,163,74,.45);color:#15803d}
+.inc li.bonus{align-items:center;grid-column:1/-1}
 .inc li.bonus .bn-mini{margin-left:auto}
 
 @media (max-width:760px){
