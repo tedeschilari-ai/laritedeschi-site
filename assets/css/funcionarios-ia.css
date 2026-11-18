@@ -578,3 +578,51 @@ h1,h2,h3,.head p,.depois,.fecho p,.imagina-s p,.offer .sonho,.org .leg,.hero .su
 .obox .left{display:grid;align-content:center}
 @media (max-width:760px){.imagina-s .feitas{grid-template-columns:1fr}}
 .bonus ol li,.inc li,.faq summary,.j-lista span,.j-lista b,.pilha li span,.custo .mais{text-wrap:balance}
+
+/* v5b · computadorzinho com a aula e ícones em volta */
+.pc-aula{position:relative;max-width:540px;margin:0 auto 48px;padding:30px 36px 34px}
+.pc-tela{position:relative;padding:10px;border-radius:18px 18px 6px 6px;background:var(--preto)}
+.pc-video{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:16/10;background:var(--painel)}
+.pc-video img{width:100%;height:100%;object-fit:cover}
+.pc-play{position:absolute;left:50%;top:44%;translate:-50% -50%;display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:#fff;color:var(--preto)}
+.pc-play svg{width:24px;height:24px;margin-left:3px}
+.pc-dur{position:absolute;left:10px;bottom:20px;padding:5px 11px;border-radius:999px;background:var(--preto);color:#fff;font-size:12.5px;font-weight:600;white-space:nowrap}
+.pc-prog{position:absolute;left:10px;right:10px;bottom:9px;height:5px;border-radius:99px;background:rgba(255,255,255,.35);overflow:hidden}
+.pc-prog i{display:block;height:100%;border-radius:inherit;background:var(--accent);transform-origin:0 50%;transform:scaleX(.62)}
+.pc-base{height:14px;margin:0 -7%;border-radius:2px 2px 12px 12px;background:var(--cartao)}
+.pc-base::after{content:"";display:block;width:22%;height:6px;margin:0 auto;border-radius:0 0 8px 8px;background:var(--preto)}
+.flut{position:absolute;z-index:2;width:48px;height:48px}
+.flut i{display:grid;place-items:center;width:100%;height:100%;border-radius:14px;background:var(--accent);color:#fff}
+.flut.lilas i{background:var(--lilas);color:var(--preto)}
+.flut.lima i{background:var(--lima);color:var(--preto)}
+.flut.preto i{background:var(--preto);color:var(--accent)}
+.flut svg{width:22px;height:22px}
+.flut.f1{left:2px;top:4px;rotate:-8deg}
+.flut.f2{right:0;top:30%;rotate:9deg}
+.flut.f3{left:0;top:56%}
+.flut.f4{right:8%;bottom:4px;rotate:-6deg}
+.flut.f5{right:18%;top:0}
+@keyframes flutua{0%,100%{translate:0 0}50%{translate:0 -7px}}
+@keyframes assiste{from{transform:scaleX(.04)}to{transform:scaleX(1)}}
+.pc-aula.on .flut{animation:flutua 4.2s ease-in-out infinite}
+.pc-aula.on .flut.f2{animation-delay:-1.1s}.pc-aula.on .flut.f3{animation-delay:-2.2s}.pc-aula.on .flut.f4{animation-delay:-3s}.pc-aula.on .flut.f5{animation-delay:-.6s}
+.pc-aula.on .pc-prog i{animation:assiste 7s linear infinite}
+.fim .pc-aula .flut,.fim .pc-aula .pc-prog i{animation:none!important}
+@media (prefers-reduced-motion:reduce){.pc-aula .flut,.pc-aula .pc-prog i{animation:none!important}}
+@media (max-width:640px){
+  .pc-aula{padding:24px 26px 28px;margin-bottom:40px}
+  .pc-tela{padding:7px;border-radius:14px 14px 5px 5px}
+  .flut{width:40px;height:40px}.flut i{border-radius:12px}.flut svg{width:19px;height:19px}
+  .pc-play{width:46px;height:46px}.pc-play svg{width:20px;height:20px}
+  .pc-dur{font-size:11.5px;padding:4px 9px;bottom:17px;left:8px}
+  .pc-prog{left:8px;right:8px;bottom:7px;height:4px}
+}
+/* tela da aula plana, sem a capa por baixo (a capa tem texto próprio e brigava com o play) */
+.pc-video{background:var(--accent)}
+.pc-chip{position:absolute;left:12px;top:12px;padding:4px 11px;border-radius:7px;background:var(--preto);color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.pc-tit{position:absolute;right:14px;top:14px;text-align:right;color:var(--preto);font-weight:600;font-size:15px;letter-spacing:-.02em;line-height:1.15}
+.pc-play{top:52%;background:var(--preto);color:#fff}
+.pc-dur{background:#fff;color:var(--preto)}
+.pc-prog{background:rgba(20,20,19,.22)}
+.pc-prog i{background:var(--preto)}
+@media (max-width:640px){.pc-chip{left:9px;top:9px;font-size:10.5px;padding:3px 8px}.pc-tit{right:10px;top:10px;font-size:12px}}
