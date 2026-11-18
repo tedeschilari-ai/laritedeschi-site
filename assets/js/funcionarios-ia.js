@@ -44,4 +44,14 @@
     })},{threshold:.35});
     io2.observe(bonus);
   }
+  /* ciclo da IA genérica: o destaque gira de ponto em ponto e volta ao começo */
+  var c=document.querySelector('.giro');
+  if(c){
+    var it=[].slice.call(c.querySelectorAll('li:not(.eixo)')),k=-1;
+    setInterval(function(){
+      if(vis.indexOf(c)<0||document.hidden)return;
+      it.forEach(function(x){x.classList.remove('at')});
+      k=(k+1)%it.length;it[k].classList.add('at');
+    },1200);
+  }
 })();
