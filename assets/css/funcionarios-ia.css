@@ -342,3 +342,150 @@
   .final .btn{width:100%}
   .imagina li{font-size:15px;padding:9px 15px}
 }
+
+/* ================= v4 ================= */
+/* botões e preço em verde (o verde dos botões das outras páginas, em versão plana) */
+:root.tema-claro{--verde:#3fbf18;--verde-2:#7be05a;--verde-3:#289c02;--verm:#e3262d}
+.btn{background:var(--verde);color:var(--preto)}
+.btn:hover{background:var(--verde-2)}
+@keyframes pulso{0%{box-shadow:0 0 0 0 rgba(63,191,24,.6)}70%,100%{box-shadow:0 0 0 16px rgba(63,191,24,0)}}
+.price .val{color:var(--verde-3)}
+.anim.sai .a{opacity:0!important}
+@keyframes cresce-b{from{opacity:1;transform:scaleY(0)}to{opacity:1;transform:scaleY(1)}}
+.anim.on .a.cresce-b{animation-name:cresce-b;transform-origin:50% 100%}
+@keyframes esfria{0%,25%{opacity:1;transform:scaleX(1);background:var(--accent)}100%{opacity:1;transform:scaleX(.16);background:var(--cinza)}}
+.anim.on .a.esfria{animation:esfria 1.8s ease-in both;animation-delay:calc(var(--i,0)*.26s);transform-origin:0 50%}
+
+/* barra fixa vermelha */
+.oferta-topo{background:var(--verm);color:#fff;flex-direction:column;gap:1px;padding:9px 14px;font-size:16px}
+.oferta-topo s{opacity:.8}
+.oferta-topo small{font-size:13px;font-weight:500;opacity:.92}
+
+/* Dobra 2 · um exemplo, em 3 momentos */
+.cenas{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:46px;max-width:980px;margin:0 auto}
+.cenas li{position:relative;display:grid;gap:16px;align-content:start;padding:14px 14px 20px;border-radius:22px;background:var(--card);border:1px solid var(--line);box-shadow:var(--card-shadow)}
+.cenas li p{font-weight:600;font-size:18px;letter-spacing:-.02em;line-height:1.25;padding:0 6px}
+.cenas li:not(:last-child)::after{content:"";position:absolute;right:-37px;top:50%;width:28px;height:28px;margin-top:-14px;background:center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d97757' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12h16M13 5l7 7-7 7'/%3E%3C/svg%3E")}
+.quadro{height:150px;border-radius:14px;background:var(--preto);display:grid;place-items:center;padding:16px;overflow:hidden}
+.conv{display:grid;gap:8px;width:150px}
+.conv .bal{height:30px;border-radius:14px 14px 14px 4px;background:var(--cartao);width:70%}
+.conv .bal.dir{justify-self:end;border-radius:14px 14px 4px 14px;background:var(--accent);width:62%}
+.conv svg{width:26px;height:26px;color:var(--lima);justify-self:center}
+.parada{width:150px;display:grid;gap:9px}
+.parada .dias{display:flex;gap:5px}
+.frio{width:150px;display:grid;gap:12px;justify-items:start}
+.frio .termo{display:block;width:100%;height:16px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden}
+.frio .termo b{display:block;height:100%;border-radius:inherit;background:var(--cinza);transform:scaleX(.16);transform-origin:0 50%}
+.frio svg{width:26px;height:26px;color:var(--lilas)}
+
+/* bloco "Imagina": tela cheia na cor do produto */
+.imagina-s{background:var(--accent);color:var(--preto);text-align:center;padding:clamp(72px,10vw,130px) 0;overflow:hidden}
+.imagina-s .oito{font-size:clamp(190px,30vw,340px);font-weight:700;letter-spacing:-.06em;line-height:.78;margin-bottom:26px}
+.imagina-s h2{max-width:13em;margin:0 auto;font-size:clamp(34px,5.2vw,68px)}
+.imagina-s p{margin:18px auto 0;font-size:clamp(18px,2vw,22px);max-width:26em}
+.time8{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:34px auto 0;max-width:520px}
+.time8 .q{width:54px;height:54px;border-radius:15px;background:var(--preto);color:var(--accent)}
+.time8 .q:nth-child(3n+2){color:var(--lilas)}.time8 .q:nth-child(3n){color:var(--lima)}
+.time8 .q svg{width:26px;height:26px}
+.imagina-s ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:28px}
+.imagina-s li{padding:10px 18px;border-radius:999px;background:#fff;color:var(--preto);font-weight:600;font-size:16px}
+
+/* Dobra 3 · o mesmo pedido, dois resultados */
+.pedidos{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:900px;margin:0 auto}
+.pedidos .lado{display:grid;gap:14px;justify-items:center;text-align:center;padding:26px 22px 28px}
+.pedido{padding:10px 16px;border-radius:16px 16px 16px 4px;background:#fff;color:var(--preto);font-size:15px;font-weight:500;line-height:1.3}
+.pedidos .desce{width:22px;height:22px;color:var(--accent);rotate:90deg}
+.saida{width:100%;max-width:300px;padding:16px;border-radius:14px;background:var(--preto);display:grid;gap:9px;justify-items:start}
+.saida .barra{width:100%}
+.saida .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.saida .eti.gen{background:rgba(255,255,255,.14);color:#fff;margin-top:4px}
+
+/* Dobra nova · quanto mais usa, melhor */
+.evolui{max-width:560px;margin:0 auto;padding:26px 26px 20px;border-radius:24px;background:var(--painel);color:#fff}
+.evolui .leg{display:flex;justify-content:space-between;gap:12px;font-size:13px;font-weight:600;color:var(--cinza)}
+.evolui .leg b{color:var(--accent);font-weight:600}
+.evolui .cols{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:end;height:170px;margin-top:16px;border-bottom:2px solid rgba(255,255,255,.14)}
+.evolui .cols i{display:block;border-radius:10px 10px 0 0;background:var(--accent)}
+.evolui .corr{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:12px}
+.evolui .corr span{display:flex;justify-content:center;gap:4px;min-height:9px}
+.evolui .corr i{width:9px;height:9px;border-radius:50%;background:var(--cinza)}
+
+/* tour: uma descrição só, em peso normal */
+.fx p{font-weight:400;color:rgba(255,255,255,.66)}
+.fx .txt{gap:8px}
+
+/* Dobra 6 · versão curta (fácil de trocar) */
+.estudio{text-align:center}
+.passa.lado-a-lado{grid-template-columns:repeat(3,1fr);max-width:940px;margin:0 auto;gap:44px}
+.passa.lado-a-lado li{grid-template-columns:1fr;justify-items:center;text-align:center;gap:12px;padding:22px 18px}
+.passa.lado-a-lado li:not(:last-child)::after{left:auto;right:-35px;bottom:auto;top:50%;margin:-12px 0 0;transform:none}
+.estudio .creds{justify-content:center;margin-top:34px}
+.estudio .creds span{color:var(--txt);background:var(--card);font-size:14px;padding:8px 14px}
+
+/* é uma aula: três momentos */
+.momentos{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:44px;max-width:900px;margin:0 auto}
+.momentos li{position:relative;display:grid;justify-items:center;gap:14px;text-align:center;font-weight:600;font-size:18px;letter-spacing:-.02em;line-height:1.25}
+.momentos .ic{display:grid;place-items:center;width:72px;height:72px;border-radius:22px;background:var(--preto);color:var(--accent)}
+.momentos .ic svg{width:32px;height:32px}
+.momentos li:not(:last-child)::after{content:"";position:absolute;right:-36px;top:22px;width:28px;height:28px;background:center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d97757' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12h16M13 5l7 7-7 7'/%3E%3C/svg%3E")}
+.simples .frame{max-width:520px;margin:0 auto 44px;border-radius:22px;overflow:hidden}
+.simples .frame img{width:100%;height:auto}
+
+/* bônus: confetes */
+#bonus{overflow:hidden}
+.confete{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:5}
+.confete i{position:absolute;top:-20px;width:9px;height:14px;border-radius:2px;animation:cai var(--t,2.2s) cubic-bezier(.3,.6,.6,1) var(--d,0s) both}
+@keyframes cai{0%{transform:translateY(0) rotate(0);opacity:1}85%{opacity:1}100%{transform:translateY(var(--y,620px)) rotate(var(--r,540deg));opacity:0}}
+
+/* custo: as duas contas */
+.custo{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:920px;margin:0 auto}
+.custo>div{padding:28px;border-radius:24px;background:var(--card);border:1px solid var(--line);box-shadow:var(--card-shadow);display:grid;gap:16px;align-content:start}
+.custo .rot{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.custo .oito-x{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.custo .oito-x span{padding:9px 0;border-radius:10px;background:var(--bg-2);text-align:center;font-weight:600;font-size:14px}
+.custo .total{font-size:clamp(40px,5vw,56px);font-weight:700;letter-spacing:-.05em;line-height:1}
+.custo .total small{display:block;font-size:16px;font-weight:600;letter-spacing:-.01em;margin-top:8px;color:var(--muted)}
+.custo .ia{background:var(--preto);color:#fff;border-color:transparent}
+.custo .ia .rot{color:var(--accent)}
+.custo .ia .total{color:var(--verde-2)}
+.custo .ia .total small{color:rgba(255,255,255,.75)}
+.custo .ia .mais{padding-top:14px;border-top:1px solid rgba(255,255,255,.14);font-size:16px;color:rgba(255,255,255,.85)}
+.custo .ia .mais b{color:#fff}
+
+/* oferta */
+.offer .sonho{max-width:640px;margin:18px auto 0;font-size:18px;color:rgba(255,255,255,.82)}
+.obox .inc{grid-template-columns:1fr;gap:13px}
+.obox .inc li{font-size:17px}
+
+@media (max-width:960px){
+  .passa.lado-a-lado{grid-template-columns:1fr;gap:34px;max-width:400px}
+  .passa.lado-a-lado li{grid-template-columns:36px 1fr;justify-items:start;text-align:left}
+  .passa.lado-a-lado li:not(:last-child)::after{right:auto;left:50%;top:auto;bottom:-30px;margin:0 0 0 -12px;transform:rotate(90deg)}
+}
+@media (max-width:760px){
+  .cenas{grid-template-columns:1fr;gap:34px;max-width:420px}
+  .cenas li{grid-template-columns:118px 1fr;align-items:center;gap:14px;padding:10px 14px 10px 10px}
+  .cenas li p{font-size:16.5px;padding:0}
+  .quadro{height:104px;padding:10px}
+  .conv,.parada,.frio{width:96px}
+  .conv .bal{height:22px}
+  .cenas li:not(:last-child)::after{right:auto;left:50%;top:auto;bottom:-31px;margin:0 0 0 -13px;width:26px;height:26px;transform:rotate(90deg)}
+  .pedidos,.custo{grid-template-columns:1fr}
+  .momentos{grid-template-columns:1fr;gap:38px;max-width:320px}
+  .momentos li{grid-template-columns:60px 1fr;justify-items:start;text-align:left;align-items:center;font-size:17px}
+  .momentos .ic{width:60px;height:60px;border-radius:18px}
+  .momentos li:not(:last-child)::after{right:auto;left:17px;top:auto;bottom:-33px;width:26px;height:26px;transform:rotate(90deg)}
+}
+@media (max-width:640px){
+  .oferta-topo{font-size:14.5px;padding:8px 10px}
+  .oferta-topo small{font-size:12px}
+  .imagina-s .oito{font-size:190px}
+  .time8{max-width:270px}
+  .custo>div{padding:22px 20px}
+  .evolui{padding:20px 18px 16px}
+  .evolui .cols{height:140px}
+  .fx p{font-size:15px}
+}
+.custo .total small{line-height:1.3}
+.parada .eti{padding:4px 8px;font-size:11.5px}
+@media (max-width:760px){.parada .dias{gap:3px}.parada .eti{padding:3px 6px;font-size:10px}}

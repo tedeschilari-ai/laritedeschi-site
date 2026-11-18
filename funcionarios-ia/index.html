@@ -7,7 +7,7 @@
 <meta name="description" content="8 funcionários de IA prontos para instalar no Claude, com uma aula que mostra como ensinar o seu estúdio de design para eles.">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#22211f">
-<!-- PRÉVIA v3 · Funcionários de IA com o Claude · página de vendas (endereço ainda a confirmar com a Lari)
+<!-- PRÉVIA v4 · Funcionários de IA com o Claude · página de vendas (endereço ainda a confirmar com a Lari)
      Página para tráfego: base de layout do escola.css, pele preto e laranja do produto, seções escuras e animações. -->
 
 <!-- Meta Pixel -->
@@ -28,12 +28,9 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
   <symbol id="ast" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" d="M12 2.5v19M3.8 7.2l16.4 9.6M20.2 7.2L3.8 16.8"/></symbol>
 </svg>
 
-<div class="pv-topo">PRÉVIA v3, nada publicado. Os avisos em amarelo com ⚠️ são pontos a confirmar e somem na versão final.</div>
-
 <a class="oferta-topo" href="#preco">
-  <span>Oferta de lançamento: <s>de R$ 197</s> por R$ 97</span>
-  <span class="ir">Quero a minha equipe →</span>
-  <span class="pv">⚠️ texto reservado: oferta, preços e botão da faixa a confirmar</span>
+  <b>Oferta de lançamento: <s>de R$ 197</s> por R$ 97</b>
+  <small>Acesso vitalício · Pagamento único</small>
 </a>
 
 <!-- ================= Dobra 1 · Headline ================= -->
@@ -48,7 +45,7 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
     <p class="micro rv">Acesso vitalício · Garantia de 7 dias</p>
 
     <div class="stage-hero">
-      <div class="janela anim" aria-label="Os 8 funcionários de IA">
+      <div class="janela anim" data-nome="janela do topo" aria-label="Os 8 funcionários de IA">
         <div class="j-barra"><i></i><i></i><i></i>Meu time de IA</div>
         <ul class="j-lista">
           <li class="a" style="--i:0"><span class="q"><svg><use href="#est"/></svg></span><div><b>Diretora de Operações</b><span>distribui o trabalho</span></div><span class="ativo a">ativo</span></li>
@@ -65,30 +62,29 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
   </div>
 </header>
 
-<!-- ================= Dobra 2 · Ativação: o ciclo ================= -->
+<!-- ================= Dobra 2 · Ativação: um exemplo ================= -->
 <section id="hoje">
   <div class="wrap">
     <div class="head rv">
       <span class="eyebrow">O seu dia hoje</span>
       <h2>É provável que hoje você seja designer, comercial, social media, editora de vídeo e atendimento, <span class="grad">tudo ao mesmo tempo</span></h2>
     </div>
-    <ol class="ciclo anim rv" aria-label="O ciclo do seu dia">
-      <li>Você sai animada da reunião</li>
-      <li>A proposta fica pra depois</li>
-      <li>O cliente esfria</li>
-      <li>O post fica pra quando sobrar um tempinho</li>
-      <li>Fecha o computador com a lista de tarefas esperando</li>
-      <li>Pede ajuda pra IA e vem uma coisa genérica</li>
-      <li>Acaba fazendo tudo você mesma</li>
-      <li class="volta" aria-label="E o ciclo recomeça"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.6-5.9"/><path d="M20 4v5h-5"/></svg></li>
+    <ol class="cenas anim rv" data-loop="7500" data-nome="exemplo da proposta">
+      <li class="a" style="--i:0"><div class="quadro"><div class="conv"><span class="bal a pop" style="--i:1"></span><span class="bal dir a pop" style="--i:2"></span><svg class="a pop" style="--i:3"><use href="#est"/></svg></div></div><p>Você sai animada da reunião com um cliente novo</p></li>
+      <li class="a" style="--i:5"><div class="quadro"><div class="parada"><span class="barra a cresce" style="--i:6;width:70%"></span><span class="barra a cresce" style="--i:7"></span><div class="dias"><span class="eti a pop" style="--i:8">seg</span><span class="eti a pop" style="--i:10">qua</span><span class="eti a pop" style="--i:12">sex</span></div></div></div><p>A proposta fica pra depois, porque tem projeto pra entregar</p></li>
+      <li class="a" style="--i:14"><div class="quadro"><div class="frio"><span class="termo"><b class="a esfria" style="--i:15"></b></span><svg class="a pop" style="--i:21" viewBox="0 0 24 24"><use href="#ast"/></svg></div></div><p>Quando você manda, o cliente já esfriou</p></li>
     </ol>
-    <p class="depois rv">Aí fica aquela sensação de que todo mundo já usa IA pra trabalhar e <b>você está ficando pra trás.</b></p>
+  </div>
+</section>
 
-    <div class="imagina anim rv">
-      <h3>Imagina ter um estúdio que funciona como uma equipe</h3>
-      <p>Você cria e decide, e o resto já chega pronto pra revisar:</p>
-      <ul><li class="a pop" style="--i:1">a proposta</li><li class="a pop" style="--i:2">a legenda</li><li class="a pop" style="--i:3">o roteiro</li><li class="a pop" style="--i:4">a mensagem de follow-up</li></ul>
-    </div>
+<!-- bloco "Imagina" -->
+<section class="imagina-s anim" data-nome="imagina (8 funcionários)">
+  <div class="wrap">
+    <div class="oito a pop" style="--i:0" aria-hidden="true">8</div>
+    <h2 class="rv">Imagina ter 8 funcionários de IA pra fazer isso pra você</h2>
+    <p class="rv">Você cria e decide, e o resto já chega pronto pra revisar.</p>
+    <div class="time8" aria-hidden="true"><span class="q a pop" style="--i:1.5"><svg><use href="#est"/></svg></span><span class="q a pop" style="--i:2.2"><svg><use href="#est"/></svg></span><span class="q a pop" style="--i:2.9"><svg><use href="#est"/></svg></span><span class="q a pop" style="--i:3.6"><svg><use href="#est"/></svg></span><span class="q a pop" style="--i:4.3"><svg><use href="#est"/></svg></span><span class="q a pop" style="--i:5.0"><svg><use href="#est"/></svg></span><span class="q a pop" style="--i:5.7"><svg><use href="#est"/></svg></span><span class="q a pop" style="--i:6.4"><svg><use href="#est"/></svg></span></div>
+    <ul><li class="a pop" style="--i:8">a proposta</li><li class="a pop" style="--i:9">a legenda</li><li class="a pop" style="--i:10">o roteiro</li><li class="a pop" style="--i:11">a mensagem de follow-up</li></ul>
   </div>
 </section>
 
@@ -98,33 +94,21 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
     <div class="head rv">
       <span class="eyebrow">Por que isso acontece</span>
       <h2>Se a IA só te entregou texto genérico até agora, foi porque <span class="grad">ela não conhecia o seu estúdio</span></h2>
-      <p>Pensa comigo: se você contratasse alguém hoje e pedisse uma proposta sem explicar nada do estúdio, também ia vir algo genérico.</p>
+      <p>Num chat comum, toda conversa começa do zero: a IA não sabe quanto você cobra nem como você fala com os seus clientes. Um funcionário de IA já conhece o seu estúdio e guarda as suas correções.</p>
     </div>
-    <div class="duelo">
-      <div class="lado anim rv" data-loop="5200">
-        <span class="rot">Pedido solto no chat</span>
-        <div class="mini"><div>Conversa 1<i><b class="a zera" style="--i:0"></b></i><small>do zero</small></div><div>Conversa 2<i><b class="a zera" style="--i:1"></b></i><small>do zero</small></div><div>Conversa 3<i><b class="a zera" style="--i:2"></b></i><small>do zero</small></div></div>
-        <ul class="marcas">
-          <li>Começa do zero em toda conversa</li>
-          <li>Você explica tudo de novo a cada pedido</li>
-          <li>O texto sai genérico e você refaz</li>
-          <li>Você corrige hoje e amanhã o erro volta</li>
-        </ul>
+    <div class="pedidos anim rv" data-loop="8000" data-nome="o mesmo pedido, dois resultados">
+      <div class="lado">
+        <span class="rot">Num chat comum</span>
+        <span class="pedido a" style="--i:0">“faz uma proposta pra esse cliente”</span>
+        <svg class="desce a" style="--i:2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg>
+        <div class="saida a" style="--i:3"><span class="barra a cresce" style="--i:4"></span><span class="barra a cresce" style="--i:5;width:86%"></span><span class="barra a cresce" style="--i:6;width:64%"></span><span class="eti gen a pop" style="--i:8">genérico</span></div>
       </div>
-      <div class="lado bom anim rv">
-        <span class="rot">Funcionário de IA treinado</span>
-        <div class="mini"><div>Conversa 1<i><b class="a cresce" style="--i:0"></b></i><small>já sabe</small></div><div>Conversa 2<i><b class="a cresce" style="--i:2"></b></i><small>já sabe</small></div><div>Conversa 3<i><b class="a cresce" style="--i:4"></b></i><small>já sabe</small></div></div>
-        <ul class="marcas">
-          <li>Já sabe os seus serviços, preços e o seu jeito de falar</li>
-          <li>Você pede como pediria pra alguém da equipe</li>
-          <li>O rascunho já sai no formato do seu estúdio</li>
-          <li>A correção fica anotada no caderno dele</li>
-        </ul>
+      <div class="lado bom">
+        <span class="rot">Com um funcionário de IA</span>
+        <span class="pedido a" style="--i:0">“faz uma proposta pra esse cliente”</span>
+        <svg class="desce a" style="--i:2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg>
+        <div class="saida a" style="--i:3"><span class="barra lj a cresce" style="--i:4"></span><span class="barra lj a cresce" style="--i:5;width:86%"></span><span class="barra lj a cresce" style="--i:6;width:64%"></span><div class="tags"><span class="eti lj a pop" style="--i:8">seus serviços</span><span class="eti lj a pop" style="--i:9.5">seus preços</span><span class="eti lj a pop" style="--i:11">seu jeito de falar</span></div></div>
       </div>
-    </div>
-    <div class="fecho rv">
-      <p>Dá a impressão de que a IA não funciona, ou de que é coisa pra quem entende de tecnologia.</p>
-      <p class="gde">Mas o que faltou foi só <span class="grad">apresentar o estúdio pra ela.</span></p>
     </div>
   </div>
 </section>
@@ -133,19 +117,36 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 <section id="caminho">
   <div class="wrap">
     <div class="head rv">
-      <span class="eyebrow">O caminho</span>
-      <h2>Pra IA trabalhar do jeito do seu estúdio, o caminho tem <span class="grad">três passos</span></h2>
+      <span class="eyebrow">É simples assim</span>
+      <h2>Os seus funcionários de IA começam a trabalhar <span class="grad">em 3 passos</span></h2>
     </div>
     <div class="steps4 tres">
-      <div class="step rv"><span class="n">01</span><div class="big num">1</div><h3>Instalar</h3>
+      <div class="step rv"><span class="n">01</span><div class="big num">1</div><h3>Você instala</h3>
         <p>A equipe já vem pronta. Você baixa uma pasta, abre no app do Claude e eles estão lá.</p>
         <p class="v">Sem código pra escrever e sem montar nada do zero.</p></div>
-      <div class="step rv"><span class="n">02</span><div class="big num">2</div><h3>Ensinar</h3>
+      <div class="step rv"><span class="n">02</span><div class="big num">2</div><h3>Você ensina</h3>
         <p>O Claude te entrevista sobre os seus serviços, preços, clientes, tom de voz e processo.</p>
         <p class="v">Já tem isso anotado? É só mandar o material e ele pergunta só o que faltar.</p></div>
-      <div class="step rv"><span class="n">03</span><div class="big num">3</div><h3>Treinar</h3>
+      <div class="step rv"><span class="n">03</span><div class="big num">3</div><h3>Você treina</h3>
         <p>Cada correção sua fica guardada no caderno do funcionário.</p>
         <p class="v">Com o tempo você corrige cada vez menos e a entrega fica com a sua cara.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Dobra nova · quanto mais usa, melhor ================= -->
+<section class="faixa" id="melhora">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">E o mais legal</span>
+      <h2>Quanto mais você usa, <span class="grad">melhor eles ficam</span></h2>
+      <p>A cada pedido e a cada correção, eles aprendem o jeito que você gosta, muito mais rápido do que a gente aprenderia.</p>
+    </div>
+    <div class="evolui anim rv" data-loop="7000" data-nome="quanto mais usa, melhor" aria-hidden="true">
+      <div class="leg"><b>■ com a sua cara</b><span>● correções</span></div>
+      <div class="cols"><i class="a cresce-b" style="--i:0;height:30%"></i><i class="a cresce-b" style="--i:2;height:52%"></i><i class="a cresce-b" style="--i:4;height:76%"></i><i class="a cresce-b" style="--i:6;height:100%"></i></div>
+      <div class="corr"><span class="a" style="--i:1"><i></i><i></i><i></i><i></i></span><span class="a" style="--i:3"><i></i><i></i><i></i></span><span class="a" style="--i:5"><i></i><i></i></span><span class="a" style="--i:7"><i></i></span></div>
+      <div class="leg" style="margin-top:12px"><span>a cada pedido →</span></div>
     </div>
   </div>
 </section>
@@ -158,133 +159,97 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
       <h2>Agora deixa eu te apresentar <span class="grad">quem vai trabalhar com você</span></h2>
     </div>
 
-    <div class="org anim rv" aria-label="Você fala com a Diretora de Operações, e ela distribui o trabalho para os outros sete">
+    <div class="org anim rv" data-nome="organograma" aria-label="Você fala com a Diretora de Operações, e ela distribui o trabalho para os outros sete">
       <span class="no a pop" style="--i:0">Você</span>
       <span class="fio a cresce-y" style="--i:1"></span>
       <span class="no dir a pop" style="--i:2">Diretora de Operações</span>
       <span class="fio a cresce-y" style="--i:3"></span>
       <div class="creds"><span class="a pop" style="--i:4.0">Comercial</span><span class="a pop" style="--i:4.6">Gerente de Projetos</span><span class="a pop" style="--i:5.2">Estrategista de Marca</span><span class="a pop" style="--i:5.8">Estrategista de Conteúdo</span><span class="a pop" style="--i:6.4">Copywriter</span><span class="a pop" style="--i:7.0">Editor de Vídeo</span><span class="a pop" style="--i:7.6">Designer</span></div>
-      <p class="leg">Você conversa com a Diretora e ela distribui o trabalho pros outros sete. Não precisa decorar quem faz o quê.</p>
+      <p class="leg">Você conversa com a Diretora e ela distribui o trabalho pros outros sete.</p>
     </div>
 
     <div class="tour">
-      <article class="fx anim rv" data-loop="7000">
+      <article class="fx anim rv" data-loop="7000" data-nome="tour · Diretora de Operações">
         <div class="palco" aria-hidden="true"><div class="rota"><div class="balao a" style="--i:0"><span class="barra" style="width:90%"></span><span class="barra" style="width:60%"></span></div><svg class="seta a" style="--i:2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg><span class="q a pop" style="--i:3"><svg><use href="#est"/></svg></span><svg class="seta a" style="--i:5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg><div class="col"><span class="eti a" style="--i:6">Copywriter</span><span class="eti lj a acende" style="--i:8">Comercial</span><span class="eti a" style="--i:6">Designer</span></div></div></div>
-        <div class="txt"><span class="n">01</span><h3>Diretora de Operações</h3><p>É com ela que você conversa. Você pede do jeito que falaria com alguém da equipe, e ela chama o funcionário certo.</p><p class="v"><svg><use href="#est"/></svg><span>Você não precisa aprender a escrever prompt.</span></p></div>
+        <div class="txt"><span class="n">01</span><h3>Diretora de Operações</h3><p>É com ela que você conversa, do jeito que falaria com alguém da equipe. Ela chama o funcionário certo.</p></div>
       </article>
-      <article class="fx anim rv" data-loop="7000">
+      <article class="fx anim rv" data-loop="7000" data-nome="tour · Comercial">
         <div class="palco" aria-hidden="true"><div class="folha"><span class="cab a" style="--i:0">Proposta</span><div class="lin"><span class="barra a cresce" style="--i:1"></span><span class="barra lj a cresce" style="--i:2"></span></div><div class="lin"><span class="barra a cresce" style="--i:3;width:80%"></span><span class="barra lj a cresce" style="--i:4"></span></div><div class="lin"><span class="barra a cresce" style="--i:5;width:90%"></span><span class="vazio a pop" style="--i:7">[preencher]</span></div></div></div>
-        <div class="txt"><span class="n">02</span><h3>Comercial</h3><p>Transforma as suas anotações da reunião numa proposta com os seus serviços e os seus preços. Também rascunha o follow-up.</p><p class="v"><svg><use href="#est"/></svg><span>A proposta sai enquanto o cliente ainda está animado, sem inventar valor.</span></p></div>
+        <div class="txt"><span class="n">02</span><h3>Comercial</h3><p>Transforma as anotações da reunião numa proposta, com os seus serviços e preços, enquanto o cliente ainda está animado.</p></div>
       </article>
-      <article class="fx anim rv" data-loop="7000">
+      <article class="fx anim rv" data-loop="7000" data-nome="tour · Gerente de Projetos">
         <div class="palco" aria-hidden="true"><div class="gantt"><div>Etapa 1<span class="barra lj a cresce" style="--i:0;width:38%"></span></div><div>Etapa 2<span class="barra lil a cresce" style="--i:2;width:44%;margin-left:26%"></span></div><div>Etapa 3<span class="barra lim a cresce" style="--i:4;width:36%;margin-left:48%"></span></div><div>Entrega<span class="barra lj a cresce" style="--i:6;width:22%;margin-left:78%"></span></div></div></div>
-        <div class="txt"><span class="n">03</span><h3>Gerente de Projetos</h3><p>Monta o cronograma, escreve as mensagens de cada etapa e preenche o seu modelo de contrato.</p><p class="v"><svg><use href="#est"/></svg><span>Você para de carregar prazo e pendência na cabeça.</span></p></div>
+        <div class="txt"><span class="n">03</span><h3>Gerente de Projetos</h3><p>Monta o cronograma, escreve as mensagens de cada etapa e preenche o seu modelo de contrato.</p></div>
       </article>
-      <article class="fx anim rv" data-loop="7000">
+      <article class="fx anim rv" data-loop="7000" data-nome="tour · Estrategista de Marca">
         <div class="palco" aria-hidden="true"><div class="par"><div class="pergs"><div class="a" style="--i:0">?<span class="barra"></span></div><div class="a" style="--i:1">?<span class="barra" style="width:75%"></span></div><div class="a" style="--i:2">?<span class="barra" style="width:88%"></span></div></div><div class="tabela"><i class="a pop c" style="--i:3"></i><i class="a pop c" style="--i:4"></i><i class="a pop c" style="--i:5"></i><i class="a pop" style="--i:6"></i><i class="a pop" style="--i:7"></i><i class="a pop" style="--i:8"></i><i class="a pop" style="--i:9"></i><i class="a pop" style="--i:10"></i><i class="a pop" style="--i:11"></i></div></div></div>
-        <div class="txt"><span class="n">04</span><h3>Estrategista de Marca</h3><p>Prepara o roteiro de perguntas da reunião, organiza a pesquisa de concorrentes e rascunha a estratégia.</p><p class="v"><svg><use href="#est"/></svg><span>Você chega na parte de pensar com o material já organizado.</span></p></div>
+        <div class="txt"><span class="n">04</span><h3>Estrategista de Marca</h3><p>Prepara o roteiro da reunião, organiza a pesquisa de concorrentes e rascunha a estratégia.</p></div>
       </article>
-      <article class="fx anim rv" data-loop="7000">
+      <article class="fx anim rv" data-loop="7000" data-nome="tour · Estrategista de Conteúdo">
         <div class="palco" aria-hidden="true"><div class="semana"><div>seg<i class="a pop lj" style="--i:0"></i></div><div>ter<i class="a pop " style="--i:1"></i></div><div>qua<i class="a pop lil" style="--i:2"></i></div><div>qui<i class="a pop " style="--i:4"></i></div><div>sex<i class="a pop lim" style="--i:5"></i></div></div></div>
-        <div class="txt"><span class="n">05</span><h3>Estrategista de Conteúdo</h3><p>Traz ideias de posts e monta o calendário, na frequência que cabe na sua rotina.</p><p class="v"><svg><use href="#est"/></svg><span>Acaba aquela história de abrir o Instagram sem saber o que postar.</span></p></div>
+        <div class="txt"><span class="n">05</span><h3>Estrategista de Conteúdo</h3><p>Traz ideias de posts e monta o calendário. Acaba aquela história de abrir o Instagram sem saber o que postar.</p></div>
       </article>
-      <article class="fx anim rv" data-loop="7000">
+      <article class="fx anim rv" data-loop="7000" data-nome="tour · Copywriter">
         <div class="palco" aria-hidden="true"><div class="legenda"><div class="topo a" style="--i:0"><i></i><span class="barra" style="width:70px"></span></div><span class="barra a cresce" style="--i:1"></span><span class="barra a cresce" style="--i:3;width:92%"></span><span class="barra a cresce" style="--i:5;width:84%"></span><div style="display:flex;align-items:center;gap:5px"><span class="barra a cresce" style="--i:7;width:46%"></span><span class="cursor"></span></div></div></div>
-        <div class="txt"><span class="n">06</span><h3>Copywriter</h3><p>Escreve legendas, roteiros e textos na voz do seu estúdio, e na dos seus clientes.</p><p class="v"><svg><use href="#est"/></svg><span>Quanto mais textos seus você mostra, mais parecido com você ele escreve.</span></p></div>
+        <div class="txt"><span class="n">06</span><h3>Copywriter</h3><p>Escreve legendas, roteiros e textos na voz do seu estúdio. Quanto mais textos seus você mostra, mais parecido fica.</p></div>
       </article>
-      <article class="fx anim rv" data-loop="7000">
+      <article class="fx anim rv" data-loop="7000" data-nome="tour · Editor de Vídeo">
         <div class="palco" aria-hidden="true"><div class="video"><div class="faixa-v"><i></i><i class="pausa a some" style="--i:3;--w:14%"></i><i style="flex-grow:1.6"></i><i class="pausa a some" style="--i:5;--w:18%"></i><i></i></div><span class="eti lj a pop" style="--i:8">legenda</span></div></div>
-        <div class="txt"><span class="n">07</span><h3>Editor de Vídeo</h3><p>Transcreve, corta as pausas, coloca a legenda com a sua fonte e exporta.</p><p class="v"><svg><use href="#est"/></svg><span>Com treino, ele aprende o seu ritmo de corte e o seu estilo de legenda.</span></p></div>
+        <div class="txt"><span class="n">07</span><h3>Editor de Vídeo</h3><p>Transcreve, corta as pausas, coloca a legenda com a sua fonte e exporta.</p></div>
       </article>
-      <article class="fx anim rv" data-loop="7000">
+      <article class="fx anim rv" data-loop="7000" data-nome="tour · Designer">
         <div class="palco" aria-hidden="true"><div class="arte"><span class="logo a pop" style="--i:0"></span><span class="barra a cresce" style="--i:2;width:80%"></span><span class="img a" style="--i:4"></span><span class="pe a" style="--i:6"><i></i><i></i></span></div></div>
-        <div class="txt"><span class="n">08</span><h3>Designer</h3><p>Monta o primeiro layout de posts e peças com o seu logo, as suas fontes e o que você já fez.</p><p class="v"><svg><use href="#est"/></svg><span>Você continua sendo a designer: o olhar final é seu.</span></p></div>
+        <div class="txt"><span class="n">08</span><h3>Designer</h3><p>Monta o primeiro layout com o seu logo e as suas fontes. O olhar final continua sendo seu.</p></div>
       </article>
     </div>
 
     <div class="fecho rv">
-      <span class="eyebrow">Em todos os casos vale o mesmo combinado</span>
       <p class="gde">Eles preparam e <span class="grad">você aprova.</span></p>
       <p>Nada é enviado pra cliente e nada é publicado sem o seu ok.</p>
     </div>
   </div>
 </section>
 
-<!-- ================= Dobra 6 · Prova pessoal ================= -->
-<section class="about" id="lari">
-  <div class="wrap grid">
-    <div class="rv">
+<!-- ================= Dobra 6 · Prova pessoal =================
+     VERSÃO CURTA, FÁCIL DE TROCAR: o ângulo desta dobra ainda está em definição com a Lari.
+     Para trocar, mexa só no título abaixo; o fluxo e as 4 etiquetas servem para qualquer ângulo. -->
+<section class="estudio" id="lari">
+  <div class="wrap">
+    <div class="head rv">
       <span class="eyebrow">Como é no meu estúdio</span>
-      <h2>Essa é a equipe que trabalha comigo no meu estúdio, e <span class="grad">eu não sei programar</span></h2>
-      <p class="first">Eu sou designer de marcas há uns 6 anos e nunca escrevi uma linha de código.</p>
-      <p>O que mudou é que <b>eu parei de começar cada tarefa do zero.</b></p>
-      <div class="creds"><span>Conteúdo com a Estrategista</span><span>Textos com a Copywriter</span><span>Posts com a Designer</span><span>Financeiro com um funcionário</span></div>
-      <span class="pv">⚠️ Lari confirma se cada exemplo desta dobra é real do jeito que está escrito.</span>
-      <p>Foi organizando a minha equipe que eu percebi que <b>qualquer designer consegue ter a sua.</b></p>
+      <h2>Essa é a equipe que trabalha comigo <span class="grad">todo dia no meu estúdio</span></h2>
     </div>
-    <div class="photo rv">
-      <ol class="passa anim">
-        <li class="a" style="--i:0"><b>1</b>Eu saio de uma reunião com cliente</li>
-        <li class="a" style="--i:2"><b>2</b>A Comercial já prepara a proposta</li>
-        <li class="a" style="--i:4"><b>3</b>Eu reviso, decido e aprovo</li>
-      </ol>
-    </div>
+    <ol class="passa lado-a-lado anim rv" data-nome="fluxo do estúdio da Lari">
+      <li class="a" style="--i:0"><b>1</b>Eu saio da reunião</li>
+      <li class="a" style="--i:2"><b>2</b>A Comercial prepara a proposta</li>
+      <li class="a" style="--i:4"><b>3</b>Eu reviso e envio</li>
+    </ol>
+    <div class="creds rv"><span>Conteúdo com a Estrategista</span><span>Textos com a Copywriter</span><span>Posts com a Designer</span><span>Financeiro com um funcionário</span></div>
   </div>
 </section>
+<!-- fim da Dobra 6 -->
 
-<!-- ================= Dobra 7 · Prova social =================
-     NÃO MONTADA: ainda não há depoimentos deste produto.
-     Título previsto: "Quem já instalou a equipe está usando assim"
-     Espaços previstos: 1. primeira tarefa delegada  2. tempo economizado  3. usava IA antes e não funcionava
-       4. achei que não ia conseguir instalar  5. usa Windows
-     Com só 2 ou 3 depoimentos, espalhar: instalação perto da Dobra 4, primeira tarefa
-     dentro do tour (Dobra 5) e o de preço ao lado do preço (Dobra 12).
--->
+<!-- Dobra 7 (prova social): fora, ainda não há depoimentos. Dobra 8 (combinado): removida a pedido da Lari. -->
 
-<!-- ================= Dobra 8 · Combinado honesto ================= -->
-<section class="faixa" id="combinado">
+<!-- ================= É uma aula (no lugar da lista de entregáveis) ================= -->
+<section class="faixa simples" id="recebe">
   <div class="wrap">
     <div class="head rv">
-      <span class="eyebrow">O combinado</span>
-      <h2>Antes de você decidir, eu quero ser <span class="grad">bem sincera</span> sobre como essa equipe funciona</h2>
+      <span class="eyebrow">Simples assim</span>
+      <h2>É uma aula. Em um dia você copia, cola e <span class="grad">já começa a usar.</span></h2>
     </div>
-    <div class="facts dois rv">
-      <div class="fact"><div class="ic n">1</div><div><div class="v">Você configura uma vez</div><div class="d">Responder a entrevista leva um tempinho, como o primeiro dia de qualquer pessoa nova. Depois eles já sabem.</div></div></div>
-      <div class="fact"><div class="ic n">2</div><div><div class="v">Eles ficam bons de verdade com treino</div><div class="d">As primeiras entregas são um bom ponto de partida. Com exemplos e correções, a equipe aprende o seu jeito.</div></div></div>
-      <div class="fact"><div class="ic n">3</div><div><div class="v">Nada sai 100% pronto, e esse nem é o objetivo</div><div class="d">A equipe tira o operacional do seu prato. O olhar, a estratégia e a decisão continuam sendo seus.</div></div></div>
-      <div class="fact"><div class="ic n">4</div><div><div class="v">Sem terminal, sem código e sem curso de IA</div><div class="d">Tudo acontece dentro do app do Claude, conversando em português.</div></div></div>
-    </div>
+    <div class="frame rv"><img src="../assets/img/funcionarios-ia/capa-aula.webp" alt="Capa da aula Funcionários de IA com o Claude" width="960" height="540" loading="lazy"></div>
+    <ol class="momentos anim rv" data-nome="é uma aula: 3 momentos">
+      <li class="a" style="--i:0"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M10 9l4 2-4 2z"/><path d="M8 21h8"/></svg></span>Assiste a aula de cerca de 54 minutos</li>
+      <li class="a" style="--i:2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></span>Copia e cola os 8 funcionários</li>
+      <li class="a" style="--i:4"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 10.5h7M8.5 13.5h4"/></svg></span>Faz o primeiro pedido</li>
+    </ol>
   </div>
 </section>
 
-<!-- ================= Dobra 9 · O que você recebe ================= -->
-<section id="recebe">
-  <div class="wrap">
-    <div class="head rv">
-      <span class="eyebrow">O que você recebe</span>
-      <h2>Tudo o que você recebe pra <span class="grad">instalar a sua equipe hoje</span></h2>
-    </div>
-    <div class="platform rv">
-      <span class="chip c1">▶ Aula de cerca de 54 minutos</span>
-      <span class="chip c2">✦ Acesso vitalício</span>
-      <div class="frame"><img src="../assets/img/funcionarios-ia/capa-aula.webp" alt="Capa da aula Funcionários de IA com o Claude" width="960" height="540" loading="lazy"></div>
-    </div>
-    <div class="facts rv">
-      <div class="fact"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M10 9l4 2-4 2z"/><path d="M8 21h8"/></svg></div><div><div class="k">Aula gravada na tela</div><div class="v">Dá pra assistir e instalar no mesmo dia</div><div class="d">Eu instalo a equipe, ensino o estúdio e faço o primeiro pedido junto com você.</div></div></div>
-      <div class="fact"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5V18a1.5 1.5 0 0 0 1.5 1.5h15A1.5 1.5 0 0 0 21 18V9a1.5 1.5 0 0 0-1.5-1.5H12L10 5H4.5A1.5 1.5 0 0 0 3 6.5z"/></svg></div><div><div class="k">8 funcionários de IA prontos</div><div class="v">Você baixa a pasta e eles já estão lá</div><div class="d">Com a função e o passo a passo de cada um escritos.</div></div></div>
-      <div class="fact"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-6 1.5L10 20z"/></svg></div><div><div class="k">Instalação passo a passo</div><div class="v">Pra acompanhar mesmo sem nunca ter usado o Claude</div><div class="d">Eu mostro cada clique, do download do app até a equipe aberta na sua tela.</div></div></div>
-      <div class="fact"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 10.5h7M8.5 13.5h4"/></svg></div><div><div class="k">Roteiro de onboarding do estúdio</div><div class="v">É o que faz o resultado parar de sair genérico</div><div class="d">Uma entrevista guiada em que a equipe aprende os seus serviços, preços, tom de voz e processo.</div></div></div>
-      <div class="fact"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h12.5v17H6zM3.5 8h3M3.5 12h3M3.5 16h3M10 9l2 2 3.5-3.5"/></svg></div><div><div class="k">Método de treino por feedback</div><div class="v">Você corrige de um jeito que ele não esquece</div><div class="d">E muda qualquer regra do estúdio só pedindo em português.</div></div></div>
-      <div class="fact"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6zM14.5 3v4.5H19M9 12h7M9 16h7"/></svg></div><div><div class="k">Apostila da aula</div><div class="v">O resumo de tudo pra consultar quando quiser</div><div class="d">Sem precisar voltar no vídeo.</div></div></div>
-    </div>
-    <div class="guar-line rv"><svg><use href="#est"/></svg><span><b>Acesso <span class="vit">vitalício</span></b>A aula e os arquivos ficam com você pra sempre.</span></div>
-  </div>
-</section>
-
-<!-- ================= Dobra 10 · Bônus (⚠️ Lari decide se entra) ================= -->
+<!-- ================= Bônus ================= -->
 <section class="esc" id="bonus">
   <div class="wrap">
-    <p class="pv bloco">⚠️ Lari decide se esta dobra inteira entra na página (bônus dos 3 funcionários extras).</p>
     <div class="bonus">
       <div class="rv">
         <span class="eyebrow" style="margin:0">Bônus</span>
@@ -295,7 +260,7 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
           <li>Eu libero mais 3 funcionários de presente</li>
         </ol>
       </div>
-      <div class="janela anim rv">
+      <div class="janela anim rv" data-nome="janela do bônus">
         <div class="j-barra"><i></i><i></i><i></i>Meu time de IA</div>
         <ul class="j-lista uma">
           <li class="a" style="--i:1"><span class="q"><svg><use href="#est"/></svg></span><div><b>Designer de Páginas de Vendas</b><span>Escreve e monta a sua página e te mostra a prévia no navegador.</span></div></li>
@@ -307,63 +272,47 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
   </div>
 </section>
 
-<!-- ================= Dobra 11 · Comparação de custo ================= -->
+<!-- ================= Comparação de custo ================= -->
 <section id="conta">
   <div class="wrap">
     <div class="head rv">
       <span class="eyebrow">A conta</span>
       <h2>Quanto custaria ter essa ajuda toda semana <span class="grad">contratando alguém pra cada função?</span></h2>
-      <p>Eu fiz a conta pensando em freelas de apoio, só pro operacional do dia a dia:</p>
+      <p>Considerando um valor baixo, de R$ 500 por mês para cada um:</p>
     </div>
-    <div class="path dois">
-      <div class="course rv">
-        <span class="lvl">Freela de apoio por mês</span>
-        <ul class="conta">
-          <li><span>Editor de Vídeo</span><b>R$ 500</b></li>
-          <li><span>Designer de apoio</span><b>R$ 500</b></li>
-          <li><span>Copywriter</span><span><b>R$ 500</b> <span class="pv">⚠️ confirmar</span></span></li>
-          <li><span>Estrategista de Conteúdo</span><span class="pv">⚠️ definir</span></li>
-          <li><span>Comercial</span><span class="pv">⚠️ definir</span></li>
-          <li><span>Gerente de Projetos</span><span class="pv">⚠️ definir</span></li>
-          <li><span>Estrategista de Marca</span><span class="pv">⚠️ definir</span></li>
-          <li><span>Diretora de Operações</span><span class="pv">⚠️ definir</span></li>
-          <li class="total"><span>Total com freelas</span><span class="pv">⚠️ somar depois de definir (cerca de R$ 4.000 se todos ficarem em R$ 500)</span></li>
-        </ul>
+    <div class="custo anim rv" data-nome="as duas contas">
+      <div>
+        <span class="rot">8 freelas de apoio · todo mês</span>
+        <div class="oito-x"><span class="a pop" style="--i:0.0">R$ 500</span><span class="a pop" style="--i:0.6">R$ 500</span><span class="a pop" style="--i:1.2">R$ 500</span><span class="a pop" style="--i:1.8">R$ 500</span><span class="a pop" style="--i:2.4">R$ 500</span><span class="a pop" style="--i:3.0">R$ 500</span><span class="a pop" style="--i:3.6">R$ 500</span><span class="a pop" style="--i:4.2">R$ 500</span></div>
+        <p class="total a" style="--i:6">R$ 4.000<small>por mês, todo mês</small></p>
       </div>
-      <div class="course here rv">
-        <span class="here-tag">Com a equipe de IA</span>
-        <ul class="conta">
-          <li><span>Os 8 funcionários e a aula</span><b>12x de R$ 9,70</b></li>
-          <li><span>Claude Pro</span><b>cerca de R$ 110 por mês</b></li>
-        </ul>
-        <span class="pv">⚠️ confirmar preço e parcela · conferir o valor do Claude Pro em reais</span>
-        <p><b style="color:var(--txt)">O Claude Pro não está incluído.</b> É a assinatura do próprio Claude, paga direto pra eles, e eu prefiro te contar isso agora do que você descobrir depois.</p>
+      <div class="ia">
+        <span class="rot">Com a equipe de IA</span>
+        <p class="total a" style="--i:8">R$ 97<small>pagamento único: a aula com os 8 funcionários</small></p>
+        <p class="mais a" style="--i:9">+ Claude Pro: <b>cerca de R$ 110 por mês</b></p>
       </div>
     </div>
-    <p class="justa rv">E pra ser justa: <b>a IA não substitui um profissional experiente.</b> Ela tira o operacional do seu prato, que é o que hoje come as suas horas.</p>
+    <div class="fecho rv" style="margin-top:44px"><p class="gde">Vale bem mais <span class="grad">a pena.</span></p></div>
   </div>
 </section>
 
-<!-- ================= Dobra 12 · Resumo e preço ================= -->
+<!-- ================= Oferta e preço ================= -->
 <section class="offer esc preta" id="preco">
   <div class="wrap">
     <div class="head rv">
-      <span class="selo-of">Oferta de lançamento</span><br><span class="pv" style="margin:0 0 18px">⚠️ texto reservado: oferta de lançamento a confirmar</span>
+      <span class="selo-of">Oferta de lançamento</span>
       <h2>Tudo isso pra você instalar a sua equipe <span class="grad">ainda hoje</span></h2>
+      <p class="sonho">Você deixa de ficar perdida e passa a ter 8 funcionários de IA trabalhando pra você, te ajudando a pensar e a executar as tarefas repetitivas.</p>
     </div>
     <div class="obox rv">
       <div class="left">
         <img src="../assets/img/funcionarios-ia/capa-workshop.webp" alt="Funcionários de IA com o Claude" width="1280" height="720" loading="lazy">
         <ul class="inc">
-          <li><svg width="20" height="20"><use href="#chk"/></svg>Aula Funcionários de IA com o Claude (cerca de 54 minutos)</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg>8 funcionários de IA prontos pra copiar, colar e instalar</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg>Instalação passo a passo</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg>Roteiro de onboarding do estúdio</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg>Método de treino por feedback</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg>Apostila da aula</li>
+          <li><svg width="20" height="20"><use href="#chk"/></svg>8 funcionários de IA pra copiar e colar no Claude</li>
+          <li><svg width="20" height="20"><use href="#chk"/></svg>Uma aula rápida e prática pra você assistir e já aplicar</li>
           <li><svg width="20" height="20"><use href="#chk"/></svg><span>Acesso <span class="vit">vitalício</span></span></li>
+          <li><svg width="20" height="20"><use href="#chk"/></svg>Bônus: mais 3 funcionários extras</li>
           <li><svg width="20" height="20"><use href="#chk"/></svg>Garantia de 7 dias</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg><span>Bônus: 3 funcionários extras pra quem mandar o depoimento <span class="pv">⚠️ só se a dobra do bônus entrar</span></span></li>
         </ul>
       </div>
       <div class="price">
@@ -371,13 +320,10 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
         <p class="de"><s>de R$ 197</s> por</p>
         <p class="val"><small>12x de R$</small>9,70</p>
         <p class="avista">ou R$ 97 à vista</p>
-        <span class="pv">⚠️ a confirmar: "de R$ 197" (preço que está na Kiwify), R$ 97 e a parcela real no checkout</span>
         <a class="btn pulsa" href="#link-do-checkout" data-checkout>Quero os meus 8 funcionários de IA</a>
-        <span class="pv">⚠️ [LINK DO CHECKOUT] ainda não colocado</span>
         <div class="secure"><span>Pagamento único. O Claude Pro é uma assinatura à parte.</span></div>
       </div>
     </div>
-    <!-- Ao lado do preço: espaço previsto para depoimento sobre o preço ("valeu cada centavo"). Só entra quando houver. -->
   </div>
 </section>
 
@@ -390,7 +336,7 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
         <span class="eyebrow">Garantia</span>
         <h2>Você tem 7 dias pra instalar, testar e <span class="grad">decidir com calma</span></h2>
         <p>Se em até 7 dias depois da compra você achar que não é pra você, é só pedir o reembolso e o valor do curso volta inteiro.</p>
-        <span class="pv">⚠️ confirmar por onde a pessoa pede o reembolso (pela Kiwify?)</span>
+        
         <div class="steps3">
           <div><b>1</b>Assiste a aula</div>
           <div><b>2</b>Instala a equipe</div>
@@ -402,26 +348,26 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
   </div>
 </section>
 
-<!-- ================= Dobra 14 · Dúvidas ================= -->
+<!-- ================= Dúvidas ================= -->
 <section class="faq" id="faq">
   <div class="wrap">
     <div class="top rv">
       <h2>Ainda ficou com <span class="grad">alguma dúvida?</span></h2>
     </div>
     <div class="list">
-      <details class="rv"><summary>Preciso pagar o Claude?</summary><p>Sim. A equipe funciona na aba Code do app do Claude, que só existe nos planos pagos, então você precisa do Claude Pro. Ele custa US$ 20 por mês, cobrados em dólar, o que dá cerca de R$ 110. É uma assinatura à parte, paga direto pro Claude, e o plano grátis não serve. Na aula eu mostro como fazer o plano render.</p><span class="pv">⚠️ conferir o valor em reais</span></details>
+      <details class="rv"><summary>Preciso pagar o Claude?</summary><p>Sim. A equipe funciona na aba Code do app do Claude, que só existe nos planos pagos, então você precisa do Claude Pro. Ele custa US$ 20 por mês, cobrados em dólar, o que dá cerca de R$ 110. É uma assinatura à parte, paga direto pro Claude, e o plano grátis não serve. Na aula eu mostro como fazer o plano render.</p></details>
       <details class="rv"><summary>Preciso saber programar?</summary><p>Não. Você não escreve código e não abre terminal. É baixar a pasta, abrir no app do Claude e conversar em português. Eu também não programo, e montei a minha equipe assim.</p></details>
-      <details class="rv"><summary>Funciona no Windows?</summary><p>O app do Claude existe pra Mac e pra Windows, e a instalação da equipe é a mesma nos dois.</p><span class="pv">⚠️ Antes de publicar: a equipe foi testada no Mac. No Windows, a edição de vídeo e a geração de peças em imagem ainda não foram testadas. Sugestão de frase, se continuar assim: "No Windows, a parte de vídeo ainda está em teste."</span></details>
+      <details class="rv"><summary>Funciona no Windows?</summary><p>O app do Claude existe pra Mac e pra Windows, e a instalação da equipe é a mesma nos dois.</p></details>
       <details class="rv"><summary>Funciona no celular?</summary><p>Não. A equipe trabalha numa pasta do seu computador, então você precisa de um computador com Mac ou Windows.</p></details>
-      <details class="rv"><summary>Quanto tempo leva pra configurar?</summary><p>A aula tem cerca de 54 minutos e você instala acompanhando. A parte que depende de você é a entrevista sobre o seu estúdio, com cerca de 20 perguntas, que dá pra parar e continuar depois. Quem já tem preços e processo anotados pode mandar o material e responder só o que faltar.</p><span class="pv">⚠️ confirmar o tempo médio da entrevista, se quiser dar um número</span></details>
-      <details class="rv"><summary>Serve se eu não for designer?</summary><p>A equipe foi pensada pra rotina de um estúdio de design: proposta, projeto, estratégia de marca, conteúdo, vídeo e peças. Ela se adapta ao tipo de trabalho que você faz, seja identidade visual, social media ou editorial, e a quem trabalha sozinha, em dupla ou com equipe.</p><span class="pv">⚠️ Lari decide o que dizer pra quem é de outra área (social media, arquiteta, fotógrafa)</span></details>
+      <details class="rv"><summary>Quanto tempo leva pra configurar?</summary><p>A aula tem cerca de 54 minutos e você instala acompanhando. A parte que depende de você é a entrevista sobre o seu estúdio, com cerca de 20 perguntas, que dá pra parar e continuar depois. Quem já tem preços e processo anotados pode mandar o material e responder só o que faltar.</p></details>
+      <details class="rv"><summary>Serve se eu não for designer?</summary><p>A equipe foi pensada pra rotina de um estúdio de design: proposta, projeto, estratégia de marca, conteúdo, vídeo e peças. Ela se adapta ao tipo de trabalho que você faz, seja identidade visual, social media ou editorial, e a quem trabalha sozinha, em dupla ou com equipe.</p></details>
       <details class="rv"><summary>Já uso o ChatGPT. Qual é a diferença?</summary><p>No chat, cada conversa começa do zero. Aqui cada funcionário tem uma função, conhece o seu estúdio e guarda as suas correções, então você não explica tudo de novo a cada pedido.</p></details>
       <details class="rv"><summary>Os funcionários mandam alguma coisa sozinhos pro meu cliente?</summary><p>Não. Eles preparam e você aprova. Tudo fica como rascunho na sua pasta até você revisar e enviar.</p></details>
       <details class="rv"><summary>O Designer e o Editor de Vídeo entregam tudo pronto?</summary><p>Eles adiantam bastante, mas o acabamento é seu. O Designer monta o primeiro layout com o seu material e o Editor corta, legenda e exporta. Os dois melhoram muito quando você mostra exemplos do seu estilo. Na primeira edição de vídeo, o Editor instala as ferramentas dele na pasta, o que ocupa cerca de 1,2 GB.</p></details>
       <details class="rv"><summary>Preciso ter modelo de proposta e de contrato?</summary><p>Se você já tem, a equipe usa os seus. Se ainda não tem, os funcionários entregam o texto e você monta do seu jeito, ou você pode usar os modelos do Kit Design Studio, que é vendido separado em laritedeschi.com/kitdesignstudio.</p></details>
       <details class="rv"><summary>O acesso é vitalício?</summary><p>Sim. A aula, a apostila e os arquivos dos funcionários ficam com você pra sempre.</p></details>
-      <details class="rv"><summary>Como recebo o acesso?</summary><p>O acesso chega no seu e-mail e fica na área de membros.</p><span class="pv">⚠️ confirmar se na venda avulsa a liberação é imediata</span></details>
-      <details class="rv"><summary>Como funciona a garantia?</summary><p>Você tem 7 dias a partir da compra pra testar. Se não for pra você, pede o reembolso e recebe o valor do curso de volta. A assinatura do Claude Pro é feita direto com o Claude, então ela não entra nesse reembolso.</p><span class="pv">⚠️ confirmar o caminho do pedido de reembolso</span></details>
+      <details class="rv"><summary>Como recebo o acesso?</summary><p>O acesso chega no seu e-mail e fica na área de membros.</p></details>
+      <details class="rv"><summary>Como funciona a garantia?</summary><p>Você tem 7 dias a partir da compra pra testar. Se não for pra você, pede o reembolso e recebe o valor do curso de volta. A assinatura do Claude Pro é feita direto com o Claude, então ela não entra nesse reembolso.</p></details>
     </div>
     <div class="final rv">
       <svg><use href="#est"/></svg>

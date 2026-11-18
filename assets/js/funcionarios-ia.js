@@ -24,14 +24,24 @@
     },ms);
   });
 
-  /* ciclo do dia: o destaque anda de passo em passo e volta ao começo */
-  var c=document.querySelector('.ciclo');
-  if(c){
-    var it=[].slice.call(c.children),k=-1;
-    setInterval(function(){
-      if(vis.indexOf(c)<0||document.hidden)return;
-      it.forEach(function(x){x.classList.remove('at')});
-      k=(k+1)%it.length;it[k].classList.add('at');
-    },1150);
+  /* bônus: confetes 2D, uma vez, quando a dobra entra na tela */
+  var bonus=document.getElementById('bonus');
+  if(bonus){
+    var io2=new IntersectionObserver(function(en){en.forEach(function(e){
+      if(!e.isIntersecting)return;io2.disconnect();
+      var cx=document.createElement('div');cx.className='confete';cx.setAttribute('aria-hidden','true');
+      var cores=['#d97757','#aaff5b','#c7bcff','#ffffff'],h=bonus.offsetHeight;
+      for(var n=0;n<34;n++){
+        var c=document.createElement('i');
+        c.style.left=(Math.random()*100)+'%';c.style.background=cores[n%4];
+        c.style.setProperty('--d',(Math.random()*.7).toFixed(2)+'s');
+        c.style.setProperty('--t',(1.8+Math.random()*1.2).toFixed(2)+'s');
+        c.style.setProperty('--y',Math.round(h*(.55+Math.random()*.4))+'px');
+        c.style.setProperty('--r',Math.round(360+Math.random()*540)+'deg');
+        cx.appendChild(c);
+      }
+      bonus.appendChild(cx);setTimeout(function(){if(cx.parentNode)cx.parentNode.removeChild(cx)},4200);
+    })},{threshold:.35});
+    io2.observe(bonus);
   }
 })();
