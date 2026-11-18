@@ -1,0 +1,54 @@
+/* =========================================================
+   Kit Design Studio · bônus (18/11/2026)
+   Um bloco por bônus, com a imagem alternando de lado.
+   Usado na página oficial e nas versões de tráfego /1 a /4.
+   ========================================================= */
+.bonus-sec{padding-top:90px}
+.bn-list{display:grid;gap:26px}
+.bn{--c:var(--azul);display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding:34px;border-radius:32px;background:var(--card);border:1px solid var(--line-2);box-shadow:0 40px 80px -60px rgba(0,0,0,.9)}
+.bn:nth-child(even) .bn-img{order:2}
+.bn-img{position:relative;display:flex;align-items:center;justify-content:center;min-height:300px;border-radius:24px;padding:18px;background:radial-gradient(70% 70% at 50% 45%,color-mix(in srgb,var(--c) 26%,transparent),transparent 72%),var(--card-2)}
+.bn-img img{display:block;width:100%;max-width:440px;max-height:360px;height:auto;object-fit:contain;filter:drop-shadow(0 24px 30px rgba(0,0,0,.45))}
+.bn-tx{min-width:0}
+.bn-tag{display:inline-flex;align-items:center;gap:9px;padding:7px 13px;border-radius:999px;border:1px solid color-mix(in srgb,var(--c) 60%,transparent);background:color-mix(in srgb,var(--c) 13%,transparent);color:var(--txt);font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.bn-tag i{width:8px;height:8px;border-radius:50%;background:var(--c);box-shadow:0 0 0 0 color-mix(in srgb,var(--c) 70%,transparent);animation:bn-pulsa 1.8s ease-out infinite}
+@keyframes bn-pulsa{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--c) 70%,transparent)}100%{box-shadow:0 0 0 10px transparent}}
+.bn h3{margin:16px 0 0;font-size:clamp(25px,2.7vw,34px);line-height:1.12;letter-spacing:-.03em;font-weight:600}
+.bn h3 span{color:var(--c)}
+.bn p{margin:14px 0 0;color:var(--muted);font-size:17px;line-height:1.55}
+.bn ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}
+.bn li{display:flex;gap:10px;align-items:flex-start;font-size:16px;line-height:1.4;color:color-mix(in srgb,var(--txt) 90%,transparent)}
+.bn li svg{flex:none;width:20px;height:20px;margin-top:1px;color:var(--c)}
+.bn .bn-inc{display:inline-block;margin-top:20px;font-size:14px;font-weight:600;color:var(--muted)}
+.bn .bn-inc b{color:var(--txt)}
+.bn-1{--c:var(--azul)} .bn-2{--c:var(--verde)} .bn-3{--c:var(--rosa)} .bn-4{--c:#25D366}
+
+/* comunidade: cabeçalho de grupo do WhatsApp, sem mensagens inventadas */
+.bn-grupo{width:100%;max-width:380px;border-radius:22px;background:#0b141a;border:1px solid rgba(255,255,255,.1);overflow:hidden;box-shadow:0 30px 50px -30px rgba(0,0,0,.8)}
+.bn-grupo .gtop{display:flex;align-items:center;gap:12px;padding:16px 18px;background:#1f2c34}
+.bn-grupo .gav{flex:none;width:48px;height:48px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}
+.bn-grupo .gav img{width:34px;height:auto}
+.bn-grupo .gnm{font-weight:600;font-size:16px;color:#e9edef;line-height:1.25}
+.bn-grupo .gsub{font-size:13px;color:#8696a0;margin-top:2px}
+.bn-grupo .gbody{padding:26px 22px 28px;text-align:center}
+.bn-grupo .gwa{width:64px;height:64px;margin:0 auto 14px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center}
+.bn-grupo .gwa svg{width:36px;height:36px;color:#fff}
+.bn-grupo .gtx{font-size:15px;line-height:1.45;color:#d1d7db}
+.bn-grupo .gchips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px}
+.bn-grupo .gchips span{font-size:12.5px;font-weight:600;padding:6px 11px;border-radius:999px;background:rgba(37,211,102,.14);border:1px solid rgba(37,211,102,.4);color:#d9fdd3}
+
+/* bônus nas listas do que vem no Kit (resumo e oferta) */
+.recibo .linha.bonus .vl,.anc li.bonus .bn-mini,.inc li.bonus .bn-mini{flex:none;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:rgba(42,233,121,.14);border:1px solid rgba(42,233,121,.45);color:#7ee08f;white-space:nowrap}
+.inc li.bonus{align-items:center}
+.inc li.bonus .bn-mini{margin-left:auto}
+
+@media (max-width:760px){
+  .bonus-sec{padding-top:70px}
+  .bn{grid-template-columns:1fr;gap:22px;padding:18px 18px 24px;border-radius:26px}
+  .bn:nth-child(even) .bn-img{order:0}
+  .bn-img{min-height:0;padding:14px}
+  .bn-img img{max-height:260px}
+  .bn h3{font-size:25px}
+  .bn p{font-size:16px}
+  .bn li{font-size:15px}
+}
