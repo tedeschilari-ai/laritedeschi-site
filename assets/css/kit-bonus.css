@@ -133,3 +133,15 @@ li .aips{margin:4px 0 0 4px;vertical-align:middle}
 @keyframes ph-sa{0%,3%{opacity:1}5%,17%{opacity:0}19%,38%{opacity:1}40%,56%{opacity:0}58%,100%{opacity:1}}
 @keyframes ph-sb{0%,3%{opacity:0}5%,17%{opacity:1}19%,38%{opacity:0}40%,56%{opacity:1}58%,100%{opacity:0}}
 @media (prefers-reduced-motion:reduce){.r1b .ph-msg{animation:none;opacity:1}}
+
+/* ---------- destaques dos títulos: cores chapadas do Kit, uma por seção (18/11) ---------- */
+:root{--hl-amarelo:#FEA710;--hl-azul:#5b8dff;--hl-rosa:#FF70FE}
+.grad,.hero h1 .grad{background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;color:var(--hl,var(--hl-amarelo))!important;-webkit-text-fill-color:currentColor!important}
+
+/* ---------- pensamentos: caixas simples, sem celular e sem chat ---------- */
+.pensamentos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:860px;margin:10px auto 0}
+.pens{min-width:0;padding:20px 22px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-left:3px solid var(--pc);font-size:17px;line-height:1.45;color:var(--txt)}
+@media (max-width:640px){
+  .pensamentos{grid-template-columns:1fr;gap:10px}
+  .pens{padding:16px 18px;font-size:16px}
+}
