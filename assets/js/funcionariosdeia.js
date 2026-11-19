@@ -1,3 +1,16 @@
+/* =========================================================
+   Funcionários de IA · laritedeschi.com/funcionariosdeia
+   Este arquivo carrega ANTES do escola.js, para o link do checkout
+   já estar nos botões quando o escola.js repassa as UTMs e avisa o Pixel.
+   ========================================================= */
+
+/* Link do checkout: vem do atributo data-link-checkout do <body> no index.html.
+   Vazio = os botões de compra levam para a dobra do preço. */
+(function(){
+  var url=(document.body.getAttribute('data-link-checkout')||'').trim();
+  document.querySelectorAll('a[data-checkout]').forEach(function(a){a.href=url||'#preco'});
+})();
+
 /* Funcionários de IA · animações da página
    .anim ganha .on quando entra na tela (as peças .a entram em sequência).
    data-loop="ms" repete a animação enquanto o bloco está visível. */
@@ -54,4 +67,27 @@
       k=(k+1)%it.length;it[k].classList.add('at');
     },1200);
   }
+})();
+
+/* Preço: a contagem de R$ 197 até R$ 97 quando o preço aparece na tela */
+(function(){
+  var el=document.querySelector('.price .conta'); if(!el) return;
+  var de=+el.dataset.de, ate=+el.dataset.ate;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=ate;return;}
+  el.textContent=de;
+  var foi=false;
+  function roda(){
+    if(foi) return; foi=true;
+    var t0=null, dur=1600;
+    function passo(t){
+      if(!t0) t0=t;
+      var p=Math.min((t-t0)/dur,1), e=1-Math.pow(1-p,3);
+      el.textContent=Math.round(de-(de-ate)*e);
+      if(p<1) requestAnimationFrame(passo); else {el.textContent=ate; el.classList.add('pisca');}
+    }
+    requestAnimationFrame(passo);
+  }
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es,o){es.forEach(function(x){if(x.isIntersecting){roda();o.disconnect();}});},{threshold:.6}).observe(el);
+  } else roda();
 })();
