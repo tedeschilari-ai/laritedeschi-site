@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Seu crédito no FigBrand · Não feche esta página</title>
+<title>Parabéns! Seu crédito no FigBrand · Não feche esta página</title>
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#24104A">
-<!-- FigBrand · upsell depois da compra do FigLogo (crédito de R$127), v4 (ângulo da estratégia). Substitui o upsell do FigPost (/figlogo/upsell/, mantido). Não aparece em buscas. -->
+<!-- FigBrand · upsell depois da compra do FigLogo, com vídeo (copy de 19/11). Crédito de R$127: de R$597 por R$470. Substitui o upsell do FigPost (/figlogo/upsell/, mantido). Não aparece em buscas. -->
 
 <!-- Meta Pixel -->
 <script>
@@ -16,71 +16,80 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=874750447646279&ev=PageView&noscript=1" alt=""></noscript>
 
 <link rel="stylesheet" href="../../assets/css/escola.css">
-<link rel="stylesheet" href="../../assets/css/upsell-figbrand.css">
+<link rel="stylesheet" href="../../assets/css/upsell-video.css">
+<style>
+/* Cores do FigBrand */
+:root{--accent:#9131F6; --accent-2:#7D1AE6; --accent-3:#24104A; --accent-lt:#B671FF; --tinta:#24104A; --pop:#E6FF7D; --pop-ink:#24104A}
+/* botão da Kiwify desta oferta (AOpO5kJ) no verde da página */
+#kiwify-upsell-AOpO5kJ{max-width:440px;margin:0 auto}
+#kiwify-upsell-trigger-AOpO5kJ{font-family:inherit!important;font-size:18px!important;font-weight:700!important;letter-spacing:-.02em;border-radius:999px!important;padding:19px 22px!important;color:#fff!important;border:0!important;width:100%;background:linear-gradient(180deg,#7be05a 0%,#3fbf18 50%,#289c02 100%)!important;box-shadow:0 0 0 1px rgba(255,255,255,.25) inset,0 14px 34px -12px rgba(63,191,24,.75)!important;cursor:pointer}
+#kiwify-upsell-cancel-trigger-AOpO5kJ{text-align:center;color:rgba(255,255,255,.62)!important;font-size:14px;margin-top:14px;text-decoration:underline;cursor:pointer}
+</style>
 </head>
 <body data-curso="FigBrand">
 
-<!-- 1 · Barra do topo -->
-<div class="aviso"><b class="ok">✓ Compra aprovada!</b> <span><b>Não feche esta página:</b> você acabou de liberar uma condição que só aparece agora.</span></div>
+<div class="aviso"><b>Não feche nem atualize esta página:</b> você acabou de liberar um crédito que só existe aqui.</div>
 
-<!-- 2 · Abertura -->
+<!-- Abertura -->
 <header class="up">
   <div class="halo"></div>
   <div class="wrap">
     <img class="logo" src="../../assets/img/figbrand/logo-figbrand-escuro.png" alt="FigBrand" width="120" height="32">
-    <div class="credito">
-      <span class="cr-ic" aria-hidden="true">🎟️</span>
-      <span class="cr-txt">Você acabou de liberar <b>R$127 de crédito</b> no FigBrand</span>
-    </div>
+    <div><span class="tag">Parabéns!</span></div>
+    <div class="selo-credito"><span class="cr-ic" aria-hidden="true">🎟️</span><span>Você acabou de liberar <b>R$127 de crédito</b> no FigBrand</span></div>
     <h1>Você acabou de entrar para o FigLogo. <span class="grad">Agora imagina criar identidades visuais estratégicas.</span></h1>
-    <p class="sub">Seu acesso ao FigLogo já está indo pro seu e-mail. E, como você acabou de comprar, os R$127 que você pagou viraram crédito no FigBrand, meu curso de identidade visual. É o próximo passo pra você agregar valor aos seus projetos com estratégia de marca e <b>chegar a cobrar mais de R$2.000 por projeto.</b></p>
-    <img class="mockup" src="../../assets/img/figbrand/tudo-que-voce-recebe.webp" alt="O FigBrand aberto no computador, no notebook e no tablet" width="664" height="341">
-    <div class="caixa">
-      <p class="cx-preco">De <s>R$597</s> por <b>R$470</b> <span>ou 12x de R$48,61</span></p>
-      <p class="cx-so">Só nesta página: se você fechar, o crédito não volta.</p>
+    <p class="sub">Gravei um recado rápido sobre o que faz o cliente pagar mais por uma identidade visual e sobre o crédito que você acabou de liberar. Assista antes de sair:</p>
+
+    <!-- VÍDEO (9:16). Quando o vídeo estiver pronto: apague a .capa e cole o embed aqui dentro, por exemplo
+         <iframe id="vsl-player" src="https://player.vimeo.com/video/ID?autoplay=1&muted=1&loop=0&autopause=0&playsinline=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Recado da Lari para quem comprou o FigLogo"></iframe>
+         O botão "Toque para ativar o som" já funciona com o player do Vimeo (script no fim da página). -->
+    <div class="video" id="vsl">
+      <div class="capa"><img src="../../assets/img/comum/lari-recorte.webp" alt="Lari Tedeschi" width="118" height="118"><p><small>Vídeo em breve</small>Um recado da Lari pra você antes de entrar no FigLogo</p></div>
+      <button type="button" class="som" id="vsl-som"><span class="ic">🔊</span>Toque para ativar o som</button>
     </div>
-    <div class="cta">
-      <a class="btn" href="#oferta">Sim! Quero usar meu crédito no FigBrand</a>
-      <a class="nao js-recusa" href="#">Não, obrigada, quero só o FigLogo</a>
-      <p class="seg">🔒 Pagamento seguro · Acesso no seu e-mail, na mesma área do FigLogo · Garantia de 7 dias</p>
+
+    <!-- Botão abaixo do vídeo: data-delay = segundos até aparecer (trecho "A conta" do vídeo). 0 = aparece na hora. -->
+    <div class="cta js-atraso" data-delay="0">
+      <a class="btn" href="#oferta">Sim! Quero o FigBrand usando meu crédito</a>
+      <a class="nao js-recusa" href="#">Não, prefiro pagar R$597 depois</a>
     </div>
   </div>
 </header>
 
-<!-- 3 · A ponte -->
-<section class="cinza">
+<!-- Bloco 1 · O problema -->
+<section class="problema cinza">
   <div class="wrap estreito">
     <h2>O que faz o cliente pagar mais por uma identidade visual <span class="grad">é a estratégia que existe por trás dela.</span></h2>
-    <p>Quando você entende o negócio do cliente, o público dele e o posicionamento da marca, cada escolha para de ser gosto pessoal. A cor, a fonte e o símbolo passam a ter um motivo, e você consegue explicar esse motivo na apresentação.</p>
-    <p>É isso que muda a conversa sobre preço. <b>O cliente para de enxergar um logo bonito e passa a enxergar um projeto pensado pro negócio dele.</b></p>
+    <p>No FigLogo você vai aprender a criar o logo. Só que, quando a criação nasce só do gosto pessoal e das referências do Pinterest, fica difícil explicar pro cliente por que você escolheu aquela cor, aquela fonte, aquele símbolo.</p>
+    <p>E aí a apresentação vira um "gostei" ou "não gostei", as alterações não acabam e <b>o preço vira negociação, porque o cliente só enxerga um logo bonito.</b></p>
   </div>
 </section>
 
-<!-- 4 · A virada -->
+<!-- Bloco 2 · A virada -->
 <section class="virada">
   <div class="wrap">
-    <p class="frase">O FigBrand é onde você aprende <span class="grad">essa estratégia.</span></p>
-    <div class="trilha" aria-hidden="true">
-      <span class="tr fl">FigLogo<small>o logo com intenção</small></span>
-      <span class="tr-seta">→</span>
-      <span class="tr fb">FigBrand<small>a estratégia de marca</small></span>
-    </div>
     <div class="estreito">
-      <p>No FigLogo você aprende a criar o logo com intenção. No FigBrand, eu te ensino a estratégia de marca: entender o negócio do cliente, definir o posicionamento, chegar no conceito e só depois transformar tudo isso em decisões visuais, do briefing à entrega.</p>
-      <p>É o mesmo método que eu uso no meu estúdio, o Studio Tedeschi, onde hoje eu faço projetos de R$7.000. Quando cada escolha tem um motivo, você apresenta e defende o projeto com segurança, e <strong>é isso que faz ele valer mais de R$2.000.</strong></p>
+      <h2>Quando cada escolha tem um motivo, <span class="grad">o cliente enxerga um projeto pensado pro negócio dele.</span></h2>
+      <p>Foi por isso que eu criei o FigBrand. Nele eu te ensino a criar identidades visuais estratégicas, do briefing à entrega: entender o negócio do cliente, definir o posicionamento, chegar no conceito e só depois transformar tudo isso em decisões visuais.</p>
+      <p>É o mesmo método que eu uso no meu estúdio, o Studio Tedeschi, em projetos de R$7.000. E é o que te leva a um nível em que dá pra <strong>cobrar mais de R$2.000 por projeto.</strong></p>
+    </div>
+    <div class="compara">
+      <div class="col so"><h3><i>✕</i>Quem cria só o logo bonito</h3><ul><li>Escolhe pela referência e pelo gosto</li><li>Apresenta e torce pro cliente gostar</li><li>Aceita alteração atrás de alteração</li><li>O preço vira negociação</li></ul></div>
+      <div class="col mais"><h3><i>✓</i>Quem cria identidade visual estratégica</h3><ul><li>Escolhe a partir do negócio e do posicionamento do cliente</li><li>Apresenta explicando o motivo de cada decisão</li><li>Defende o conceito com segurança</li><li>O projeto vale mais, porque o cliente entende o que está comprando</li></ul></div>
     </div>
   </div>
 </section>
 
-<!-- 5 · Dentro do FigBrand -->
+<!-- Bloco 3 · O que você recebe -->
 <section class="cinza">
   <div class="wrap">
     <div class="estreito"><h2>Dentro do <span class="grad">FigBrand:</span></h2></div>
+    <img class="mockup" src="../../assets/img/figbrand/tudo-que-voce-recebe.webp" alt="O FigBrand aberto no computador, no notebook e no tablet" width="664" height="341" loading="lazy">
     <ul class="recebe">
       <li><svg><use href="#ok"/></svg><span><b>Curso completo, do briefing à entrega</b>, com a estratégia de marca vindo antes do visual</span></li>
-      <li><svg><use href="#ok"/></svg><span><b>Hotseat mensal ao vivo comigo</b>, por 12 meses, pra levar seus projetos e dúvidas</span></li>
+      <li><svg><use href="#ok"/></svg><span><b>Hotseat mensal ao vivo comigo, por 12 meses</b>, pra levar seus projetos e dúvidas</span></li>
       <li><svg><use href="#ok"/></svg><span><b>Projeto final com correção individual</b>, feita por mim, que ainda vira projeto pro seu portfólio</span></li>
-      <li><svg><use href="#ok"/></svg><span><b>Mais de 20 templates</b>, como briefing, proposta, apresentação e guia de marca</span></li>
+      <li><svg><use href="#ok"/></svg><span><b>Mais de 20 templates</b>: briefing, proposta, apresentação, guia de marca e outros</span></li>
       <li><svg><use href="#ok"/></svg><span><b>10 aulas com profissionais convidados</b></span></li>
       <li><svg><use href="#ok"/></svg><span><b>Comunidade no WhatsApp</b></span></li>
       <li><svg><use href="#ok"/></svg><span><b>Certificado de conclusão</b></span></li>
@@ -89,78 +98,79 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
   </div>
 </section>
 
-<!-- 6 · Prova curta -->
+<!-- Bloco 4 · Prova -->
 <section>
   <div class="wrap">
     <div class="estreito"><h2>Quem já fez <span class="grad">o FigBrand:</span></h2></div>
-    <div class="provas">
-      <article class="res"><div class="txt"><span class="big">Mais confiança para criar</span><p>Perdeu as dúvidas e o medo de começar um projeto.</p></div><div class="print"><img src="../../assets/img/figbrand/depoimentos/aluna-1.webp" alt="Depoimento da Helena, aluna do FigBrand" loading="lazy"></div></article>
-      <article class="res"><div class="txt"><span class="big">Estratégia antes do Figma</span><p>Aprendeu o que vem antes de abrir a ferramenta.</p></div><div class="print"><img src="../../assets/img/figbrand/depoimentos/aluna-2.webp" alt="Depoimento da Giovanna, aluna do FigLogo e do FigBrand" loading="lazy"></div></article>
+    <div class="prova-box">
+      <article class="res"><div class="txt"><div class="who">Giovanna</div><span class="big">Já era aluna do FigLogo</span><p>Conta que o FigBrand abriu a mente dela pra muito além de criar um logo, e que o projeto que criou é o que mais a deixa orgulhosa.</p></div><div class="print"><img src="../../assets/img/figbrand/depoimentos/aluna-2.webp" alt="Depoimento da Giovanna, aluna do FigLogo e do FigBrand" loading="lazy"></div></article>
+      <figure class="proj"><img src="../../assets/img/figbrand/projetos-hut/giovanna.webp" alt="Projeto HUT da Giovanna" loading="lazy"><figcaption><b>Giovanna</b>Projeto HUT · Turma 1</figcaption></figure>
     </div>
   </div>
 </section>
 
-<!-- 7 · A conta do crédito -->
+<!-- Bloco 5 · A oferta + crédito do FigLogo -->
 <section class="oferta" id="oferta">
   <div class="glow"></div>
   <div class="wrap">
     <div class="estreito">
-      <h2>Só pra quem acabou de entrar no FigLogo, <span class="pop">e só nesta página</span></h2>
-      <p>Na página normal, o FigBrand custa R$597. Aqui, os R$127 que você pagou no FigLogo saem inteiros desse valor.</p>
+      <h2>Só pra quem acabou de entrar no FigLogo, <span class="pop">e só nesta página:</span></h2>
+      <p>O FigBrand custa <b>R$597</b> pra quem chega pela página normal. Aqui, os <b>R$127 que você acabou de pagar no FigLogo viram crédito</b> e saem direto desse valor.</p>
     </div>
     <div class="recibo">
       <div class="tt"><img src="../../assets/img/figbrand/logo-figbrand-escuro.png" alt="FigBrand" width="100" height="27"><span>SUA CONTA</span></div>
       <div class="linha cheio"><span class="nm">FigBrand (preço normal)</span><span class="pt"></span><span class="vl">R$597</span></div>
       <div class="linha credito"><span class="nm">🎟️ <b>Seu crédito do FigLogo</b></span><span class="pt"></span><span class="vl">− R$127</span></div>
-      <div class="tot"><span>Você paga hoje</span><b><small>12x de R$</small>48,61</b></div>
-      <p class="vista">ou R$470 à vista</p>
-      <p class="anual">✓ Acesso anual (12 meses) ao FigBrand</p>
+      <div class="tot"><span>Você paga hoje</span><b><small>R$</small>470</b></div>
+      <p class="parc">ou 12x de R$48,61</p>
+      <p class="acesso">✓ 12 meses de acesso ao FigBrand</p>
     </div>
-    <p class="dois">Na prática, <span class="pop">você leva os dois cursos, o FigLogo e o FigBrand,</span> pagando menos do que o FigBrand custa sozinho.</p>
-    <p class="so-aqui">⚠️ <span><b>Não feche esta página.</b> Esse crédito existe só aqui, logo depois da sua compra. Se você sair ou atualizar, o FigBrand volta pra R$597.</span></p>
+    <p class="dois">Na prática, <span class="pop">é como se o FigLogo saísse de graça:</span> você leva os dois cursos pelo preço do FigBrand.</p>
+    <p class="porque"><b>Por que eu faço isso?</b> Porque a aluna que faz os dois cursos aprende a criar o logo e também a pensar a estratégia que dá valor a ele, e chega no cliente com muito mais segurança pra apresentar e cobrar. Prefiro colocar esse crédito em quem já decidiu levar isso a sério.</p>
+    <p class="so-aqui">🔒 <span>Esse crédito existe <b>só nesta página</b>. Se você sair ou atualizar, ele não aparece de novo, e o FigBrand volta pra R$597.</span></p>
     <div class="cta-up" id="comprar">
-      <!-- Botão da Kiwify (gerador do produto FigLogo Vitalício, oferta "Upsell" do FigBrand). Aceitar e recusar levam ao obrigado do FigLogo. -->
+      <!-- Botão da Kiwify (gerador do produto FigLogo Vitalício, oferta "Upsell" do FigBrand, R$470). Aceitar e recusar levam ao obrigado do FigLogo. -->
       <div id="kiwify-upsell-AOpO5kJ" data-upsell-url="https://laritedeschi.com/figlogo/obrigado/" data-downsell-url="https://laritedeschi.com/figlogo/obrigado/" style="--kiwify-upsell-accept-bg:#2ECC70;--kiwify-upsell-accept-color:#FFFFFF">
-        <button id="kiwify-upsell-trigger-AOpO5kJ">Sim! Quero usar meu crédito no FigBrand</button>
-        <div id="kiwify-upsell-cancel-trigger-AOpO5kJ">Não, obrigada, quero só o FigLogo</div>
+        <button id="kiwify-upsell-trigger-AOpO5kJ">Sim! Quero o FigBrand usando meu crédito</button>
+        <div id="kiwify-upsell-cancel-trigger-AOpO5kJ">Não, prefiro pagar R$597 depois</div>
       </div>
-      <p class="seg">🔒 Pagamento seguro · Acesso no seu e-mail, na mesma área do FigLogo · Garantia de 7 dias</p>
+      <p class="seg">🔒 Pagamento seguro · Acesso no seu e-mail · Garantia de 7 dias</p>
     </div>
   </div>
 </section>
 
-<!-- 8 · Garantia -->
+<!-- Bloco 6 · Garantia -->
 <section class="g-sec">
   <div class="wrap">
     <div class="garantia">
-      <img src="../../assets/img/comum/selo-garantia.svg" alt="Garantia de 7 dias" width="88" height="88">
+      <img src="../../assets/img/comum/selo-garantia.svg" alt="Garantia de 7 dias" width="84" height="84">
       <div><h2>Garantia de 7 dias.</h2><p>Entra, assiste e conhece o curso. Se não fizer sentido pra você, devolvemos 100% do valor do FigBrand, sem burocracia. O seu FigLogo continua com você normalmente.</p></div>
     </div>
   </div>
 </section>
 
-<!-- 9 · Dúvidas -->
+<!-- Bloco 7 · Dúvidas -->
 <section class="faq">
   <div class="wrap">
     <div class="estreito"><h2><span class="grad">Dúvidas</span> frequentes</h2></div>
     <div class="list">
-      <details open><summary>Como funciona o crédito do FigLogo?</summary><p>É automático. Os R$127 que você pagou já estão descontados do preço do FigBrand nesta página. O valor que aparece no botão já é o final.</p></details>
-      <details><summary>Preciso terminar o FigLogo antes?</summary><p>Não. Você pode fazer os dois ao mesmo tempo, porque um complementa o outro: o FigLogo ensina a criar o logo e o FigBrand ensina a estratégia de marca por trás da identidade visual.</p></details>
-      <details><summary>O FigBrand é um curso de Figma?</summary><p>Não. A ferramenta você aprende no FigLogo. O foco do FigBrand é método, estratégia e processo.</p></details>
+      <details open><summary>Como funciona o crédito do FigLogo?</summary><p>É automático. Os R$127 que você pagou já estão descontados do preço do FigBrand nesta página. Você não precisa pedir nada nem esperar reembolso: o valor do botão já é o final.</p></details>
+      <details><summary>Preciso terminar o FigLogo antes?</summary><p>Não. Dá pra fazer os dois ao mesmo tempo, porque um complementa o outro: o FigLogo ensina a criar o logo e o FigBrand ensina a estratégia de marca por trás da identidade visual.</p></details>
       <details><summary>Por quanto tempo eu tenho acesso?</summary><p>12 meses de curso, hotseat mensal ao vivo e comunidade. O acesso chega no seu e-mail, na mesma área de membros do FigLogo.</p></details>
       <details><summary>Essa condição volta depois?</summary><p>Não. O crédito do FigLogo só existe nesta página, pra quem acabou de comprar.</p></details>
     </div>
   </div>
 </section>
 
-<!-- 10 · Fechamento -->
+<!-- CTA final -->
 <section class="fim">
   <div class="wrap">
-    <h2>Você já deu o primeiro passo <span class="grad">no design de marcas.</span></h2>
-    <p>Agora é aprender a estratégia que faz os seus projetos valerem mais, com o seu crédito já aplicado.</p>
-    <a class="btn" href="#oferta">Sim! Quero usar meu crédito no FigBrand</a>
-    <a class="nao js-recusa" href="#">Não, obrigada, quero só o FigLogo</a>
-    <p class="seg">🔒 Pagamento seguro · Acesso no seu e-mail, na mesma área do FigLogo · Garantia de 7 dias</p>
+    <h2>Você já deu o primeiro passo: <em class="grad">decidiu aprender a criar marcas.</em></h2>
+    <p class="fim-sub">Agora é aprender a estratégia que faz os seus projetos valerem mais.</p>
+    <div class="cta">
+      <a class="btn" href="#oferta">Sim! Quero o FigBrand usando meu crédito</a>
+      <a class="nao js-recusa" href="#">Não, prefiro pagar R$597 depois</a>
+    </div>
     <p class="duvida">Ainda ficou com dúvida? <a href="https://wa.me/5541999401055?text=Oi!%20Acabei%20de%20comprar%20o%20FigLogo%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20FigBrand." target="_blank" rel="noopener">Fale com o suporte no WhatsApp</a></p>
   </div>
 </section>
@@ -176,6 +186,22 @@ document.addEventListener('click',function(e){
   var r=t.closest('.js-recusa');if(r){e.preventDefault();var c=document.getElementById('kiwify-upsell-cancel-trigger-AOpO5kJ');if(c){c.click()}else{window.location.href='../obrigado/'}}
 });
 </script>
+<script>
+/* Botão abaixo do vídeo: aparece depois de data-delay segundos (0 = na hora). Com o vídeo do Vimeo, conta o tempo do próprio vídeo. */
+(function(){
+  var cta=document.querySelector('.js-atraso');if(!cta)return;var d=parseFloat(cta.dataset.delay||'0');if(!(d>0))return;
+  cta.hidden=true;var mostra=function(){if(cta.hidden){cta.hidden=false;cta.classList.add('aparece')}};
+  var f=document.getElementById('vsl-player');
+  if(f&&window.Vimeo){var pl=new Vimeo.Player(f);pl.on('timeupdate',function(x){if(x.seconds>=d)mostra()})}
+  setTimeout(mostra,(d+30)*1000); /* garantia: aparece mesmo se o vídeo não tocar */
+  if(!f)setTimeout(mostra,d*1000);
+})();
+/* Som do vídeo: um toque liga o som e volta pro início (só quando houver o player do Vimeo) */
+(function(){var b=document.getElementById('vsl-som'),f=document.getElementById('vsl-player');if(!b)return;
+  b.addEventListener('click',function(){if(f&&window.Vimeo){var pl=new Vimeo.Player(f);pl.setMuted(false);pl.setVolume(1);pl.setCurrentTime(0);pl.play()}b.classList.add('off')});
+})();
+</script>
+<!-- Quando o vídeo entrar, carregue também: <script src="https://player.vimeo.com/api/player.js"></script> (antes dos scripts acima) -->
 <script src="../../assets/js/escola.js"></script>
 </body>
 </html>
