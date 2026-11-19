@@ -3,488 +3,201 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Espere! Uma oferta para você · FigLogo</title>
+<title>Parabéns! Seu crédito no FigLogo · Não feche esta página</title>
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#f3f1f3">
-<!-- FigLogo · upsell depois da compra do Kit Design Studio. Sem vídeo. Oferta exclusiva desta página: R$47 (R$67 na página do FigLogo). Não aparece em buscas. -->
+<meta name="theme-color" content="#2a0b2c">
+<!-- FigLogo · upsell depois da compra do Kit Design Studio, com vídeo (copy de 19/11). Crédito de R$47: de R$127 por R$80. A oferta de R$80 ainda não existe na Kiwify: o botão de compra é um marcador. Não aparece em buscas. -->
 
 <!-- Meta Pixel -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',{content_name:'FigLogo upsell Kit'});
+fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',{content_name:'FigLogo upsell'});
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=874750447646279&ev=PageView&noscript=1" alt=""></noscript>
 
 <link rel="stylesheet" href="../../assets/css/escola.css">
+<link rel="stylesheet" href="../../assets/css/upsell-video.css">
 <style>
-/* Cores do FigLogo (iguais a /figlogo). Componentes do escola.css: .head, .steps4, .modgrid, .rgrid, .obox, .price, .guar, .faq */
-:root{--accent:#ff58fc; --accent-2:#c92bd0; --accent-3:#7a1580; --accent-lt:#ffc6fe; --tinta:#1a0b1a; --verm:#e04a4a; --ok:#1f9d4c}
-.tema-claro .res .big{color:var(--accent-3)}
-
-/* ---------- barra do pedido (etapas, como em upsell) ---------- */
-.pedido{position:sticky;top:0;z-index:30;background:var(--tinta);color:#fff;padding:10px 16px}
-.pedido ol{list-style:none;display:flex;justify-content:center;align-items:center;gap:8px;margin:0 auto;max-width:760px;font-size:13px;font-weight:600;letter-spacing:-.01em}
-.pedido li{display:flex;align-items:center;gap:7px;white-space:nowrap;color:rgba(255,255,255,.5)}
-.pedido li i{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;font-style:normal;font-size:11px;font-weight:800;background:rgba(255,255,255,.14);color:#fff}
-.pedido li.ok{color:#fff}.pedido li.ok i{background:#3fbf18}
-.pedido li.agora{color:#fff}.pedido li.agora i{background:var(--accent);box-shadow:0 0 0 4px rgba(255,88,252,.25)}
-.pedido .sep{flex:0 1 34px;height:2px;background:rgba(255,255,255,.18);border-radius:2px}
-
-/* ---------- etiqueta [CONFIRMAR] (só na prévia; sai antes de publicar) ---------- */
-.cf{display:inline-block;vertical-align:middle;margin-left:6px;padding:1px 6px;border-radius:5px;background:#ffe14d;color:#4a3800;font-size:10.5px;font-weight:800;letter-spacing:.02em;line-height:1.5;font-style:normal;text-transform:none;-webkit-text-fill-color:#4a3800;white-space:nowrap}
-.pend{display:block;margin:8px auto 0;width:max-content;max-width:100%;padding:1px 7px;border-radius:5px;background:#ffe14d;color:#4a3800;font-size:10.5px;font-weight:800}
-
-/* ---------- abertura (mesmo padrão do upsell atual) ---------- */
-.up{position:relative;isolation:isolate;overflow-x:clip;text-align:center;padding:48px 0 30px}
-.up .logo{height:28px;width:auto;margin:0 auto 22px}
-.up .pill{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--ok);border-radius:999px;padding:7px 16px}
-.up h1{font-size:clamp(30px,4.6vw,52px);max-width:900px;margin:20px auto 0;line-height:1.06;text-wrap:balance}
-.up .sub{color:var(--muted);font-size:18px;margin:18px auto 0;max-width:560px}
-.up .sub b{color:var(--txt)}
-.halo2{position:absolute;left:50%;top:62%;width:min(760px,100vw);height:640px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,color-mix(in srgb,#ff58fc 28%,transparent),transparent);filter:blur(30px);z-index:-1}
-.up .platform{max-width:640px;margin:36px auto 0}
-.up .platform .frame img{height:auto;display:block}
-.up .platform .frame{box-shadow:0 40px 80px -36px rgba(122,21,128,.55);border:6px solid #fff}
-.up .platform .chip.c1{background:#fff;color:var(--tinta)}
-.up .platform .chip.c1 b{color:var(--ok)}
-.cta-up{max-width:440px;margin:30px auto 0}
-.cta-up .btn,.price .btn,.fim .btn{width:100%;font-size:18px;padding:20px 24px}
-.recusa{display:block;width:100%;margin-top:14px;background:none;border:0;font-family:inherit;font-size:14px;color:var(--dim);text-decoration:underline;cursor:pointer}
-.selos{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px}
-.selos span{display:inline-flex;align-items:center;gap:8px;background:#fff;border:2px solid var(--accent);color:var(--tinta);border-radius:999px;padding:9px 16px;font-size:14.5px;font-weight:700;box-shadow:0 12px 26px -16px rgba(201,43,208,.55)}
-.selos svg{width:19px;height:19px}
-
-/* ---------- oferta forte (obox do /figlogo, com o preto guardado para o preço) ---------- */
-.offer{position:relative;padding:70px 0 90px}
-.offer .head{margin-bottom:34px}
-.offer .obox{border:2px solid var(--accent);box-shadow:0 40px 90px -50px rgba(201,43,208,.75)}
-.offer .price{background:var(--tinta);color:#fff;border:0}
-.offer .price .lbl{color:var(--accent-lt)}
-.offer .price .avista{color:rgba(255,255,255,.75)}
-.offer .price .parc{color:rgba(255,255,255,.62)}
-.offer .price .secure{color:rgba(255,255,255,.5)}
-.offer .price .recusa{color:rgba(255,255,255,.55)}
-.offer .price .kit{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,.08);margin-bottom:18px;text-align:left}
-.offer .price .kit b{color:#7be05a;white-space:nowrap}
-.offer .price .val{color:#fff}
-.offer .obox .quote small{display:block;font-size:15px;font-weight:500;color:var(--muted);letter-spacing:0;margin-top:8px;line-height:1.45}
-.offer .guar-line{max-width:1000px}
-
-/* ---------- recado ---------- */
-.recado{padding:70px 0}
-.bilhete{max-width:700px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--card-shadow)}
-.foto-res{width:64px;height:64px;border-radius:50%;background:color-mix(in srgb,var(--accent) 14%,#fff);border:2px dashed var(--accent);display:grid;place-items:center;font-size:22px}
-.bilhete h2{font-size:24px}
-.bilhete p{color:var(--muted);font-size:16.5px;margin-top:10px;line-height:1.55}
-.bilhete p b{color:var(--txt)}
-.bilhete .ass{font-weight:700;color:var(--txt);margin-top:14px}
-
-/* ---------- problema (mesmo padrão do upsell atual) ---------- */
-.problema{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.erros{list-style:none;display:grid;gap:10px;margin:0 auto;max-width:640px}
-.erros li{display:flex;gap:12px;align-items:flex-start;padding:16px 18px;border-radius:16px;background:#fff;border:1px solid var(--line);box-shadow:var(--card-shadow);font-size:16.5px;line-height:1.45}
-.erros li i{flex:none;width:24px;height:24px;border-radius:50%;background:#fde4e4;color:var(--verm);display:grid;place-items:center;font-style:normal;font-weight:700;font-size:13px;margin-top:1px}
-.resultado{max-width:640px;margin:26px auto 0;text-align:center;font-size:18px;font-weight:600;letter-spacing:-.02em}
-
-/* ---------- Kit x FigLogo (colunas do upsell atual) ---------- */
-.compara{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:880px;margin:54px auto 0}
-.col{border-radius:22px;padding:24px 22px;border:1px solid var(--line);background:#fff;box-shadow:var(--card-shadow);min-width:0}
-.col h3{font-size:17px;display:flex;align-items:center;gap:10px}
-.col h3 img{height:22px;width:auto}
-.col ul{list-style:none;margin-top:16px;display:grid;gap:12px}
-.col li{font-size:15.5px;line-height:1.45;color:var(--muted);padding-left:18px;position:relative}
-.col li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%;background:#c9c2cc}
-.col.mais{border-color:color-mix(in srgb,var(--accent) 45%,transparent);background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 9%,#fff),#fff 60%);box-shadow:0 30px 60px -36px rgba(201,43,208,.55)}
-.col.mais li{color:var(--txt)}.col.mais li::before{background:var(--accent)}
-
-/* ---------- módulos: 3 colunas no computador, 2 no celular ---------- */
-.modgrid .modcard{min-width:0}
-.modcard .ttl{overflow-wrap:anywhere}
-
-/* ---------- prova ---------- */
-.rgrid.tres{columns:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
-.rgrid.tres .res{margin:0;min-width:0}
-.hall-head{margin:80px auto 34px}
-
-/* ---------- final ---------- */
-.fim{text-align:center;padding:30px 0 90px}
-.fim h2{font-size:clamp(26px,3.6vw,40px);max-width:800px;margin:0 auto;text-wrap:balance}
-.fim p{color:var(--muted);font-size:18px;margin:14px auto 0;max-width:560px}
-.fim .cta-up{margin-top:26px}
-
-
-/* ---------- barra do topo: compra aprovada + espere ---------- */
-.pedido p{margin:0 auto;max-width:860px;text-align:center;font-size:14px;font-weight:600;letter-spacing:-.01em;line-height:1.4}
-.pedido .ok{color:#7be05a;margin-right:6px;white-space:nowrap}
-.pedido b{color:#fff}
-
-/* ---------- preço exclusivo e aviso de não fechar ---------- */
-.offer .price .de{color:rgba(255,255,255,.62);margin:2px 0 0}
-.offer .price .de s{color:#ff8a8a}
-.offer .price .exc{display:inline-block;margin:0 auto 4px;padding:5px 12px;border-radius:999px;background:var(--accent);color:#fff;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-.offer .price .um{font-size:12.5px;color:rgba(255,255,255,.55);margin-top:12px;line-height:1.5}
-.obox .alerta{grid-column:1/-1;margin:0}
-.alerta{display:flex;align-items:flex-start;gap:12px;max-width:1000px;margin:18px auto 0;padding:16px 20px;border-radius:18px;background:#fff4d6;border:2px solid #f2b705;color:#4a3500;font-size:15.5px;line-height:1.45;box-shadow:0 18px 40px -26px rgba(242,183,5,.8)}
-.alerta .ic{flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#f2b705;color:#fff;font-weight:900;font-size:17px}
-.alerta b{color:#2e2100}
-
-/* ---------- o que muda pra você (fcard do /figlogo) ---------- */
-.fgrid.tres .fcard{min-width:0}
-.fgrid.tres .fcard p b{color:var(--txt)}
-.meio{max-width:440px;margin:44px auto 0;text-align:center}
-.meio .btn{width:100%;font-size:18px;padding:20px 24px}
-
-@media (max-width:960px){.fgrid.tres{grid-template-columns:1fr;max-width:560px;margin:0 auto}.rgrid.tres{grid-template-columns:1fr;max-width:520px;margin:0 auto}.compara{grid-template-columns:1fr}.offer .price,.offer .obox .alerta{order:-1}}
-@media (max-width:640px){
-  .pedido ol{gap:5px;font-size:11.5px}.pedido .sep{flex-basis:12px}
-  .pedido li .tx-l{display:none}
-  .up{padding-top:30px}.up .sub{font-size:16.5px}
-  .up .platform .frame{border-width:4px}
-  .offer{padding:56px 0 70px}
-  .bilhete{grid-template-columns:1fr;padding:22px 20px;gap:12px}
-  .modgrid{grid-template-columns:1fr 1fr!important;gap:10px}
-  .modcard{border-radius:14px}
-  .modcard .cap{flex-direction:column;gap:2px;padding:10px 12px 12px}
-  .modcard .ttl{font-size:14px;line-height:1.25}
-  .offer .price .kit{font-size:13px}
-  .cta-up .btn,.price .btn,.fim .btn,.meio .btn{font-size:16.5px;padding:18px 16px}
-  .pedido p{font-size:12.5px}
-  .alerta{font-size:14.5px;padding:14px 16px}
-}
+/* Cores do FigLogo */
+:root{--accent:#ff58fc; --accent-2:#c92bd0; --accent-3:#7a1580; --accent-lt:#ffc6fe; --tinta:#2a0b2c; --pop:#ffc6fe; --pop-ink:#4a0d4d}
+.recebe svg circle{fill:var(--accent-2)}
+.garantia img{filter:hue-rotate(28deg) saturate(1.1)} /* selo da garantia no rosa do FigLogo */
 </style>
 </head>
 <body data-curso="FigLogo">
 
-<!-- Barra do topo -->
-<div class="pedido">
-  <p><span class="ok">✓ Compra aprovada!</span> <b>Espere: antes de acessar seu Kit, tem uma oferta que só aparece agora.</b></p>
-</div>
+<div class="aviso"><b>Não feche nem atualize esta página:</b> você acabou de liberar um crédito que só existe aqui.</div>
 
 <!-- Abertura -->
 <header class="up">
-  <div class="halo2"></div>
+  <div class="halo"></div>
   <div class="wrap">
-    <img class="logo" src="../../assets/img/figlogo/logo-figlogo-escuro.png" alt="FigLogo" width="87" height="28">
-    <h1>Seu Kit já tem contrato, proposta e manual de marca prontos. <span class="grad">Agora falta aprender a criar o logotipo que vai dentro deles.</span></h1>
-    <p class="sub">No FigLogo, você aprende o método pra criar logotipos no Figma do briefing à entrega, com segurança pra explicar cada escolha pro cliente. E, como você acabou de comprar o Kit, ele sai por <b>R$47 em vez de R$67</b>. Esse preço é exclusivo desta página, então não feche ela ainda.</p>
-    <div class="cta-up">
-      <a class="btn sim" href="#oferta">Sim! Quero o FigLogo por R$47</a>
-      <span class="pend">[LINK DO CHECKOUT]</span>
-      <button type="button" class="recusa">Não, obrigada. Prefiro pagar R$67 depois</button>
-      <p class="secure" style="color:var(--dim);margin-top:10px">🔒 1 clique, sem preencher seus dados de novo<i class="cf">CONFIRMAR Pix</i></p>
+    <img class="logo" src="../../assets/img/figlogo/logo-figlogo-escuro.png" alt="FigLogo" width="110" height="30">
+    <div><span class="tag">Parabéns!</span></div>
+    <div class="selo-credito"><span class="cr-ic" aria-hidden="true">🎟️</span><span>Você acabou de liberar <b>R$47 de crédito</b> no FigLogo</span></div>
+    <h1>Você acabou de entrar para o Kit Design Studio. <span class="grad">Agora imagina criar o logo que vai dentro dele.</span></h1>
+    <p class="sub">Gravei um recado rápido sobre o que faz o cliente dizer sim pro seu projeto e sobre o crédito que você acabou de liberar. Assista antes de sair:</p>
+
+    <!-- VÍDEO (9:16). Quando o vídeo estiver pronto: apague a .capa e cole o embed aqui dentro, por exemplo
+         <iframe id="vsl-player" src="https://player.vimeo.com/video/ID?autoplay=1&muted=1&loop=0&autopause=0&playsinline=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Recado da Lari para quem comprou o Kit Design Studio"></iframe>
+         O botão "Toque para ativar o som" já funciona com o player do Vimeo (script no fim da página). -->
+    <div class="video" id="vsl">
+      <div class="capa"><img src="../../assets/img/comum/lari-recorte.webp" alt="Lari Tedeschi" width="118" height="118"><p><small>Vídeo em breve</small>Um recado da Lari pra você antes de entrar no Kit</p></div>
+      <button type="button" class="som" id="vsl-som"><span class="ic">🔊</span>Toque para ativar o som</button>
     </div>
-    <div class="platform">
-      <div class="glowp"></div>
-      <span class="chip c1"><b>✓</b> Kit Design Studio garantido</span>
-      <span class="chip c2">+ FigLogo por R$47</span>
-      <div class="frame"><img src="../../assets/img/figlogo/area-de-membros.webp" alt="Área de membros do FigLogo" width="1600" height="826"></div>
-    </div>
-    <div class="selos">
-      <span><svg viewBox="0 0 24 24"><path d="M12 2l8 3.5v6c0 5-3.4 8.6-8 10.5-4.6-1.9-8-5.5-8-10.5v-6z" fill="#c92bd0"/><path d="M8.5 12l2.4 2.4L15.5 10" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Garantia de 7 dias<i class="cf">CONFIRMAR</i></span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="#c92bd0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c-2-2.7-3.6-4-5.5-4a4 4 0 0 0 0 8c1.9 0 3.5-1.3 5.5-4zm0 0c2 2.7 3.6 4 5.5 4a4 4 0 0 0 0-8c-1.9 0-3.5 1.3-5.5 4z"/></svg>Acesso vitalício<i class="cf">CONFIRMAR</i></span>
+
+    <!-- Botão abaixo do vídeo: data-delay = segundos até aparecer (trecho "A conta" do vídeo). 0 = aparece na hora. -->
+    <div class="cta js-atraso" data-delay="0">
+      <a class="btn" href="#oferta">Sim! Quero o FigLogo usando meu crédito</a>
+      <a class="nao js-recusa" href="#">Não, prefiro pagar R$127 depois</a>
     </div>
   </div>
 </header>
 
-<!-- Oferta (logo depois da abertura) -->
-<section class="offer" id="oferta">
-  <div class="bgglow"></div>
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">Só pra quem acabou de comprar o Kit</span>
-      <h2>Oferta exclusiva <span class="grad">pra você que tem o Kit.</span></h2>
-      <p>Na página do FigLogo, o curso custa R$67. Como você acabou de entrar no Kit, aqui ele sai por R$47.</p>
-    </div>
-    <div class="obox">
-      <div class="left">
-        <p class="quote">O que vem no FigLogo:<small>O curso de criação de logotipos no Figma, do briefing à entrega.</small></p>
-        <ul class="inc">
-          <li><svg width="20" height="20"><use href="#chk"/></svg>Método PCRA completo</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg>Figma do zero ao avançado</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg>12 módulos de aulas gravadas</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg>Desafios práticos para o portfólio</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg>Oficina de mockups</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg>Checklist de entrega</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg>Aulas com profissionais convidados</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg>Como avaliar e refinar um logo gerado por IA</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg>Licença educacional do Figma</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg>Comunidade no WhatsApp</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg>Certificado de conclusão</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg><span>Acesso vitalício, com atualizações <i class="cf">CONFIRMAR</i></span></li>
-        </ul>
-      </div>
-      <div class="price">
-        <div class="kit"><span>Kit Design Studio</span><b>✓ já garantido</b></div>
-        <span class="exc">Preço exclusivo desta página</span>
-        <p class="de">Na página do curso: <s>R$67</s></p>
-        <p class="val"><small>R$</small>47</p>
-        <p class="avista">à vista · pagamento único, sem mensalidade</p>
-        <p class="parc">ou 12x de R$4,86 no cartão<i class="cf">CONFIRMAR</i></p>
-        <a class="btn sim" href="#oferta">Sim! Quero o FigLogo por R$47</a>
-        <span class="pend">[LINK DO CHECKOUT]</span>
-        <button type="button" class="recusa">Não, obrigada. Prefiro pagar R$67 depois</button>
-        <p class="um">🔒 1 clique, sem preencher seus dados de novo · Acesso imediato · Garantia de 7 dias<i class="cf">CONFIRMAR Pix</i></p>
-      </div>
-      <div class="alerta" role="note"><span class="ic">!</span><span><b>Não feche esta página.</b> Esse preço só aparece agora, logo depois da compra do seu Kit. Se você sair ou atualizar, o FigLogo volta pra R$67 e você não vai ver esse valor de novo.</span></div>
-    </div>
-    <div class="guar-line"><img src="../../assets/img/comum/selo-garantia.svg" alt="" width="54" height="54"><span><b>Garantia de 7 dias no FigLogo.</b> Não gostou? Devolvemos 100% do valor do FigLogo, e o seu Kit continua com você.<i class="cf">CONFIRMAR</i></span></div>
+<!-- Bloco 1 · O problema -->
+<section class="problema cinza">
+  <div class="wrap estreito">
+    <h2>Documento bonito ajuda muito. <span class="grad">Mas quem aprova o projeto é o cliente olhando pro logo.</span></h2>
+    <p>O seu Kit já tem proposta, contrato, apresentação e manual de marca prontos. Você chega na reunião organizada e com cara de estúdio.</p>
+    <p>Só que a apresentação tem um espaço bem no meio, e é ali que entra o logo que você criou. Se ele foi feito no improviso, testando fonte e ajustando "no olho", dá aquele frio na barriga quando o cliente pergunta por que você fez daquele jeito. E, quando você não consegue explicar, <b>o preço vira negociação.</b></p>
   </div>
 </section>
 
-<!-- Recado -->
-<section class="recado problema">
+<!-- Bloco 2 · A virada -->
+<section class="virada">
   <div class="wrap">
-    <div class="bilhete">
-      <span class="foto-res" title="Foto da Lari a confirmar">👋</span>
-      <div>
-        <h2>Oi! Aqui é a Lari<i class="cf">CONFIRMAR foto</i></h2>
-        <p>Parabéns pela compra! Os arquivos do Kit já estão a caminho do seu e-mail e você não precisa fazer mais nada pra receber.<i class="cf">CONFIRMAR</i></p>
-        <p>Olhando o caminho dos meus alunos, eu percebi que <b>muita gente que começa pelo Kit vai depois para o FigLogo.</b> Um completa o outro: o Kit cuida de tudo o que fica em volta do projeto, e o FigLogo ensina a criar o que vai no meio, que é o logotipo.</p>
-        <p>Por isso preparei uma oferta exclusiva pra você que tá comprando o Kit. Na página do curso, o FigLogo custa R$67. <b>Aqui, ele sai por R$47.</b></p>
-        <p>Quero muito que você não pare no documento pronto: que aprenda a criar o logo que vai dentro da sua apresentação e do seu manual, e chegue no próximo cliente com o projeto inteiro na mão. Essa oferta é única e só existe nesta página.</p>
-        <p class="ass">Lari Tedeschi</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- O problema -->
-<section>
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">O espaço em branco</span>
-      <h2>Documento bonito ajuda muito. <span class="grad">Mas quem aprova o projeto é o cliente olhando para o logo.</span></h2>
-      <p>A apresentação do Kit tem um espaço em branco bem no meio, e é ali que entra o logotipo que você criou. Quando falta um método pra criar, acontece isto:</p>
-    </div>
-    <ul class="erros">
-      <li><i>✕</i>você abre o Figma sem saber por onde começar e passa horas em tentativa e erro</li>
-      <li><i>✕</i>o logo fica bonito, mas você não sabe explicar as escolhas, e aceita qualquer alteração que o cliente pede</li>
-      <li><i>✕</i>o símbolo funciona grande e some quando vira foto de perfil do Instagram</li>
-      <li><i>✕</i>na hora de entregar, bate a dúvida de quais arquivos mandar e em quais formatos</li>
-    </ul>
-    <p class="resultado">E pesa no bolso: quando você não consegue explicar o que criou, o cliente só enxerga "um desenho", e o preço vira negociação.</p>
-    <p class="resultado" style="font-weight:500;color:var(--muted);margin-top:10px">Nada disso é falta de talento. É só falta de alguém mostrar a ordem das coisas.</p>
-  </div>
-</section>
-
-<!-- Método -->
-<section class="problema">
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">O método</span>
-      <h2>Criar logotipo tem um passo a passo, <span class="grad">o Método PCRA.</span></h2>
-      <p>O Kit colocou ordem no seu atendimento. O FigLogo faz a mesma coisa com a criação, na ordem em que um projeto de logotipo acontece de verdade.</p>
-    </div>
-    <div class="steps4">
-      <div class="step"><span class="n">01</span><div class="big">P</div><h3>Pesquisa</h3><p>Briefing e análise de referências, pra entender o que a marca precisa antes de criar.</p></div>
-      <div class="step"><span class="n">02</span><div class="big">C</div><h3>Conceito</h3><p>Transformar o briefing em direções criativas com intenção, em vez de sair testando.</p></div>
-      <div class="step"><span class="n">03</span><div class="big">R</div><h3>Refinamento</h3><p>Grid, proporção, tipografia e kerning: os detalhes que deixam o logo com cara profissional.</p></div>
-      <div class="step"><span class="n">04</span><div class="big">A</div><h3>Apresentação</h3><p>Mockups, arquivos finais e uma apresentação que ajuda o cliente a aprovar.</p></div>
+    <div class="estreito">
+      <h2>Criar logo também tem um passo a passo, <span class="grad">do mesmo jeito que o seu atendimento agora tem.</span></h2>
+      <p>Foi por isso que eu criei o FigLogo. Nele eu te ensino o meu processo pra criar logotipos no Figma: o processo criativo, a construção, o refinamento e a apresentação pro cliente. O Figma é gratuito e roda no navegador, então você não precisa de programa caro pra começar.</p>
+      <p>E repara que o começo e o fim do processo conversam direto com o Kit: o briefing e a apresentação de marca que você acabou de comprar. <strong>O FigLogo te ensina a usar esses momentos pra criar e defender um logo de verdade.</strong></p>
     </div>
     <div class="compara">
-      <div class="col">
-        <h3><img src="../../assets/img/kit/logo-kit-escuro.png" alt="">O Kit Design Studio te dá</h3>
-        <ul>
-          <li>O roteiro de briefing</li>
-          <li>A apresentação de marca pronta pra preencher</li>
-          <li>O manual de marca pra entregar</li>
-          <li>O contrato e a proposta de logotipo</li>
-        </ul>
-      </div>
-      <div class="col mais">
-        <h3><img src="../../assets/img/figlogo/logo-figlogo-escuro.png" alt="">O FigLogo te ensina</h3>
-        <ul>
-          <li>A tirar do briefing o que a marca precisa</li>
-          <li>A criar o logotipo que entra nela e a explicar cada decisão</li>
-          <li>A construir e refinar o logo que vai no manual</li>
-          <li>A entregar o que você prometeu neles, com segurança</li>
-        </ul>
-      </div>
+      <div class="col so"><h3><i>✕</i>Quem tem só os documentos</h3><ul><li>Atende com cara de estúdio, mas cria no improviso</li><li>Preenche a apresentação e torce pro cliente gostar</li><li>Aceita qualquer alteração pra agradar</li><li>O preço vira negociação</li></ul></div>
+      <div class="col mais"><h3><i>✓</i>Quem tem os documentos e o logo</h3><ul><li>Atende e cria com um processo do começo ao fim</li><li>Explica cada escolha do logo na apresentação</li><li>Defende o que criou com segurança</li><li>Tem base pra cobrar melhor pelo projeto</li></ul></div>
     </div>
   </div>
 </section>
 
+<!-- Bloco 3 · O que você recebe -->
+<section class="cinza">
+  <div class="wrap">
+    <div class="estreito"><h2>Dentro do <span class="grad">FigLogo:</span></h2></div>
+    <img class="tela" src="../../assets/img/figlogo/area-de-membros.webp" alt="A área de membros do FigLogo" width="1600" height="826" loading="lazy">
+    <ul class="recebe">
+      <li><svg><use href="#ok"/></svg><span><b>O meu processo completo</b>: processo criativo, construção, refinamento e apresentação</span></li>
+      <li><svg><use href="#ok"/></svg><span><b>Figma do zero</b>, pra acompanhar mesmo começando do zero</span></li>
+      <li><svg><use href="#ok"/></svg><span><b>FigLab incluso</b>: meu curso básico de Figma, com os desafios práticos</span></li>
+      <li><svg><use href="#ok"/></svg><span><b>Oficina de mockups</b>, pra apresentar o logo aplicado</span></li>
+      <li><svg><use href="#ok"/></svg><span><b>Checklist de entrega</b>: quais arquivos exportar e em quais formatos</span></li>
+      <li><svg><use href="#ok"/></svg><span><b>Aulas com profissionais convidados</b></span></li>
+      <li><svg><use href="#ok"/></svg><span><b>Licença educacional do Figma</b>, pra usar as funções Pro de graça</span></li>
+      <li><svg><use href="#ok"/></svg><span><b>Comunidade no WhatsApp</b></span></li>
+      <li><svg><use href="#ok"/></svg><span><b>Certificado de conclusão</b></span></li>
+      <li><svg><use href="#ok"/></svg><span><b>Acesso vitalício</b>, com as atualizações</span></li>
+    </ul>
+  </div>
+</section>
 
-<!-- O que muda pra você -->
+<!-- Bloco 4 · Prova -->
 <section>
   <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">O que muda pra você</span>
-      <h2>Com o Kit e o FigLogo juntos, <span class="grad">você atende e cria como uma designer de marcas.</span></h2>
-    </div>
-    <div class="fgrid tres">
-      <div class="fcard"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3.5v6c0 5-3.4 8.6-8 10.5-4.6-1.9-8-5.5-8-10.5v-6z"/><path d="M8.5 12l2.4 2.4L15.5 10"/></svg></div><h3>Segurança pra defender o que você criou</h3><p>Cada etapa do método tem um porquê. Quando o cliente perguntar "por que essa fonte?", você sabe responder, e para de aceitar qualquer alteração só pra agradar.</p></div>
-      <div class="fcard"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div><h3>Base pra cobrar melhor pelo logo</h3><p>Saber explicar cada decisão é o que sustenta um preço mais alto. A Quesia, designer há 6 anos, passou de <b>R$150 para mais de R$1.000 por projeto</b> depois do curso.<i class="cf">CONFIRMAR</i></p></div>
-      <div class="fcard"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg></div><h3>Portfólio saindo do curso</h3><p>Os desafios práticos viram os primeiros projetos do seu portfólio, apresentados com os mockups e a apresentação de marca do seu Kit.</p></div>
+    <div class="estreito"><h2>Quem já fez <span class="grad">o FigLogo:</span></h2></div>
+    <div class="prova-uma">
+      <article class="res"><div class="txt"><div class="who">Quesia</div><span class="big">R$150 → +R$1.000 por projeto</span></div><div class="print"><img src="../../assets/img/framer/zXRTje0tnFe5INgP0lJgQYgD86A.webp" alt="Depoimento da Quesia, aluna do FigLogo" loading="lazy"></div></article>
     </div>
   </div>
 </section>
 
-<!-- Módulos -->
-<section>
+<!-- Bloco 5 · A oferta + crédito do Kit -->
+<section class="oferta" id="oferta">
+  <div class="glow"></div>
   <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">O que tem dentro</span>
-      <h2>Os 12 módulos do FigLogo, <span class="grad">um por um.</span></h2>
+    <div class="estreito">
+      <h2>Só pra quem acabou de entrar no Kit Design Studio, <span class="pop">e só nesta página:</span></h2>
+      <p>O FigLogo custa <b>R$127</b> pra quem chega pela página normal. Aqui, os <b>R$47 que você acabou de pagar no Kit viram crédito</b> e saem direto desse valor.</p>
     </div>
-    <div class="modgrid">
-      <article class="modcard"><img src="../../assets/img/figlogo/modulos/01-comece-por-aqui.webp" alt="" loading="lazy"><div class="cap"><span class="num">01</span><span class="ttl">Comece por aqui</span></div></article>
-      <article class="modcard"><img src="../../assets/img/figlogo/modulos/02-hall-criativo.webp" alt="" loading="lazy"><div class="cap"><span class="num">02</span><span class="ttl">Hall criativo</span></div></article>
-      <article class="modcard"><img src="../../assets/img/figlogo/modulos/03-a-base-de-tudo.webp" alt="" loading="lazy"><div class="cap"><span class="num">03</span><span class="ttl">A base de tudo</span></div></article>
-      <article class="modcard"><img src="../../assets/img/figlogo/modulos/04-processo-criativo.webp" alt="" loading="lazy"><div class="cap"><span class="num">04</span><span class="ttl">O processo criativo</span></div></article>
-      <article class="modcard"><img src="../../assets/img/figlogo/modulos/05-tecnicas-de-construcao.webp" alt="" loading="lazy"><div class="cap"><span class="num">05</span><span class="ttl">Técnicas de construção</span></div></article>
-      <article class="modcard"><img src="../../assets/img/figlogo/modulos/06-criando-na-pratica.webp" alt="" loading="lazy"><div class="cap"><span class="num">06</span><span class="ttl">Criando na prática</span></div></article>
-      <article class="modcard"><img src="../../assets/img/figlogo/modulos/07-sistema-de-refinamento.webp" alt="" loading="lazy"><div class="cap"><span class="num">07</span><span class="ttl">Sistema de refinamento</span></div></article>
-      <article class="modcard"><img src="../../assets/img/figlogo/modulos/08-desafios-para-evoluir.webp" alt="" loading="lazy"><div class="cap"><span class="num">08</span><span class="ttl">Desafios para evoluir</span></div></article>
-      <article class="modcard"><img src="../../assets/img/figlogo/modulos/09-checklist-de-entrega.webp" alt="" loading="lazy"><div class="cap"><span class="num">09</span><span class="ttl">Checklist de entrega</span></div></article>
-      <article class="modcard"><img src="../../assets/img/figlogo/modulos/10-oficina-de-mockups.webp" alt="" loading="lazy"><div class="cap"><span class="num">10</span><span class="ttl">Oficina de mockups</span></div></article>
-      <article class="modcard"><img src="../../assets/img/figlogo/modulos/11-plano-de-evolucao.webp" alt="" loading="lazy"><div class="cap"><span class="num">11</span><span class="ttl">Plano de evolução</span></div></article>
-      <article class="modcard"><img src="../../assets/img/figlogo/modulos/12-profissionais-convidados.webp" alt="" loading="lazy"><div class="cap"><span class="num">12</span><span class="ttl">Profissionais convidados</span></div></article>
+    <div class="recibo">
+      <div class="tt"><img src="../../assets/img/figlogo/logo-figlogo-escuro.png" alt="FigLogo" width="90" height="25"><span>SUA CONTA</span></div>
+      <div class="linha cheio"><span class="nm">FigLogo (preço normal)</span><span class="pt"></span><span class="vl">R$127</span></div>
+      <div class="linha credito"><span class="nm">🎟️ <b>Seu crédito do Kit Design Studio</b></span><span class="pt"></span><span class="vl">− R$47</span></div>
+      <div class="tot"><span>Você paga hoje</span><b><small>R$</small>80</b></div>
+      <p class="parc">ou 12x de R$—</p>
+      <p class="acesso">✓ Acesso vitalício ao FigLogo</p>
     </div>
-    <div class="meio">
-      <a class="btn sim" href="#oferta">Sim! Quero o FigLogo por R$47</a>
-      <span class="pend">[LINK DO CHECKOUT]</span>
-      <button type="button" class="recusa">Não, obrigada. Prefiro pagar R$67 depois</button>
+    <p class="dois">Na prática, <span class="pop">é como se o Kit saísse de graça:</span> você leva o Kit e o FigLogo pelo preço do FigLogo.</p>
+    <p class="porque"><b>Por que eu faço isso?</b> Porque muita gente que começa pelo Kit vai depois pro FigLogo, e quem faz os dois chega no próximo cliente com o atendimento organizado e o logo pensado. Prefiro colocar esse crédito em quem já decidiu levar isso a sério.</p>
+    <p class="so-aqui">🔒 <span>Esse crédito existe <b>só nesta página</b>. Se você sair ou atualizar, ele não aparece de novo, e o FigLogo volta pra R$127.</span></p>
+    <div class="cta-up" id="comprar">
+      <!-- MARCADOR: a oferta de R$80 (Kit → FigLogo) ainda não existe na Kiwify.
+           Quando existir, troque este bloco pelo código do "Gerador de upsell" do produto Kit Design Studio
+           (div kiwify-upsell-ID com botão kiwify-upsell-trigger-ID e recusa kiwify-upsell-cancel-trigger-ID),
+           repita as regras de estilo do botão com o novo ID, carregue https://snippets.kiwify.com/upsell-v2/upsell.min.js
+           e troque "R$—" pela parcela que o checkout mostrar. -->
+      <span class="btn-marcador" role="img" aria-label="Botão de compra (aguardando a oferta na Kiwify)">Sim! Quero o FigLogo usando meu crédito</span>
+      <a class="recusa-marcador js-recusa" href="#">Não, prefiro pagar R$127 depois</a>
+      <p class="seg">🔒 Pagamento seguro · Acesso no seu e-mail · Garantia de 7 dias</p>
     </div>
   </div>
 </section>
 
-
-<!-- Prova -->
-<section class="problema">
+<!-- Bloco 6 · Garantia -->
+<section class="g-sec">
   <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">Quem já fez</span>
-      <h2>O que os alunos <span class="grad">contam do FigLogo.</span><i class="cf">CONFIRMAR depoimentos</i></h2>
-    </div>
-    <div class="rgrid tres">
-      <article class="res"><div class="txt"><div class="who">Quesia</div><span class="big">R$150 → +R$1.000 por projeto</span><i class="cf">CONFIRMAR números</i><p>Mesmo com experiência, ganhou mais segurança no próprio processo de criação.</p></div><div class="print"><img src="../../assets/img/framer/zXRTje0tnFe5INgP0lJgQYgD86A.webp" alt="Depoimento da Quesia" loading="lazy"></div></article>
-      <article class="res"><div class="txt"><div class="who">Bea</div><span class="big">Começou sem nunca ter usado o Figma</span><p>Aprendeu a metodologia do zero.</p></div><div class="print"><img src="../../assets/img/framer/SOxju70KbkgDFKUJok6V9cqT4.webp" alt="Depoimento da Bea" loading="lazy"></div></article>
-      <article class="res"><div class="txt"><div class="who">Gioh</div><span class="big">Primeiro logo criado</span><p>Tirou o primeiro logo do papel com os desafios do curso.</p></div><div class="print"><img src="../../assets/img/framer/91qHzviLr0gBg0N56T5IbVJiEs8.webp" alt="Depoimento da Gioh" loading="lazy"></div></article>
-    </div>
-    <div class="head hall-head">
-      <span class="eyebrow">Hall criativo</span>
-      <h2>Logos criados <span class="grad">pelos alunos.</span><i class="cf">CONFIRMAR</i></h2>
-    </div>
-  </div>
-  <div class="marquee">
-    <div class="track" id="gallery">
-      <img src="../../assets/img/framer/az9qJXyC3fehBNaAb1Ba67cOQ7Y.webp" alt="Projeto de aluno do FigLogo" loading="lazy">
-      <img src="../../assets/img/framer/4J2uVN0cK7PkjjGrBmSlLCQP1k.webp" alt="Projeto de aluno do FigLogo" loading="lazy">
-      <img src="../../assets/img/framer/BYE4t8zsuG7c3r0uz6VXPR951Mg.webp" alt="Projeto de aluno do FigLogo" loading="lazy">
-      <img src="../../assets/img/framer/srRgcvceFwUAgQdou5xQ6Jqk.webp" alt="Projeto de aluno do FigLogo" loading="lazy">
-      <img src="../../assets/img/framer/JIiHZGa4hx0YxrzWXU3GoltGOec.webp" alt="Projeto de aluno do FigLogo" loading="lazy">
-      <img src="../../assets/img/framer/HJB7K1eE6BXg2nwKEVkGwgBjgA.webp" alt="Projeto de aluno do FigLogo" loading="lazy">
-    </div>
-  </div>
-  <div class="dots" aria-hidden="true"></div>
-</section>
-
-
-<!-- Oferta (repetida) -->
-<section class="offer" id="oferta-2">
-  <div class="bgglow"></div>
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">Seu pedido</span>
-      <h2>Kit Design Studio <span class="grad">+ FigLogo por R$47.</span></h2>
-    </div>
-    <div class="obox">
-      <div class="left">
-        <p class="quote">Você sai daqui com o atendimento organizado e um método pra criar o logo.<small>Na página do FigLogo, o curso custa R$67. Esse preço de R$47 é só pra quem acabou de comprar o Kit, e só aparece aqui.</small></p>
-        <ul class="inc">
-          <li><svg width="20" height="20"><use href="#chk"/></svg>Kit Design Studio (já garantido)</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg>FigLogo completo, 12 módulos</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg>Método PCRA, do briefing à entrega</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg>Licença educacional do Figma</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg>Comunidade no WhatsApp</li>
-          <li><svg width="20" height="20"><use href="#chk"/></svg>Certificado de conclusão</li>
-        </ul>
-      </div>
-      <div class="price">
-        <div class="kit"><span>Kit Design Studio</span><b>✓ já garantido</b></div>
-        <span class="exc">Preço exclusivo desta página</span>
-        <p class="de">Na página do curso: <s>R$67</s></p>
-        <p class="val"><small>R$</small>47</p>
-        <p class="avista">à vista · pagamento único, sem mensalidade</p>
-        <p class="parc">ou 12x de R$4,86 no cartão<i class="cf">CONFIRMAR</i></p>
-        <a class="btn sim" href="#oferta">Sim! Quero o FigLogo por R$47</a>
-        <span class="pend">[LINK DO CHECKOUT]</span>
-        <button type="button" class="recusa">Não, obrigada. Prefiro pagar R$67 depois</button>
-        <p class="um">🔒 1 clique, sem preencher seus dados de novo · Acesso imediato · Garantia de 7 dias<i class="cf">CONFIRMAR Pix</i></p>
-      </div>
-      <div class="alerta" role="note"><span class="ic">!</span><span><b>Não feche esta página.</b> Esse preço só aparece agora, logo depois da compra do seu Kit. Se você sair ou atualizar, o FigLogo volta pra R$67 e você não vai ver esse valor de novo.</span></div>
+    <div class="garantia">
+      <img src="../../assets/img/comum/selo-garantia.svg" alt="Garantia de 7 dias" width="84" height="84">
+      <div><h2>Garantia de 7 dias.</h2><p>Entra, assiste e aplica. Se não fizer sentido pra você, devolvemos 100% do valor do FigLogo, sem burocracia. O seu Kit continua com você normalmente.</p></div>
     </div>
   </div>
 </section>
 
-<!-- Garantia -->
-<section class="guarantee" style="padding-top:20px">
+<!-- Bloco 7 · Dúvidas -->
+<section class="faq">
   <div class="wrap">
-    <div class="guar">
-      <div class="selo"><svg viewBox="0 0 240 240" role="img" aria-label="Garantia de 7 dias"><defs><path id="arco" d="M120,120 m-86,0 a86,86 0 1,1 172,0 a86,86 0 1,1 -172,0"/></defs><style>.fundo{fill:currentColor}.anel{fill:none;stroke:#fff;stroke-opacity:.35;stroke-width:1.5}.txt{fill:#fff;font-family:Euclid,"Helvetica Neue",Arial,sans-serif;font-weight:600}</style><circle class="fundo" cx="120" cy="120" r="116"/><circle class="anel" cx="120" cy="120" r="100"/><circle class="anel" cx="120" cy="120" r="70"/><g class="gira"><text class="txt" font-size="15" letter-spacing="3.2" textLength="530" lengthAdjust="spacing"><textPath href="#arco">GARANTIA INCONDICIONAL ✦ SEM RISCO ✦ </textPath></text></g><text class="txt" x="120" y="134" text-anchor="middle" font-size="64" font-weight="700" letter-spacing="-3">7</text><text class="txt" x="120" y="160" text-anchor="middle" font-size="17" letter-spacing="2">DIAS</text></svg></div>
-      <div>
-        <span class="eyebrow">Garantia<i class="cf">CONFIRMAR</i></span>
-        <h2>Você tem 7 dias pra decidir <span class="grad">com calma.</span></h2>
-        <p>Entre, assista às aulas e conheça o curso. Se sentir que o FigLogo não é pra você, peça o reembolso em até 7 dias e devolvemos 100% do valor do FigLogo, sem burocracia. O seu Kit continua com você normalmente.</p>
-        <p style="margin-top:12px"><b>Ou seja: você garante o preço de R$47 agora e tem uma semana inteira pra ver se o curso é pra você.</b></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Dúvidas -->
-<section class="faq" id="faq">
-  <div class="wrap">
-    <div class="top">
-      <h2><span class="grad">Perguntas</span> frequentes</h2>
-      <p>Ficou alguma dúvida?<br>Chama no WhatsApp.</p>
-    </div>
+    <div class="estreito"><h2><span class="grad">Dúvidas</span> frequentes</h2></div>
     <div class="list">
-      <details open><summary>Esse preço vale depois?</summary><p>Não. Na página do FigLogo, o curso custa R$67. Os R$47 são exclusivos pra quem acabou de comprar o Kit e só aparecem aqui, agora. Se você fechar ou atualizar esta página, o preço volta pra R$67.</p></details>
-      <details><summary>Preciso já saber usar o Figma?</summary><p>Não. O FigLogo começa do zero, na instalação do Figma, e vai até as ferramentas avançadas.</p></details>
-      <details><summary>Editei meu Kit no Canva (ou no Word). Consigo fazer o FigLogo?</summary><p>Consegue. O Kit pode ser editado em vários programas, e o FigLogo é feito no Figma, que você aprende dentro do curso. Uma coisa não depende da outra.</p></details>
-      <details><summary>Preciso pagar o Figma?</summary><p>Não. O FigLogo é um curso verificado pelo Figma, então você pode pedir a licença educacional e usar as funções Pro de graça. O passo a passo está dentro do curso.</p></details>
-      <details><summary>Já crio logos. O FigLogo serve pra mim?</summary><p>Serve se você sente que ainda cria no improviso. Ele foi pensado pra quem está começando, mas também pra quem já cria e quer um passo a passo claro do briefing à entrega, sabendo explicar cada decisão pro cliente.</p></details>
-      <details><summary>Por quanto tempo eu tenho acesso?</summary><p>Para sempre, com as atualizações futuras incluídas.<i class="cf">CONFIRMAR</i></p></details>
-      <details><summary>Como eu recebo o acesso?</summary><p>O acesso chega no seu e-mail logo depois da compra, do mesmo jeito que o do Kit.<i class="cf">CONFIRMAR</i></p></details>
-      <details><summary>O FigLogo ensina identidade visual completa?</summary><p>O FigLogo ensina a criar o logotipo, do briefing à entrega. Identidade visual completa é assunto do FigBrand, o passo seguinte pra quem quer ir além. Pra quem está começando com marcas, o FigLogo é o primeiro passo.</p></details>
-      <details><summary>Já sou aluna do FigLogo. E agora?</summary><p>Então você já tem o que precisa: é só clicar em "Não, obrigada" e ir direto para o seu Kit. Não precisa comprar de novo.</p></details>
-      <details><summary>Posso parcelar?</summary><p>Pode, em até 12x no cartão.</p></details>
-    </div>
-    <div class="support">
-      <p>Ainda ficou com dúvida?</p>
-      <a href="https://wa.me/5541999401055?text=Oi!%20Acabei%20de%20comprar%20o%20Kit%20Design%20Studio%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20FigLogo." target="_blank" rel="noopener">Chama no WhatsApp →</a>
+      <details open><summary>Como funciona o crédito do Kit?</summary><p>É automático. Os R$47 que você pagou no Kit já estão descontados do preço do FigLogo nesta página. O valor do botão já é o final.</p></details>
+      <details><summary>Preciso já saber usar o Figma?</summary><p>Não. O FigLogo começa do zero e o FigLab já vem junto.</p></details>
+      <details><summary>Como eu recebo o acesso?</summary><p>O acesso chega no seu e-mail logo depois da compra, do mesmo jeito que o do Kit.</p></details>
+      <details><summary>Essa condição volta depois?</summary><p>Não. O crédito do Kit só existe nesta página, pra quem acabou de comprar.</p></details>
     </div>
   </div>
 </section>
 
-<!-- Fechamento -->
+<!-- CTA final -->
 <section class="fim">
   <div class="wrap">
-    <h2>Com o Kit, você já organizou o seu atendimento. <span class="grad">O FigLogo é pra você ter a mesma segurança na hora de criar.</span></h2>
-    <p>Esse é o único momento em que o FigLogo sai por R$47. Se você sair desta página, ele volta pra R$67.</p>
-    <p>Se faz sentido levar o projeto inteiro pro próximo cliente, do contrato ao logo, clica aqui embaixo.</p>
-    <div class="cta-up">
-      <a class="btn sim" href="#oferta">Sim! Quero o FigLogo por R$47</a>
-      <span class="pend">[LINK DO CHECKOUT]</span>
-      <button type="button" class="recusa">Não, obrigada. Prefiro pagar R$67 depois</button>
+    <h2>Você já organizou o seu atendimento com o Kit. <em class="grad">Agora é ter a mesma segurança na hora de criar o logo.</em></h2>
+    <div class="cta">
+      <a class="btn" href="#oferta">Sim! Quero o FigLogo usando meu crédito</a>
+      <a class="nao js-recusa" href="#">Não, prefiro pagar R$127 depois</a>
     </div>
+    <p class="duvida">Ainda ficou com dúvida? <a href="https://wa.me/5541999401055?text=Oi!%20Acabei%20de%20comprar%20o%20Kit%20Design%20Studio%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20FigLogo." target="_blank" rel="noopener">Fale com o suporte no WhatsApp</a></p>
   </div>
 </section>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="chk" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#ff58fc"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-</svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="ok" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#c92bd0"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol></svg>
 
 <script>
-/* PRÉVIA: a oferta do FigLogo ainda não existe na Kiwify. Quando existir, entra o botão de 1 clique
-   (snippets.kiwify.com/upsell-v2/upsell.min.js + código da oferta nova) e os botões verdes e a recusa passam a acionar ele. */
+/* Recusas: quando o código da Kiwify entrar, elas acionam a recusa oficial (kiwify-upsell-cancel-trigger-ID). Por enquanto não fazem nada. */
 document.addEventListener('click',function(e){
-  if(e.target.closest&&e.target.closest('.sim')){try{fbq('track','InitiateCheckout',{content_name:'FigLogo upsell Kit'})}catch(x){}}
-  if(e.target.closest&&e.target.closest('.recusa')){e.preventDefault()}
+  var r=e.target.closest&&e.target.closest('.js-recusa');if(!r)return;e.preventDefault();
+  var c=document.querySelector('[id^="kiwify-upsell-cancel-trigger-"]');if(c)c.click();
 });
+/* Botão abaixo do vídeo: aparece depois de data-delay segundos (0 = na hora). Com o vídeo do Vimeo, conta o tempo do próprio vídeo. */
+(function(){
+  var cta=document.querySelector('.js-atraso');if(!cta)return;var d=parseFloat(cta.dataset.delay||'0');if(!(d>0))return;
+  cta.hidden=true;var mostra=function(){if(cta.hidden){cta.hidden=false;cta.classList.add('aparece')}};
+  var f=document.getElementById('vsl-player');
+  if(f&&window.Vimeo){var pl=new Vimeo.Player(f);pl.on('timeupdate',function(x){if(x.seconds>=d)mostra()})}
+  setTimeout(mostra,(d+30)*1000);
+  if(!f)setTimeout(mostra,d*1000);
+})();
+/* Som do vídeo: um toque liga o som e volta pro início (só quando houver o player do Vimeo) */
+(function(){var b=document.getElementById('vsl-som'),f=document.getElementById('vsl-player');if(!b)return;
+  b.addEventListener('click',function(){if(f&&window.Vimeo){var pl=new Vimeo.Player(f);pl.setMuted(false);pl.setVolume(1);pl.setCurrentTime(0);pl.play()}b.classList.add('off')});
+})();
 </script>
+<!-- Quando o vídeo entrar, carregue também: <script src="https://player.vimeo.com/api/player.js"></script> (antes dos scripts acima) -->
 <script src="../../assets/js/escola.js"></script>
 </body>
 </html>
