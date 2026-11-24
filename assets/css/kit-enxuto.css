@@ -84,5 +84,5 @@ h1,h2,h3,.head p,.sub,.frase-forte,.fecho p,.edit p,.bn p,.passo p{text-wrap:bal
 .hz .pillbar{width:auto;max-width:max-content;margin-left:auto;margin-right:auto;white-space:nowrap}
 @media (min-width:981px){.hz .pillbar{margin-left:0}}
 .lista-x li .tx,.imagina li,.item,.entrega li,.mat small,.mod li,.fact .d,.steps3 div,.op p,.virada p,.mas,.enfim,.sabe,.clique{text-wrap:balance}
-@media (max-width:640px){.edit-sec .edit .apps{gap:14px 0}.edit-sec .edit .apps span{width:33.33%!important;max-width:none;box-sizing:border-box}}
+@media (max-width:640px){.edit-sec .edit .apps{gap:18px 2%!important}.edit-sec .edit .apps span{width:30%!important;max-width:none;box-sizing:border-box}}
 .guar p{text-wrap:balance}
