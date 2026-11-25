@@ -14,3 +14,5 @@
   if(!calmo)setInterval(function(){if(!mq.matches||!vis||Date.now()<pausa)return;g.scrollTo({left:pos((at+1)%cs.length),behavior:'smooth'})},2800);
   mark();
 })();
+/* No celular, o botão do WhatsApp só aparece depois da primeira tela, para não cobrir o botão de compra. */
+(function(){var w=document.querySelector('.wa');if(!w)return;function f(){w.classList.toggle('no-topo',scrollY<200)}addEventListener('scroll',f,{passive:true});f()})();
