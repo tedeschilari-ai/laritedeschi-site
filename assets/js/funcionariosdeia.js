@@ -27,23 +27,13 @@
   })},{threshold:.2});
   els.forEach(function(e){io.observe(e)});
 
-  /* repete a animação dos blocos que estão na tela */
-  els.forEach(function(el){
-    var ms=parseInt(el.getAttribute('data-loop'),10);if(!ms)return;
-    setInterval(function(){
-      if(vis.indexOf(el)<0||document.hidden)return;
-      el.classList.add('sai');
-      setTimeout(function(){el.classList.remove('on','sai');void el.offsetWidth;el.classList.add('on')},420);
-    },ms);
-  });
-
   /* bônus: confetes 2D, uma vez, quando a dobra entra na tela */
   var bonus=document.getElementById('bonus');
   if(bonus){
     var io2=new IntersectionObserver(function(en){en.forEach(function(e){
       if(!e.isIntersecting)return;io2.disconnect();
       var cx=document.createElement('div');cx.className='confete';cx.setAttribute('aria-hidden','true');
-      var cores=['#d97757','#aaff5b','#c7bcff','#ffffff'],h=bonus.offsetHeight;
+      var cores=['#FEB273','#F2B0FF','#CFC9FF','#ffffff'],h=bonus.offsetHeight;
       for(var n=0;n<34;n++){
         var c=document.createElement('i');
         c.style.left=(Math.random()*100)+'%';c.style.background=cores[n%4];
@@ -57,37 +47,34 @@
     })},{threshold:.35});
     io2.observe(bonus);
   }
-  /* ciclo da IA genérica: o destaque gira de ponto em ponto e volta ao começo */
-  var c=document.querySelector('.giro');
-  if(c){
-    var it=[].slice.call(c.querySelectorAll('li:not(.eixo)')),k=-1;
-    setInterval(function(){
-      if(vis.indexOf(c)<0||document.hidden)return;
-      it.forEach(function(x){x.classList.remove('at')});
-      k=(k+1)%it.length;it[k].classList.add('at');
-    },1200);
-  }
 })();
 
-/* Preço: a contagem de R$ 197 até R$ 97 quando o preço aparece na tela */
+
+/* Vídeos curtos sem som: só carregam e tocam quando estão na tela */
 (function(){
-  var el=document.querySelector('.price .conta'); if(!el) return;
-  var de=+el.dataset.de, ate=+el.dataset.ate;
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=ate;return;}
-  el.textContent=de;
-  var foi=false;
-  function roda(){
-    if(foi) return; foi=true;
-    var t0=null, dur=1600;
-    function passo(t){
-      if(!t0) t0=t;
-      var p=Math.min((t-t0)/dur,1), e=1-Math.pow(1-p,3);
-      el.textContent=Math.round(de-(de-ate)*e);
-      if(p<1) requestAnimationFrame(passo); else {el.textContent=ate; el.classList.add('pisca');}
-    }
-    requestAnimationFrame(passo);
-  }
-  if('IntersectionObserver' in window){
-    new IntersectionObserver(function(es,o){es.forEach(function(x){if(x.isIntersecting){roda();o.disconnect();}});},{threshold:.6}).observe(el);
-  } else roda();
+  var vs=[].slice.call(document.querySelectorAll('video[data-src]'));
+  if(!vs.length||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){
+    var v=e.target;
+    if(e.isIntersecting){if(!v.src)v.src=v.dataset.src;v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){})}
+    else if(!v.paused)v.pause();
+  })},{rootMargin:'120px'});
+  vs.forEach(function(v){io.observe(v)});
+})();
+
+/* carrossel da equipe no celular: passa sozinho até a pessoa tocar */
+(function(){
+  var t=document.getElementById('tour'),p=document.getElementById('pts');if(!t||!p)return;
+  var fs=[].slice.call(t.children),k=0,vis=false,para=false;
+  fs.forEach(function(_,n){var d=document.createElement('i');if(!n)d.className='on';p.appendChild(d)});
+  var cel=function(){return matchMedia('(max-width:640px)').matches};
+  var vai=function(n){t.scrollTo({left:fs[n].offsetLeft-(t.clientWidth-fs[n].offsetWidth)/2,behavior:'smooth'})};
+  t.addEventListener('scroll',function(){
+    var c=t.scrollLeft+t.clientWidth/2,m=0,best=1e9;
+    fs.forEach(function(f,n){var x=Math.abs(f.offsetLeft+f.offsetWidth/2-c);if(x<best){best=x;m=n}});
+    if(m!==k){k=m;[].forEach.call(p.children,function(d,n){d.className=n===k?'on':''})}
+  },{passive:true});
+  ['touchstart','pointerdown'].forEach(function(e){t.addEventListener(e,function(){para=true},{passive:true})});
+  if('IntersectionObserver' in window)new IntersectionObserver(function(e){vis=e[0].isIntersecting},{threshold:.5}).observe(t);
+  if(!matchMedia('(prefers-reduced-motion:reduce)').matches)setInterval(function(){if(cel()&&vis&&!para&&!document.hidden)vai((k+1)%fs.length)},3600);
 })();
