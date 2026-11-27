@@ -7,6 +7,7 @@
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#f3f1f3">
 <!-- FigPost · upsell depois da compra do Kit Design Studio (etapa 1 de 2): crédito do Kit. Não aparece em buscas. -->
+<!-- Cópia guardada em 27/11/2026: esta foi a página de /kitdesignstudio/upsell/ até 27/11, quando o upsell do Kit passou a oferecer o FigLogo. -->
 
 <!-- Meta Pixel -->
 <script>
@@ -125,6 +126,8 @@ section{padding:90px 0}
 #kiwify-upsell-3bO3K6K select option{color:#000!important;background-color:#fff!important}
 .kiwi-topo{max-width:440px;margin:0 auto}
 #kiwi-topo-btn{font-family:inherit;font-size:18px;font-weight:700;letter-spacing:-.02em;border-radius:999px;padding:19px 24px;color:#fff;border:0;width:100%;background:linear-gradient(180deg,#7be05a 0%,#3fbf18 50%,#289c02 100%);box-shadow:0 0 0 1px rgba(255,255,255,.25) inset,0 14px 34px -12px rgba(63,191,24,.75);cursor:pointer}
+#kiwi-topo-btn[hidden]{display:none}
+.kiwi-topo .kiwify-upsell-card{margin-top:4px!important}
 #kiwi-topo-btn[disabled]{opacity:.7;cursor:wait}
 .kiwi-parc{text-align:left;margin-bottom:12px}
 .kiwi-parc label{display:block;font-size:14px;margin-bottom:6px;color:var(--tinta)}
@@ -336,13 +339,19 @@ section{padding:90px 0}
 
 <script src="https://snippets.kiwify.com/upsell-v2/upsell.min.js"></script>
 <script>
+var pixUp=/[?&]payment_type=(automatic)?pix(&|$)/.test(location.search);
+function veQr(){var q=document.getElementById('kiwify-upsell-inline-3bO3K6K');if(q)window.scrollTo(0,q.getBoundingClientRect().top+window.pageYOffset-120)}
 document.addEventListener('click',function(e){
   if(e.target.closest&&e.target.closest('#kiwify-upsell-trigger-3bO3K6K')){try{fbq('track','InitiateCheckout',{content_name:'FigPost upsell Kit'})}catch(x){}}
   /* botão do topo: copia as parcelas escolhidas e aciona o botão oficial da Kiwify */
+  /* Pix: o código aparece logo abaixo do botão clicado, e não lá no fim da página. Um Pix só: clicar de novo não gera outro */
+  if(pixUp&&e.target.closest&&e.target.closest('#kiwi-topo-btn')){var q=document.getElementById('kiwify-upsell-inline-3bO3K6K'),o=document.getElementById('kiwify-upsell-trigger-3bO3K6K'),tb=document.getElementById('kiwi-topo-btn');if(q&&o){if(!o.classList.contains('kiwify-upsell-hidden')){tb.parentNode.appendChild(q);o.click()}tb.hidden=true;veQr()}return}
+  if(pixUp&&e.target.closest&&e.target.closest('#kiwify-upsell-trigger-3bO3K6K')){setTimeout(function(){var tb=document.getElementById('kiwi-topo-btn');if(tb)tb.hidden=true},0)}
+  if(pixUp&&e.target.closest&&e.target.closest('a[href="#oferta"]')){var of=document.getElementById('kiwify-upsell-trigger-3bO3K6K');if(of&&of.classList.contains('kiwify-upsell-hidden')){e.preventDefault();e.stopPropagation();veQr();return}}
   if(e.target.closest&&e.target.closest('#kiwi-topo-btn')){var s=document.getElementById('kiwify-upsell-inline-installments-3bO3K6K'),t=document.querySelector('.kiwi-parc select'),b=document.getElementById('kiwify-upsell-trigger-3bO3K6K');if(s&&t&&s.value!==t.value){s.value=t.value;s.dispatchEvent(new Event('change',{bubbles:true}))}if(b){e.target.closest('button').disabled=true;e.target.closest('button').textContent='Processando…';setTimeout(function(){b.click()},250);setTimeout(function(){var x=document.getElementById('kiwi-topo-btn');x.disabled=false;x.textContent='Sim! Quero o FigPost usando meu crédito'},12000)}}
   /* a recusa do final usa a mesma recusa da Kiwify, para seguir o fluxo certo */
   if(e.target.id==='recusa-final'){e.preventDefault();var c=document.getElementById('kiwify-upsell-cancel-trigger-3bO3K6K');if(c)c.click()}
-});
+},true);
 </script>
 <script>
 /* quando a Kiwify carregar as parcelas, repete o mesmo seletor no topo */
