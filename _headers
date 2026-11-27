@@ -1,0 +1,5 @@
+# Vídeos hospedados no próprio site: cache no Cloudflare para o navegador conseguir
+# pedir pedaços do arquivo (Range/206), que o iPhone exige para tocar vídeo.
+# Se trocar um vídeo, use um nome de arquivo novo (o cache dura 1 dia).
+/*.mp4
+  Cache-Control: public, max-age=86400
