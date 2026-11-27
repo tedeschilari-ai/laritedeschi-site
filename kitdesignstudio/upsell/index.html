@@ -18,10 +18,146 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 <link rel="stylesheet" href="../../assets/css/escola.css">
 <link rel="stylesheet" href="../../assets/css/upsell-video.css">
 <style>
-/* Cores do FigLogo */
-:root{--accent:#ff58fc; --accent-2:#c92bd0; --accent-3:#7a1580; --accent-lt:#ffc6fe; --tinta:#2a0b2c; --pop:#ffc6fe; --pop-ink:#4a0d4d}
-.recebe svg circle{fill:var(--accent-2)}
-.garantia img{filter:hue-rotate(28deg) saturate(1.1)} /* selo da garantia no rosa do FigLogo */
+:root{--accent:#6032FD; --accent-2:#B01CFF; --accent-3:#1E0B5C; --accent-lt:#9C7BFF; --lima:#B7F36B; --tinta:#1E0B5C; --verm:#e04a4a}
+.grad{background:linear-gradient(95deg,#6032FD 0%,#7A3BFF 55%,#9B4DFF 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+section{padding:90px 0}
+.aviso{position:sticky;top:0;z-index:20;background:var(--tinta);color:#fff;text-align:center;font-size:13.5px;font-weight:600;padding:10px 16px;letter-spacing:-.01em}
+.aviso b{color:var(--lima)}
+.estreito{max-width:760px;margin:0 auto}
+.estreito h2{font-size:clamp(28px,4vw,44px);text-align:center}
+.estreito>p{font-size:18px;color:var(--muted);margin-top:18px}
+.estreito>p b,.estreito>p strong{color:var(--txt)}
+
+/* ---------- abertura com o vídeo ---------- */
+.up{position:relative;isolation:isolate;overflow-x:clip;text-align:center;padding:52px 0 40px}
+.up .logo{height:30px;width:auto;margin:0 auto 24px}
+.up .pill{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta);background:var(--lima);border-radius:999px;padding:7px 16px}
+.up h1{font-size:clamp(30px,4.8vw,52px);max-width:860px;margin:20px auto 0;line-height:1.06}
+.up .sub{color:var(--muted);font-size:18px;margin:18px auto 0;max-width:560px}
+.video{position:relative;width:min(360px,100%);margin:34px auto 0;aspect-ratio:9/16;border-radius:24px;overflow:hidden;background:var(--tinta);box-shadow:0 40px 80px -30px rgba(48,20,160,.45),0 0 0 6px #fff}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video .som{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:0;background:rgba(20,8,50,.28);color:#fff;font-family:inherit;cursor:pointer;text-align:center}
+.video .som .ic{display:grid;place-items:center;width:74px;height:74px;border-radius:50%;background:var(--accent);font-size:32px;box-shadow:0 0 0 10px rgba(96,50,253,.35);animation:somPulse 1.6s ease-in-out infinite}
+.video .som span:last-child{background:rgba(20,8,50,.82);padding:10px 16px;border-radius:14px;font-size:15px;line-height:1.35}
+.video .som b{display:block;font-size:16px}
+.video .som.off{display:none}
+@keyframes somPulse{50%{box-shadow:0 0 0 18px rgba(96,50,253,.12)}}
+.halo2{position:absolute;left:50%;top:58%;width:min(640px,100vw);height:640px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,color-mix(in srgb,#6032FD 30%,transparent),transparent);filter:blur(30px);z-index:-1}
+.selos{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px}
+.selos span{display:inline-flex;align-items:center;gap:9px;background:#fff;border:2px solid var(--accent);color:var(--tinta);border-radius:999px;padding:11px 20px;font-size:16px;font-weight:700;box-shadow:0 12px 26px -16px rgba(96,50,253,.55)}
+.selos svg{width:21px;height:21px}
+.cta-topo{margin-top:26px}
+.cta-topo .btn{font-size:18px;padding:20px 34px;max-width:440px;width:100%}
+
+/* ---------- bloco 1: o problema ---------- */
+.problema{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pergunta{display:block;max-width:460px;margin:30px auto 8px;padding:16px 20px;border-radius:20px 20px 20px 6px;background:#fff;box-shadow:var(--card-shadow);font-size:19px;font-weight:600;color:var(--tinta);text-align:left;position:relative}
+.pergunta small{display:block;font-size:12.5px;font-weight:500;color:var(--dim);margin-bottom:4px}
+.erros{list-style:none;display:grid;gap:10px;margin:26px auto 0;max-width:640px}
+.erros li{display:flex;gap:12px;align-items:flex-start;padding:16px 18px;border-radius:16px;background:#fff;border:1px solid var(--line);box-shadow:var(--card-shadow);font-size:16.5px;line-height:1.45}
+.erros li i{flex:none;width:24px;height:24px;border-radius:50%;background:#fde4e4;color:var(--verm);display:grid;place-items:center;font-style:normal;font-weight:700;font-size:13px;margin-top:1px}
+.resultado{max-width:640px;margin:26px auto 0;text-align:center;font-size:18px;font-weight:600;letter-spacing:-.02em}
+
+/* ---------- bloco 2: a virada ---------- */
+.virada .frase{font-size:clamp(30px,4.6vw,52px);text-align:center;line-height:1.08;letter-spacing:-.04em;font-weight:600}
+.compara{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:880px;margin:44px auto 0}
+.col{border-radius:22px;padding:24px 22px;border:1px solid var(--line);background:#fff;box-shadow:var(--card-shadow)}
+.col h3{font-size:17px;display:flex;align-items:center;gap:10px}
+.col h3 i{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:14px;color:#fff}
+.col ul{list-style:none;margin-top:16px;display:grid;gap:12px}
+.col li{font-size:15.5px;line-height:1.45;color:var(--muted);padding-left:18px;position:relative}
+.col li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%}
+.col.so h3 i{background:#c9c2cc}.col.so li::before{background:#c9c2cc}
+.col.mais{border-color:color-mix(in srgb,var(--accent) 40%,transparent);background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 9%,#fff),#fff 60%);box-shadow:0 30px 60px -36px rgba(96,50,253,.55)}
+.col.mais h3 i{background:var(--accent)}.col.mais li{color:var(--txt)}.col.mais li::before{background:var(--accent)}
+
+/* ---------- bloco 3: o que você recebe ---------- */
+.recebe{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:880px;margin:36px auto 0}
+.recebe div{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border-radius:18px;background:#fff;border:1px solid var(--line);box-shadow:var(--card-shadow)}
+.recebe svg{flex:none;width:24px;height:24px;margin-top:1px}
+.recebe b{display:block;font-size:16.5px;letter-spacing:-.02em}
+.recebe span{display:block;font-size:14.5px;color:var(--muted);margin-top:3px;line-height:1.45}
+
+/* ---------- bloco 4: prova ---------- */
+.provas{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:880px;margin:36px auto 0}
+.prova{padding:26px;border-radius:22px;background:#fff;border:1px solid var(--line);box-shadow:var(--card-shadow);display:flex;flex-direction:column;gap:16px}
+.prova q{quotes:none;font-size:17px;line-height:1.5;color:var(--txt)}
+.prova q::before{content:"“";color:var(--accent);font-weight:700}.prova q::after{content:"”";color:var(--accent);font-weight:700}
+.prova .quem{display:flex;align-items:center;gap:12px;margin-top:auto}
+.prova .quem img,.prova .quem .ini{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none}
+.prova .quem .ini{display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 14%,#fff);color:var(--accent);font-weight:700}
+.prova .quem b{display:block;font-size:15.5px}
+.prova .quem small{font-size:13px;color:var(--dim)}
+
+/* ---------- bloco 5: a oferta com o crédito do Kit ---------- */
+.oferta{position:relative;overflow:hidden}
+.oferta .bgglow{position:absolute;left:50%;top:50%;width:1000px;height:800px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 18%,transparent),transparent);pointer-events:none}
+.recibo{position:relative;max-width:520px;margin:34px auto 0;background:#fff;color:var(--tinta);padding:30px 30px 40px;border-radius:20px 20px 0 0;box-shadow:0 40px 70px -36px rgba(30,11,92,.45),0 0 0 1px rgba(30,11,92,.06)}
+.recibo::after{content:"";position:absolute;left:0;right:0;bottom:-14px;height:14px;background:radial-gradient(circle at 10px -2px,transparent 12px,#fff 12.5px) -10px 0/20px 14px repeat-x}
+.recibo .tt{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;letter-spacing:.14em;color:rgba(30,11,92,.5);padding-bottom:14px;border-bottom:2px dashed rgba(30,11,92,.16)}
+.recibo .tt img{height:24px;width:auto}
+.linha{display:flex;align-items:baseline;gap:10px;padding:12px 0;font-size:16.5px}
+.linha .pt{flex:1;border-bottom:2px dotted rgba(30,11,92,.18);translate:0 -4px}
+.linha .vl{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.linha.cheio .vl{color:#9a92a6;text-decoration:line-through;text-decoration-color:var(--verm);text-decoration-thickness:2px}
+.linha.credito .vl{color:#1f9d4c}
+.linha.credito .nm b{color:#1f9d4c}
+.recibo .tot{margin-top:10px;padding-top:18px;border-top:2px dashed rgba(30,11,92,.16);display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.recibo .tot span{font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.recibo .tot b{font-size:clamp(44px,7vw,60px);letter-spacing:-.05em;line-height:1;color:#16a34a}
+.recibo .tot b small{font-size:.42em;letter-spacing:-.02em;margin-right:4px;vertical-align:.7em}
+.recibo .parc{text-align:right;font-size:14px;color:#6b6478;margin-top:6px}
+.dois{max-width:640px;margin:40px auto 0;text-align:center;font-size:clamp(19px,2.3vw,23px);font-weight:600;letter-spacing:-.02em;line-height:1.35}
+.porque{max-width:640px;margin:22px auto 0;padding:20px 22px;border-radius:18px;background:#fff;border:1px solid var(--line);box-shadow:var(--card-shadow);font-size:16px;color:var(--muted);line-height:1.55}
+.porque b{color:var(--txt)}
+.destaque{display:flex;align-items:center;gap:12px;max-width:440px;margin:0 auto 16px;padding:12px 14px;border-radius:16px;background:#fff;border:2px solid var(--accent);text-align:left;font-size:14.5px;line-height:1.4;color:var(--tinta);box-shadow:0 14px 30px -18px rgba(96,50,253,.6)}
+.destaque .tag{flex:none;background:var(--accent);color:#fff;font-weight:800;font-size:15px;letter-spacing:-.01em;padding:8px 10px;border-radius:10px}
+.recibo .vit{text-align:right;font-size:15px;font-weight:700;color:var(--accent);margin-top:10px}
+.so-aqui{display:flex;align-items:center;justify-content:center;gap:10px;max-width:640px;margin:22px auto 0;padding:13px 18px;border-radius:14px;background:#fff7e0;border:1px solid #f4dc95;color:#6b4e00;font-size:15px;font-weight:600;text-align:left}
+.cta-up{margin-top:28px}
+
+/* botão de 1 clique da Kiwify, adaptado ao fundo claro */
+#kiwify-upsell-3bO3K6K{max-width:440px;margin:0 auto}
+#kiwify-upsell-trigger-3bO3K6K{font-family:inherit!important;font-size:18px!important;font-weight:700!important;letter-spacing:-.02em;border-radius:999px!important;padding:19px 24px!important;color:#fff!important;border:0!important;width:100%;background:linear-gradient(180deg,#7be05a 0%,#3fbf18 50%,#289c02 100%)!important;box-shadow:0 0 0 1px rgba(255,255,255,.25) inset,0 14px 34px -12px rgba(63,191,24,.75)!important;cursor:pointer}
+#kiwify-upsell-3bO3K6K .kiwify-upsell-inline-label{font-family:inherit;text-align:left}
+#kiwify-upsell-3bO3K6K select{font-family:inherit;border-radius:14px!important}
+#kiwify-upsell-3bO3K6K label,#kiwify-upsell-3bO3K6K [class*="parcel"]{color:var(--tinta)!important}
+#kiwify-upsell-3bO3K6K select{color:#000!important;background-color:#fff!important}
+#kiwify-upsell-3bO3K6K select option{color:#000!important;background-color:#fff!important}
+.kiwi-topo{max-width:440px;margin:0 auto}
+#kiwi-topo-btn{font-family:inherit;font-size:18px;font-weight:700;letter-spacing:-.02em;border-radius:999px;padding:19px 24px;color:#fff;border:0;width:100%;background:linear-gradient(180deg,#7be05a 0%,#3fbf18 50%,#289c02 100%);box-shadow:0 0 0 1px rgba(255,255,255,.25) inset,0 14px 34px -12px rgba(63,191,24,.75);cursor:pointer}
+#kiwi-topo-btn[hidden]{display:none}
+.kiwi-topo .kiwify-upsell-card{margin-top:4px!important}
+#kiwi-topo-btn[disabled]{opacity:.7;cursor:wait}
+.kiwi-parc{text-align:left;margin-bottom:12px}
+.kiwi-parc label{display:block;font-size:14px;margin-bottom:6px;color:var(--tinta)}
+.kiwi-parc select{width:100%;font-family:inherit;font-size:16px;padding:12px 14px;border-radius:14px;border:1px solid rgba(26,11,26,.18);color:#000;background:#fff}
+#kiwify-upsell-cancel-trigger-3bO3K6K{text-align:center;color:rgba(26,11,26,.55)!important;font-size:14px;margin-top:14px;text-decoration:underline;cursor:pointer}
+
+/* ---------- garantia, dúvidas e final ---------- */
+.garantia{display:flex;align-items:center;gap:22px;max-width:720px;margin:0 auto;padding:26px 28px;border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:var(--card-shadow)}
+.garantia svg{flex:none;width:84px;height:84px}
+.garantia h2{font-size:24px;text-align:left}
+.garantia p{color:var(--muted);margin-top:6px;font-size:16px}
+.faq .list{max-width:760px;margin:30px auto 0}
+.fim{text-align:center;padding:30px 0 70px}
+.fim h2{font-size:clamp(26px,3.6vw,40px);max-width:760px;margin:0 auto}
+.fim p{color:var(--muted);font-size:18px;margin:14px auto 0;max-width:560px}
+.fim .btn{margin-top:26px;font-size:18px;padding:20px 34px;max-width:440px;width:100%}
+.fim .nao{display:block;margin-top:14px;font-size:14px;color:rgba(26,11,26,.55);text-decoration:underline}
+.duvida{text-align:center;padding:56px 0 70px;border-top:1px solid var(--line);background:var(--bg-2)}
+.duvida h2{font-size:clamp(26px,3.6vw,36px)}
+.duvida a{display:inline-flex;align-items:center;gap:10px;margin-top:18px;font-weight:600;color:var(--tinta);background:#fff;border:1px solid var(--line);border-radius:999px;padding:13px 22px;box-shadow:var(--card-shadow)}
+.duvida a svg{width:20px;height:20px}
+
+@media (max-width:760px){.compara,.recebe,.provas{grid-template-columns:1fr}}
+@media (max-width:640px){
+  section{padding:70px 0}
+  .up{padding-top:36px}.up .sub{font-size:16.5px}
+  .estreito>p{font-size:16.5px}
+  .recibo{padding:24px 18px 34px}.linha{font-size:15px;gap:8px}
+  .garantia{flex-direction:column;text-align:center}.garantia h2{text-align:center}
+}
 </style>
 </head>
 <body data-curso="FigLogo">
@@ -179,23 +315,32 @@ fbq('init','874750447646279');fbq('track','PageView');fbq('track','ViewContent',
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="ok" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#c92bd0"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol></svg>
 
 <script>
-/* Recusas: quando o código da Kiwify entrar, elas acionam a recusa oficial (kiwify-upsell-cancel-trigger-ID). Por enquanto não fazem nada. */
+var pixUp=/[?&]payment_type=(automatic)?pix(&|$)/.test(location.search);
+function veQr(){var q=document.getElementById('kiwify-upsell-inline-3bO3K6K');if(q)window.scrollTo(0,q.getBoundingClientRect().top+window.pageYOffset-120)}
 document.addEventListener('click',function(e){
-  var r=e.target.closest&&e.target.closest('.js-recusa');if(!r)return;e.preventDefault();
-  var c=document.querySelector('[id^="kiwify-upsell-cancel-trigger-"]');if(c)c.click();
-});
-/* Botão abaixo do vídeo: aparece depois de data-delay segundos (0 = na hora). Com o vídeo do Vimeo, conta o tempo do próprio vídeo. */
-(function(){
-  var cta=document.querySelector('.js-atraso');if(!cta)return;var d=parseFloat(cta.dataset.delay||'0');if(!(d>0))return;
-  cta.hidden=true;var mostra=function(){if(cta.hidden){cta.hidden=false;cta.classList.add('aparece')}};
-  var f=document.getElementById('vsl-player');
-  if(f&&window.Vimeo){var pl=new Vimeo.Player(f);pl.on('timeupdate',function(x){if(x.seconds>=d)mostra()})}
-  setTimeout(mostra,(d+30)*1000);
-  if(!f)setTimeout(mostra,d*1000);
-})();
-/* Som do vídeo: um toque liga o som e volta pro início (só quando houver o player do Vimeo) */
-(function(){var b=document.getElementById('vsl-som'),f=document.getElementById('vsl-player');if(!b)return;
-  b.addEventListener('click',function(){if(f&&window.Vimeo){var pl=new Vimeo.Player(f);pl.setMuted(false);pl.setVolume(1);pl.setCurrentTime(0);pl.play()}b.classList.add('off')});
+  if(e.target.closest&&e.target.closest('#kiwify-upsell-trigger-3bO3K6K')){try{fbq('track','InitiateCheckout',{content_name:'FigPost upsell Kit'})}catch(x){}}
+  /* botão do topo: copia as parcelas escolhidas e aciona o botão oficial da Kiwify */
+  /* Pix: o código aparece logo abaixo do botão clicado, e não lá no fim da página. Um Pix só: clicar de novo não gera outro */
+  if(pixUp&&e.target.closest&&e.target.closest('#kiwi-topo-btn')){var q=document.getElementById('kiwify-upsell-inline-3bO3K6K'),o=document.getElementById('kiwify-upsell-trigger-3bO3K6K'),tb=document.getElementById('kiwi-topo-btn');if(q&&o){if(!o.classList.contains('kiwify-upsell-hidden')){tb.parentNode.appendChild(q);o.click()}tb.hidden=true;veQr()}return}
+  if(pixUp&&e.target.closest&&e.target.closest('#kiwify-upsell-trigger-3bO3K6K')){setTimeout(function(){var tb=document.getElementById('kiwi-topo-btn');if(tb)tb.hidden=true},0)}
+  if(pixUp&&e.target.closest&&e.target.closest('a[href="#oferta"]')){var of=document.getElementById('kiwify-upsell-trigger-3bO3K6K');if(of&&of.classList.contains('kiwify-upsell-hidden')){e.preventDefault();e.stopPropagation();veQr();return}}
+  if(e.target.closest&&e.target.closest('#kiwi-topo-btn')){var s=document.getElementById('kiwify-upsell-inline-installments-3bO3K6K'),t=document.querySelector('.kiwi-parc select'),b=document.getElementById('kiwify-upsell-trigger-3bO3K6K');if(s&&t&&s.value!==t.value){s.value=t.value;s.dispatchEvent(new Event('change',{bubbles:true}))}if(b){e.target.closest('button').disabled=true;e.target.closest('button').textContent='Processando…';setTimeout(function(){b.click()},250);setTimeout(function(){var x=document.getElementById('kiwi-topo-btn');x.disabled=false;x.textContent='Sim! Quero o FigPost usando meu crédito'},12000)}}
+  /* a recusa do final usa a mesma recusa da Kiwify, para seguir o fluxo certo */
+  if(e.target.id==='recusa-final'){e.preventDefault();var c=document.getElementById('kiwify-upsell-cancel-trigger-3bO3K6K');if(c)c.click()}
+},true);
+</script>
+<script>
+/* quando a Kiwify carregar as parcelas, repete o mesmo seletor no topo */
+(function(){var n=0,iv=setInterval(function(){var s=document.getElementById('kiwify-upsell-inline-installments-3bO3K6K'),box=document.querySelector('.kiwi-parc');if(s&&box){clearInterval(iv);var c=s.cloneNode(true);c.removeAttribute('id');c.id='kiwi-topo-parc';c.value=s.value;var l=document.createElement('label');l.htmlFor='kiwi-topo-parc';l.textContent='Selecione o número de parcelas';box.appendChild(l);box.appendChild(c);box.hidden=false;
+  c.addEventListener('change',function(){s.value=c.value;s.dispatchEvent(new Event('change',{bubbles:true}))});s.addEventListener('change',function(){if(c.value!==s.value)c.value=s.value})}
+  if(++n>160)clearInterval(iv)},250)})();
+</script>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+/* VSL: começa sozinha sem som (regra dos navegadores); um toque liga o som e volta pro início */
+(function(){var f=document.getElementById('vsl-player'),b=document.getElementById('vsl-som');if(!f||!b||!window.Vimeo)return;var pl=new Vimeo.Player(f);
+  b.addEventListener('click',function(){pl.setMuted(false);pl.setVolume(1);pl.setCurrentTime(0);pl.play();b.classList.add('off')});
+  pl.on('volumechange',function(d){if(d&&d.volume>0)pl.getMuted().then(function(m){if(!m)b.classList.add('off')})});
 })();
 </script>
 <!-- Quando o vídeo entrar, carregue também: <script src="https://player.vimeo.com/api/player.js"></script> (antes dos scripts acima) -->

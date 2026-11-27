@@ -1,0 +1,199 @@
+/* Kit Design Studio · páginas mais enxutas (24/11/2026)
+   Capa com editáveis e mockup no topo, tags no lugar de textão,
+   carrossel dos materiais no celular e bônus pulsando na cor de cada um. */
+:root{--hl-capa:#5b8dff}
+h1,h2,h3,.head p,.sub,.frase-forte,.fecho p,.edit p,.bn p,.passo p{text-wrap:balance}
+
+/* ---------- capa ---------- */
+.hz{display:grid;grid-template-columns:minmax(0,1fr);gap:22px}
+.hz-vis .editl{margin:0 auto}
+.hz .stage-hero{margin:14px auto 0}
+.hz .capa-mockup{margin:14px auto 0}
+.hz-tx{position:relative;z-index:4;min-width:0}
+.hero .hz h1{margin-top:0}
+.hero .hz .sub{margin-top:16px}
+.hero .hz .ctas{margin-top:22px}
+.hz .pillbar{margin-top:18px}
+@media (min-width:981px){
+  .hero:has(.hz){padding-top:120px}
+  .hz{grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:56px;align-items:center;text-align:left}
+  .hz-vis{order:2}
+  .hero .hz h1{font-size:clamp(38px,4vw,56px);margin:0}
+  .hero .hz .sub{margin-left:0;margin-right:0;max-width:520px}
+  .hero .hz .ctas,.hero .hz .selos-linha{justify-content:flex-start}
+  .hz .editl{justify-content:center}
+  .hz .stage-hero .mockup{width:100%}
+  .hz .stage-hero{margin-top:34px}
+}
+@media (max-width:980px){
+  .hero:has(.hz){padding-top:88px}
+  .faixa-topo~.hero:has(.hz),.topo~.hero:has(.hz){padding-top:84px}
+  .hz .stage-hero{max-width:560px}
+}
+@media (max-width:640px){
+  .hero .hz h1{font-size:clamp(30px,8.6vw,38px);line-height:1.06}
+  .hz{gap:16px}
+  .hz .stage-hero{margin-top:26px}
+  .hz .voa.v4{bottom:-3%}
+  .hz .selos-linha{margin-top:16px}
+}
+
+/* ---------- tags no lugar de texto corrido ---------- */
+.tgs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:16px auto 0;max-width:760px}
+.tgs span{font-size:14.5px;font-weight:600;line-height:1.2;padding:9px 14px;border-radius:999px;background:var(--card-2);border:1px solid var(--line-2);color:var(--txt)}
+.tgs.x span::before{content:"✕";margin-right:8px;color:#ff7b7b;font-weight:700}
+.passo .tx .tgs{justify-content:flex-start;margin:12px 0 0}
+.passo .tx .tgs span{font-size:13px;padding:7px 11px}
+
+/* ---------- bônus: caixa pulsando na cor de cada um ---------- */
+.bn-2{--c:var(--amarelo,#FEA710)}
+.bn{position:relative;border:2px solid color-mix(in srgb,var(--c) 75%,transparent);background:linear-gradient(160deg,color-mix(in srgb,var(--c) 22%,var(--card)),var(--card) 75%);animation:bn-caixa 2.4s ease-in-out infinite}
+.bn:nth-child(2){animation-delay:.3s}.bn:nth-child(3){animation-delay:.6s}.bn:nth-child(4){animation-delay:.9s}
+@keyframes bn-caixa{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--c) 45%,transparent),0 0 18px -6px color-mix(in srgb,var(--c) 45%,transparent)}50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--c) 14%,transparent),0 0 46px -4px color-mix(in srgb,var(--c) 75%,transparent)}}
+.bn-img,.bn-3 .bn-img{background:radial-gradient(70% 70% at 50% 45%,color-mix(in srgb,var(--c) 34%,transparent),transparent 74%),var(--card-2)}
+.bn-tag{background:var(--c);border-color:var(--c);color:#0b0b0f;font-size:13px}
+.bn-1 .bn-tag,.bn-3 .bn-tag{color:#fff}
+.bn-tag .gift{width:19px;height:19px;flex:none;animation:gift 2.4s ease-in-out infinite;transform-origin:50% 80%}
+@keyframes gift{0%,70%,100%{rotate:0deg}76%{rotate:-12deg}82%{rotate:12deg}88%{rotate:-8deg}94%{rotate:5deg}}
+.bonus-sec .head h2::before{content:"🎁";display:block;font-size:1.25em;line-height:1;margin-bottom:16px}
+
+/* ---------- materiais: carrossel automático no celular ---------- */
+.mat-dots{display:none}
+@media (max-width:640px){
+  body .matgrid{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;margin:0 -20px;padding:4px 9vw 10px}
+  body .matgrid::-webkit-scrollbar{display:none}
+  body .matgrid .mat{flex:0 0 78vw;scroll-snap-align:center;opacity:1!important;transform:none!important;filter:none!important}
+  body .matgrid .mat .cap{padding:18px 18px 20px;gap:14px;align-items:center}
+  body .matgrid .mat .cap svg{width:40px;height:30px}
+  body .matgrid .mat .cap b{font-size:19px}
+  body .matgrid .mat .cap small{font-size:15px;margin-top:4px;line-height:1.35;color:var(--muted)}
+  .mat-dots{display:flex;justify-content:center;gap:7px;margin-top:12px}
+  .mat-dots i{width:7px;height:7px;border-radius:99px;background:rgba(255,255,255,.22);transition:width .3s,background .3s}
+  .mat-dots i.on{width:22px;background:var(--hl-capa)}
+}
+@media (prefers-reduced-motion:reduce){.bn,.bn-tag .gift{animation:none}}
+
+/* ---------- preço: valor riscado bem maior ---------- */
+.anc-tot.grande{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin-top:26px}
+.anc-tot.grande s{font-size:clamp(44px,5vw,60px);font-weight:700;line-height:1;letter-spacing:-.04em;text-decoration-thickness:4px}
+
+.lista-x li .tx{flex:1;min-width:0}
+.retrato .rbarra img,.about .photo .retrato .rbarra img{width:10%;max-height:none}
+.apps-fim{display:flex;justify-content:center;margin-top:14px}
+.fact .mini-apps{margin-top:6px;gap:8px}.fact .mini-apps img{height:20px}
+.hz .pillbar{width:auto;max-width:max-content;margin-left:auto;margin-right:auto;white-space:nowrap}
+@media (min-width:981px){.hz .pillbar{margin-left:0}}
+.lista-x li .tx,.imagina li,.item,.entrega li,.mat small,.mod li,.fact .d,.steps3 div,.op p,.virada p,.mas,.enfim,.sabe,.clique{text-wrap:balance}
+@media (max-width:640px){.edit-sec .edit .apps{gap:18px 2%!important}.edit-sec .edit .apps span{width:30%!important;max-width:none;box-sizing:border-box}}
+.guar p{text-wrap:balance}
+
+/* ---------- ajustes da Lari, 2a rodada (24/11/2026) ---------- */
+/* topo: só a logo no meio; quem fica presa é a faixa vermelha */
+.faixa-topo.fixa,.topo.fixa{position:sticky;top:0;z-index:40;background:#e3262d;font-size:17px;padding:11px 16px;line-height:1.2;color:#fff;font-weight:600;text-align:center;display:block;letter-spacing:-.01em}
+.faixa-topo.fixa b{color:#fff}
+.nav.so-logo,.nav.so-logo.solid{position:relative;top:auto;background:none;border-color:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+.nav.so-logo .wrap{justify-content:center}
+.nav.so-logo .logo{height:40px}
+html{scroll-padding-top:64px}
+@media (max-width:640px){
+  .faixa-topo.fixa,.topo.fixa{font-size:15px;padding:9px 12px}
+  .topo.fixa{font-size:14px;white-space:nowrap;letter-spacing:-.02em}
+}
+/* capa: logo, programas, mockup, título, subtítulo e botão na primeira tela do celular */
+@media (max-width:640px){
+  .nav.so-logo .wrap{height:52px}
+  .nav.so-logo .logo{height:32px}
+  body .hero.hero:has(.hz){margin-top:-52px;padding-top:58px}
+  .hz{gap:0}
+  .hz-vis .editl{flex-wrap:nowrap;gap:8px;font-size:clamp(11px,3.1vw,12.5px);margin:0 auto;white-space:nowrap}
+  .hz-vis .editl .mini-apps{gap:5px;flex-wrap:nowrap}
+  .hz-vis .editl .mini-apps img{height:clamp(13px,4vw,16px)}
+  .hz .stage-hero,.hz .capa-mockup{max-width:min(100%,max(210px,calc((100svh - 432px)*1.5)))}
+  .hz .stage-hero{margin-top:24px}
+  .hz .voa.v2{top:-1%}
+  .hz .capa-mockup{margin-top:10px}
+  .hz .voa{font-size:10.5px;padding:5px 9px 5px 6px}
+  .hz .voa svg{width:18px;height:14px}
+  .hz-tx{margin-top:16px}
+  .hero .hz h1{font-size:clamp(23px,min(7vw,4.2svh),29px);line-height:1.1}
+  .hero .hz .sub{font-size:15.5px;line-height:1.35;margin-top:8px}
+  .hero .hz .ctas{margin-top:14px;gap:8px}
+  .hero .hz .ctas .btn{padding-block:15px}
+  .hz .pillbar{margin-top:20px}
+  .wa{transition:opacity .25s,visibility .25s}
+  .wa.no-topo{opacity:0;visibility:hidden}
+}
+/* kit pronto: janela com as pastas */
+.janela{max-width:560px;margin:0 auto;border-radius:20px;overflow:hidden;background:var(--card);border:1px solid var(--line-2);box-shadow:0 40px 80px -40px rgba(43,112,248,.6)}
+.janela .jb{position:relative;display:flex;align-items:center;gap:7px;padding:15px 18px;background:var(--card-2);border-bottom:1px solid var(--line)}
+.janela .jb i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.janela .jb i:nth-child(2){background:#febc2e}.janela .jb i:nth-child(3){background:#28c840}
+.janela .jb span{position:absolute;left:0;right:0;text-align:center;font-size:14.5px;font-weight:600}
+.janela ul{list-style:none;margin:0;padding:6px 18px}
+.janela li{display:flex;align-items:center;gap:14px;padding:12px 0;font-size:17px;font-weight:600;border-top:1px solid var(--line)}
+.janela li:first-child{border-top:0}
+.janela li svg{flex:none;width:34px;height:26px}
+.janela li span{flex:1;min-width:0}
+.janela li em{font-style:normal;font-size:13.5px;font-weight:700;color:var(--verde);padding:5px 11px;border-radius:99px;background:rgba(42,233,121,.14)}
+.janela li em::before{content:"✓ "}
+.js .janela li em{opacity:0;scale:.6}
+.js .janela.in li em{opacity:1;scale:1;transition:opacity .3s,scale .45s cubic-bezier(.3,1.7,.5,1);transition-delay:calc(.5s + var(--i)*.22s)}
+/* garantia: luz azul pulsando */
+.guar,.garantia-l{--g:#4a84ff;border:2px solid color-mix(in srgb,var(--g) 75%,transparent);background:linear-gradient(160deg,color-mix(in srgb,var(--g) 20%,var(--card)),var(--card) 80%);animation:luz-azul 2.4s ease-in-out infinite}
+@keyframes luz-azul{0%,100%{box-shadow:0 0 0 0 rgba(74,132,255,.4),0 0 20px -6px rgba(74,132,255,.5)}50%{box-shadow:0 0 0 7px rgba(74,132,255,.13),0 0 60px 0 rgba(74,132,255,.6)}}
+.guar p{font-size:17px}
+.garantia-l.rv{max-width:560px;padding:16px 20px;border-radius:18px;margin-top:26px}
+/* Lari: tudo no centro */
+.about.centro .wrap.grid{display:flex;flex-direction:column;align-items:center;text-align:center;gap:0}
+.about.centro .grid>div:first-child{display:contents}
+.about.centro .grid h2{order:1;text-align:center}
+.about.centro .grid>.photo{order:2;width:100%;margin:30px 0 26px}
+.about.centro .retrato{margin:0 auto;max-width:360px}
+.about.centro p.first{order:3;max-width:680px;margin:0 auto;text-wrap:pretty}
+/* perguntas: azul e no centro */
+.faq .top{flex-direction:column;align-items:center;text-align:center;gap:8px}
+.faq .top p{text-align:center}
+/* sozinho (vermelho) x com o kit (verde) */
+.cmps{max-width:760px;margin:0 auto;display:grid;gap:30px}
+.cmp h3{font-size:19px;margin:0 0 10px;text-align:center}
+.cmp{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.cmp h3{grid-column:1/-1;margin:0 0 2px}
+.cr{display:flex;gap:13px;align-items:center;padding:15px 17px;border-radius:16px;font-size:16px;line-height:1.35}
+.cr b{display:block;font-size:13.5px;margin-bottom:2px}
+.cr i{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;font-style:normal;font-weight:700;color:#fff}
+.cr span{min-width:0;text-wrap:balance}
+.cr.nao{background:rgba(239,68,68,.13);border:1.5px solid rgba(239,68,68,.5)}.cr.nao i{background:#ef4444}.cr.nao b{color:#ff8a8a}
+.cr.sim{background:rgba(42,233,121,.12);border:1.5px solid rgba(42,233,121,.5)}.cr.sim i{background:#22b45e}.cr.sim b{color:var(--verde)}
+@media (max-width:640px){.guar p{font-size:15.5px}.janela ul{padding:4px 14px}.janela li{font-size:16px;gap:11px}.janela li svg{width:30px;height:23px}.janela li em{font-size:13px;padding:4px 9px}.cmp{grid-template-columns:1fr;gap:8px}.cmps{gap:24px}}
+@media (prefers-reduced-motion:reduce){.guar,.garantia-l{animation:none}}
+
+/* programas: texto em cima, logos embaixo e maiores */
+.hz .editl,.hz-vis .editl{display:flex;flex-direction:column;flex-wrap:nowrap;align-items:center;gap:14px;font-size:17px;text-align:center}
+.hz-vis .editl .mini-apps{justify-content:center;gap:16px}
+.hz-vis .editl .mini-apps img{height:36px}
+.ed-line{flex-direction:column;align-items:flex-start;gap:12px}
+.ed-line .mini-apps,.anc li.ed .mini-apps{gap:12px}
+.ed-line .mini-apps img,.anc li.ed .mini-apps img{height:28px}
+.anc li.ed .mini-apps{margin-left:0;margin-top:4px}
+@media (max-width:640px){
+  .hz .editl,.hz-vis .editl{font-size:14.5px;gap:9px}
+  .hz-vis .editl .mini-apps{gap:clamp(8px,2.8vw,13px);flex-wrap:nowrap}
+  .hz-vis .editl .mini-apps img{height:clamp(22px,6.8vw,28px)}
+  .hz .stage-hero,.hz .capa-mockup{max-width:min(100%,max(190px,calc((100svh - 466px)*1.5)))}
+  .ed-line .mini-apps,.anc li.ed .mini-apps{gap:9px 10px}
+  .ed-line .mini-apps img,.anc li.ed .mini-apps img{height:25px}
+}
+@media (max-width:640px){
+  .hz-vis .editl .mini-apps img{height:clamp(23px,7.5vw,31px)}
+  .hz .stage-hero{margin-top:28px}
+}
+@media (max-width:640px) and (max-height:620px){.hz .stage-hero .voa.v1{display:none}}
+
+/* topo: só os ícones dos programas, sem texto */
+.hz-vis .editl .mini-apps{gap:20px}
+.hz-vis .editl .mini-apps img{height:42px}
+@media (max-width:640px){
+  .hz-vis .editl .mini-apps{gap:clamp(9px,3.1vw,14px)}
+  .hz-vis .editl .mini-apps img{height:clamp(25px,8vw,34px)}
+  .hz .stage-hero,.hz .capa-mockup{max-width:min(100%,max(190px,calc((100svh - 448px)*1.5)))}
+}
+.price .avista{text-wrap:balance}
